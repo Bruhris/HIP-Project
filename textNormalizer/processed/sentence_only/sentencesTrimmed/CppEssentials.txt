@@ -1,0 +1,3114 @@
+Essentials Sharam Hekmat PragSoft Corporation Contents .
+
+Preliminaries Simple Program Compiling Simple Program How Compilation Works Variables Simple Comments Memory Integer Numbers Real Numbers Characters Strings Names Exercises .
+Expressions Arithmetic Operators Relational Operators Logical Operators Bitwise Operators Operators Assignment Operator Conditional Operator Comma Operator The sizeof Operator Operator Precedence Simple Type Conversion Exercises .
+
+Statements Simple and Compound Statements The if Statement The switch Statement The while Statement The do Statement The for Statement The continue Statement The break Statement The goto Statement The return Statement Exercises .
+Functions Simple Function Parameters and Arguments Global and Local Scope Scope Operator Auto Variables Register Variables Static Variables and Functions Extern Variables and Functions Symbolic Constants Enumerations Runtime Stack Inline Functions Recursion Default Arguments Variable Number of Arguments Command Line Arguments Exercises .
+Arrays , Pointers , and References Arrays Multidimensional Arrays Pointers Dynamic Memory Pointer Arithmetic Function Pointers References Typedefs Exercises Essentials Copyright PragSoft .
+Classes Simple Class Inline Member Functions Example : Set Class Constructors Destructors Friends Default Arguments Implicit Member Argument Scope Operator Member Initialization List Constant Members Static Members Member Pointers References Members Class Members Arrays Class Scope Structures and Unions Bit Fields Exercises .
+Overloading Function Overloading Operator Overloading Example : Set Operators Type Conversion Example : Binary Number Class Overloading for Output Overloading for Input Overloading Memberwise Initialization Memberwise Assignment Overloading new delete Overloading arrow_operator Overloading .
+Derived Classes An illustrative Class Simple Derived Class .
+
+Templates Function Definition Function Instantiation Example : Binary Search Class Definition Class Instantiation Nontype Parameters Class Specialization Class Members Class Friends Example : Lists Derived Class Templates Exercises .
+Exception Handling Flow Control The Throw Clause The Try Block Catch Clauses Function Throw Lists Exercises .
+The IO Library The Role of streambuf Stream Output with ostream Stream Input with istream Using the ios Class Stream Manipulators File IO with fstreams Array IO with strstreams Example : Program Annotation Essentials .
+
+The Preprocessor Preprocessor Directives Macro Definition Quote and Concatenation Operators File Inclusion Conditional Compilation Other Directives Predefined Identifiers Exercises Solutions to Exercises .
+
+Preface Since its introduction less than decade ago , has experienced growing acceptance as practical programming language suitable for teaching , research , and commercial software development .
+The language has also rapidly evolved during this period and acquired number of new , templates and exception which have added to its richness .
+
+This book serves as an introduction to the language .
+It teaches how to program in and how to properly use its .
+It does not attempt to teach design to any depth , which believe is best covered in book in its own right .
+
+In designing this book , have strived to achieve three goals .
+First , to produce concise introductory text , free from unnecessary verbosity , so that beginners can develop good understanding of the language in short period of time .
+Second , have tried to combine tutorial style on explanation of concepts through with reference style on flat .
+As result , each chapter consists of list of relatively short sections one or two , with no further subdivision .
+This , hope , further simplifies the task .
+Finally , have consciously avoided trying to present an absolutely complete description of .
+While no important topic has been omitted , descriptions of some of the minor idiosyncrasies have been avoided for the sake of clarity and to avoid overwhelming beginners with too much information .
+Experience suggests that any small knowledge gaps left as result , will be easily filled over time through selfdiscovery .
+
+Intended Audience This book introduces as an programming language .
+No previous knowledge of or any other programming language is assumed .
+
+Copyright PragSoft who have already been exposed to programming language as or will be able to skip over some of the earlier material in this book .
+
+Although the book is primarily designed for use in undergraduate computer science courses , it will be equally useful to professional programmers and hobbyists who intend to learn the language on their own .
+The entire book can be easily covered in lectures , making it suitable for or course .
+It can also be used as the basis of an intensive day industrial training course .
+
+Structure of the Book The book is divided into chapters .
+Each chapter has flat structure , consisting of an unnumbered sequence of sections , most of which are limited to one or two pages .
+The aim is to present each new in confined space so that it can be quickly grasped .
+Each chapter ends with list of exercises .
+Answers to all of the exercises are provided in an appendix .
+Readers are encouraged to attempt as many of the exercises as feasible and to compare their solutions against the ones provided .
+
+For the convenience of readers , the sample programs presented in this book the solutions to the and provided in electronic form .
+
+Preliminaries This chapter introduces the basic elements of program .
+We will use simple examples show the structure of programs and the way they are compiled .
+
+Elementary concepts such as constants , variables , and their storage in memory will also be discussed .
+
+The following is cursory description of the concept of programming for the benefit of those who are new the subject .
+
+Programming digital computer is useful tool for solving great variety of problems .
+solution problem is called an algorithm ; it describes the sequence of steps be performed for the problem be solved .
+simple example of problem and an algorithm for it would be : Problem : Algorithm : Sort list of names in ascending lexicographic order .
+
+Call the given list ; create an empty list , hold the sorted list .
+
+Repeatedly find the ' name in , remove it from , and make it the next entry of , until is empty .
+
+An algorithm is expressed in abstract terms .
+To be intelligible computer , it needs be expressed in language understood by it .
+The only language really understood by computer is its own machine language .
+Programs expressed in the machine language are said be executable .
+program written in any other language needs be first translated the machine language before it can be executed .
+
+machine language is far too cryptic be suitable for the direct use of programmers .
+further abstraction of this language is the assembly language which provides mnemonic names for the instructions and more intelligible notation for the data .
+An assembly language program is translated machine language by translator called an assembler .
+
+Even assembly languages are difficult work with .
+languages such as provide much more convenient notation for implementing algorithms .
+
+They liberate programmers from having think in very terms , and help them focus on the algorithm instead .
+program written in language is translated assembly language by translator called compiler .
+The assembly code produced by the compiler is then assembled produce an executable program .
+
+is standard header file and contains definitions for input and output .
+
+function may have zero or more parameters ; these always appear after the function name , between pair of brackets .
+The word void appearing between the brackets indicates that main has no parameters .
+
+The return type for main is int , an integer .
+All programs must have exactly one main function .
+
+Program execution always begins from main .
+
+statement is computation step which may produce value .
+The end of statement is always marked with semicolon .
+This statement causes the string " be sent the output stream .
+string is any sequence of characters enclosed in .
+The last character in this string is newline character which is similar carriage return on type writer .
+stream is an object which performs input or output .
+Cout is the standard output stream in output usually means your computer monitor .
+The symbol is an output operator which takes an output stream as its left operand and an expression as its right operand , and causes the value of the latter be .
+
+Copyright PragSoft Compiling Simple Program Dialog shows how the program in Listing is compiled and run in typical UNIX environment .
+User input appears in bold and system response in plain .
+
+The UNIX command line prompt appears as dollar symbol .
+
+Dialog CC Hello World Annotation The command for invoking the translator in UNIX environment is CC .
+The argument to this command is the name of the file which contains the program .
+As convention , the file name should end in , or The result of compilation is an executable file which is by default named .
+To run the program , we just use as command .
+
+The CC command accepts variety of useful options .
+An option appears as name , where name is the name of the option single .
+Some options take arguments .
+For example , the output option allows you to specify name for the executable file produced by the compiler instead of .
+
+Bookmark not defined .
+
+Dialog CC hello hello Hello World Although the actual command may be different depending on the make of the compiler , similar compilation procedure is used under .
+Windowsbased compilers offer environment where compilation is as simple as choosing menu command .
+The naming convention under and Windows is that source file names should end in .
+
+First , the preprocessor goes over the program text and carries out the instructions specified by the preprocessor directives ,
+The result is modified program text which no longer contains any directives .
+
+Then , the compiler translates the program code .
+The compiler may be true compiler which generates native or code , or just translator which translates the code into .
+In the latter case , the resulting code is then passed through compiler to produce native object code .
+In either case , the outcome may be incomplete due to the program referring to library routines which are not defined as part of the program .
+For example , Listing refers to the operator which is actually defined in separate IO library .
+
+Finally , the linker completes the object code by linking it with the object code of any library modules that the program may have referred to .
+The final result is an executable file .
+
+Figure illustrates the above steps for both translator and native compiler .
+In practice all these steps are usually invoked by single command , and the user will not even see the intermediate files generated .
+
+Figure Compilation Program TRANSLATOR Program NATIVE COMPILER Code COMPILER Object Code LINKER .
+
+Copyright PragSoft Variables variable is symbolic name for memory location in which data can be stored and subsequently recalled .
+Variables are used for holding data values so that they can be utilized in various computations in program .
+All variables have two important .
+
+type which is established when the variable is defined , integer , real ,
+Once defined , the type of variable cannot be changed .
+
+which can be changed by assigning new to the variable .
+The kind of values variable can assume depends on its type .
+For example , an integer variable can only take integer values ,
+
+Listing illustrates the uses of some simple variable .
+
+As general rule , variable is defined by specifying its type first , followed by the variable name , followed by semicolon .
+
+As illustrated by this line , multiple variables of the same type can be defined at once by separating them with commas .
+
+It assigns the to the variable Therefore , after this statement is executed , denotes the .
+
+The resulting is stored in .
+
+When run , the program will produce the following output : When variable is defined , its is undefined until it is actually assigned one .
+For example , has an undefined , whatever happens to be in the memory location which the variable denotes at the until line is executed .
+The assigning of to variable for the first time is called initialization .
+It is important to ensure that variable is initialized before it is used in any computation .
+
+It is possible to define variable and initialize it at the same time .
+This is considered good programming practice , because it the possibility of using the variable prior to it being initialized .
+Listing is revised version of Listing which uses this technique .
+For all intents and purposes , the two programs are equivalent .
+
+Copyright PragSoft Simple The most common way in which program communicates with the outside world is through simple , operations .
+provides two useful operators for this purpose : for input and for output .
+We have already seen examples of output using .
+Listing also illustrates the use of for input .
+
+The input operator takes an input stream as its left operand is the standard input stream which corresponds to data entered via the and variable which the input data is as its right operand .
+
+When run , the program will produce the following output input appears in : What is the hourly pay rate .
+This is illustrated by Listing which now allows the input of both the daily work hours and the hourly pay rate .
+
+The two values should be separated by white space , one or more space or tab .
+This statement is equivalent to :  Because the result of is its left operand , evaluates to cin which is then used as the left operand of the next operator .
+
+It outputs  followed by the value of  followed by newline character .
+This statement is equivalent to :  evaluates to which is then used as the left operand of the next operator , etc .
+
+When run , the program will produce the following output : What are the work hours and the hourly pay rate .
+
+Copyright PragSoft Comments comment is piece of descriptive text which explains some aspect of program .
+
+Program comments are totally ignored by the compiler and are only intended for human readers .
+provides two types of comment .
+
+Anything after the end of the line on which it is considered comment .
+
+Anything enclosed by the pair and is considered comment .
+
+Listing illustrates the use of both forms .
+
+Listing This program calculates the weekly gross pay for worker , based on the total number of hours worked and the hourly pay rate .
+
+The following two points , in particular , should be .
+
+comment should be easier to read and understand than the code which it tries to explain .
+confusing or comment is worse than no comment at all .
+
+of comments can lead to even less readability .
+program which contains so much comment that you can hardly see the code can by no means be considered readable .
+
+Use of descriptive names for variables and other entities in program , and proper indentation of the code can reduce the need for using comments .
+
+The best guideline for how to use comments is to simply apply common sense .
+
+This memory can be thought of as contiguous sequence of bits , each of which is capable of storing binary digit or .
+Typically , the memory is also divided into groups of consecutive bits .
+The bytes are sequentially addressed .
+Therefore each byte can be uniquely identified by its address Figure .
+
+Figure Bits and bytes in memory .
+
+Byte Address .
+
+Byte Byte .
+
+For example , the variable definition int ; causes the compiler to allocate few bytes to represent .
+The exact number of bytes allocated and the method used for the binary representation of the integer depends on the specific implementation , but let us say two bytes encoded as complement integer .
+The compiler uses the address of the first byte at which is allocated to refer to it .
+The above assignment causes the value to be stored as complement integer in the two bytes allocated Figure .
+
+Figure Representation of an integer in memory .
+
+Memory While the exact binary representation of data item is rarely of interest to programmer , the general organization of memory and use of addresses for referring to data items we will see is very important .
+
+Copyright PragSoft Integer Numbers An integer variable may be defined to be of type short , int , or long .
+The only difference is that an int uses more or at least the same number of bytes as short , and long uses more or at least the same number of bytes as an int .
+For example , on the PC , short uses bytes , an int also bytes , and long bytes .
+
+By default , an integer variable is assumed to be signed , have signed representation so that it can assume positive as well as negative .
+However , an integer can be defined to be unsigned by using the keyword unsigned in its definition .
+The keyword signed is also allowed but is redundant .
+
+literal integer , is always assumed to be of type int , unless it has an or suffix , in which case it is treated as long .
+Also , literal integer can be specified to be unsigned using the suffix or .
+
+The decimal notation is the one we have been using so far .
+An integer is taken to be octal if it is preceded by zero , and hexadecimal if it is preceded by or .
+
+Octal numbers use the base , and can therefore only use the digits .
+
+Hexadecimal numbers use the base , and therefore use the letter to represent , respectively ,
+Octal and hexadecimal numbers are calculated as follows : + + + + + +
+
+The latter uses more bytes and therefore offers greater range and accuracy for representing real numbers .
+For example , on the PC , float uses and double uses bytes .
+
+literal real , is always assumed to be of type double , unless it has an or suffix , in which case it is treated as float , or an or suffix , in which case it is treated as long double .
+The latter uses more bytes than double for better accuracy , bytes on the .
+
+For example , may be written in the scientific notation as : or The letter stands for exponent .
+The scientific notation is interpreted as follows :
+
+Copyright PragSoft Characters character variable is defined to be of type char .
+character variable occupies single byte which contains the code for the character .
+This code is numeric value and depends on the character coding system being used , is .
+The most common system is ASCII Standard Code for Information .
+For example , the character has the ASCII code , and the character has the ASCII code .
+
+By the default most char means signed char .
+However , on some systems it may mean unsigned char .
+signed character variable can hold numeric values in the range through .
+An unsigned character variable can hold numeric values in the range through .
+As result , both are often used to represent small integers in programs can be assigned numeric values like : signed char unsigned char .
+
+literal character is written by enclosing the character between pair of single quotes ,
+Nonprintable characters are represented using escape sequences .
+
+Literal characters may also be specified using their numeric code value .
+The general escape sequence , backslash followed by up to three octal is used for this purpose .
+For example :
+
+string variable is defined to be of type , pointer to .
+pointer is simply the address of memory location .
+
+string variable , therefore , simply contains the address of where the first character of string appears .
+For example , consider the definition : char ; Figure illustrates how the string variable and the string " might appear in memory .
+
+Figure string and string variable in memory .
+
+literal string is written by enclosing its characters between pair of double quotes ,
+The compiler always appends null character to literal string to mark its end .
+The characters of string may be specified using any of the notations for specifying literal characters .
+
+long string may extend beyond single line , in which case each of the preceding lines should be terminated by backslash .
+For example : to show the use of backslash for The backslash in this context means that the rest of the string is continued on the next line .
+The above string is equivalent to the single line string : common programming error results from confusing string , with single character ,
+
+The former consists of two bytes character ' followed by the character , whereas the latter consists of single byte .
+
+The shortest possible string is the null string which simply consists of the null character .
+
+Copyright PragSoft Names Programming languages use names to refer to the various entities that make up program .
+We have already seen examples of an important category of such names , variable .
+Other categories include : function names , type names , and macro names , which will be described later in this book .
+
+Names are programming convenience , which allow the programmer to organize what would otherwise be quantities of plain data into meaningful and collection .
+As result , no trace of name is left in the final executable generated by compiler .
+For example , temperature variable eventually becomes few bytes of memory which is referred to by the executable by its address , not its name .
+
+imposes the following rules for creating valid names called identifiers .
+name should consist of one or more characters , each of which may be letter , and , digit , or an underscore character , except that the first character may not be digit .
+Upper and lower case letters are distinct .
+For example : salary Salary .
+
+But the limit is usually so large that it should not cause concern ,
+
+Certain words are reserved by for specific purposes and may not be used as identifiers .
+These are called reserved words or keywords and are summarized in Table : Table keywords .
+
+Its behavior should resemble this : Temperature in  degrees degrees Celsius .
+
+Which of the following represent valid identifiers .
+
+Age of person .
+
+Expressions This chapter introduces the operators for composing expressions .
+An expression is any computation which yields value .
+
+When discussing expressions , we often use the term evaluation .
+For example , we say that an expression evaluates to certain value .
+Usually the final value is the only reason for evaluating the expression .
+However , in some cases , the expression may also produce .
+These are permanent changes in the program state .
+In this sense , expressions are different from mathematical expressions .
+
+provides operators for composing arithmetic , relational , logical , bitwise , and conditional expressions .
+It also provides operators which produce useful sideeffects , such as assignment , increment , and decrement .
+We will look at each category of operators in turn .
+We will also discuss the precedence rules which govern the order of operator evaluation in expression .
+
+These are summarized in Table .
+
+Operator + Name Addition Subtraction Multiplication Division Remainder Example +
+
+Generally , if both operands are integers then the result will be an integer .
+However , if one or both of the operands are reals then the result will be real double to be .
+
+When both operands of the division operator are integers then the division is performed as an integer division and not the normal division we are used to .
+
+Integer division always results in an integer outcome , the result is always rounded .
+
+Unintended integer divisions are common source of programming errors .
+To obtain real division when both operands are integers , you should cast one of the operands to be real : double .
+
+The remainder operator expects integers for both of its operands .
+It returns the remainder of the operands .
+For example is calculated by integer dividing by to give an outcome of and remainder of ; the result is therefore .
+
+It is possible for the outcome of an arithmetic operation to be too large for storing in designated variable .
+This situation is called an overflow .
+The outcome of an overflow is and therefore undefined .
+For example : unsigned .
+
+Copyright PragSoft Relational Operators provides six relational operators for comparing numeric quantities .
+These are summarized in Table .
+Relational operators evaluate to the true or the false .
+
+Table Relational operators .
+
+Operator Name Equality Inequality Less Than Less Than or Equal Greater Than Greater Than or Equal Example .
+
+In  are both invalid do not mean anything .
+
+The operands of relational operator must evaluate to number .
+Characters are valid operands since they are represented by numeric values .
+For example ASCII : The relational operators should not be used for comparing strings , because this will result in string addresses being compared , not string contents .
+For example , expression causes address of " to be compared to address of .
+As these addresses are determined by compiler , outcome may be or may be , is therefore undefined .
+
+provides library functions , for lexicographic comparison of string .
+These will be described later in book .
+
+These are summarized in Table .
+Like relational operators , logical operators evaluate to or .
+
+Logical negation is unary operator , which negates logical value of its single operand .
+If its operand is nonzero it produce , if it is it produces .
+
+Logical produces if one or both of its operands evaluate to .
+
+Logical or produces if both of its operands evaluate to .
+
+Note that here we talk of zero nonzero operands zero .
+In general , any nonzero value can be used to represent logical true , whereas only zero represents logical false .
+The following are , therefore , all valid logical expressions :
+
+Copyright PragSoft Bitwise Operators provides six bitwise operators for manipulating individual bits in an integer quantity .
+These are summarized in Table .
+
+Table Bitwise operators .
+
+Operator Name Bitwise Negation Bitwise And Bitwise Or Bitwise Exclusive Or Bitwise Left Shift Bitwise Right Shift Example '
+
+Bitwise negation is unary operator which reverses the bits in its operands .
+Bitwise and compares the corresponding bits of its operands and produces when both bits are , and otherwise .
+Bitwise or compares the corresponding bits of its operands and produces when both bits are , and otherwise .
+Bitwise exclusive or compares the corresponding bits of its operands and produces when both bits are or both bits are , and otherwise .
+
+Bitwise left shift operator and bitwise right shift operator both take bit sequence as their left operand and positive integer quantity as their right operand .
+The former produces bit sequence equal to the left operand but which has been shifted bit positions to the left .
+The latter produces bit sequence equal to the left operand but which has been shifted bit positions to the right .
+Vacated bits at either end are set to .
+
+Table illustrates bit sequences for the sample operands and results in Table .
+To avoid worrying about the sign bit is machine , it is common to declare bit sequence as an unsigned quantity : unsigned char ; unsigned char ; Table .
+
+How the bits are calculated .
+
+Example Octal Value Bit Sequence .
+
+These are summarized in Table .
+The examples assume the following variable definition : int ; Table Increment and decrement operators .
+
+Operator Name Example + + + +
+
+The difference is significant .
+When used in prefix form , the operator is first applied and the outcome is then used in the expression .
+When used in the postfix form , the expression is evaluated first and then the operator applied .
+
+Both operators may be applied to integer as well as real variables , although in practice real variables are rarely useful in this form .
+
+Copyright PragSoft Assignment Operator The assignment operator is used for storing value at some memory location denoted by .
+Its left operand should be an lvalue , and its right operand may be an arbitrary expression .
+The latter is evaluated and the outcome is stored in the location denoted by the lvalue .
+
+An lvalue for left is anything that denotes memory location in which value may be stored .
+The only kind of lvalue we have seen so far in this book is variable .
+Other kinds of lvalues on pointers and will be described later in this book .
+
+The assignment operator has number of variants , obtained by combining it with the arithmetic and bitwise operators .
+These are summarized in Table .
+The examples assume that is an integer variable .
+
+Operator Example Equivalent To + An assignment operation is itself an expression whose value is the value stored in its left operand .
+An assignment operation can therefore be used as the right operand of another assignment operation .
+Any number of assignments can be concatenated in this fashion to form one expression .
+
+It has the general form :
+If the result is nonzero then is evaluated and its value is the final result .
+Otherwise , is evaluated and its value is the final result .
+
+For example , in int .
+
+Because conditional operation is itself an expression , it may be used as an operand of another conditional operation , that is , conditional expressions may be nested .
+For example : int , 
+
+Copyright PragSoft Comma Operator Multiple expressions can be combined into one expression using the comma operator .
+The comma operator takes two operands .
+It first evaluates the left operand and then the right operand , and returns the value of the latter as the final outcome .
+
+Otherwise , is evaluated and the value of is stored in .
+
+It takes single operand which may be type name , or an expression , and returns the size of the specified entity in bytes .
+The outcome is totally .
+Listing illustrates the use of sizeof on the types we have encountered so far .
+
+Listing int main cout cout cout cout cout cout cout cout cout cout size size size size size size size .
+
+When run , the program will produce the following output the : bytes bytes bytes bytes bytes bytes bytes bytes bytes bytes .
+
+Copyright PragSoft Operator Precedence The order in which operators are evaluated in an expression is significant and is determined by precedence rules .
+These rules divide the operators into number of precedence levels Table .
+Operators in higher levels take precedence over operators in lower levels .
+
+Table Operator precedence levels .
+
+Level Highest Lowest .
+
+Left to Right For example , in + c c is evaluated first because has higher precedence +
+The result is added to because + has higher precedence , is evaluated .
+Precedence rules can be overridden using brackets .
+For example , rewriting the above expression as + causes + to be evaluated before .
+
+Operators with the same precedence level are evaluated in the order specified by the last column of Table .
+For example , in c the evaluation order is right to left , so first c is evaluated , followed by Chapter : Expressions Simple Type Conversion to any of the other types .
+For example : converts to an int to give converts to long to give converts to double to give converts to char whose code is gives as an unsigned short As shown by these examples , the type identifiers can be used as type operators .
+Type operators are unary , take one appear inside brackets to the left of their operand .
+This is called explicit type conversion .
+
+When the type name is just one word , an alternate notation may be used in which the brackets appear around the .
+
+In the last example , + involves mismatching types , so is first converted to double added to .
+The result is double which does not match the type of on the left side of the assignment , so it is converted to int before being assigned to .
+
+The above rules represent some simple but common cases for type conversion .
+More complex cases will be examined later in the book after we have discussed other data types classes .
+
+Copyright PragSoft Exercises Write expressions for the .
+
+To test if number is even .
+
+To give the number of characters in string literal .
+
+Add extra brackets to the following expressions to explicitly show the order in which the operators are evaluated : What will be the value of each of the following variables after its initialization : double long char char c c .
+
+Write program which inputs positive integer outputs raised to the power of .
+
+Statements This chapter introduces the various forms of statements for composing programs .
+Statements represent the building blocks of program .
+
+Roughly speaking , each statement represents computational step which has certain .
+
+running program spends all of its time executing statements .
+The order in which statements are executed is called flow control control .
+This term reflect the fact that the currently executing statement has the control of the CPU , which when completed will be handed over to another statement .
+Flow control in program is typically sequential , from one statement to the next , but may be diverted to other paths by branch statements .
+Flow control is an important consideration because it determines what is executed during run and what is not , therefore affecting the overall outcome of the program .
+
+Like many other procedural languages , provides different forms of statements for different purposes .
+Declaration statements are used for defining variables .
+statements are used for simple , algebraic computations .
+
+Branching statements are used for specifying alternate paths of execution , depending on the outcome of logical condition .
+Loop statements are used for specifying computations which need to be repeated until certain logical condition is satisfied .
+Flow control statements are used to divert the execution path to another part of the program .
+We will discuss these in turn .
+
+Copyright PragSoft Simple and Compound Statements simple statement is computation terminated by semicolon .
+
+The last example represents useless statement , because it has no is added to and the result is just .
+
+Although the null statement has no , as we will see later in the chapter , it has some genuine uses .
+
+Multiple statements can be combined into compound statement by enclosing them within braces .
+
+Compound statements are useful in two ways : they allow us to put multiple they allow us to introduce new in the program .
+is part of the program text within which variable remains defined .
+For example , the of   and in the above example is from where they are defined till the closing brace of the compound statement .
+Outside the compound statement , these variables are not defined .
+
+Because compound statement may contain variable definitions and defines for them , it is also called block .
+The of variable is limited to the block immediately enclosing it .
+Blocks and rules will be described in more detail when we discuss functions in the next chapter .
+
+The if statement provides way of expressing this , the general form of which is : statement ; First expression is evaluated .
+If the outcome is nonzero then statement is executed .
+
+For example , when dividing two values , we may want to check that the denominator is nonzero : sum .
+
+variant form of the if statement allows us to specify two alternative statements : one which is executed if condition is satisfied and one which is executed if the condition is not satisfied .
+This is called the statement and has the general form :  else  First expression is evaluated .
+If the outcome is nonzero then statement is .
+
+Copyright PragSoft Given the similarity between the two alternative parts , the whole statement can be simplified to :
+
+If statements may be nested by having an if statement appear inside another if .
+
+Copyright PragSoft The switch Statement The switch statement provides way of choosing between set of alternatives , based on the value of an expression .
+The general form of the switch statement is : switch case  statements ;
+
+First expression the switch is evaluated , and the outcome is compared to each of the numeric constants case , in the order they appear , until match is found .
+The statements following the matching case are then executed .
+Note the plural : each case may be followed by zero or more statements just one .
+Execution continues until either break statement is encountered or all intervening statements until the end of the switch statement are executed .
+The final default case is optional and is exercised if none of the earlier cases provide match .
+
+For example , suppose we have parsed binary arithmetic operation into its three components and stored these in variables operator , and .
+The following switch statement performs the operation and stored the in .
+
+As illustrated by this example , it is usually necessary to include break statement at the end of each case .
+The break terminates the switch statement by jumping to the very end of it .
+There are , however , situations in which it makes sense to have case without break .
+For example , if we extend the above statement to also allow to be used as multiplication  we will have :
+
+Because case ' has no break statement fact no statement at , when this case is satisfied , execution proceeds to the statements of the next case and the multiplication is performed .
+
+It should be obvious that any switch statement can also be written as multiple statements .
+The above statement , for example , may be written as : +
+
+In general , preference should be given to the switch version when possible .
+The approach should be reserved for situation where switch cannot do the job , when the conditions involved are not simple equality expressions , or when the case labels are not numeric .
+
+Copyright PragSoft The while Statement The while statement called while provides way of repeating an statement while condition holds .
+It is one of the three flavors of iteration in .
+
+The general form of the while statement is : statement ; First expression the loop is evaluated .
+If the outcome is nonzero then statement the loop is executed and the whole process is repeated .
+Otherwise , the loop is terminated .
+
+For example , suppose we wish to calculate the of all numbers from to some integer denoted by .
+
+For set to , Table provides trace of the loop by listing the values of the variables involved and the loop condition .
+
+Table While loop trace .
+
+Iteration First Second Third Fourth Fifth Sixth It is not unusual for while loop to have an empty body , null .
+
+The following loop , for example , sets to its greatest odd factor .
+
+The loop condition not only tests that is even , it also divides by two and ensures that the loop will terminate should be zero .
+
+The general form of the do statement is : do statement ; while ; First statement is executed and then expression is evaluated .
+If the outcome of the latter is nonzero then the whole process is repeated .
+Otherwise , the loop is terminated .
+
+The do loop is less frequently used than the while loop .
+It is useful for situations where we need the loop body to be executed at least once , regardless of the loop condition .
+For example , suppose we wish to repeatedly read value and print its square , and stop when the value is zero .
+This can be expressed as the following .
+
+Unlike the while loop , the do loop is never used in situations where it would have null body .
+Although do loop with null body would be equivalent to similar while loop , the latter is always preferred for its superior readability .
+
+Copyright PragSoft The for Statement The for statement called for is similar to the while statement , but has two additional components : an expression which is evaluated only once before everything else , and an expression which is evaluated once at the end of each iteration .
+The general form of the for statement is : statement ; First is evaluated .
+Each time round the loop , is evaluated .
+If the outcome is nonzero then statement is executed and is evaluated .
+Otherwise , the loop is terminated .
+The general for loop is equivalent to the following while .
+
+The following for loop , for example , calculates the of all integers from to .
+
+In this example , is usually called the loop variable .
+
+allows the first expression in for loop to be variable definition .
+In the above loop , for example , can be defined inside the loop itself :  Contrary to what may appear , the scope for is not the body of the loop , but the .
+
+For example , removing the first and the third expression gives us something identical to while .
+
+Removing all the expressions gives us an infinite loop .
+This condition is .
+
+In other words , loops can be nested .
+For example , produces the product of the set with itself , giving the output :
+
+Copyright PragSoft The continue Statement The continue statement terminates the current iteration of loop and instead jumps to the next iteration .
+It applies to the loop immediately enclosing the continue statement .
+It is an error to use the continue statement outside loop .
+
+In while and do loops , the next iteration commences from the loop condition .
+
+In for loop , the next iteration commences from the third expression .
+For example , loop which repeatedly reads in number , processes it but ignores negative numbers , and terminates when the number is zero , may be expressed .
+
+When the continue statement appears inside nested loops , it applies to the loop immediately enclosing it , and not to the outer loops .
+For example , in the following set of nested loops , the continue applies to the for loop , and not the while .
+
+It causes jump out of these constructs , and hence terminates them .
+
+Like the continue statement , break statement only applies to the loop or switch immediately enclosing it .
+It is an error to use the break statement outside loop or switch .
+
+For example , suppose we wish to read in user password , but would like to allow the user limited number of attempts : for ; attempts ;
+
+Here we have assumed that there is function called Verify which checks password and returns true if it is correct , and false otherwise .
+
+Rewriting the loop without break statement is always possible by using an additional logical variable and adding it to the loop .
+
+Copyright PragSoft .
+
+The goto statement provides the of jumping .
+It has the general form : goto label ; where label is an identifier which marks the jump destination of goto .
+The label should be followed by colon and appear before statement within the same function as the goto statement itself .
+
+For example , the role of the break statement in the for loop in the previous section can be emulated by goto : for ; attempts ;
+
+Because goto provides free and unstructured form of jumping break and , it can be easily misused .
+Most programmers these days avoid using it altogether in favor of clear programming .
+Nevertheless , goto does have some legitimate uses .
+Because of the potential complexity of such cases , furnishing of examples is postponed to the later parts of the book .
+
+It has the general form : return expression ; where expression denotes the value returned by the function .
+The type of this value .
+
+The return value of main is what the program returns to the operating system when it completes its execution .
+Under UNIX , for example , it its conventional to return from main when the program executes without errors .
+
+Otherwise , error code is returned .
+
+When function has return value in the above , failing to return value will result in compiler warning .
+The actual return value will be undefined in this case , it will be whatever value which happens to be in its corresponding memory location at the .
+
+Copyright PragSoft Exercises Write program which inputs and and outputs one of the messages : underweight , normal , or overweight , using the criteria : Underweight : Normal : Overweight : Assuming that is , what will the following code fragment output when executed .
+
+For example , becomes : December ,
+
+Write program which inputs an octal number and outputs its decimal equivalent .
+
+The following example illustrates the expected behavior of the program : Input an octal number : Write program which produces simple multiplication table of the following format for integers in the range to :
+
+Functions This chapter describes functions as one of the main building blocks of programs .
+The other main building block classes will be discussed in Chapter .
+
+function provides convenient way of packaging computational recipe , so that it can be used as often as required .
+function definition consists of two specifies how it may be used .
+It consists of three .
+
+This is simply unique identifier .
+
+The function parameters called its .
+This is set of zero or more typed identifiers used for passing values to and from the function .
+
+This specifies the type of value the function returns .
+
+function which returns nothing should have the return type void .
+
+The body of function contains the computational steps that comprise the function .
+
+Using function involves ' it .
+function call consists of the function name followed by the call operator brackets , inside which zero or more arguments appear .
+The number of arguments should match the number of function parameters .
+Each argument is an expression whose type should match the type of the corresponding parameter in the function interface .
+
+When function call is executed , the arguments are first evaluated and their resulting values are assigned to the corresponding parameters .
+
+Finally , the function return value is passed to the caller .
+
+Since call to function whose return type is void yields return value , the call is an expression and may be used in other expressions .
+By contrast , call to function whose return type is void is statement .
+
+Listing Annotation .
+
+This line defines the function interface .
+It starts with the return type of the function in this .
+The function name appears next followed by its parameter list .
+Power has two parameters and which are of types int and unsigned int , respectively Note that the syntax for parameters is similar to the syntax for defining variables : type identifier followed by the parameter name .
+However , it is not possible to follow type identifier with multiple .
+
+This line is local variable definition .
+
+This brace marks the end of the function body .
+
+Listing illustrates how this function is called .
+The effect of this call is that first the argument values and are , respectively , assigned to the parameters base and exponent , and then the function body is evaluated .
+
+Copyright PragSoft In general , function should be declared before its is used .
+function declaration simply consists of the function prototype , which specifies the function name , parameter types , and return type .
+Line in Listing shows how may be declared for the above program .
+Although function may be declared without its parameter names , int , unsigned ; this is not recommended unless the role of the parameters is .
+
+Listing int base , unsigned int ; function declaration .
+
+Because function definition contains prototype , it also serves as declaration .
+Therefore if the definition of function appears before its use , no additional declaration is needed .
+Use of function prototypes is nevertheless encouraged for all circumstances .
+Collecting these in separate header file enables other programmers to quickly access the functions without having to read their entire definitions .
+
+value parameter receives copy of the value of the argument passed to it .
+As  if the function makes any changes to the parameter , this will not affect the argument .
+
+As far as this function is concerned , behaves just like local variable inside the function .
+When the function is called and passed to it , receives copy of the value of .
+As  although is set to by the function , this does not affect .
+The program produces the following output : reference parameter , on the other hand , receives the argument passed to it and works on it directly .
+Any changes made by the function to reference parameter is in effect directly applied to the argument .
+Reference parameters will be further discussed in Chapter .
+
+Within the context of function calls , the two styles of passing arguments are , respectively , called and .
+It is perfectly valid for function to use for some of its parameters and for others .
+
+Copyright PragSoft Global and Local Scope Everything defined at the program scope level , outside functions and is said to have global scope .
+Thus the sample functions we have seen so far all have global scope .
+Variables may also be defined at the global scope : int .
+
+Uninitialized global variables are automatically initialized to zero .
+
+Since global entities are visible at the program level , they must also be unique at the program level .
+This means that the same global variable or function may not be defined more than once at the global level .
+
+Each block in program defines local scope .
+Thus the body of function represents local scope .
+The parameters of function have the same scope as the function body .
+Variables defined within local scope are visible to that scope only .
+
+Hence , variable need only be unique within its own scope .
+Local scopes may be nested , in which case the inner scopes override the outer scopes .
+For example , in int .
+
+Generally , the lifetime of variable is limited to its scope .
+So , for example , global variables last for the duration of program execution , while local variables are created when their scope is entered and destroyed when their scope is exited .
+The memory space for global variables is reserved prior to program execution commencing , whereas the memory space for local variables is allocated on the fly during program execution .
+
+For example , in int .
+
+This problem is overcome using the unary scope operator : which takes global entity as argument : int .
+
+Copyright PragSoft Auto Variables Because the lifetime of local variable is limited and is determined automatically , these variables are also called automatic .
+The storage class specifier auto may be used to explicitly specify local variable to be automatic .
+
+When the program code refers to variable , in an , the compiler generates machine code which accesses the memory location denoted by the variable .
+For variables , loop , efficiency gains can be obtained by keeping the variable in register instead thereby avoiding memory access for that variable .
+
+The storage class specifier register may be used to indicate to the compiler that the variable should be stored in register if possible .
+For example :  Here , each time round the loop , is used three times : once when it is compared to , once when it is added to  and once when it is incremented .
+Therefore it makes sense to keep in register for the duration of the loop .
+
+Note that register is only hint to the compiler , and in some cases the compiler may choose not to use register when it is asked to do so .
+One reason for this is that any machine has limited number of registers and it may be the case that they are all in use .
+
+Even when the programmer does not use register declarations , many optimizing compilers try to make an intelligent guess and use registers where they are likely to improve the performance of the program .
+
+Use of register declarations can be left as an after thought ; they can always be added later by reviewing the code and inserting it in appropriate places .
+
+Copyright PragSoft Static Variables and Functions It is often useful to confine the accessibility of global variable or function to single file .
+This is facilitated by the storage class specifier static .
+For example , consider puzzle game program which consists of three files for game generation , game solution , and user interface .
+The game solution file would contain Solve function and number of other functions ancillary to Solve .
+Because the latter are only for the private use of Solve , it is best not to make them accessible outside the file : static int FindNextRoute only accessible in this file .
+
+local variable in function may also be defined as static .
+The variable will remain only accessible within its local scope ; however , its lifetime will no longer be confined to this scope , but will instead be global .
+In other words , static local variable is global variable which is only accessible within its local scope .
+
+Static local variables are useful when we want the value of local variable to persist across the calls to the function in which it appears .
+For example , consider an Error function which keeps of the errors and aborts the program when the exceeds preset .
+
+Otherwise , the compiler may object to the variable as undefined .
+This is facilitated by an extern declaration .
+For example , the declaration .
+
+This is called variable declaration because it does not lead to any storage being allocated for .
+
+It is poor programming practice to include an initializer for an extern variable , since this causes it to become variable definition and have storage allocated for .
+
+If there is another definition for elsewhere in the program , it will eventually clash with this one .
+
+Function prototypes may also be declared as extern , but this has no effect when prototype appears at the global scope .
+It is more useful for declaring function prototypes inside function .
+
+Copyright PragSoft Symbolic Constants Preceding variable definition by the keyword const makes that variable readonly , symbolic .
+constant must be initialized to some value when it is defined .
+For example : const int .
+
+This is useful for declaring set of constants .
+For example , enum , south ,  introduces four enumerators which have integral values starting from .
+
+The default numbering of enumerators can be overruled by explicit initialization : enum , south , Here , south is and west is .
+
+An enumeration can also be named , where the name becomes type .
+This is useful for defining variables which can only be assigned limited set of values .
+For example , in enum Direction , south , 
+
+Enumerations are particularly useful for naming the cases of switch statement .
+
+Copyright PragSoft Runtime Stack Like many other modern programming languages , function call execution is based on runtime stack .
+When function is called , memory space is allocated on this stack for the function parameters , return value , and local variables , as well as local stack area for expression evaluation .
+The allocated space is called stack frame .
+When function returns , the allocated stack frame is released so that it can be reused .
+
+For example , consider situation where main calls function called Solve which in turn calls another function called Normalize :
+
+Figure Function call stack frames .
+
+For most functions , this overhead is negligible compared to the actual computation the function performs .
+
+For value denoted by , this may be expressed as : However , instead of replicating this expression in many places in the program , it is better to define it as .
+
+The function version has number of advantages .
+First , it leads to more readable program .
+Second , it is reusable .
+And third , it avoid undesirable sideeffects when the argument is itself an expression with .
+
+The disadvantage of the function version , however , is that its frequent use can lead to considerable performance penalty due to the overheads associated with calling function .
+For example , if Abs is used within loop which is iterated thousands of times , then it will have an impact on performance .
+The overhead can be avoided by defining Abs as an inline .
+
+The effect of this is that when Abs is called , the compiler , instead of generating code to call Abs , expands and substitutes the body of Abs in place of the call .
+
+While essentially the same computation is performed , no function call is involved and hence no stack frame is allocated .
+
+Because calls to an inline function are expanded , no trace of the function itself will be left in the compiled code .
+Therefore , if function is defined inline in one file , it may not be available to other files .
+Consequently , inline functions are commonly placed in header files so that they can be shared .
+
+Like the register keyword , inline is hint which the compiler is not obliged to observe .
+Generally , the use of inline should be restricted to simple , frequently used functions .
+function which contains anything more than couple of statements is unlikely to be good candidate .
+Use of inline for excessively long and complex functions is almost certainly ignored by the compiler .
+
+Copyright PragSoft Recursion function which calls itself is said to be recursive .
+Recursion is general programming technique applicable to problems which can be defined in terms of themselves .
+Take the factorial problem , for instance , which is defined .
+
+Factorial of positive number is times the factorial of .
+
+The second line clearly indicates that factorial is defined in terms of itself and hence can be expressed as recursive .
+
+For set to , Table provides trace of the calls to Factorial .
+The stack frames for these calls appear sequentially on the runtime stack , one after the other .
+
+Table execution trace .
+
+Call First Second Third Fourth .
+
+Returns recursive function must have at least one termination condition which can be satisfied .
+Otherwise , the function will call itself indefinitely until the runtime stack overflows .
+The Factorial function , for example , has the termination condition which , when satisfied , causes the recursive calls to fold back .
+
+As general rule , all recursive functions can be rewritten using iteration .
+In situations where the number of stack frames involved may be quite large , the iterative version is preferred .
+In other cases , the elegance and simplicity of the recursive version may give it the edge .
+
+For factorial , for example , very large argument will lead to as many stack frames .
+An iterative version is therefore preferred in this .
+
+For example , consider function for reporting errors : void Error , int .
+
+As the first call illustrates , default argument may be overridden by explicitly specifying an argument .
+
+Default arguments are suitable for situations where certain function parameters frequently take the same values .
+In Error , for example , errors are more common than others and therefore good candidate for default argument .
+less appropriate use of default arguments would be : int Power base , unsigned int ; Because any other is unlikely to be one in this situation .
+
+To avoid ambiguity , all default arguments must be trailing arguments .
+The following declaration is therefore .
+
+default argument need not necessarily be constant .
+Arbitrary expressions can be used , so long as the variables used in the expression are available to the scope of the function definition , global .
+
+The accepted convention for default arguments is to specify them in function declarations , not function definitions .
+Because function declarations appear in header files , this enables the user of function to have control over the default arguments .
+Thus different default arguments can be specified for different situations .
+
+It is , however , illegal to specify two different default arguments for the same function in file .
+
+Copyright PragSoft Variable Number of Arguments It is sometimes desirable , if not necessary , to have functions which take variable number of arguments .
+simple example is function which takes set of menu options as arguments , displays the menu , and allows the user to choose one of the options .
+To be general , the function should be able to accept any number of options as arguments .
+This may be expressed as int Menu ; which states that Menu should be given one argument or more .
+
+Menu can access its arguments using set of macro definitions in the header file , as illustrated by Listing .
+The relevant macros are highlighted in bold .
+
+Listing .
+
+Args is initialized by calling .
+The second argument to must be the last function parameter explicitly declared in the function header ,
+
+The second argument to must be the expected type of that argument ,
+For this technique to work , the last argument must be , marking the end of the argument list .
+is called repeatedly until this is reached .
+
+The sample call will produce the following output :
+Open file .
+Close file .
+Revert to saved file .
+Delete file .
+
+Copyright PragSoft Command Line Arguments When program is executed under an operating system as DOS or , it can be passed zero or more arguments .
+These arguments appear after the program executable name and are separated by blanks .
+Because they appear on the same line as where operating system commands are issued , they are called command line arguments .
+
+As an example , consider program named sum which prints out the sum of set of numbers provided to it as command line arguments .
+Dialog illustrates how two numbers are passed as arguments to sum is the UNIX .
+
+Dialog sum Command line arguments are made available to program via the main .
+
+The first parameter , argc , denotes the number of arguments passed to the program the name of the program .
+The second parameter , argv , is an array of the string constants which represent the arguments .
+For example , given the command line in Dialog , we have : argc is is .
+
+Arrays , Pointers , and References This chapter introduces the array , pointer , and reference data types and illustrates their use for defining variables .
+
+An array consists of set of objects its , all of which are of the same type and are arranged contiguously in memory .
+In general , only the array itself has symbolic name , not its elements .
+Each element is identified by an index which denotes the position of the element in the array .
+The number of elements in an array is called its dimension .
+The dimension of an array is fixed and predetermined ; it cannot be changed during program execution .
+
+Arrays are suitable for representing composite data which consist of many similar , individual items .
+Examples  list of names , table of world cities and their current temperatures , or the monthly transactions for bank account .
+
+pointer is simply the address of an object in memory .
+Generally , objects can be accessed in two ways : directly by their symbolic name , or indirectly through pointer .
+The act of getting to an object via pointer to it , is called dereferencing the pointer .
+Pointer variables are defined to point to objects of specific type so that when the pointer is dereferenced , typed object is obtained .
+
+Pointers are useful for creating dynamic objects during program execution .
+
+Unlike normal and objects which are allocated storage on the runtime stack , dynamic object is allocated memory from different storage area called the heap .
+Dynamic objects do not obey the normal scope rules .
+Their scope is explicitly controlled by the programmer .
+
+reference provides an alternative symbolic name for an object .
+
+Accessing an object through reference is exactly the same as accessing it through its original name .
+References offer the power of pointers and the convenience of direct access to objects .
+They are used to support the style of function parameters , especially when large objects are being passed to functions .
+
+For example , an array representing height measurements being an integer may be defined as : int ; The individual elements of the array are accessed by indexing the array .
+The first array element always has the index .
+Therefore , and denote , respectively , the first and last element of .
+Each of elements can be treated as an integer variable .
+So , for example , to set the third element to , we may write : Attempting to access nonexistent array element , or leads to serious runtime error out of bounds '
+
+Processing of an array usually involves loop which goes through the array element by element .
+Listing illustrates this using function which takes an array of integers and returns the average of its elements .
+
+Listing const int ;
+
+When complete initializer is used , the array dimension becomes redundant , because the number of elements is implicit in the initializer .
+The first definition of .
+
+Another situation in which the dimension can be omitted is for an array function parameter .
+For example , the Average function above can be improved by rewriting it so that the dimension of is not fixed to constant , but specified by an additional parameter .
+Listing illustrates this .
+
+Listing double ;
+
+It is easy to calculate the dimension of an array using the sizeof operator .
+For example , given an array ar whose element type is Type , the dimension of ar is :
+
+The organization of the array in memory is still the same contiguous sequence of , but the perceived organization of the elements is different .
+
+For example , suppose we wish to represent the seasonal temperature for three major Australian capital cities Table .
+
+Table Average seasonal temperature .
+
+Spring Sydney Melbourne Brisbane Summer Autumn Winter This may be represented by array of integers : int ; The organization of this array in memory is as consecutive integer elements .
+The programmer , however , can imagine it as three rows of four integer entries each Figure .
+
+Figure Organization of seasonTemp in memory .
+
+Third row As before , elements are accessed by indexing the array .
+separate index is needed for each dimension .
+For example , summer temperature row , second is given by .
+
+The array may be initialized using nested .
+
+For example , it makes it possible to initialize only the first element of each row and have the rest default to zero : Essentials .
+
+Processing multidimensional array is similar to array , but uses nested loops instead of single loop .
+Listing illustrates this by showing function for finding the highest temperature in .
+
+Listing const int rows const int columns .
+
+pointer variable is defined to to ' data of specific type .
+For example : int char .
+
+The symbol is the address operator ; it takes variable as argument and returns the memory address of that variable .
+The effect of the above assignment is that the address of num is assigned to .
+Therefore , we say that points to num .
+
+Figure illustrates this diagrammatically .
+
+Figure simple integer pointer .
+
+The symbol is the dereference operator ; it takes pointer as argument and returns the contents of the location to which it points .
+
+In general , the type of pointer must match the type of the data it is set to point to .
+pointer of type , however , will match any type .
+This is useful for defining pointers which may point to data of different types , or whose type is originally unknown .
+
+pointer may be cast to another type .
+For example , converts to char pointer before assigning it to .
+
+Regardless of its type , pointer may be assigned the value the null .
+The null pointer is used for initializing pointers , and for marking the end of data structures , linked .
+
+Copyright PragSoft Dynamic Memory In addition to the program stack is used for storing global variables and stack frames for function , another memory area , called the heap , is provided .
+
+The heap is used for dynamically allocating memory blocks during program execution .
+As result , it is also called dynamic memory .
+Similarly , the program stack is also called static memory .
+
+Two operators are used for allocating and deallocating memory blocks on the heap .
+The new takes type as argument and allocated memory block for an object of that type .
+It returns pointer to the allocated block .
+For example , new  new ; allocate , respectively , block for storing single integer and block large enough for storing an array of characters .
+
+Memory allocated from the heap does not obey the same scope rules as normal variables .
+
+The latter remains allocated until explicitly released by the programmer .
+
+The delete is used for releasing memory blocks allocated by .
+It takes pointer as argument and releases the memory block to which it points .
+
+Note that when the block to be deleted is an array , an additional should be included to indicate this .
+The significance of this will be explained later when we discuss classes .
+
+Should delete be applied to pointer which points to anything but object , variable on the , serious runtime error may occur .
+It is harmless to apply delete to the pointer .
+
+Dynamic objects are useful for creating data which last beyond the function call which creates them .
+Listing illustrates this using function which takes string parameter and returns copy of the string .
+
+Because the null character is not included in the count , we add to the total and allocate an array of characters of that size .
+
+Because of the limited memory resources , there is always the possibility that dynamic memory may exhausted during program execution , especially when many large blocks are allocated and none released .
+Should unable to allocate block of the requested size , it will return instead .
+It is the responsibility of the programmer to deal with such possibilities .
+The exception handling mechanism of in Chapter provides practical method of dealing with such problems .
+
+Copyright PragSoft Pointer Arithmetic In one can add an integer quantity to or subtract an integer quantity from pointer .
+This is frequently used by programmers and is called pointer arithmetic .
+
+Pointer arithmetic is not the same as integer arithmetic , because the outcome depends on the size of the object pointed to .
+For example , suppose that an is represented by bytes .
+
+Figure illustrates this diagrammatically .
+
+Figure Pointer arithmetic .
+
+Similarly , the elements of can referred to as , + + and +
+
+Another form of pointer arithmetic allowed in involves subtracting two .
+
+Pointer arithmetic is very handy when processing the elements of an array .
+
+Listing shows as an example string copying function similar to strcpy .
+
+This condition becomes when the final null character of src is copied to dest .
+
+In turns out that an array variable as is itself the address of the first element of the array it represents .
+Hence the elements of can also referred to using pointer arithmetic on  that is , is equivalent to +
+The difference between and is that is constant , so it cannot made to point to anything else , whereas is variable and can made to point to any other integer .
+
+Listing shows how the HighestTemp function earlier in Listing can improved using pointer arithmetic .
+
+Listing int ;
+
+In this way , the function is not restricted to specific array size .
+
+HighestTemp can simplified even further by treating temp as onedimensional array of row column integers .
+This is shown in Listing .
+
+Listing int ;
+
+Copyright PragSoft Function Pointers It is possible to take the address of function and store it in function pointer .
+The pointer can then be used to indirectly call the function .
+For example , int , const ; defines function pointer named which can hold the address of any function that takes two constant character pointers as arguments and returns an integer .
+The string comparison library function strcmp , for example , is such .
+
+common use of function pointer is to pass it as an argument to another function ; typically because the latter requires different versions of the former in different circumstances .
+good example is binary search function for searching through sorted array of strings .
+This function may use comparison function as for comparing the search string against the array strings .
+
+For example , strcmp is .
+If we wanted to do the search in manner then different comparison function would be needed .
+
+As shown in Listing , by making the comparison function parameter of the search function , we can make the latter independent of the former .
+
+The search list is denoted by table which is an array of strings of dimension .
+The search item is denoted by item .
+
+This is repeated until the two ends of the search span by and collide , or until match is found .
+
+The following example shows how BinSearch may be called with passed as the comparison function :
+
+Copyright PragSoft References reference introduces an alias for an object .
+The notation for defining references .
+
+After this definition and both refer to the same object , as if they were the same variable .
+It should be emphasized that reference does not create copy of an object , but merely symbolic alias for it .
+
+Hence , after ; both and will denote the value .
+
+The in the first and the in the third line are likely to be the same object compilers do constant optimization and allocate both in the same memory .
+So although we expect to be , it could turn out to be .
+However , by forcing to be copy of , the compiler guarantees that the object denoted by will be different from both .
+
+The most common use of references is for function parameters .
+Reference parameters facilitates the style of arguments , as opposed to the style which we have used so far .
+To observe the differences , consider the three swap functions in Listing .
+
+Although swaps and  this has no effect on the arguments passed to the function , because receives copy of the arguments .
+What happens to the copy does not affect the original .
+
+By dereferencing the pointers , gets to the original values and swaps them .
+
+The parameters become aliases for the arguments passed to the function and therefore swap them as intended .
+
+has the added advantage that its call syntax is the same as and involves no addressing or dereferencing .
+The following main function illustrates the .
+
+When run , it will produce the following output :
+
+Copyright PragSoft Typedefs Typedef is syntactic facility for introducing symbolic names for data types .
+Just as reference defines an alias for an object , typedef defines an alias for type .
+Its main use is to simplify otherwise complicated type declarations as an aid to improved readability .
+Here are few .
+
+The effect of these definitions is that String becomes an alias for , Name becomes an alias for an array of chars , and uint becomes an alias for unsigned int .
+Therefore : String Name uint .
+
+This makes signature arguably simpler .
+
+The following table specifies the major contents of four brands of breakfast cereals .
+
+Define array to capture this data : Top Flake Cornabix Oatabix Ultrabran Fiber Sugar Fat Salt Write function which outputs this table element by element .
+
+Bubble sort involves repeated scans of the list , where during each scan adjacent items are compared and swapped if out of order .
+scan which involves no swapping indicates that the list is sorted .
+
+Classes This chapter introduces the class construct of for defining new types .
+
+concrete representation of the objects of the .
+
+set of operations for manipulating the objects .
+
+Added to these is the restriction that , other than the designated operations , no other operation should be able to manipulate the objects .
+For this reason , we often say that the operations characterize the  that is , they decide what can and what cannot happen to the objects .
+For the same reason , proper types as such are often called abstract types abstract because the internal representation of the objects is hidden from operations that do not belong to the .
+
+class definition consists of two parts : header and body .
+The class header specifies the class name and its base classes .
+Two types of are .
+
+Data have the syntax of variable definitions and specify the representation of class objects .
+
+Member functions have the syntax of function prototypes and specify the class operations , also called the class interface .
+
+Class fall under one of three different access permission .
+
+Protected are only accessible by the class and the of derived class .
+
+The type defined by class is used in exactly the same way as type .
+
+Copyright PragSoft Simple Class Listing shows the definition of simple class for representing points in two dimensions .
+
+Listing class Point int xVal , yVal ; public :
+
+class definition always begins with the keyword class , followed by the class name .
+
+An open brace marks the beginning of the class body .
+
+The default access permission for class member is private .
+Both xVal and yVal are therefore private .
+
+Both have two integer parameters and void return type .
+
+The order in which the and member functions of class are presented is largely irrelevant .
+The above class , for example , may be equivalently written .
+
+Listing shows the separate definition of SetPt and OffsetPt .
+
+The function name should be preceded by the class name and .
+
+This identifies SetPt as being member of Point .
+The function interface must match its earlier interface definition within the class , take two integer parameters and have the return type .
+
+Once class is defined in this way , its name denotes new type , allowing us to define variables of that type .
+
+Member functions are called using the dot notation : calls SetPt for the object pt , that is , pt is an implicit argument to SetPt .
+
+By making and private of the class , we have ensured that user of the class cannot manipulate them .
+
+This will not compile .
+
+At this stage , we should clearly distinguish between object and class .
+class denotes type , of which there is only one .
+An object is an element of particular type , of which there may be many .
+For example , Point , defines three objects , and all of the same class .
+
+Furthermore , operations of class are applied to objects of that class , but never the class itself .
+class is therefore concept that has no concrete existence other than that reflected by its objects .
+
+In the class Point , for example , both member functions are very short two .
+Defining these to be inline improves the efficiency considerably .
+member function is defined to be inline by inserting the keyword inline before its definition .
+
+This example shows how set may be defined as class .
+For simplicity , we will restrict ourselves to sets of integers with finite number of elements .
+Listing shows the Set class definition .
+
+Listing const .
+
+AddElem adds new to the set .
+If the is already in the set then nothing happens .
+
+Should this result in an overflow then the is not inserted .
+
+The parameter of this function is reference to the destination set .
+
+Two sets are equal if they contain exactly the same elements order of which is .
+
+Copyright PragSoft Intersect compares two sets to produce third set by its last whose elements are in both sets .
+For example , the intersection of and is .
+
+For example , the union of and is .
+
+For example , set containing the numbers , and is printed as .
+
+Only the first entries in elems are considered to be valid elements .
+
+The separate definition of the member functions of class is sometimes referred to as the implementation of the class .
+The implementation of the Set class is as follows .
+
+When run , the program will produce the following output :
+
+This is supported by special member functions called constructors .
+constructor always has the same name as the class itself .
+
+For example , class Point .
+
+Now we can define objects of type and initialize them at once .
+This is in fact compulsory for classes that contain constructors that require .
+
+The Set class can be improved by using constructor instead of EmptySet : class Set .
+
+This has the distinct advantage that the programmer need no longer remember to call EmptySet .
+The constructor ensures that every set is initially empty .
+
+The Set class can be further improved by giving the user control over the maximum size of set .
+To do this , we define elems as an integer pointer rather than an integer array .
+The constructor can then be given an argument which specifies the desired size .
+This means that maxCard will no longer be the same for all Set objects and therfore needs to become data member itself : class Set public : Set int ;
+
+It is important to note that an object ' constructor is applied when the object is created .
+This in turn depends on the object ' scope .
+For example , global object is created as soon as program execution commences ; an automatic object is created when its scope is entered ; and dynamic object is created when the new operator is applied to it .
+
+destructor always has the same name as the class itself , but is preceded with symbol .
+Unlike constructors , class may have at most one destructor .
+destructor never takes any arguments and has no explicit return type .
+
+Destructors are generally useful for classes which have pointer data members which point to memory blocks allocated by the class itself .
+In such cases it is important to release memory before the object is destroyed .
+destructor can do just that .
+
+For example , our revised version of Set uses array for the member .
+This memory should be released by destructor : class Set public :
+
+When Foo is called , the constructor for is invoked , allocating storage for and initializing its data members .
+Next the rest of the body of Foo is executed .
+Finally , before Foo returns , the destructor for is invoked , deleting the storage occupied by .
+Hence , as far as storage allocation is concerned , behaves just like an automatic variable of type , which is created when its scope is entered and destroyed when its scope is left .
+
+In general , an object ' constructor is applied just before the object is destroyed .
+This in turn depends on the object ' scope .
+For example , global object is destroyed when program execution is completed ; an automatic object is destroyed when its scope is left ; and dynamic object is destroyed when the delete operator is applied to it .
+
+Copyright PragSoft Friends Occasionally we may need to grant function access to the nonpublic members of class .
+Such an access is obtained by declaring the function friend of the class .
+
+There are two possible reasons for requiring this .
+
+It may be the only correct way of defining the function .
+
+It may be necessary if the function is to be implemented efficiently .
+
+Examples of the first case will be provided in Chapter , when we discuss overloaded operators .
+An example of the second case is discussed below .
+
+Suppose that we have defined two variants of the Set class , one for sets of integers and one for sets of reals : class IntSet .
+
+Although this works , the overhead of calling AddElem for every member of the set may be unacceptable .
+The implementation can be improved if we could gain access to the private members of both IntSet and RealSet .
+This can be arranged by declaring SetToReal as friend of RealSet .
+
+Although friend declaration appears inside class , that does not make the function member of that class .
+In general , the position of friend declaration in class is irrelevant : whether it appears in the private , protected , or the public section , it has the same meaning .
+
+Copyright PragSoft Default Arguments As with global functions , member function of class may have default arguments .
+
+The same rules apply : all default arguments should be trailing arguments , and the argument should be an expression consisting of objects defined within the scope in which the class appears .
+
+For example , constructor for the Point class may use default arguments to provide more variations of the way Point object may be defined : class Point .
+
+Given this constructor , the following definitions are all valid : Point Point Point .
+
+For example , in Point ;
+
+Using this , OffsetPt can be rewritten .
+
+Use of this in this particular example is redundant .
+There are , however , programming cases where the use of the this pointer is essential .
+We will see examples of such cases in Chapter , when discussing overloaded operators .
+
+The this pointer can be used for referring to member functions in exactly the same way as it is used for data members .
+It is important to bear in mind , however , that this is defined for use within member functions of class only .
+In particular , it is undefined for global functions global friend .
+
+Copyright PragSoft Scope Operator When calling member function , we usually use an abbreviated syntax .
+
+The full form uses the binary scope operator : to indicate that OffsetPt is member of Point .
+
+In some situations , using the scope operator is essential .
+For example , the case where the name of class member is hidden by local variable , member function can be overcome using the scope operator : class .
+
+The latter are referred to explicitly as : and .
+
+The first approach involves initializing the data members using assignments in the body of constructor .
+For example : class Image public : Image .
+
+For example : class Image public : Image .
+
+The effect of this declaration is that is initialized to and is initialized to .
+The only difference between this approach and the previous one is that here members are initialized before the body of the constructor is executed .
+
+member initialization list may be used for initializing any data member of class .
+It is always placed between the constructor header and body .
+colon is used to separate it from the header .
+It should consist of list of data members whose initial value appears within pair of brackets .
+
+Copyright PragSoft Constant Members class data member may defined as constant .
+For example : class Image const int .
+
+As one would expect , no member function is allowed to assign to constant data member .
+
+constant data member is not appropriate for defining the dimension of an array data member .
+For example , in class Set public : Set .
+
+The reason for this being that maxCard is not bound to value during compilation , but when the program is run and the constructor is invoked .
+
+Member functions may also be defined as constant .
+This is used to specify which member functions of class may be invoked for constant object .
+For example , class Set public : Bool void .
+
+Set Member AddElem .
+
+To do so , the keyword const is inserted after the function header , both inside the class and in the function definition .
+
+constant object can only be modified by the constant member functions of the .
+
+Given that constant member function is allowed to be invoked for constant objects , it would be illegal for it to attempt to modify any of the class data members .
+
+Constructors and destructors need never be defined as constant members , since they have permission to operate on constant objects .
+They are also exempted from the above rule and can assign to data member of constant object , unless the data member is itself constant .
+
+Copyright PragSoft Static Members data member of class can be defined to be static .
+This ensures that there will be exactly one copy of the member , shared by all objects of the class .
+For example , consider Window class which represents windows on bitmap display : class Window static Window .
+
+Here , no matter how many objects of type are defined , there will be only one instance of .
+Like other static variables , static data member is by default initialized to .
+It can be initialized to an arbitrary value in the same scope where the member function definitions appear : The alternative is to make such variables global , but this is exactly what static members are intended to avoid ; by including the variable in class , we can ensure that it will be inaccessible to anything outside the class .
+
+Member functions can also be defined to be static .
+Semantically , static member function is like global function which is friend of the class , but inaccessible outside the class .
+It does not receive an implicit argument and hence cannot refer to this .
+Static member functions are useful for defining routines whose parameter lists are predetermined and outside the control of the programmer .
+
+For example , the class might use function for repainting exposed areas of the .
+
+Because static members are shared and do not rely on the this pointer , they are best referred to using the syntax .
+For example , and PaintProc would be referred to as : and .
+
+Public static members can be referred to using this syntax by nonmember functions , global .
+
+It is possible to obtain and manipulate the address of member function of class in similar fashion .
+As before , the idea is to make function more flexible by making it independent of another function .
+
+The syntax for defining pointer to member function is slightly more complicated , since the class name must also be included in the function pointer type .
+For example , typedef int , const ; defines member function pointer type called Compare for class called Table .
+
+This type will match the address of any member function of Table which takes two constant character pointers and returns an int .
+Compare may be used for passing pointer to Search member of Table : class Table public : Table int Search int int private : int char .
+
+The definition of Table includes two sample comparison member functions which can be passed to Search .
+Search has to use slightly complicated syntax for invoking the comparison function via .
+
+Copyright PragSoft Note that comp can only be invoked via Table object this pointer is used in this .
+None of the following attempts , though seemingly .
+
+The above class member pointer syntax applies to all members except for static .
+Static members are essentially global entities whose scope has been limited to class .
+Pointers to static members use the conventional syntax of global entities .
+
+In general , the same protection rules apply as before : to take the address of class member or one should have access to it .
+For example , function which does not have access to the private members of class cannot take the address of any of those members .
+
+Copyright PragSoft Class Members data member of class may be of type , that is , an object of another class .
+For example , Rectangle class may be defined using two Point data members which represent the and corners of the rectangle : class Rectangle public : Rectangle left , int  int right , int .
+
+The constructor for Rectangle should also initialize the two object members of the class .
+Assuming that Point has constructor , this is done by including topLeft and botRight in the member initialization list of the constructor for .
+
+If the constructor for Point takes no parameters , or if it has default arguments for all of its parameters , then the above member initialization list may be omitted .
+Of course , the constructor is still implicitly called .
+
+The order of initialization is always as follows .
+First , the constructor for topLeft is invoked , followed by the constructor for botRight , and finally the constructor for Rectangle itself .
+First the destructor for Rectangle is invoked , followed by the destructor for botRight , and finally for topLeft .
+The reason that topLeft is initialized before botRight is not that it appears first in the member initialization list , but because it appears before botRight in the class itself .
+Therefore , defining the constructor as follows would not change the initialization .
+
+For example , pentagon can be defined as an array of points : This definition assumes that has an ' constructor , one which can be invoked without .
+The constructor is applied to each element of the array .
+
+The array can also be initialized using normal array initializer .
+Each entry in the initialization list would invoke the constructor with the desired arguments .
+When the initializer has less entries than the array dimension , the remaining elements are initialized by the constructor .
+
+When the constructor can be invoked with single argument , it is sufficient to just specify the argument .
+
+Unless the is included , delete will have no way of knowing that denotes an array of points and not just single point .
+The destructor is applied to the elements of the array in reverse order before the array is deleted .
+
+Omitting the will cause the destructor to be applied to just the first element of the array : delete .
+
+Since the objects of dynamic array cannot be explicitly initialized at the time of creation , the class must have an constructor to handle the implicit initialization .
+When this implicit initialization is insufficient , the programmer can explicitly reinitialize any of the elements .
+
+For example , general polygon class has no way of knowing in advance how many vertices polygon may have : class Polygon public :
+
+All the class members belong to the class scope and thus hide entities with identical names in the enclosing scope .
+
+At the global scope .
+This leads to global class , whereby it can be referred to by all other scopes .
+The great majority of classes all the examples presented so far in this are defined at the global scope .
+
+At the class scope of another class .
+This leads to nested class , where class is contained by another class .
+
+At the local scope of block or function .
+This leads to local class , where the class is completely contained by block or function .
+
+nested class is useful when class is used only by one other class .
+
+Copyright PragSoft defines as nested by Rectangle .
+The member functions of may be defined either inline inside the class or at the global scope .
+The latter would require further qualification of the member function names by preceding them with .
+
+local class must be completely defined inside the scope in which it appears .
+
+All of its functions members , therefore , need to be defined inline inside the class .
+
+This implies that local scope is not suitable for defining anything but very simple classes .
+
+For example , struct .
+
+The struct construct originated in , where it could only contain data members .
+It has been retained mainly for backward compatibility reasons .
+In , structure can have an initializer with syntax similar to that of an array .
+allows such initializers for structures and classes all of whose data members are public : class public : char .
+
+The initializer consists of values which are assigned to the data members of the structure in the order they appear .
+This style of initialization is largely superseded by constructors .
+Furthermore , it cannot be used with class that has constructor .
+
+union is class all of whose data members are mapped to the same address within its object than sequentially as is the case in .
+The size of an object of union is , therefore , the size of its largest data member .
+
+The main use of unions is for situations where an object may assume values of different types , but only one at time .
+For example , consider an interpreter for simple programming language , called , which supports number of data types such as : integers , reals , strings , and lists .
+value in this language may be defined to be of the type : Essentials Copyright PragSoft union Value long double char Pair .
+
+Assuming that long is bytes , double bytes , and pointer bytes , an object of type Value would be exactly bytes , the same as the size of double or Pair object latter being equal to two .
+
+An object in can be represented by the class , class Object .
+
+For example , when type is set to strObj , is used for referring to its value .
+
+Because of the unique way in which its data members are mapped to memory , union may not have static data member or data member which requires constructor .
+
+Like structure , all of the members of union are by default public .
+The keywords private , public , and protected may be used inside struct or union in exactly the same way they are used inside class for defining private , public , and protected members .
+
+For example , in data communication , data is transferred in discrete units called packets .
+In addition to the user data that it carries , each packet also contains header which is comprised of information for managing the transmission of the packet across the network .
+To minimize the cost of transmission , it is desirable to minimize the space taken by the header .
+Figure illustrates how the header fields are packed into adjacent bits to achieve this .
+
+Figure Header fields of packet .
+
+Because bit field does not necessarily start on byte boundary , it is illegal to take its address .
+For the same reason , bit field cannot be defined as static .
+
+Use of enumerations can make working with bit fields easier .
+For example , given the enumerations enum PacketType , controlPack , enum Bool .
+
+Copyright PragSoft Exercises Explain why the Set parameters of the Set member functions are declared as references .
+
+complex number has the general form + ib , where is the real part and is the imaginary part stands for .
+Complex arithmetic rules are as follows :
+
+Use nested class , Option , to represent the set elements .
+Define constructor , destructor , and the following member functions for .
+
+Insert which inserts new at given position .
+Provide default argument so that the item is appended to the end .
+
+Delete which deletes an existing .
+
+Use nested class , Element , to represent the set elements .
+
+Define constructor , destructor , and the following member functions for .
+
+Insert which inserts new into its sort position .
+
+Find which searches the sequence for given and returns true if it finds it , and false otherwise .
+
+Define class named BinTree for storing sorted strings as binary tree .
+Define the same set of member functions as for Sequence from the previous exercise .
+
+Use this function to define constructor for BinTree which takes sequence as argument .
+
+Define an inline member function which returns the ID .
+How will you keep track of the last allocated ID .
+
+Overloading This chapter discusses the overloading of functions and operators in .
+The term overloading means multiple definitions .
+Overloading of functions involves defining distinct functions which share the same name , each of which has unique signature .
+Function overloading is appropriate .
+
+Defining functions which essentially do the same thing , but operate on different data types .
+
+Providing alternate interfaces to the same function .
+
+Function overloading is purely programming convenience .
+
+Operators are similar to functions in that they take operands and return value .
+Most of the operators are already overloaded .
+For example , the + operator can be used to add two integers , two reals , or two addresses .
+Therefore , it has multiple definitions .
+The definitions of the operators are restricted to types .
+Additional definitions can be provided by the programmer , so that they can also operate on types .
+Each additional definition is implemented by function .
+
+The overloading of operators will be illustrated using number of simple classes .
+We will discuss how conversion rules can be used to reduce the need for multiple overloadings of the same operator .
+We will present examples of for container classes , and the pointer operators .
+We will also discuss memberwise initialization and assignment , and the importance of their correct implementation in classes which use data members .
+
+Unlike functions and operators , classes cannot be overloaded ; each class must have unique name .
+However , as we will see in Chapter , classes can be altered and extended through facility called inheritance .
+Also functions and classes can be written as templates , so that they become independent of the data types they employ .
+We will discuss templates in Chapter .
+
+Function Overloading Consider function , GetTime , which returns in its the current time of the day , and suppose that we require two variants of this function : one which returns the time as seconds from midnight , and one which returns the time as hours , minutes , and seconds .
+Given that these two functions serve the same purpose , there is no reason for them to have different names .
+
+allows functions to be overloaded , that is , the same function to have more than one .
+
+Copyright PragSoft Operator Overloading allows the programmer to define additional meanings for its predefined operators by overloading them .
+For example , we can overload the + and operators for adding and subtracting objects : class .
+
+If is binary .
+
+However , if is unary operator :
+
+Table summarizes the operators which can be overloaded .
+The remaining five operators cannot be .
+
+does not support the definition of new tokens , because this can lead to ambiguity .
+Furthermore , the precedence rules for the predefined operators is fixed and cannot be altered .
+For example , no matter how you overload , it will always have higher precedence than +
+
+Equivalence rules do not hold for overloaded operators .
+For example , overloading + does not , unless the latter is also explicitly overloaded .
+
+To avoid the copying of large objects when passing them to an overloaded  references should be used .
+Pointers are not suitable for this purpose because an overloaded cannot operate exclusively on pointers .
+
+Copyright PragSoft Example : Set The Set class was introduced in Chapter .
+Most of the Set member functions are better defined as overloaded operators .
+Listing illustrates .
+
+Listing const .
+
+Here , we have decided to define the functions as global friends .
+They could have just as easily been defined as member functions .
+The implementation of these functions is as follow .
+
+When run , the program will produce the following output :
+
+Copyright PragSoft Type Conversion The normal type conversion rules of the language also apply to functions and operators .
+
+Any other type conversion required in addition to these must be explicitly defined by the programmer .
+For example , suppose we want to overload + for the Point type so that it can be used to add two points , or to add an integer value to both coordinates of .
+
+To make + commutative , we have defined two functions for adding an integer to point : one for when the integer is the first operand , and one for when the integer is the second operand .
+It should be obvious that if we start considering other types in addition to int , this approach will ultimately lead to an unmanageable variations of the .
+
+better approach is to use constructor to convert the object to the same type as the class itself so that one can handle the job .
+In this case , we need constructor which takes an int , specifying both coordinates of point : class .
+
+The temporary object is then destroyed .
+The overall effect is an implicit type conversion from int to .
+The final value of is therefore .
+
+What if we want to do the opposite conversion , from the class type to another type .
+In this case , constructors cannot be used because they always return an object of the class to which they belong .
+Instead , one can define member function which explicitly converts the object to the desired type .
+
+For example , given Rectangle class , we can define type conversion function which converts rectangle to point , by overloading the type in Rectangle : class Rectangle .
+
+This is defined to convert rectangle to point , whose coordinates represent the width and height of the rectangle .
+Therefore , in the code fragment Rectangle .
+
+The type conversion can also be applied explicitly using the normal type cast notation .
+
+constructor defined for which takes single argument of type will implicitly convert objects to objects when needed .
+
+One of the disadvantages of type conversion methods is that , unless they are used sparingly , they can lead to programs whose behaviors can be very difficult to predict .
+There is also the additional risk of creating ambiguity .
+
+Ambiguity occurs when the compiler has more than one option open to it for applying type conversion rules , and therefore unable to choose .
+All such cases are reported as errors by the compiler .
+
+To illustrate possible ambiguities that can occur , suppose that we also define type conversion constructor for Rectangle takes as well as overloading the + and operators : class Rectangle .
+
+Listing .
+
+Addition is done bit by bit .
+For simplicity , no attempt is made to detect overflows .
+
+The implementation of these functions is as follows :
+
+The first of these converts to  does the addition , and then converts the result to int , before sending it to .
+This is equivalent to :
+
+The output produced by the program is evidence that the conversions are performed correctly :
+
+Copyright PragSoft Overloading for Output The simple and uniform treatment of output for types is easily extended to types by further overloading the .
+For any given userdefined type , we can define an function which outputs objects of type : The first parameter must be reference to ostream so that multiple uses of can be concatenated .
+The second parameter need not be reference , but this is more efficient for large objects .
+
+For example , instead of the Print member function , we can overload the for the class .
+Because the first operand of must be an ostream object , it cannot be overloaded as member function .
+It should therefore be defined as global .
+
+Without the use of overloaded , the last example would have to be written as that has been removed from .
+
+For any given type , we can define an function which inputs objects of type : The first parameter must be reference to istream so that multiple uses of can be concatenated .
+The second parameter must be reference , since it will be modified by the function .
+
+Continuing with the class example , we overload the for the input of bit streams .
+Again , because the first operand of must be an istream object , it cannot be overloaded as member .
+
+Copyright PragSoft Overloading Listing defines simple associative vector class .
+An associative vector is array in which elements can be looked up by their contents rather than their position in the array .
+In AssocVec , each element has string name which it can be looked and an associated integer .
+
+Listing class AssocVec .
+
+The function which overloads must have exactly one parameter .
+Given string index , it searches the vector for match .
+If matching index is found then reference to its associated value is returned .
+Otherwise , new is created and reference to this value is returned .
+
+Each vector consists of string by and an integer value by .
+
+The implementation of the member functions is as .
+
+Note that , because must return valid reference , reference to static integer is returned when the vector is full or when new fails .
+
+reference expression is an lvalue and hence can appear on both sides of an assignment .
+If function returns reference then call to that function can be assigned to .
+This is why the return type of is defined to be reference .
+
+Using we can now create associative vectors that behave very much like normal .
+
+Listing defines matrix class .
+matrix is table of values similar to whose size is denoted by the number of rows and columns in the table .
+An example of simple matrix would be : The standard mathematical notation for referring to matrix elements uses brackets .
+
+For example , of , in the first row and second is referred to as .
+Matrix algebra provides set of operations for manipulating matrices , which includes addition , subtraction , and multiplication .
+
+Listing class Matrix public : private : friend friend friend friend Matrix short rows , const short .
+
+The function which overloads may have zero or more parameters .
+It returns reference to the specified .
+
+Copyright PragSoft Memberwise Initialization Consider the following definition of the overloaded + for Matrix : Matrix ,
+
+This form of initialization is called memberwise initialization because the special constructor initializes the object member by member .
+If the data members of the object being initialized are themselves objects of another class , then those are also memberwise initialized , etc .
+
+As result of the default memberwise initialization , the data member of both objects will point to the same block .
+
+Hence the destructor deletes the block pointed to by , leaving the returned data member pointing to an invalid block .
+This ultimately leads to runtime failure bus .
+
+Figure illustrates .
+
+Figure pointers .
+
+The danger of the default memberwise initialization of objects with memberwise copy of is made After is destroyed Matrix Memberwise Copy of Dynamic Block Memberwise Copy of Invalid Block Memberwise initialization occurs in the following situations : Chapter : Overloading .
+
+When defining and initializing an object in declaration statement that uses another object as its initializer , in Foo below .
+
+When passing an object argument to function applicable to reference or pointer , in Foo below .
+
+When returning an object value from function applicable to reference or pointer return , return in Foo below .
+
+The problems caused by the default memberwise initialization of other classes can be avoided by explicitly defining the constructor in charge of memberwise initialization .
+
+For any given class , the constructor always has the form :
+
+Copyright PragSoft Memberwise Assignment Objects of same class are assigned to one another by an internal overloading of which is automatically generated by compiler .
+For example , to handle assignment in .
+
+This is identical in its approach to memberwise initialization and is called memberwise assignment .
+It suffers from exactly same problems , which in turn can be overcome by explicitly overloading .
+For example , for class , following overloading would be appropriate :
+
+As result , they impose different memory requirements .
+Small objects , in particular , are not efficiently handled by default versions new delete .
+Every block allocated by new some overhead used for housekeeping purposes .
+For large objects this is not significant , but for small objects overhead may be even bigger than block itself .
+In addition , having too many small blocks can severely slow down subsequent allocation deallocation .
+The performance program that dynamically creates many small objects can be significantly improved by using simpler memory management strategy for those objects .
+
+The dynamic storage management operators new delete can be overloaded for class , in which case they override global definition these operators when used for objects that class .
+
+As an example , suppose we wish to overload new delete for Point class , so that Point objects are allocated from an array :
+
+New should always return .
+The parameter new size block to be allocated .
+The corresponding argument is always automatically passed by compiler .
+The first parameter delete block to be deleted .
+The second parameter is optional size allocated block .
+The corresponding arguments are automatically passed by compiler .
+
+Since  used are static they do not affect size object is still two .
+These are initialized as follows : new .
+
+New takes next available block from returns its address .
+
+Delete frees block by inserting it in front denoted by When reaches  returns first block in , but fails when is .
+
+Calling any other type as argument will invoke global definition  if call occurs inside member function .
+
+The functions which overload delete for class are always assumed by compiler to be static , which means that they will not have access to this pointer therefore nonstatic class members .
+This is because when these operators are invoked for an object class , object does not exist : is invoked before object is constructed , delete is called after it has been destroyed .
+
+This can be to do some extra pointer processing , is facilitated by overloading unary operators arrow_operator
+
+For classes that do not overload arrow_operator this is always binary : left operand is pointer to class object right operand is class member name .
+When left operand arrow_operator is an object or reference type not , is expected to have overloaded arrow_operator as unary .
+In this case , arrow_operator is first applied to left operand to produce result .
+If is pointer to class then is as left operand binary arrow_operator right operand is expected to be member .
+Otherwise , is as left operand unary arrow_operator whole procedure is repeated for class .
+Consider following classes that overload .
+
+In other words , is applied to obj to give , is applied to to give , since is pointer to  final result is .
+
+Unary operators can also be overloaded so that semantic correspondence between arrow_operator is preserved .
+
+As an example , consider library system which represents book record as raw string of following format :
+
+Copyright PragSoft Each field starts field specifier , specifies an ends null character ,
+The fields can appear in any order .
+Also , some fields may be missing from record , in which case default value must be .
+
+For efficiency reasons we may want to keep the data in this format but use the following structure whenever we need to access the fields of record : struct Book short short .
+
+To reduce the frequency of mappings from to  we have simple memory of records .
+The corresponding static members are initialized as follows : short short .
+
+If the book is not in the  RawToBook loads the book at the current position in the   return + 
+
+The overloaded operators arrow_operator are easily defined in terms of .
+
+The identical definitions for arrow_operator should not be surprising since arrow_operator is unary in this context semantically equivalent to .
+
+The following test case demonstrates that the operators behave as expected .
+It sets up two book records and prints each using different operators .
+
+It will produce the following output : Peters , Blue Earth , Phedra , Sydney ,
+Jackson , Pregnancy , Miles ,
+
+To distinguish between the two , the postfix version is specified to take an extra integer argument .
+For example , the prefix and postfix versions of may be overloaded for the Binary class as follows : class Binary .
+
+Although we have chosen to define these as global friend functions , they can also be defined as member functions .
+Both are easily defined in terms of the + operator defined .
+
+It will produce the following output : The prefix and postfix versions of may be overloaded in exactly the same way .
+
+Copyright PragSoft Exercises Write overloaded versions of Max function which compares two integers , two reals , or two strings , and returns the ' one .
+
+Overload the following two operators for the .
+
+For simplicity , assume that the first operand is always greater than the second operand .
+
+In practice , sparse matrices of sizes up to are not uncommon .
+On machine which uses representation for reals , storing such matrix as an array would require megabytes of storage .
+
+Define SparseMatrix class which uses to record only nonzero elements , overload the + operators for it .
+Also define an appropriate memberwise initialization constructor memberwise assignment operator for the class .
+
+Note that two versions of the constructor are required , one for to String using , one for memberwise should index string character using its position .
+
+bit vector is vector with binary elements , that is , each element is either or .
+Small bit vectors are conveniently represented by unsigned integers .
+For example , an unsigned char can represent bit vector of elements .
+Larger bit vectors can be defined as arrays of such smaller bit vectors .
+Complete the implementation of the Bitvec class , as defined below .
+It should allow bit vectors of any size to be created manipulated using the associated operators .
+
+Derived Classes In practice , most classes are not entirely unique , but rather variations of existing ones .
+Consider , for example , class named RecFile which represents file of records , another class named SortedRecFile which represents sorted file of records .
+These two classes would have much in common .
+For example , they would have similar member functions such as Insert , Delete , Find , as well as similar data members .
+In fact , SortedRecFile would be specialized version of RecFile with the added property that its records are organized in sorted order .
+
+Most of the member functions in both classes would therefore be identical , while few which depend on the fact that file is sorted would be different .
+For example , Find would be different in SortedRecFile because it can take advantage of the fact that the file is sorted to perform binary search instead of the linear search performed by the Find member of RecFile .
+
+Given the shared properties of these two classes , it would be tedious to have to define them independently .
+Clearly this would lead to considerable duplication of code .
+The code would not only take longer to write it would also be harder to maintain : change to any of the shared properties would have to be consistently applied to both classes .
+
+programming provides facility called inheritance to address this problem .
+Under inheritance , can inherit the properties of an existing .
+Inheritance makes it possible to define variation of without redefining the new from scratch .
+Shared properties are defined only once , and reused as often as desired .
+
+In , inheritance is supported by derived classes .
+derived is like an ordinary  except that its definition is based on one or more existing classes , called base classes .
+derived can share selected properties as well as data of its base classes , but makes no changes to the definition of any of its base classes .
+derived can itself be the base of another derived .
+The inheritance relationship between the classes of program is called hierarchy .
+
+derived is also called subclass , because it becomes subordinate of the base in the hierarchy .
+Similarly , base may be called superclass , because from it many other classes may be derived .
+
+The two classes are defined in Listing and support the creation of directory of personal contacts .
+
+Listing Contact public : private : char char char ;
+
+Contact captures the details , name , address , and telephone of personal .
+
+Copyright PragSoft Insert inserts new into the directory .
+This will overwrite an existing with identical name .
+
+If none exists then Lookup returns the index of the slot where such an entry should be inserted .
+Lookup is defined as private because it is an auxiliary function used only by Insert , Delete , and Find .
+
+The implementation of the member function and friends is as follows :
+
+When run , it will produce the following output : Deleted Jack .
+
+SmartDir is best defined as derivation of ContactDir , as illustrated by Listing .
+
+Listing class SmartDir  public ContactDir public : int  Recent ; Find ;
+
+colon separates the two .
+Here , ContactDir is specified to be the base class from which SmartDir is derived .
+The keyword public before ContactDir specifies that ContactDir is used as public base class .
+
+This pointer is set to point to the of the last entry .
+
+Because ContactDir is public base class of SmartDir , all the public members of ContactDir become public members of SmartDir .
+This means that we can invoke member function such as Insert on SmartDir object and this Essentials Copyright PragSoft will simply be call to .
+Similarly , all the private members of ContactDir become private members of SmartDir .
+
+In accordance with the principles of information hiding , the private members of ContactDir will not be accessible by SmartDir .
+Therefore , SmartDir will be unable to access any of the data members of ContactDir as well as the private member function Lookup .
+
+SmartDir redefines the Find member function .
+This should not be confused with overloading .
+There are two distinct definitions of this function : and of which have the same signature , though they can have different signatures if .
+Invoking Find on SmartDir object causes the latter to be invoked .
+As illustrated by the definition of Find in SmartDir , the former can still be invoked using its full .
+
+The following code fragment illustrates that SmartDir behaves the same as ContactDir , but also keeps track of the most recently entry : SmartDir .
+
+An object of type SmartDir contains all the data members of ContactDir as well as any additional data members introduced by SmartDir .
+Figure illustrates the physical make up of ContactDir and SmartDir object .
+
+Figure Base and derived class objects .
+
+ContactDir object SmartDir object .
+
+Figure illustrates the UML notation that we will be using in this book .
+Each class is represented by box which is labeled with the class name .
+Inheritance between two classes is illustrated by directed line drawn from the derived class to the base class .
+line with diamond shape at one end depicts composition , class object is composed of one or more objects of another .
+The number of objects contained by another object is depicted by label ,
+
+Figure simple class hierarchy ContactDir .
+
+SmartDir Figure is interpreted as follows .
+ContactDir is composed of zero or more objects .
+
+SmartDir is derived from ContactDir .
+
+Copyright PragSoft Constructors and Destructors derived class may have constructors and destructor .
+Since derived class may provide data members on top of those of its base class , the role of the constructor and destructor is to , respectively , initialize and destroy these additional members .
+
+When an object of derived class is created , the base class constructor is applied to it first , followed by the derived class constructor .
+When the object is destroyed , the destructor of the derived class is applied first , followed by the base class destructor .
+In other words , constructors are applied in order of derivation and destructors are applied in the reverse order .
+For example , consider class derived from which is in turn derived from .
+Figure illustrates how an object of type is created and destroyed .
+
+The constructor of derived class whose base class constructor requires arguments should specify these in the definition of its constructor .
+To do this , the derived class constructor explicitly invokes the base class constructor in its member initialization list .
+For example , the SmartDir constructor passes its argument to the ContactDir constructor in this way :
+
+The idea is that private members should be completely hidden so that they cannot be tampered with by the class clients .
+
+This restriction may prove too prohibitive for classes from which other classes are likely to be derived .
+Denying the derived class access to the base class private members may convolute its implementation or even make it impractical to define .
+
+The restriction can be relaxed by defining the base class private members as protected instead .
+As far as the clients of class are concerned , protected member is the same as private member : it cannot be accessed by the class clients .
+
+However , protected base class member can be accessed by any class derived from it .
+
+For example , the private members of ContactDir can be made protected by substituting the keyword protected for private : class ContactDir .
+
+As result , Lookup and the data members of ContactDir are now accessible to SmartDir .
+
+The access keywords private , public , and protected can occur as many times as desired in class definition .
+Each access keyword specifies the access characteristics of the members following it until the next access keyword : class Foo public : public .
+
+Copyright PragSoft Private , Public , and Protected Base Classes base class may be specified to be private , public , or protected .
+Unless so specified , the base class is assumed to be private : class .
+
+is is is is private base class of private base class of public base class of protected base class of The behavior of these is as follows Table for .
+
+All the members of private base class become private members of the derived class .
+So , Fx , Fy , and Fz all become private members of and .
+
+The members of public base class keep their access characteristics in the derived class .
+So , and Fx becomes private members of , and Fy become public members of , and and Fz become protected members of .
+
+The private members of protected base class become private members of the derived class .
+Whereas , the public and protected members of protected base class become protected members of the derived class .
+So , and Fx become private members of , and , Fy , and Fz become protected members of .
+
+Base class access inheritance rules .
+
+Base Class Private Member Public Member Protected Member Private Derived private private private Public Derived private public protected Protected Derived private protected protected It is also possible to individually exempt base class member from the access changes specified by derived class , so that it retains its original access characteristics .
+To do this , the exempted member is fully named in the derived class under its original access characteristic .
+For example : class  private .
+
+The obvious advantage of this is that the search speed can be improved by using the binary search algorithm instead of linear search .
+
+The actual search is performed by the Lookup member function .
+Therefore we need to redefine this function in SortedDir so that it uses the binary search algorithm .
+
+We can also redefine these so that they refer to instead .
+If we follow this approach , the value of inheritance becomes rather questionable , because we would have practically redefined the whole class .
+
+What we really want to do is to find way of expressing this : Lookup should be tied to the type of the object which invokes it .
+If the object is of type SortedDir then invoking Lookup anywhere , even from within the member functions of should mean .
+Similarly , if the object is of type ContactDir then calling Lookup should mean .
+
+This can be achieved through the dynamic binding of Lookup : the decision as to which version of Lookup to call is made at runtime depending on the type of the object .
+
+In , dynamic binding is supported by virtual member functions .
+member function is declared as virtual by inserting the keyword virtual before its prototype in the base class .
+Any member function , including constructors and destructors , can be declared as virtual .
+Lookup should be declared as virtual in ContactDir : class ContactDir .
+
+Only nonstatic member functions can be declared as virtual .
+virtual function redefined in derived class must have exactly the same prototype as the one in the base class .
+Virtual functions can be overloaded like other member functions .
+
+Listing shows the definition of SortedDir as derived class of ContactDir .
+
+Copyright PragSoft class SortedDir  public ContactDir public : SortedDir int 
+
+The new of Lookup is as .
+
+It will produce the following output :
+
+Alternatively , derived class may have multiple base classes .
+This is referred to as multiple inheritance .
+
+For example , suppose we have defined two classes for , respectively , representing lists of options and bitmapped windows : class OptionList .
+
+Under multiple inheritance , derived class inherits all of the members of its base classes .
+As before , each of the base classes may be private , public , or protected .
+The same base member access principles apply .
+Figure illustrates the class hierarchy for Menu .
+
+Figure The Menu class hierarchy OptionList Window Menu Since the base classes of Menu have constructors that take arguments , the constructor for the derived class should invoke these in its member initialization list : Essentials .
+
+The order in which the base class constructors are invoked is the same as the order in which they are specified in the derived class header the order in which they appear in the derived class member initialization .
+For Menu , for example , the constructor for OptionList is invoked before the constructor for Window , even if we change their order in the .
+
+The destructors are applied in the reverse order : followed by , followed by .
+
+The obvious implementation of derived class object is to contain one object from each of its base classes .
+Figure illustrates the relationship between Menu object and its base class objects .
+
+Figure Base and derived class objects .
+
+OptionList object OptionList data members Window object Menu object Window data members OptionList data members Window data members Menu data members In general , derived class may have any number of base classes , all of which .
+
+For example , suppose that both OptionList and Window have member function called Highlight for highlighting specific part of either object type : class OptionList .
+
+The ambiguity is resolved by making the call explicit : Alternatively , we can define Highlight member for Menu which in turn calls the .
+
+Copyright PragSoft Type Conversion For any derived class there is an implicit type conversion from the derived class to any of its public base classes .
+This can be used for converting derived class object to base class object , be it proper object , reference , or pointer : Menu Window Window Window .
+
+Such conversions are safe because the derived class object always contains all of its base class objects .
+The first assignment , for example , causes the Window component of menu to be assigned to .
+
+By contrast , there is no implicit conversion from base class to derived class .
+The reason being that such conversion is potentially dangerous due to the fact that the derived class object may have data members not present in the base class object .
+The extra data members will therefore end up with unpredictable values .
+All such conversions must be explicitly cast to confirm the intention : Menu Menu .
+
+For example , given class Menu  public OptionList , public Window .
+
+This can be represented as table , as illustrated by Table .
+
+Table Message transmission time .
+
+Sydney Melbourne Perth Sydney Melbourne Perth The row and column indices for this table are strings rather than integers , so the Matrix class will not be adequate for representing the table .
+We need way of mapping strings to indices .
+This is already supported by the AssocVec class .
+As shown in Listing , can be defined as derived class of Matrix and AssocVec .
+
+Listing class  Matrix , AssocVec public : 
+
+Copyright PragSoft class  Matrix .
+
+The answer lies in the relationship of table to matrix and associative .
+
+table is form of matrix .
+
+table is not an associative vector , but rather uses an associative vector to manage the association of its row and column labels with positional indexes .
+
+In general , an relationship is best realized using inheritance , because it implies that the properties of one object are shared by another object .
+On the other hand , relationship is best realized using composition , because it implies that one object is contained by another object .
+is therefore the preferred solution .
+
+It is worth considering which of the two versions of table better lends itself to generalization .
+One obvious generalization is to remove the restriction that the table should be square , and to allow the rows and columns to have different labels .
+To do this , we need to provide two sets of indexes : one for rows and one for columns .
+
+Hence we need two associative vectors .
+It is arguably easier to expand to do this rather than modify Listing .
+
+Figure shows the class hierarchies for the three variations of table .
+
+Figure Matrix Variations of table .
+
+For derived class which also has class object data members , the order of object construction is as follows .
+First the base class constructors are invoked in the order in which they appear in the derived class header .
+Then the class object data members are initialized by their constructors being invoked in the same order in which they are declared in the class .
+Finally , the derived class constructor is invoked .
+As before , the derived class object is destroyed in the reverse order of construction .
+
+Figure illustrates this for object .
+
+Figure object construction and destruction order .
+
+Copyright PragSoft Virtual Base Classes Recall the Menu class and suppose that its two base classes are also multiply derived : class OptionList  public Widget , List ; class Window  public Widget , Port .
+
+This is not desirable menu is considered single and may lead to ambiguity .
+For example , when applying widget member function to menu object , it is not clear as to which of the two widget objects it should be applied .
+The problem is overcome by making Widget virtual base class of OptionList and Window .
+base class is made virtual by placing the keyword virtual before its name in the derived class header : class OptionList  virtual public Widget , List class Window  virtual public Widget , Port .
+
+This ensures that Menu object will contain exactly one Widget object .
+In other words , OptionList and Window will share the same Widget object .
+
+An object of class which is derived from virtual base class does not directly contain the object , but rather pointer to it Figure and .
+This enables multiple occurrences of virtual class in hierarchy to be collapsed into one Figure .
+
+If in class hierarchy some instances of base class are declared as virtual and other instances as nonvirtual , then the derived class object will contain an object for each nonvirtual instance of , and single object for all virtual occurrences of .
+
+virtual base class object is initialized , not necessarily by its immediate derived class , but by the derived class farthest down the class hierarchy .
+This rule ensures that the virtual base class object is initialized only once .
+For example , in menu object , the widget object is initialized by the Menu constructor overrides the invocation of the Widget constructor by OptionList or : Rect .
+
+Figure Nonvirtual and virtual base classes .
+
+Widget data members .
+
+OptionList data members OptionList data members Window object with Widget as virtual Widget data members Widget data members Port data members Port data members Window data members Window data members Menu data members Menu object with Widget as virtual List data members OptionList data members Widget data members Port data members Window data members Menu data members If in class hierarchy virtual base is declared with conflicting access characteristics , any combination of private , protected , and , then the most accessible will dominate .
+For example , if Widget were declared private base class of OptionList , and public base class of Window , then it would still be public base class of Menu .
+
+Copyright PragSoft Overloaded Operators Except for assignment operator , derived class inherits all overloaded operators of its base classes .
+An overloaded by derived class itself hides overloading of same by base classes exactly same way member functions of derived class hide member functions of base .
+
+Memberwise initialization and assignment Chapter extend to derived classes .
+For any given class derived from , memberwise initialization is handled by an constructor of form : Similarly , memberwise assignment is handled by an overloading of  Memberwise initialization of derived class object involves memberwise initialization of its base classes as well as its class object members .
+
+Special care is needed when derived class relies on overloading of new and delete operators for its base class .
+For example , recall overloading of these two operators for Point class in Chapter , and suppose that we wish to use them for derived class : class  public Point .
+
+Because implementation of : new that requested block be size of Point object , its inheritance by class leads to problem : it fails to account for extra space needed by data member of latter ,
+
+To avoid this problem , an overloading of new attempt to allocate exact amount of storage specified by its size parameter , rather than assuming predefined size .
+Similarly , an overloading of delete note size specified by its second parameter and attempt to release exactly those many bytes .
+
+Because each day has binary value , Year is easily derived from BitVec : enum Month Jan , Feb , Mar , Apr , May , Jun , Jul , Aug , Sep , Oct , Nov , Dec ; class Year  public public : Year void WorkDay void OffDay Bool Working short Day protected : short .
+
+Complete Year class by implementing its member functions .
+
+Derive class named LinearEqns from Matrix and for this purpose and define following member functions for .
+
+constructor which accepts as matrix , and destructor .
+
+Generate which randomly generates system of linear equations as matrix .
+It take positive integer as argument and generate set of equations , ensuring that range of coefficients does not exceed coef .
+
+Use random number generator , random under to generate coefficients .
+To ensure that is solution for equations denoted by , last element of row is denoted by :  + 
+
+Solve which uses Gaussian elimination to solve equations generated by Generate .
+Solve output of Matrix to display augmented matrix each time elements below pivot are eliminated .
+
+In certain applications we may need to construct sets of such enumerations .
+
+Copyright PragSoft example , in parser , each parsing routine may be passed set of symbols that not be skipped when parser attempts to recover from syntax error .
+
+Derive class named EnumSet from BitVec to facilitate this .
+EnumSet overload the following operators :
+
+An abstract class is class which is never used directly but provides skeleton for other classes to be derived from it .
+Typically , all the member functions of an abstract are virtual have dummy implementations .
+The following is simple example of an abstract class : class Database public : virtual void virtual void virtual Data ; Insert Delete Search .
+
+First derive class from Database then derive from : class BTree  public Database ; class BStar  public BTree ; See Comer for description of .
+For the purpose of this exercise , use the type int for Key double for Data .
+
+Templates This chapter describes the template facility of for defining functions classes .
+Templates facilitate the generic definition of functions classes so that they are not tied to specific implementation types .
+They are invaluable in that they dispense with the burden of redefining function or class so that it will work with yet another data type .
+
+function template defines an algorithm .
+An algorithm is generic recipe for accomplishing task , independent of the particular data types used for its implementation .
+For example , the binary search algorithm operates on sorted array of items , whose exact type is irrelevant to the algorithm .
+Binary search can therefore be defined as function template with type parameter which denotes the type of the array items .
+This template then becomes blueprint for generating executable functions by substituting concrete type for the type parameter .
+This process is called instantiation its outcome is conventional function .
+
+class template defines parameterized type .
+parameterized type is data type defined in terms of other data types , one or more of which are unspecified .
+Most data types can be defined independently of the concrete data types used in their implementation .
+For example , the stack data type involves set of items whose exact type is irrelevant to the concept of stack .
+Stack can therefore be defined as class template with type parameter which specifies the type of the items to be stored on the stack .
+This template can then be instantiated , by substituting concrete type for the type parameter , to generate executable stack classes .
+
+Templates provide direct support for writing reusable code .
+This in turn makes them an ideal tool for defining generic libraries .
+
+We will present few simple examples to illustrate how templates are defined , instantiated , specialized .
+We will describe the use of nontype parameters in class templates , discuss the role of class members , friends , derivations in the context of class templates .
+
+Copyright PragSoft Function Template Definition function template definition is always preceded by template clause , which consists of the keyword template list of one or more type parameters .
+For example , template Max , declares function template named Max for returning the maximum of two objects .
+
+denotes an unspecified type .
+Max is specified to compare two objects of the same type return the larger of the two .
+Both arguments the return value are therefore of the same type .
+The definition of function template is very similar to normal function , except that the specified type parameters can be referred to within the definition .
+The definition of Max is shown in Listing .
+
+Listing template .
+
+type parameter is an arbitrary identifier whose scope is limited to the function itself .
+Type parameters always appear inside .
+Each type parameter consists of the keyword class followed by the parameter name .
+When multiple type parameters are used , they should be separated by commas .
+Each specified type parameter must actually be referred to in the function prototype .
+The keyword class cannot be factored out : template , class , class , ok .
+
+For example , given the earlier template definition of  the code fragment .
+
+In the second call , both arguments are reals , hence is bound to double .
+In the final call , both arguments are characters , hence is bound to char .
+total of three functions are therefore generated by the compiler to handle these cases : int double char .
+
+When the compiler encounters call to template function , it attempts to infer the concrete type to be substituted for each type parameter by examining the type of the arguments in the call .
+The compiler does not attempt any implicit type conversions to ensure match .
+As result , it cannot resolve the binding of the same type parameter to reasonable but unidentical types .
+For example : would be considered an error because it requires the first argument to be converted to double so that both arguments can match .
+The same restriction even applies to the ordinary parameters of function template .
+For example , consider the alternative definition of in Listing for finding the maximum value in an array of .
+The ordinary parameter denotes the number of array elements .
+matching argument for this parameter must be of type int : unsigned .
+
+Copyright PragSoft template .
+
+As illustrated by Listings and , function templates can be overloaded in exactly the same way as normal functions .
+The same rule applies : each overloaded definition must have unique signature .
+
+Both definitions of assume that the operator is defined for the type substituted in an instantiation .
+When this is not the case , the compiler flags it as an .
+
+Binary search is better defined as function template so that it can be used for searching arrays of any type .
+Listing provides template definition .
+
+Listing template int .
+
+It introduces Type as type parameter , the scope for which is the entire definition of the BinSearch function .
+
+Instantiating BinSearch with Type bound to type such as int has the desired effect .
+For example , int , 
+
+Copyright PragSoft Now let us instantiate BinSearch for type such as RawBook Chapter .
+First , we need to ensure that the comparison operators are defined for our type : class RawBook public :
+
+The code fragment .
+
+For example , class Stack ; declares class named Stack .
+class clause follows the same syntax rules as function clause .
+
+The definition of class is very similar to normal class , except that the specified type parameters can be referred to within the definition .
+The definition of Stack is shown in Listing .
+
+Listing class Stack .
+
+The member functions of Stack are defined inline except for Push .
+The is also overloaded to display the stack contents for testing purposes .
+
+These two are defined as follows :
+
+Except for within the class definition itself , reference to class must include its parameter list .
+This is why the definition of Push and use the name instead of Stack .
+
+For example , given the earlier definition of  it is easy to generate stacks of variety of types through instantiation :
+
+The combination of class and arguments for all of its type parameters , represents valid type specifier .
+
+If class is used as part of the definition of another class function , then the former ' type parameters can be bound to the latter ' parameters .
+For example :
+
+Value parameters defined may also be used .
+Listing shows variation of the class , where the maximum size of the stack is denoted by parameter than data .
+
+Listing template  int class public :  void Push ; void Pop .
+
+For example , Push is now defined as follows : template  int .
+
+The type of the value must match the type of value parameter exactly .
+The value itself must be constant expression which can be evaluated at .
+For example : int .
+
+Copyright PragSoft Class Specialization The algorithms defined by the member functions of class template may be inappropriate for certain types .
+For example , instantiating the class with the type may lead to problems because the Push function will simply push string pointer onto the stack without copying it .
+As result , if the original string is destroyed the stack entry will be invalid .
+
+Such cases can be properly handled by specializing the inappropriate member functions .
+Like global function template , member function of class template is specialized by providing an implementation of it based on particular type .
+
+Pop needs to be specialized as well :
+
+Although the friend declaration of is necessary , because this is nonmember function , its earlier definition suffices .
+
+The use of constant and reference members is exactly as before .
+
+Static data members are shared by the objects of an instantiation .
+There will therefore be an instance of each static data member per instantiation of the class template .
+
+As an example , consider adding static data member to the class to enable Top to return value when the stack is empty : template class public :
+
+This is instantiated for each instantiation of .
+
+Alternatively , an explicit instance of this initialization may be provided for each instantiation of .
+instantiation , for example , could use the following initialization of  int :
+
+Copyright PragSoft Class Friends When function or class is declared as friend of class  the friendship can take one of there forms , as illustrated by the following example .
+
+Consider the class and function named  void ; We wish to define class named Sample and declare and as its friends .
+The following makes specific instance of and friends of all instances of Sample :
+
+This means that , for example , and are friends of , but not .
+
+The extreme case of making all instances of and friends of all instances of Sample is expressed as :
+
+represents one of the simplest and most popular forms of container types .
+It consists of set of elements , each of which contains pointer to the next element in the list .
+In list , each element also contains pointer to the previous element in the list .
+Figure illustrates list of integers .
+
+Figure list of integers .
+
+Last Because container class can conceivably contain objects of any type , it is best defined as class .
+Listing show the definition of lists as two class templates .
+
+Listing .
+
+Value Prev ListElem Next friend class friendship .
+
+Insert .
+
+Member ; friend ,
+
+; element in the list .
+
+It consists of value whose type is denoted by the type parameter Type , and two pointers which point to the previous and elements in the list .
+
+Note that these two are declared of type and not , because the declaration is outside the class .
+
+Insert , Remove , and Element are all defined as virtual to allow class derived from to override them .
+
+All of the member functions of are defined inline .
+The definition of member functions is as follows :
+
+Copyright PragSoft .
+
+It will produce the following output : is in Removed .
+
+As an example of derived class  consider deriving Set class from Given that set consists of unique elements only , no , all we need to do is override the Insert member function to ensure this Listing .
+
+Listing class Set  public public : virtual void .
+
+Copyright PragSoft Exercises Define Swap function for swapping two objects of the same type .
+
+Provide specialization of the function for strings .
+
+Provide specialization of the class for strings .
+
+Exception Handling An exception is error .
+Proper handling of exceptions is an important programming issue .
+This is because exceptions can and do happen in practice and programs are generally expected to behave gracefully in face of such exceptions .
+
+Unless an exception is properly handled , it is likely to result in abnormal program termination and potential loss of work .
+For example , an undetected division by zero or dereferencing of an invalid pointer will almost certainly terminate the program abruptly .
+
+Exception handling consists of three things : the detecting of error , raising an exception in response to the error , and taking corrective action .
+
+The latter is called recovery .
+Some exceptions can be fully recovered from so that execution can proceed unaffected .
+For example , an invalid argument value passed to function may be handled by substituting reasonable default value for it .
+Other exceptions can only be partially handled .
+For example , exhaustion of the heap memory can be handled by abandoning the current operation and returning to state where other operations as saving the currently open files to avoid losing their can be attempted .
+
+provides language facility for the uniform handling of exceptions .
+Under this scheme , section of code whose execution may lead to errors is labeled as try block .
+Any fragment of code activated during the execution of try block can raise an exception using throw clause .
+All exceptions are typed , each exception is denoted by an object of specific .
+try block is followed by one or more catch clauses .
+Each catch clause is responsible for the handling of exceptions of particular type .
+
+When an exception is raised , its type is compared against the catch clauses following it .
+If matching clause is found then its handler is executed .
+Otherwise , the exception is propagated up , to an immediately enclosing try block .
+The process is repeated until either the exception is handled by matching catch clause or it is handled by default handler .
+
+Copyright PragSoft Flow Control Figure illustrates the flow of control during exception handling .
+It shows function with try block from which it calls ; calls another function from its own try block , which in turn calls .
+Each of the try blocks is followed by of catch clauses .
+Function throws an exception of type .
+The enclosing try catch clauses are examined , and ; neither matches .
+The exception is therefore propagated to the catch clauses of the enclosing try block , and , which do not match either .
+Propagating the exception further up , the catch clauses following the try block in , and are examined next , resulting in match .
+
+At this point flow of control is transferred from where the exception was raised in to the catch clause in .
+The intervening stack frames for , and are unwound : all automatic objects created by these functions are properly destroyed by implicit calls to their destructors .
+
+Figure Flow control in exception handling .
+
+throw Two points are worth noting .
+First , once an exception is raised and handled by matching catch clause , the flow of control is not returned to where the exception was raised .
+The best that the program can do is to the code that resulted in the exception , call again in the above .
+Second , the only role of catch clause in life is to handle exceptions .
+If no exception is raised during the execution of try block , then the catch clauses following it are simply ignored .
+
+An exception is raised by throw clause , which has the general form throw object ; where object is an object of or type .
+Since an exception is matched by the type of object and not its value , it is customary to define classes for this exact purpose .
+
+For example , recall the Stack class template discussed in Chapter Listing .
+
+Listing template class Stack public : Stack ; void Push ; void Pop ; Top ; friend ,
+
+The constructor parameter may be given nonsensical value .
+Also , the attempt at dynamically allocating storage for may fail due to heap exhaustion .
+We raise exceptions BadSize and HeapFail in response to these : template .
+
+We raise an Overflow exception in response to this : Essentials Copyright PragSoft template .
+
+An attempt to pop from an empty results in an underflow .
+We raise an Underflow exception in response to this : template .
+
+Attempting to examine the element of an empty is clearly an error .
+
+We raise an Empty exception in response to this : template .
+
+Suppose that we have defined class named Error for exception handling purposes .
+The above exceptions are easily defined as derivations of Error : class class class class class class Error BadSize HeapFail Overflow Underflow Empty      public public public public public .
+
+In other words , try block is like compound statement preceded by the try keyword .
+
+try block is followed by catch clauses for the exceptions which may be raised during the execution of the block .
+The role of the catch clauses is to handle the respective exceptions .
+catch clause called has the general form statements where type is the type of the object raised by the matching exception , par is optional and is an identifier bound to the object raised by the exception , and statements represents zero or more statements .
+
+For example , continuing with our class , we may .
+
+When an exception is raised by the code within the try block , the catch clauses are examined in the order they appear .
+The first matching catch clause is selected and its statements are executed .
+The remaining catch clauses are ignored .
+
+catch clause type matches an exception type if :
+
+Both are pointers and one can be converted to another by implicit type conversion rules .
+
+Because of the way the catch clauses are evaluated , their order of appearance is significant .
+Care should be taken to place the types which are likely to mask other types last .
+For example , the clause type will match any pointer and should therefore appear after other pointer type clauses : try .
+
+The statements in catch clause can also throw exceptions .
+The case where the matched exception is to be propagated up can be signified by an empty .
+
+An exception which is not matched by any catch clause after try block , is propagated up to an enclosing try block .
+This process is continued until either the exception is matched or no more enclosing try block remains .
+The latter causes the predefined function terminate to be called , which simply terminates the program .
+
+This function has the following type : typedef void .
+
+TermFun ; returns the previous setting .
+
+This enables function users to quickly determine the list of exceptions that their code will have to handle .
+function prototype may be appended with throw list for this purpose : type function throw ; where exceptions denotes list of zero or more exception types which function may directly or indirectly throw .
+The list is also an assurance that function will not throw any other exceptions .
+
+For example , throw , BadFile , const ; specifies that Encrypt may throw an InvalidKey , BadFile , or const .
+
+It is generally expected to at least define throw lists for functions .
+
+Should function throw an exception which is not specified in its throw list , the predefined function unexpected is called .
+The default behavior of unexpected is to terminate the program .
+This can be overridden by calling has the same signature as and passing the replacing function as its argument : TermFun ; As before , returns the previous setting .
+
+Copyright PragSoft Exercises Consider the following function which is used for receiving packet in network system :
+
+That connection c is active .
+will return true if this is the case .
+
+That no errors have occurred in the transmission of the packet .
+
+will return true if this is the case .
+
+That the packet type is known default case is exercised .
+
+Define suitable exceptions for the above and modify ReceivePacket so that it throws an appropriate exception when any of the above cases is not satisfied .
+Also define throw list for the function .
+
+When the sizes of the operands of + and are not identical .
+
+When the number of the columns of the first operand of does not match the number of rows of its second operand .
+
+When heap storage is exhausted .
+
+The IO Library has no capability .
+Instead , this capability is provided by library .
+The standard IO library is called the iostream library .
+
+The definition of the library classes is divided into three header files .
+An additional header file defines set of manipulators which act on streams .
+These are summarized by Table .
+
+Figure relates these header files to class hierarchy for implementation of the iostream class hierarchy .
+The classes appear unshaded .
+user of the iostream library typically works with these classes only .
+
+Table summarizes the role of these classes .
+The library also provides four predefined stream objects for the common use of programs .
+These are summarized by Table .
+
+Table Iostream header files .
+
+Header File .
+
+Table iostream classes .
+
+Form of IO Standard IO File IO Array of char IO Table Description Defines hierarchy of classes for IO and IO .
+This includes the definition of the ios , istream , ostream , and iostream classes .
+
+Derives set of classes from those defined in for file IO .
+This includes the definition of the ifstream , ofstream , and fstream classes .
+
+Derives set of classes from those defined in for IO with respect to character arrays .
+This includes the definition of the istrstream , ostrstream , and strstream classes .
+
+Defines set of manipulator which operate on streams to produce useful effects .
+
+Input and Output istream ifstream istrstream ostream ofstream ostrstream iostream fstream strstream Predefined streams .
+
+Stream Type cin cout clog cerr istream ostream ostream ostream Essentials Buffered Yes Yes Yes No Description Copyright PragSoft stream may be used for input , output , or both .
+The act of reading data from an input stream is called extraction .
+It is performed using the operator the extraction or an iostream member function .
+Similarly , the act of writing data to an output stream is called insertion , and is performed using the operator the insertion or an iostream member function .
+We therefore speak of data from an input stream ' and data into an output .
+
+Figure Iostream class hierarchy .
+
+The upper layer deals with formatted IO of typed objects or .
+The lower layer deals with unformatted IO of streams of characters , and is defined in terms of streambuf objects Figure .
+All stream classes contain pointer to streambuf object or one derived from it .
+
+Figure IO model .
+
+Under normal circumstances , the user need not worry about or directly work with streambuf objects .
+These are indirectly employed by streams .
+However , basic understanding of how streambuf operates makes it easier to understand some of the operations of streams .
+
+Think of streambuf as sequence of characters which can grow or shrink .
+
+Depending on the type of the stream , one or two pointers are associated with this sequence Figure .
+
+put pointer points to the position of the next character to be deposited into the sequence as result of an insertion .
+
+get pointer points to the position of the next character to be fetched from the sequence as result of an extraction .
+
+For example , ostream only has put pointer , istream only has get pointer , and iostream has both pointers .
+
+Figure Streambuf put and get pointers .
+
+Therefore , the stream classes provide constructors which take argument .
+All stream classes overload the insertion and extraction operators for use with operand .
+The insertion or extraction of streambuf causes the entire stream represented by it to be copied .
+
+Use of the insertion operator for stream output was introduced in Chapter , and employed throughout this book .
+
+The overloading of the insertion operator for types was discussed in Chapter .
+This section looks at the ostream member functions .
+
+The put member function provides simple method of inserting single character into an output stream .
+For example , assuming that os is an ostream object , inserts ' into os .
+
+An optional second argument to .
+
+These are defined as public enumeration in the ios class .
+
+Table summarizes the ostream member functions .
+All output functions with an return type , return the stream for which they are invoked .
+
+Multiple calls to such functions can be concatenated , combined into one .
+For example , Chapter : The IO Library .
+
+Member functions of ostream .
+
+Copyright PragSoft Stream Input with istream Istream provides formatted input capability .
+Use of the extraction operator for stream input was introduced in Chapter .
+The overloading of the extraction operator for types was discussed in Chapter .
+This section looks at the istream member functions .
+
+The get member function provides simple method of extracting single character from an input stream .
+For example , assuming that is is an istream object , int ; extracts and returns the character denoted by the get pointer of is , and advances the get pointer .
+variation of get , called peek , does the same but does not advance the get pointer .
+In other words , it allows you to examine the next input character without extracting it .
+The effect of call to get can be canceled by calling putback which deposits the extracted character back into the stream : The return type of get and peek is an int .
+This is because the character is usually given the value .
+
+The behavior of get is different from the extraction operator in that the former does not skip blanks .
+For example , an input line consisting of , space , would be extracted by four calls to get .
+
+See Table for summary .
+
+The read member function extracts string of characters from an input stream .
+For example , char ; extracts up to characters from is and deposits them into buf .
+Of course , if EOF is encountered in the process , less characters will be extracted .
+The actual number of characters extracted is obtained by calling gcount .
+
+variation of read , called getline , allows extraction of characters until delimiter is encountered .
+For example , is similar to the above call to read but stops the extraction if tab character is encountered .
+The delimiter , although extracted if encountered within the specified number of characters , is not deposited into buf .
+
+The delimiters itself is also extracted and discarded .
+
+The position of an input stream get pointer can be queried using tellg and adjusted using seekg .
+For example , moves the get pointer characters backward .
+An optional second argument to .
+
+Table summarizes the istream member functions .
+All input functions with an return type , return the stream for which they are invoked .
+Multiple calls to such functions can therefore be concatenated .
+
+Table Member functions of istream .
+
+The constructor associates streambuf its with the class to provide an input stream .
+
+The first version extracts the next character .
+The second and third versions are similar but instead deposit the character into their parameter .
+The last version extracts and deposit characters into the given streambuf until the delimiter denoted by its last parameter is encountered .
+
+The delimiter , if encountered and extracted , is not deposited into the array .
+
+It uses streambuf for buffering of data and maintains operational information on the state of the streambuf , IO .
+It also keeps formatting information for the use of its client classes , istream and .
+
+The definition of ios contains number of public enumerations whose values are summarized by Table .
+The values are used for the state data member which is bit vector of IO error flags .
+The formatting flags are used for the data member bit .
+The values are bit flags for specifying the opening mode of stream .
+The values specify the seek direction for seekp and seekg .
+
+Table Useful public enumerations in ios .
+
+When state is set to this value , it means that all is ok .
+
+has been reached .
+
+An invalid operation has been attempted .
+
+The last IO operation attempted has failed .
+
+An unrecoverable error has taken place .
+
+Provides formatting flags .
+
+the output .
+
+the output .
+
+Output padding indicator .
+
+Convert to decimal .
+
+Convert to octal .
+
+Convert to hexadecimal .
+
+Show the base on output .
+
+Show the decimal point on output .
+
+Use upper case for hexadecimal output .
+
+Show the + symbol for positive integers .
+
+Use the floating notation for reals .
+
+Use the scientific notation for reals .
+
+Skip blanks on input .
+
+Flush all streams after insertion .
+
+Provides values for stream opening mode .
+
+Stream open for input .
+
+Stream open for output .
+
+Append data to the end of the file .
+
+Upon opening the stream , seek to EOF .
+
+Truncate existing file .
+
+Open should fail if file already exists .
+
+Open should fail if file does not already exist .
+
+Binary file opposed to default text .
+
+Provides values for relative seek .
+
+Seek relative to the beginning of the stream .
+
+Seek relative to the current pointer position .
+
+Seek relative to the end of the stream .
+
+Copyright PragSoft IO operations may result in IO errors , which can be checked for using number of ios member functions .
+For example , good returns nonzero if no error .
+
+The opposite shorthand is provided through the overloading of the so that it returns zero when fail returns nonzero .
+This makes it possible to check for errors in the following fashion : no error occurred The entire error bit vector can be obtained by calling rdstate , and cleared by .
+
+For example , sets the eofbit and badbit flags .
+
+Ios also provides various formatting member functions .
+For example , precision can be used to change the precision for displaying floating point numbers :
+
+Also , the specified width applies only to the next object to be output .
+By default , spaces are used to pad the object up to the specified minimum size .
+The padding character can be changed using fill .
+
+The second argument is typically one of :
+
+Copyright PragSoft Formatting flags can be reset by calling unsetf , and set as whole or examined by calling flags .
+For example , to disable the skipping of leading blanks for an input stream such as cin , we can write : Table summarizes the member functions of ios .
+
+Member functions of ios .
+
+Both return the previous setting .
+
+The second version sets the formatting flags to given value restores default , and return the previous setting .
+
+The second version ties the stream denoted by its parameter to this stream and returns the stream .
+When two streams are tied the use of one affects the other .
+For example , because cin , cerr , and clog are all tied to  using any of the first three causes to be flushed first .
+
+Copyright PragSoft Stream Manipulators manipulator is an identifier that can be inserted into an output stream or extracted from an input stream in order to produce desired effect .
+For example , endl is manipulator which inserts newline into an output stream and flushes it .
+
+Manipulator endl ends flush dec hex ws .
+
+Stream Type output output output input Description Inserts newline character and flushes the stream .
+
+Inserts character .
+
+Sets the conversion base to decimal .
+
+Sets the conversion base to hexadecimal .
+
+Sets the conversion base to octal .
+
+Extracts blanks characters .
+
+Sets the conversion base to one of , or .
+
+Clears the status flags denoted by the argument .
+
+Sets the status flags denoted by the argument .
+
+Sets the padding character to the argument .
+
+Sets the precision to the argument .
+
+Sets the field width to the argument .
+
+Because the classes defined in this file are derived from iostream classes , also includes .
+
+file can be opened for output by creating an ofstream object and specifying the file name and mode as arguments to the constructor .
+For example , ofstream , opens file named for output Table for list of the open .
+
+First , however , we should check that the file is opened as .
+
+Because ifstream is derived from istream , all the public member functions of the latter can also be invoked for ifstream objects .
+
+The fstream class is derived from iostream and can be used for opening file for input as well as output .
+
+Table Member functions of ofstream , ifstream , and fstream .
+
+The first version makes an ofstream which is not attached to file .
+The second version makes an ofstream and connects it to an open file descriptor .
+The third version does the same but also uses userspecified buffer of given size .
+The last version makes an ofstream and opens and connects specified file to it for writing .
+
+Insertion and extraction on such streams causes the data to be moved into and out of its character array .
+Because these classes are derived from iostream classes , this file also includes .
+
+The three array IO classes , istrstream , are very similar to the file IO counterparts , ifstream ,
+As before , they are derived from iostream classes and therefore inherit their member functions .
+
+An ostrstream object is used for output .
+It can be created with either internal buffer , or .
+
+The static version is more appropriate for situations where the user is certain of an upper bound on the stream buffer size .
+In the dynamic version , the object is responsible for resizing the buffer as needed .
+
+After all the insertions into an ostrstream have been completed , the user can obtain pointer to the stream buffer by calling  char ; This freezes odyn all future .
+If is not called before odyn goes out of scope , the class destructor will destroy the buffer .
+However , when is called , this responsibility rests with the user .
+Therefore , the user should make sure that when is no longer needed it is deleted : delete .
+
+The advantage of the former is that extraction operations will not attempt to go beyond the end of data array .
+
+Table summarizes the member functions of ostrstream , istrstream , and strstream addition to those inherited from their base .
+
+We would like to write tool which takes the output of the compiler and uses it to annotate the lines in the program file which are reported to contain errors , so that , for example , instead of the above we would have something like : + Error : invalid expression .
+
+Listing provides function which performs the proposed annotation .
+
+Annotation Annotate takes two argument : inProg denotes the program file name and inData denotes the name of the file which contains the messages generated by the compiler .
+
+When match is found , we reset the get pointer of data back to the beginning of the stream , ignore characters up to the space character before the line number , extract the line number into lineNo , and then ignore the remaining characters up to the comma following the line number , where the actual error message .
+
+Note that as result of the , the line number is effectively removed from the error message and displayed next to the program line .
+
+Copyright PragSoft Listing .
+
+Chapter : The IO Library : size .
+
+Copyright PragSoft Exercises Use the istream member functions to define an overloaded version of the operator for the Set class Chapter so that it can input sets expressed in the .
+
+Your program should be able to copy text as well as binary files .
+
+line which contains an unbalanced bracket should be reported by message such as the following sent to standard output : on line has no matching '
+
+The Preprocessor Prior to compiling program source file , the compiler passes the file through preprocessor .
+The role of the preprocessor is to transform the source file into an equivalent file by performing the preprocessing instructions contained by it .
+These instructions facilitate number of features , such as : file inclusion , conditional compilation , and macro substitution .
+
+Figure illustrates the effect of the preprocessor on simple file .
+It shows the preprocessor performing the .
+
+Removing program comments by substituting single white space for each comment .
+
+Performing the file inclusion and conditional compilation , commands as it encounters them .
+
+It compares these names against the identifiers in the program , and does substitution when it finds match .
+
+The preprocessor performs very minimal error checking of the preprocessing instructions .
+Because it operates at text level , it is unable to check for any sort of syntax errors .
+This function is performed by the compiler .
+
+Figure The role of the preprocessor .
+
+Copyright PragSoft Preprocessor Directives Programmer instructions to the preprocessor take the general form : directive tokens The symbol should be the first character on the line , only spaces and tabs may appear before .
+Blank symbols may also appear between the and directive .
+The following are therefore all valid and have exactly the same effect : size size define size directive usually occupies single line .
+line whose last character is , is assumed to continue on the line following it , thus making it possible to define multiple line directives .
+For example , the following multiple line and single line directives have exactly the same effect : CheckError .
+
+directive line may also contain comment ; these are simply ignored by the preprocessor .
+appearing on line on its own is simply ignored .
+
+Table summarizes the preprocessor directives , which are explained in detail in subsequent sections .
+Most directives are followed by one or more tokens .
+
+token is anything other than blank .
+
+Table Preprocessor directives .
+
+Directive Explanation Defines macro Undefines macro Textually includes the contents of file Makes compilation of code conditional on macro being defined Makes compilation of code conditional on macro not being defined Marks the end of conditional compilation block Makes compilation of code conditional on an expression being nonzero Specifies an else part for , or directive Combination of and Change current line number and file name Outputs an error message Is .
+
+plain macro has the general form : identifier tokens It instructs the preprocessor to substitute tokens for every occurrence of identifier in the rest of the file for inside .
+The substitution tokens can be anything , even empty has the effect of removing identifier from the rest of the .
+
+Plain macros are used for defining symbolic constants .
+For example : size word bytes long Because macro substitution is also applied to directive lines , an identifier defined by .
+
+Given the above definitions , the code fragment word size .
+
+Use of macros for defining symbolic constants has its origins in , which had no language facility for defining constants .
+In , macros are less often used for this purpose , because consts can be used instead , with the added benefit of proper type checking .
+
+parameterized macro has the general form tokens where parameters is list of one or more identifiers .
+There should be no blanks between the identifier and .
+Otherwise , the whole thing is interpreted as plain macro whose substitution tokens part starts from .
+For example , defines parameterized macro for working out the maximum of two quantities .
+
+parameterized macro is matched against call to it , which is syntactically very similar to function call .
+call must provide matching number of arguments .
+
+Additionally , every occurrence of parameter in the substituted tokens is substituted by the corresponding argument .
+This is called macro expansion .
+For example , the call Max ,
+
+Note that the in macro call may be separated from the macro identifier by blanks .
+
+It is generally good idea to place additional brackets around each occurrence of parameter in the substitution tokens we have done for .
+
+This protects the macro against undesirable operator precedence effects after macro expansion .
+
+Overlooking the fundamental difference between macros and functions can lead to subtle programming errors .
+Because macros work at textual level , the semantics of macro expansion is not necessarily equivalent to function call .
+For example , the macro call is expanded to which means that may end up being incremented twice .
+Where as function version of Max would ensure that is only incremented once .
+
+Two facilities of make the use of parameterized macros less attractive than in .
+First , inline functions provide the same level of code efficiency as macros , without the semantics pitfalls of the latter .
+Second , templates provide the same kind of flexibility as macros for defining generic functions and classes , with the added benefit of proper syntax analysis and type checking .
+
+Macros can also be redefined .
+However , before macro is redefined , it should be undefined using the directive .
+For example : size size Max Use of on an undefined identifier is harmless and has no effect .
+
+The quote operator is unary and takes macro parameter operand .
+It transforms its operand into string by putting around it .
+
+For example , consider parameterized macro which checks for pointer to be nonzero and outputs warning message when it is zero : Use of the operator allows the expression given as argument to CheckPtr to be literally printed as part of the warning message .
+
+Note that defining the macro as .
+
+The concatenation operator is binary and is used for concatenating two tokens .
+For example , given the definition .
+
+It is very useful for writing translators and code generators , as it makes it easy to build an identifier out of fragments .
+
+Copyright PragSoft File Inclusion file can be textually included in another file using the directive .
+For example , placing inside file causes the contents of to be included in in exactly the position where the directive appears .
+The included file is usually expected to reside in the same directory as the program file .
+Otherwise , full or relative path to it should be specified .
+
+When including system header files for standard libraries , the file name should be enclosed in instead of .
+For example : When the preprocessor encounters this , it looks for the file in one or more prespecified locations on the system , the directory on UNIX .
+On most systems the exact locations to be searched can be specified by the user , either as an argument to the compilation command or as system environment variable .
+
+File inclusions can be nested .
+For example , if file includes another file which in turn includes another file , then effectively also includes .
+
+Although the preprocessor does not care about the ending of an included file , whether it is or or , it is customary to only header files in other files .
+
+Multiple inclusion of files may or may not lead to compilation problems .
+For example , if header file contains only macros and declarations then the compiler will not object to their reappearance .
+But if it contains variable definition , for example , the compiler will flag it as an error .
+The next section describes way of avoiding multiple inclusions of the same file .
+
+It is usually used as portability tool for tailoring the program code to specific hardware and software architectures .
+Table summarizes the general forms of these directives denotes zero or more lines of program text , and expression denotes constant .
+
+Table General forms of conditional compilation directives .
+
+Form identifier code identifier code expression code identifier Explanation If identifier is symbol then code is included in the compilation process .
+
+If identifier is not symbol then code is included in the compilation process .
+
+If expression evaluates to nonzero then code is included in the compilation process .
+
+If identifier is symbol then is included in the compilation process and is excluded .
+
+Otherwise , is included and is excluded .
+
+Similarly , can be used with and .
+
+If evaluates to nonzero then only is included in the compilation process .
+Otherwise , if evaluates to nonzero then only is included .
+
+As before , the part is optional .
+Also , any number of directives may appear after directive .
+
+; Ensure Unit is at least bytes .
+
+Copyright PragSoft One of the common uses of is for temporarily omitting code .
+This is often done during testing and debugging when the programmer is experimenting with suspected areas of code .
+Although code may also be omitted by commenting its out , placing and around , this approach does not work if the code already contains style comments , because such comments cannot be nested .
+
+Code is omitted by giving an expression which always evaluates to zero : to be omitted The preprocessor provides an operator called defined for use is expression arguments of and .
+For example , defined BETA has the same effect as : BETA However , use of defined makes it possible to write compound logical expressions .
+For example : defined ALPHA defined BETA Conditional compilation directives can be used to avoid the multiple of inclusion of files .
+For example , given an include file called , we can avoid multiple inclusions of in any other file by adding the following to : contents of goes here When the preprocessor reads the first inclusion of , the symbol is undefined , hence the contents is included , causing the symbol to be defined .
+
+Subsequent inclusions have no effect because the directive causes the contents to be excluded .
+
+The directive is used to change the current line number and file name .
+It has the general form : number file where file is optional .
+For example , makes the compiler believe that the current line number is and the current file name is .
+The change remains effective until another directive is encountered .
+The directive is useful for translators which generate code .
+It allows the line numbers and file name to be made consistent with the original input file , instead of any intermediate file .
+
+The directive is used for reporting errors by the preprocessor .
+It has the general form error where error may be any sequence of tokens .
+When the preprocessor encounters this , it outputs error and causes compilation to be aborted .
+It should therefore be only used for reporting errors which make further compilation pointless or impossible .
+For example : UNIX This software requires the UNIX OS .
+
+It is used by compiler vendors to introduce nonstandard preprocessor features , specific to their own implementation .
+Examples from the SUN compiler include : align name and val starting addresses to multiples of bytes : char ; double val ; call MyFunction at the beginning of program execution :
+
+Copyright PragSoft Predefined Identifiers The preprocessor provides small set of predefined identifiers which denote useful information .
+The standard ones are summarized by Table .
+Most implementations augment this list with many nonstandard predefined identifiers .
+
+Table Standard predefined identifiers .
+
+The predefined identifiers can be used in programs just like program constants .
+
+For example , cout : assertion on line  defines an assert macro for testing program invariants .
+Assuming that the sample call ; appear in file on line , when the stated condition fails , the following message is displayed : assertion on line failed .
+
+An infinite loop structure called forever .
+
+Pascal style loop .
+
+Define parameterized macros for the .
+
+Swapping two values .
+
+Finding the center of rectangle whose and coordinates are given two .
+
+Redefine the above as inline functions or function templates as appropriate .
+
+Defining Small as an unsigned char when the symbol PC is defined , and as unsigned short otherwise .
+
+Including the file in another file when release is , or when release is , or when release is greater than .
+
+Write macro named When which returns the current date and time as string , Dec ,
+Similarly , write macro named Where which returns the current location in file as string , line .
+
+It will output the message is negative .
+
+This is because the else clause is associated with the if clause immediately preceding it .
+The indentation in the code fragment  is ; else  is ; is therefore misleading , because it is understood by the compiler as :  is ; else .
+
+The value and will be unchanged because Swap uses value parameters .
+
+Consequently , it swaps copy and and not the originals .
+
+Jan , Feb , Mar , Apr , May ,
+
+Declaring Set parameters as references avoids their being copied in call .
+is generally more efficient than when the objects involved are larger than the type objects .
+
+Next .
+
+Copyright PragSoft .
+
+FreeSubtree InsertNode DeleteNode FindNode PrintNode .
+
+static data member is to keep track of the last allocated ID lastId .
+
+Rows int Cols .
+
+int String String String Length .
+
+Copyright PragSoft .
+
+consists of set of nodes , where each node may contain up to records and have children .
+The number is called the order of the tree .
+
+Every node in the tree for the root must have at least records .
+This ensures that at least of the storage capacity is utilized .
+Furthermore , nonleaf node that contains records must have exactly children .
+The most important property of is that the insert and delete operations are designed so that the tree remains balanced at all times .
+
+Item Item , KeyOf friend ,
+
+Copyright PragSoft .
+
+Page ; buffer page for virtual void virtual virtual FreePages SearchAux .
+
+is in which most nodes are at least full of .
+Instead of splitting node as soon as it becomes full , an attempt is made to evenly distribute the contents of the node and its between them .
+node is split only when one or both of its neighbors are full too .
+Solutions to Exercises facilitates more economic utilization of the available store , since it ensures that at least of the storage occupied by the is actually .
+As result , the height of the is smaller , which in turn improves the search speed .
+The search and delete operations are exactly as in ; only the insertion operation is different .
+
+FreeSubtree InsertNode DeleteNode FindNode PrintNode .
+
+, template .
+
+Copyright PragSoft .
+
+Copyright PragSoft template Key , class , int .
+
+PType Type Bool Valid ; class Connection .
+
+Bool Active ; class InactiveConn class InvalidPack class UnknownPack .

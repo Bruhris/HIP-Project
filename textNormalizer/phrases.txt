@@ -1,0 +1,148 @@
+base class
+class template
+variadic template
+datum member
+assignment operator
+friend function
+friend class
+function call
+return value
+object class
+copy constructor
+move constructor
+allocate memory
+source file
+call function
+derived class
+virtual function
+pointer object
+policy object
+pass function
+return pointer
+error message
+type function
+function name
+declare function
+overload operator
+class function
+function object
+programming language
+output stream
+input output
+object oriented programming
+generic programming
+type conversion
+arithmetic operator
+logical operator
+standard input
+character string
+standard library
+dynamic memory
+exception handle
+source code
+syntax error
+exception handling
+abstract class
+user defined type
+data structure
+arrow operator
+dot operator
+subscript operator
+new operator
+delete operator
+size function
+enum class
+plain enum
+header file
+using directive
+out of range
+concrete class
+resource handle
+resource acquisition is initialization
+resource leak
+keyword this
+rvalue reference
+member_function
+float_point
+return_type
+class_class
+class_member
+element_type
+function_call
+local_variable
+type_value
+return_value
+operating_system
+default_value
+integer_value
+class_function
+type_type
+function_return
+function_class
+member_class
+type_function
+function_declaration
+global_variable
+call_function
+type_name
+numeric_value
+value_return
+switch_statement
+function_declare
+pass_reference
+declare_function
+function_member
+decimal_point
+declaration_function
+program_will
+compiler_will
+character_string
+element_array
+variable_name
+class_private
+class_name
+variable_type
+function_function
+return_statement
+int_int
+just_like
+type_int
+input_output
+value_value
+pointer_pointer
+return_function
+value_store
+class_call
+function_will
+type_integer
+set_value
+type_variable
+array_element
+function_body
+newline_character
+value_variable
+will_return
+example_function
+example_follow
+variable_initialize
+store_value
+function_name
+parameter_type
+data_type
+class_contain
+program_call
+assign_value
+class_will
+function_parameter
+value_function
+variable_function
+break_statement
+give_value
+end_line
+will_produce
+single_line
+store_variable
+value_array
+parameter_function
+number_time
+variable_variable

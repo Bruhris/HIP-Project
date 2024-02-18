@@ -1,0 +1,6318 @@
+e Rook’s Guide to C++
+
+26 November 2013
+
+© 2013 Jeremy A. Hansen
+All rights reserved.
+is work is licensed under a Creative Commons Aribution-NonCommercialShareAlike 3.0 Unported License, as described at
+http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+Printed in the United States of America
+
+First edition:
+
+ISBN 978-1-304-66105-0
+
+Rook’s Guide Press
+19 Black Road
+Berlin, VT 05602
+http://rooksguide.org
+
+November 2013
+
+Preface
+What you are reading is the ﬁrst of what I hope to be many everimproving iterations of a useful C++ textbook. We’ve gone fairly
+quickly from whim to print on an all-volunteer basis, and as a result,
+there are many things that I’d add and change if I had an inﬁnite
+amount of time in my schedule. e vast majority of the contents
+were wrien in less than 36 hours by 25 students (mostly freshmen!)
+at Norwich University over a long weekend. Some of it is mine, and
+some was added by our crack team of technical editors as we translated sleep-deprived poor grammar into sleep-deprived beer grammar.
+Where it goes from here is mostly up to you! If there’s a section
+that’s missing or in need of clariﬁcation, please take a bit of time
+and make those changes. If you don’t want to bother yourself with
+the GitHub repository, send me your additions and modiﬁcations directly.
+I want to ﬁrst thank my family for the time I didn’t spend with
+them on the writing weekend and throughout the summer when I
+was editing and typeseing. I promise I won’t do this next summer!
+My next thanks go out to the technical editors and typeseers,
+without whom you would have a much uglier book. anks to Ted
+Rolle for building the initial LATEXframework and to Ma Jadud for
+the incredibly helpful pointers on how to manage the pile of typesetting ﬁles in a collaborative environment. I also thank Craig Robbins
+iii
+
+and Levi Schuck, who, on diﬀerent sides of the planet, managed to
+contribute extensively to the heavy liing of geing the book into
+the shape it’s in now. If we ever meet, I owe you a beer or whatever
+you’re having!
+I also would like to thank all of the Kickstarter backers not only
+for the money which made this possible, but for reinforcing the idea
+that this is a worthwhile contribution to the community. Peter Stephenson and Andrew Pedley also contributed food directly over the textbook writing hackathon weekend, and without them we’d never have
+goen our saturated fat quota! (Note to future project leaders: there’s
+nothing that gets a bunch of college students who are generally lukewarm about programming to write a textbook like free food. It didn’t
+even maer what the food was. Really.)
+anks to Ma Russo for shooting the video and organizing the
+media and social networking eﬀorts with the Kickstarter project through
+the writing weekend.
+Special thanks to Allyson LeFebvre1 for the textbook photography, several diagrams, and the extensive search through the semiﬁnal textbook that turned up a bunch of mistakes that I missed.
+And my last (and not at all least) thanks go out to all the students who showed up in person or digitally. And without geing
+too grandiose, you remind us all that we can make the world beer
+by showing up. Keep showing up!
+
+Jeremy
+jeremyhansen@acm.org
+26 November 2013
+
+1
+
+at’s “la-fave”, everyone
+
+Contents
+1 History
+
+1
+
+2 Variables
+2.1 How do I decide which data type I need?
+2.2 Identiﬁers . . . . . . . . . . . . . . . . .
+2.3 Declaring a Variable . . . . . . . . . . . .
+2.4 Initializing Variables . . . . . . . . . . . .
+2.5 Assignment Statements . . . . . . . . . .
+2.6 Review estions . . . . . . . . . . . . .
+2.7 Review Answers . . . . . . . . . . . . . .
+2.8 Further Reading . . . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+3
+4
+4
+4
+5
+5
+6
+6
+6
+
+3 Literals and Constants
+3.1 Literals . . . . . . .
+3.2 Declared Constants
+3.3 Review estions .
+3.4 Review Answers . .
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+7
+7
+7
+8
+8
+
+4 Assignments
+4.1 Review estions . . . . . . . . . . . . . . . . . . . .
+4.2 Review Answers . . . . . . . . . . . . . . . . . . . . .
+
+11
+13
+13
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+v
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+5 Output
+5.1 Review estions . . . . . . . . . . . . . . . . . . . .
+5.2 Review Answers . . . . . . . . . . . . . . . . . . . . .
+5.3 Further Reading . . . . . . . . . . . . . . . . . . . . .
+
+15
+18
+19
+19
+
+6 Input
+6.1 Review estions . . . . . . . . . . . . . . . . . . . .
+6.2 Review Answers . . . . . . . . . . . . . . . . . . . . .
+6.3 Further Reading . . . . . . . . . . . . . . . . . . . . .
+
+21
+23
+24
+24
+
+7 Arithmetic
+7.1 Review estions . . . . . . . . . . . . . . . . . . . .
+7.2 Review Answers . . . . . . . . . . . . . . . . . . . . .
+7.3 Further Reading . . . . . . . . . . . . . . . . . . . . .
+
+25
+28
+30
+31
+
+8 Comments
+8.1 Review estions . . . . . . . . . . . . . . . . . . . .
+8.2 Review estions . . . . . . . . . . . . . . . . . . . .
+
+33
+35
+37
+
+9 Data Types and Conversion
+9.1 Floating-point types . . . . . . . .
+9.2 Other types introduced by C++11
+9.3 Conversion Between Types . . . .
+9.4 Coercion & Casting . . . . . . . .
+9.5 Automatic Types in C++11 . . . .
+9.6 Review estions . . . . . . . . .
+9.7 Review Answers . . . . . . . . . .
+9.8 Further Reading . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+39
+40
+42
+42
+43
+44
+45
+45
+45
+
+.
+.
+.
+.
+
+47
+48
+48
+49
+51
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+10 Conditionals
+10.1 if, else, and else if . . . . . . . . .
+10.1.1 A small digression on expressions .
+10.1.2 Using else . . . . . . . . . . . . .
+10.2 switch statements . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+10.3 Review estions . . . . . . . . . . . . . . . . . . . .
+10.4 Review Answers . . . . . . . . . . . . . . . . . . . . .
+
+54
+54
+
+11 Strings
+11.1 Review estions . . . . . . . . . . . . . . . . . . . .
+11.2 Review Answers . . . . . . . . . . . . . . . . . . . . .
+11.3 Further Reading . . . . . . . . . . . . . . . . . . . . .
+
+55
+59
+60
+60
+
+12 Loops
+12.1 Introduction . . . . . . . . . . . . . . . . .
+12.2 Having Fun while Programming . . . . .
+12.3 do-while Loops . . . . . . . . . . . . . .
+12.4 Event-Based Loops vs Count-Based Loops
+12.5 for work or for play . . . . . . . . . . .
+12.6 Picking a Loop . . . . . . . . . . . . . . . .
+12.7 Nested Loops . . . . . . . . . . . . . . . . .
+12.8 Inﬁnite Loops . . . . . . . . . . . . . . . .
+12.9 Review estions . . . . . . . . . . . . . .
+12.10 Review Answers . . . . . . . . . . . . . . .
+12.11 Further Reading . . . . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+61
+61
+61
+63
+65
+66
+67
+68
+68
+69
+70
+70
+
+13 Arrays
+13.1 Multi-dimensional Arrays .
+13.2 Review estions . . . . .
+13.3 Review Answers . . . . . .
+13.4 Further Reading . . . . . .
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+71
+73
+74
+74
+75
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+14 Blocks, Functions, and Scope
+77
+14.1 Blocks . . . . . . . . . . . . . . . . . . . . . . . . . . 77
+14.2 Basic Functions in C++ . . . . . . . . . . . . . . . . . 78
+14.2.1 What are functions and why do we use them? 78
+14.2.2 e parts of a basic function . . . . . . . . . . 78
+14.3 void Functions . . . . . . . . . . . . . . . . . . . . . 81
+14.4 Overloading Function Names . . . . . . . . . . . . . . 82
+
+14.5
+14.6
+14.7
+14.8
+
+Scope . . . . . . .
+Review estions
+Review Answers .
+Further Reading .
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+83
+85
+86
+88
+
+15 Problem Solving & Troubleshooting
+15.1 e Compilation Error . . . . . .
+15.2 e Logic Error . . . . . . . . . .
+15.3 e Inﬁnite Loop . . . . . . . . .
+15.4 Review estions . . . . . . . . .
+15.5 Review Answers . . . . . . . . . .
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+89
+89
+90
+90
+91
+92
+
+16 e Preprocessor
+16.1 Review estions . . . . . . . . . . . . . . . . . . . .
+16.2 Review Answers . . . . . . . . . . . . . . . . . . . . .
+
+93
+94
+95
+
+17 Advanced Arithmetic
+17.1 Examples . . . . .
+17.1.1 pow() .
+17.1.2 sqrt()
+17.1.3 Modulo .
+17.2 Review estions
+17.3 Review Answers .
+17.4 Further Reading .
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+97
+98
+98
+99
+100
+101
+101
+102
+
+18 File I/O
+18.1 I/O Streams . . . . . . . . . . . . . .
+18.2 File I/O . . . . . . . . . . . . . . . .
+18.3 Opening and closing a File . . . . .
+18.4 Reading from a File . . . . . . . . .
+18.5 Writing data to a File . . . . . . . .
+18.6 Introduction to Classes and Objects
+18.7 Other functions . . . . . . . . . . .
+18.8 Review estions . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+103
+103
+104
+104
+105
+106
+107
+108
+109
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+18.9 Review Answers . . . . . . . . . . . . . . . . . . . . . 110
+18.10 Further Reading . . . . . . . . . . . . . . . . . . . . . 110
+19 Pointers
+111
+19.1 Review estions . . . . . . . . . . . . . . . . . . . . 114
+19.2 Review Answers . . . . . . . . . . . . . . . . . . . . . 115
+20 Dynamic Data
+117
+20.1 Review estions . . . . . . . . . . . . . . . . . . . . 121
+20.2 Review Answers . . . . . . . . . . . . . . . . . . . . . 121
+20.3 Further Reading . . . . . . . . . . . . . . . . . . . . . 121
+21 Classes and Abstraction
+21.1 structs . . . . . . . . . . . . . . . . . . . . . .
+21.2 Assigning values to member variables . . . . . . .
+21.3 Classes . . . . . . . . . . . . . . . . . . . . . . . .
+21.4 public and private variables and functions
+21.5 Deﬁning member functions . . . . . . . . . . . . .
+21.6 Using member functions . . . . . . . . . . . . . .
+21.7 classes and structs together . . . . . . . . .
+21.8 Constructors . . . . . . . . . . . . . . . . . . . . .
+21.9 Overloading Member Functions . . . . . . . . . .
+21.10 Review estions . . . . . . . . . . . . . . . . . .
+21.11 Review Answers . . . . . . . . . . . . . . . . . . .
+21.12 Further Reading . . . . . . . . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+123
+123
+124
+124
+125
+126
+126
+127
+128
+129
+130
+131
+132
+
+22 Separate Compilation
+133
+22.1 Review estions . . . . . . . . . . . . . . . . . . . . 135
+22.2 Review Answers . . . . . . . . . . . . . . . . . . . . . 136
+22.3 Further Reading . . . . . . . . . . . . . . . . . . . . . 136
+23 STL
+137
+23.1 #include <utility>
+#include <tuple> (C++11) . . . . . . . . . . . 137
+
+23.2 #include <iterator> . . . . . . .
+23.2.1 Forward iterators . . . .
+23.2.2 Bidirectional iterators .
+23.2.3 Random access iterators
+23.3 #include <vector> . . . . . . . .
+23.4 #include <map> . . . . . . . . .
+23.5 Further Reading . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+
+138
+139
+139
+140
+140
+141
+143
+
+License
+
+is work by Jeremy A. Hansen (jeremyhansen@acm.org) is licensed
+under a Creative Commons Aribution-NonCommercial-ShareAlike
+3.0 Unported License, as described at
+http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+
+xi
+
+Dramatis Personæ
+Managing Editor:
+Jeremy A. Hansen, PhD, CISSP
+Technical Editing & Typesetting:
+Jeremy A. Hansen
+Ma Jadud, PhD
+Craig D. Robbins
+eodore M. Rolle, Jr.
+Levi Schuck
+Media & Outreach:
+Mahew E. Russo
+Cover Art & Graphic Design:
+Allyson E. LeFebvre
+Content Authors:
+Tyler Atkinson, Troy M. Dundas, Connor J. Fortune, Jeremy A. Hansen, Sco
+T. Heimann, Benjamin J. Jones, Michelle Kellerman, Michael E. Kirl, Zachary
+LeBlanc, Allyson E. LeFebvre, Gerard O. McEleney, Phung P. Pham, Megan
+Rioux, Alex Robinson, Kyle R. Robinson-O’Brien, Jesse A. Rodimon, Matthew E. Russo, Yosary Silvestre, Dale R. Stevens, Ryan S. Sutherland, James
+M. Verderico, Christian J. Vergnes, Rebecca Weaver, Richard Z. Wells, and
+Branden M. Wilson.
+Funding & Support:
+Peter Stephenson, PhD, VSM, CISSP, CISM, FICAF, LPI at the Norwich University Center for Advanced Computing & Digital Forensics
+Andrew Pedley at Depot Square Pizza
+
+xiii
+
+Kickstarter contributors:
+Nathan Adams, Chris Aldrich, Jay Anderson, Kent Archie, Erik Arvedson, Astrolox,
+Phoebe Ayers, Papa Joe Barr, Julia Benson-Slaughter, Georgia Perimeter College,
+Patrick Berthon, Francis Bolduc, Greg Borenstein, Patrick Breen, Igor Bronshteyn,
+Valdemar Bučilko, Ross Buckley, Nikita Burtsev, Jakob Bysewski, David Camara,
+Dave M. Campbell, Brian V. Campbell III, S. Canero, Serge Canizares, Andrew Carlberg, Casey B. Cessnun, Winston Chow, W. Jesse Clements, Greg Crawford, Sean
+Cristofori, Jordan G Cundiﬀ, Michael David, Joseph Davies, Ashley Davis, David
+C. Dean, DJS, Carlton Doc Dodd, Phil Dodds, Dominic, Sankar Dorai, dryack, Ma
+DuHarte, Brandon Duong, Van Van Duong, Daniel Egger, Chris Fabian, Jorge F.
+Falcon, Tek Francis, Fuchsi, Steve Gannon, Michael Gaskins, Gavlig, Adam Gibson,
+Russell E. Gibson, Goldenwyrm, James Green, Brian J. Green, Casey Grooms, Vitalik
+Gruntkovskiy, Vegar Guldal, Felix Gutbrodt, Jeremy Gwinnup, Beau T. Hahn, Paul
+R. Harms - Norwich 1975, Corey H. Hart, MBA, Aaron A. Haviland, Josh Heﬀner,
+Greg Holland, Henry Howard, Mark V Howe, Ivaliy Ivanov, Ma Jadud, Joseph
+Jaoudi, Tim R. Johnson, Ibi-Wan Kentobi, Mark King, Mitchell Kogut III, Sigmund
+Kopperud, Michael Korolev, Jamie Kosoy, Aria Kra, Alexander Týr Kristjánsson,
+Richard Kutscher, Eric Laberge, John Lagerquist, Philip Lawrence, Mark Brent Lee,
+John and Nancy LeFebvre, Nevin :-) Liber, Jonathan Lindquist, omas Lockney,
+Stuart A. MacGillivray, Dr. Pedro Maciel, Troels Holstein Madsen, William Marone, Fred Mastropasqua, Miles Mawyer, michael mazzello, Ryan McDonough, Matthew McFadden, John McIntosh II, Sean McNamara, mdsaravanan, Brandon Meskimen, Andrew Mike, G.F. Miller IV, Marcus Millin, Salvador Torres Morales, Danny
+Morgan, Ken Moulton, Aaron Murray, mvi, Jon Nebenfuhr, Philip K. Nicholson,
+chris nielsen, Pontus Nilsson, Mike Noble, Aleksander R. Nordgarden-Rødner, Greg
+O’Hanlon, Doug Oo, Randy Padawer, Ph.D., J Palmer, Tasos Papastylianou, Paul,
+James Pearson-Kirk, Mahew Peterson, Grigory Petrov, pezmanlou, Joachim Pileborg, Kyle Pinches, pkh, Mary Purdey, Marshall Reeves, Mahew Ringman, Craig
+D. Robbins, Antonio Rodriguez, Armando Emanuel Roggio, Victor Suarez Rovere,
+Christian Sandberg, Jaymes Saler, Paolo Scalia, Patrice Scheidt, Daniel Schmi,
+Levi Schuck, Raman Sharma_Himachali, Michael Shashoua, Daniel Shiﬀman, Clay
+Shirky, sillygoatgirl, Kevin J. Slonka, Brian Smith, Hazel Smith & Rebecca Twigg,
+Andrey Soplevenko, Kasper Souren, Derek A. Spangler, Speckman, Kellan St.Louis,
+Nick Stefanou, Steve, Andrew Stewart, Jeremy Sturdivant, Cyrille Tabary, Adam
+8T Tannir, M Taylor, Telecat Productions, Aron Temkin, Mitchell Tilbrook, Nathan
+Tolbert, Devin M. Tomlinson - Vermont Born, Todd Trimble, Michiel van Slobbe,
+James A. Velez, Marco Verdecchia, David Walter, Lothar Werzinger, Wayne West,
+Sean Whaley ’05 & M’08, Mark Wheeler, Tommy Widenﬂycht, Dylan Widis, Tony
+Williamitis, Adam M. Williams, Stephen D. Williams, Dylan Wilson, Wesley Wiser,
+wizzy, Sam Wright, Janet Hong Yam, and Jy Yaworski.
+
+Chapter 1
+
+History
+Developed by Bjarne Stroustrup, C++ has become one of the most popular programming languages in the world. Originally, it was designed as an improvement
+upon the C language, which was developed by Bell Labs. Developed in the early
+1970s, C’s name is derived from the B programming language, which in turn was
+derived from the BCPL language. C gained a large following, in part due to its use in
+the development of the UNIX operating system. Due to both its popularity and the
+number of versions on the market, an American National Standards Institute (ANSI)
+commiee was formed in 1982 to create a standard for the C language, which was
+adopted in 1989.
+Stroustrup began with the idea that object oriented programming would be an
+important addition to C, and created C with Classes. In 1983, Stroustrup’s contributions oﬃcially became known as C++, its name stemming from C and adding the
+++ (increment) operator. It wasn’t until 1998 that the international standard for
+C++ was established.
+Since then, most changes have been minor. In 2005, a report was released by
+the ISO on features that were intended to be included in the next version of C++.
+e early versions of this became known as C++0x, until 2011, when the C++11
+standard was released by the ISO.
+In this book, we’ll favor older techniques, pre-C++11. When C++11 features
+are discussed, they will be pointed out as such. While not all of the new features
+are discussed, we will be trying our best to explain them as we go.
+
+1
+
+Chapter 2
+
+Variables
+Variables are extremely important to every programmer - they will be a critical part
+of your programming toolkit regardless of the language you use. Very simply put,
+a variable is a space in memory that can store some range of values. Some of the
+basic data types are shown in Table 2.1. For a deeper discussion of data types, refer
+to Chapter 9.
+
+int
+char
+bool
+float
+double
+
+Short for integer; stores whole numbers
+Short for character; stores a single leer, digit, or
+symbol
+Short for Boolean; stores true or false
+Short for ﬂoating point number; stores numbers
+with fractional parts
+Short for double precision ﬂoating point number; stores bigger numbers with bigger fractional
+parts than float
+Table 2.1: A few basic data types
+
+3
+
+2.1
+
+How do I decide which data type I need?
+
+What you can do with a variable depends on the type of data they contain. For
+instance, you can’t store the number 100000 in a char because a char stores
+only character data. To store 100000 the programmer should use an int. If you
+think you are dealing with numbers that have fractional parts, you need at least a
+float. You generally want to use the smallest variable type that will get your job
+done. Simply put, if it is a round number, int works ﬁne; if it’s a true or false,
+use bool; for a leer, use char; for fractional numbers, use float; for a really
+big number or a number with many digits aer the decimal point, use double.
+
+2.2
+
+Identiﬁers
+
+Now we have an idea of what types of variables we will use in the program. How do
+we have the program diﬀerentiate between multiple ints, chars, or doubles?
+We have to name them! e name we use will give the variable an identity, so it’s
+known as an identiﬁer. An identiﬁer can be almost anything you’d like, provided
+the identiﬁer does not begin with a number or symbol.1 Remember that the variable
+name can only be one word long. You may use a an underscore to replace a space
+if you so desire, and note that C++ is case sensitive. at is, testresults,
+TestResults, and Test_Results are all diﬀerent identiﬁers.
+
+2.3
+
+Declaring a Variable
+
+e line of code that creates a variable is called a declaration. A declaration is the
+program telling the computer “save a place in memory for me with this name.”
+A declaration for an integer variable named myVariable looks like this:
+i n t myVariable ;
+
+e speciﬁc syntax—the set of grammatical rules for the language—is important to follow when declaring variables. Notice that the ﬁrst part (int) is the data
+type of the variable. e second part is the identiﬁer (myVariable), or variable
+name. e last part is the semicolon (;) which signiﬁes the end of a statement. You
+can think of the semicolon in C++ as equivalent to a period at the end of a sentence;
+1
+
+ere are a few exceptions, including those words that describe data types (as
+in the table above) and other keywords such as if and while, which you’ll learn
+about in later chapters.
+
+it is the end of a complete thought. Note that you may declare several variables of
+the same data type together. Consider this example:
+int x , y , z ;
+double a ;
+
+e above example creates three variables of type int named x, y, and z and
+one variable of type double named a.
+
+2.4 Initializing Variables
+Values can be immediately assigned to a variable at the time of its declaration. is
+is known as initializing a variable. To do this, the variable’s name is followed by
+an equals sign (=, the assignment operator), the value, and a semicolon. Consider
+this example:
+int x = 20;
+double a = 2 . 2 ;
+
+Note that uninitialized variables can cause problems if they are used anywhere
+before they are assigned a value. When a variable is declared, it contains whatever
+was already in that space of memory, which can give them unpredictable values.
+is means that is is oen a good idea to initialize variables to some sensible initial
+value when they are declared.
+
+2.5 Assignment Statements
+An assignment statement is a method of assigning a value to a variable aer it
+has been declared. All assignment statements have the variable being assigned the
+value on the le side of an equals sign and the value to assign on the right side.
+Note that the expression on the right side of the assignment may contain arithmetic
+operations such as multiplication, division, addition, and subtraction, or even other
+variables. Consider the following example:
+int a = 1 , b = 2 , x = 0 , y = 0;
+x = a + b;
+y = x;
+
+2.6
+
+Review estions
+
+1. Declare two variables of type int and initialize them to an appropriate
+value.
+2. Declare three integer variables: sum, a, b. Initialize the variables a and b
+to an appropriate integer and use an assignment statement to assign sum
+the result of a plus b.
+3. Declare a double variable called number and initialize it to 13.6.
+4. Create a program in which 3 variables are declared. Create one float
+named myFloat, one int named myInt, and one double named myDouble. Initialize them to 3.14, 3, and 3.14159, respectively.
+
+2.7
+
+Review Answers
+
+1. int a = 6;
+int b = 0;
+2. int sum, a = 6, b = 0;
+sum = a + b;
+3. double number = 13.6;
+
+4.
+
+i n t main ( )
+{
+f l o a t myFloat = 3 . 1 4 ;
+i n t myInt = 3 ;
+d o u b l e myDouble = 3 . 1 4 1 5 9 ;
+return 0;
+}
+
+2.8
+
+Further Reading
+• http://www.cplusplus.com/doc/tutorial/variables/
+• http://www.tutorialspoint.com/cplusplus/cpp_variable_types.htm
+
+Chapter 3
+
+Literals and Constants
+3.1 Literals
+A literal is a value outside of a variable such as 5, 9, 103, and −21. Each of those
+is an int, but a literal can be of any data type. e point is, these are values that
+the C++ compiler already recognizes, and can’t be changed. In other words, you
+can’t convince the compiler to give the literal 3 the value of 4, because 3 is constant.
+Table 3.1 contains a few examples.
+
+3.2 Declared Constants
+We call a variable whose value we cannot change a constant. Aer you declare
+a constant, you are unable to change it, no maer what. e diﬀerence between
+declaring a normal variable and a constant is that we simply place the keyword
+const before the data type in the declaration. is indicates whatever variable
+and type that follows the const will be a constant and cannot be changed. Since
+it is a constant, we will also need to initialize the value at the time we declare the
+variable. Here is an example (we cover the cout object shortly in Chapter 5):
+const f l o a t pi = 3 . 1 4 ;
+f l o a t radius = 5 , area ;
+area = radius * radius * pi ;
+c o u t << a r e a ; / / o u t p u t s 7 8 . 5
+
+7
+
+Literal value
+123.45f
+13.8903
+-389283220.342423
+49e-8
+12
+12u
+'x'
+"text"
+true
+false
+
+Data Type
+float
+double
+double
+double
+int
+unsigned int
+char
+string
+bool
+bool
+
+Table 3.1: Examples of a few literals
+
+3.3
+
+Review estions
+
+1. Describe the diﬀerence between literals and declared constants. When would
+a declared constant be more useful than a literal constant?
+2. What is the diﬀerence between a normal variable and a constant?
+3. Build a program in C++ that does the following:
+(a) Declare a double variable named Feet. Initialize it to your height.
+(b) Declare a double constant named MetersPerFoot, with the
+value of 0.3048.
+(c) Declare a double variable named Meters. Set it to Feet multiplied by MetersPerFoot.
+4. Create a program that displays the diameter and area of a circle for any given
+radius. Use a const float to represent π.
+
+3.4
+
+Review Answers
+
+1. A literal is a value not stored in a variable; a constant is an unchanging value
+stored in a variable.
+2. Normal variables can be changed or overwrien; constants cannot be changed
+or overwrien.
+
+3.
+
+4.
+
+double Feet 5 . 5 ;
+const double MetersPerFoot = . 3 0 4 8 ;
+double Meters = Feet * MetersPerFoot ;
+
+float radius = 5;
+const f l o a t pi = 3.14159
+double diameter , area ;
+diameter = radius * 2;
+area = pi * ( radius * radius )
+
+Chapter 4
+
+Assignments
+Assignments are a way for a user or a programmer to assign a value to a variable.
+e way we assign a value to a variable in C++ is diﬀerent from how we might do
+it in math. In mathematics we are allowed to say that x = 3 or 3 = x, but in
+C++ the only acceptable way to assign the value of 3 to x is to type x = 3.
+e = in the expression x = 3 is known as an assignment operator. is
+allows the program to set a variable’s value depending on its type. Here are some
+examples of seing a value to diﬀerent types of variables:
+int x = 4;
+c h a r a l p h a = ’A ’ ;
+s t r i n g word = ” Alpha ” ;
+float y = 3.14;
+
+We are able to declare variables and assign a value to those variables immediately by using the assignment operator. When we assign literal values to variables
+of type char, the value must be surrounded by single quotes (for example, 'A').
+When we assign values to variables of type string, the literal value must be surrounded by double quotes (for example, "Alpha"). We do not have to initialize
+the values of the variables, however. We can set them later in the code like this:
+i n t myVal ;
+/ / some c o d e
+myVal = 0 ;
+
+In all of the lines of code in this section where a variable is set using the assignment operator, the “thing that is being given a value” is known as an lvalue,
+and the expression on the right that is being stored in the variable is known as the
+
+11
+
+rvalue. Literals such as 'A' or 3 can never be an lvalue. Aside from literals, the
+rvalue can consist of other variables, like this:
+myVal = myVal2 ;
+
+Even though myVal2 is a variable, we are only using the value stored in the
+variable, not the variable itself. For example, if myVal2 had a value of 6, myVal
+would then be assigned to the value 6 with the above code.
+We can also store the results of an arithmetic expression in a variable like this:
+myVal = 5 + 6 ; / / a s s i g n s myVal a v a l u e o f 11
+
+But we can’t write
+5 + 6 = myVal ; / / ERROR !
+
+since 5 + 6 doesn’t refer to a place where we can store a value. We can also
+combine arithmetic expressions with variables as an rvalue like this:
+myVal2 = 6 ;
+myVal = 4 + myVal2 ;
+
+In this case, the variable myVal would be assigned a value of 10 because the
+variable myVal2 was initialized to a value of 6, and 4 + 6 is 10. e value
+of myVal2 remains unchanged. Make sure that the variable myVal, the variable
+myVal2, and the literal 4 are of the same type. For example, the following code
+will result in an error:
+i n t myValue = 4 ;
+i n t yourVal ;
+s t r i n g m y S t r i n g = ” word ” ;
+y o u r V a l = myValue + m y S t r i n g ;
+/ / Adding s t r i n g t o an i n t i s
+/ / p r o b a b l y n o t what you meant !
+
+When we try to combine diﬀerent variable types, the compiler will get very
+mad at us. Some exceptions to this rule are if we try to combine floats, ints,
+and doubles. ese types have the ability to be combined (to a certain extent)
+because they are all numeric values. Both doubles and floats can hold values
+with a decimal point such as −3.14, 0.003, or 5.167289 whereas an int can only
+hold round values such as 2, −18, or 100. Refer to Chapter 9 for more information
+on converting between data types.
+
+4.1 Review estions
+1. Which of the following is an incorrect way to assign a value to a variable x
+of type int?
+(a) 7 = x;
+(b) int x = 7;
+(c) int x(7);
+(d) x = 7;
+2. Which of the following is an incorrect way to assign a value to a variable of
+type string?
+(a) string myString = "word";
+(b) string myString = 'word';
+(c) myString = "word";
+3. Is the following code incorrect? If so, why? If it is correct, why?
+int x = 6 , y ;
+c h a r myChar = ’ x ’ ;
+y = myChar + x ;
+
+4. Write a program that declares two int variables and two double variables. Add and subtract ﬁve from each of your declared integer variables.
+en add and subtract 7.32 your double variables by 7.32. en output
+each of your results to the screen.
+
+4.2 Review Answers
+1. a. When we store a value in a variable, the variable goes on the le of the
+assignment operator, and the value being stored in that variable goes to the
+right of the assignment operator.
+2. b. String literals must be surrounded by double quotes, not single quotes;
+single quotes are used for single characters like 'b'.
+3. e code is incorrect. is will probably not produce the expected result it
+tries to add an int and a char and store that value in a variable of type
+int.
+
+Chapter 5
+
+Output
+Output in C++ is done with the object cout (“console output”). e object cout
+prints useful information to the screen for the user. For example, if we wanted to
+prompt the user with
+Type in your name:
+we would use cout. cout is extremely important when you are starting to learn
+C++ as it gives you the ability to display the current state of any variable and provide
+user feedback at any point in your program. Let’s make a program that outputs
+something to the screen:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c o u t << ” Go C a d e t s ! ” ;
+return 0;
+}
+
+e symbol << is called the insertion operator and is needed between cout
+and what you want to display to the screen. In this case, we are displaying a string
+literal "Go Cadets!". As you know, every statement in C++ ends with a semicolon, and this one is no exception.
+What if we want to print more, though?
+
+15
+
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c o u t << ” Go C a d e t s ! ” ;
+c o u t << ” You can do i t ! ” ;
+return 0;
+}
+
+Try to compile and run that. It works, but it’s not really the desired output.
+You should get:
+Go Cadets!You can do it!
+How do we get those on a diﬀerent line? One of the ways we can do it is to
+use the object endl. endl means “end line”, and is used when you want to end
+one line and start over on the next—it’s like hiing enter on your keyboard. You
+will also need another redirect operator between the string literal and the endl.
+Puing all of this together looks like this:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c o u t << ” Go C a d e t s ! ” << e n d l ;
+c o u t << ” You can do i t ! ” ;
+return 0;
+}
+
+is prints:
+Go Cadets!
+You can do it!
+at works a bit more as intended. Alternatively, we can combine the two lines
+that use cout into a single one like this:
+c o u t << ” Go C a d e t s ! ” << e n d l << ” You can do i t ! ” ;
+
+Another way we can accomplish this, without needing another redirect operator, is with the special character '\n'. '\n' is a newline character, it prints a
+new line just like the endl object.
+
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c o u t << ” Go C a d e t s ! \ nYou can do i t ! ” ;
+return 0;
+}
+
+is prints:
+Go Cadets!
+You can do it!
+Another thing we can use with the console output object is the special character
+'\t'. Printing this character is the same as pressing the tab key on your keyboard,
+and is used for indentation and formaing. Let’s look at an example that uses the
+newline character, the tab character, and some text:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c o u t << ” \ tGo C a d e t s ! \ nYou can do i t ! ” ;
+return 0;
+}
+
+is code prints:
+Go Cadets!
+You can do it!
+We don’t always have to output words the screen using cout. We can also
+print variables of type int, double, and float and can control the number of
+digits that appear aer the decimal point. For example, if we had a variable that
+contained the value 3.14159265 we might only care about the ﬁrst two numbers
+aer the decimal point and just want to output 3.14 to the screen. We do that with
+the precision() member function. is function call will result in subsequent
+float or double variables being printed with the speciﬁed number of decimal
+places. In the following code, the number of digits is set to 2:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+d o u b l e num = 3 . 1 4 1 5 9 2 6 5 ;
+cout . p r e c i s i o n ( 2 ) ;
+c o u t << num << e n d l ;
+}
+
+is code prints:
+3.14
+To display data in a similar way as a spreadsheet, we can create a ﬁeld of
+characters and set the number of characters in each ﬁeld using the width() and
+fill() member functions. Notice the use of the left ﬂag in the following code,
+which positions the output on the le side of the ﬁeld; the default is for the output
+to be on the right side:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c o u t << ” Norwich ” << e n d l ;
+cout . width ( 1 5 ) ;
+c o u t << ” U n i v e r s i t y ” << e n d l ;
+cout . f i l l ( ’ * ’ ) ;
+cout . width ( 2 0 ) ;
+c o u t << l e f t << ” Corps o f C a d e t s ” << e n d l ;
+}
+
+e above code prints:
+Norwich
+University
+Corps of Cadets*****
+
+5.1
+
+Review estions
+
+1. Which of the following is a correct way to output Hello World to the
+screen?
+(a) output: "Hello World";
+(b) cout >> "Hello World";
+(c) cout << "Hello World";
+(d) console.output << "Hello World";
+2. Which of the following is a correct way to output Hello! to the screen
+on one line and Goodbye! to the screen on the next line?
+(a) cout >> "Hello!" >> "Goodbye!";
+(b) output: "Hello!\nGoodbye!";
+(c) cout << "Hello!" << \n << "Goodbye!";
+(d) cout << "Hello!" << '\n' << "Goodbye!";
+
+3. Aside from the answer in the previous question, write two alternative ways
+of printing Hello! and Goodbye! to the screen on two diﬀerent lines.
+4. Write several lines of code using the width() and fill() functions in a
+main() that prints Programming! to the screen with 4 'x' characters
+printed aer it.
+5. Write code to output the values 124, 12.376, z, 1000000, and strings! as
+distinct values, separated by spaces.
+6. What is the output of the following program?
+# include <iostream >
+# include <string >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+s t r i n g s h i r t = ” maroon ” , p a n t s = ” b l u e ” ;
+c o u t << s h i r t << ” ” << p a n t s << e n d l ;
+return 0;
+}
+
+5.2 Review Answers
+1. c.
+2. d.
+3. cout << "Hello!" << endl << "Goodbye!"; or
+cout << "Hello!\nGoodbye!";
+(other similar answers are possible)
+4.
+
+cout . f i l l ( ’ x ’ ) ;
+cout . width ( 1 6 ) ;
+c o u t << l e f t << ” Programming ! ” ;
+
+5. cout << 124 << " " << 12.376 << " z " << 1000000
+<< " strings!";
+6. maroon blue
+
+5.3 Further Reading
+• http://java-samples.com/showtutorial.php?tutorialid=245
+
+• http://www.cplusplus.com/doc/tutorial/basic_io
+• http://www.cplusplus.com/reference/ostream/ostream/
+• http://www.cplusplus.com/doc/tutorial/functions/
+
+Chapter 6
+
+Input
+When a programmer wants a user to enter data, such as the price of an item, he
+or she will use the cin object, pronounced “see-in”, in conjunction with >>, the
+extraction operator in the program. Let us look at the following code:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+int x = 0;
+c o u t << ” P l e a s e e n t e r a v a l u e f o r x : ” << e n d l ;
+c i n >> x ;
+return 0;
+}
+
+When you compile and run this code, here’s what the output will look like:
+Please enter a value for x:
+As a user you may want to check the value that was entered. To do this, simply
+
+21
+
+add an additional cout statement like this:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+int x = 0;
+c o u t << ” P l e a s e e n t e r a v a l u e f o r x : ” << e n d l ;
+c i n >> x ;
+c o u t << ” The v a l u e o f x i s : ” << x ;
+return 0;
+}
+
+e output of this code is:
+Please enter a value for x:
+Suppose the user enters a value of 1 for x. e output that follows is:
+The value of x is: 1
+As you can see, the value displayed is the one entered. is can be a very useful
+technique in troubleshooting the values of variables throughout a program. Do not
+be afraid to insert additional cout statements throughout a program to check the
+values of variables when debugging. is can help in the debugging process and
+speed up catching errors.
+If you want to have a user input more than one value, just repeat the code for
+each individual variable:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+int x = 0;
+int y = 0;
+c o u t << ” P l e a s e e n t e r
+c i n >> x ;
+c o u t << ” P l e a s e e n t e r
+c i n >> y ;
+c o u t << ” The v a l u e o f
+c o u t << ” The v a l u e o f
+return 0;
+
+a v a l u e f o r x : ” << e n d l ;
+a v a l u e f o r y : ” << e n d l ;
+x i s : ” << x << e n d l ;
+y i s : ” << y << e n d l ;
+
+}
+
+We can’t always trust that the user will input the correct data into a variable.
+For example, if a user was prompted to input an age into a variable of type int
+but typed the character z, the program would not behave properly because the user
+entered the wrong data type. We can check for improper input like this by using the
+
+cin.fail() function in a conditional statement. Look at the following code:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+int x = 0;
+int y = 0;
+c o u t << ” P l e a s e e n t e r a v a l u e f o r x : ” << e n d l ;
+c i n >> x ;
+i f ( cin . f a i l ( ) )
+{
+c o u t << ” That i s n o t a v a l i d d a t a t y p e ! ” ;
+}
+}
+
+is introduction to cin statements is only the beginning. ey will get slightly
+more complicated aer we introduce strings, arrays, and overloaded operators.
+
+6.1 Review estions
+1. Which of the following numbered lines of code are proper cin statements?
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+int x = 0;
+int y = 0;
+c o u t << ” P l e a s e e n t e r a v a l u e f o r x : ” ;
+c i n << x ; / / #1
+c i n >> x ; / / #2
+c i n >> x / / #3
+cin x ;
+/ / #4
+c i n >< x ; / / #5
+x >> c i n ; / / #6
+return 0;
+}
+
+2. Must you always use cin with cout? Why or why not?
+3. What is the redirect operator, and how is it used to process user input?
+4. Can you use cin to store a value in a variable that already has a value?
+
+5. Write code that allows the user to enter an integer value and store it in a
+variable. Your code should prompt the user, receive their input, and then
+print their input value back to them.
+6. Add some functionality to the code you wrote for the previous exercise. Add
+two new variables, one char and one float or double. Prompt the
+user properly for each value. e program should print out the values of the
+variables, clearly labeled, on separate lines.
+
+6.2
+
+Review Answers
+
+1. Only #2 (cin >> x;) is correct.
+2. You do not need to to use cin statements exclusively with cout statements, though it is good practice to provide adequate feedback to users.
+3. e redirect operator is >>, and it is used in conjunction with cin on the
+le and a variable on the right that receives the value entered by the user.
+4. Yes, and the previous value is overwrien.
+
+6.3
+
+Further Reading
+• http://www.cplusplus.com/reference/iolibrary
+• http://www.cplusplus.com/doc/tutorial/basic_io
+
+Chapter 7
+
+Arithmetic
+One of the most important things provided by C++ is the ability to do math. Everything a computer sees is a number. To a computer, its ability to do math and
+manipulate numbers is as essential to it as breathing is to us. (My apologies to
+anything not living that may be reading this).
+e operators (+, -, *, /) in C++ are slightly diﬀerent from what you may be
+used to from your second-grade math class. Addition is still a plus sign ( + ) and
+subtraction is still a minus sign ( - ). On the other hand, multiplication becomes an
+asterisk ( * ) and division becomes a forward slash ( / ). ink of the forward slash
+as over as in “5 over 9” is the same as the fraction 5/9 or 59 .
+To do math in C++, you will either want a variable to store the answer, or output
+the answer to the user.
+e following code directly outputs the answer to the user:
+c o u t << 9 + 2 ; / / P r i n t s 11
+
+is code shows how to use a variable to store the answer:
+i n t sum = 9 + 2 ; / / sum now h o l d s 11
+
+Note that when you use a variable to store an answer, the variable must come
+ﬁrst in the equation (before the equal sign) and must be the only thing on the le
+side of the equation. ere are some other things to note. When you use more
+complicated equations, you can use parentheses to help. C++ uses a familiar order of operations (Parentheses, Exponents, Multiply, Divide, Add, and Subtract, or
+PEMDAS), but without the exponent operation (this topic is covered in Chapter 17).
+However, unlike in normal arithmetic, parentheses do not imply multiplication. For
+
+25
+
+example, (4)(3), which we might expect to mean “4 times 3” does not mean the
+same as 4 * 3, the correct syntax. e expression (4)(3) results in a syntax
+error and will not compile. e compiler returns an error message like this:
+'error: '4' cannot be used as a function.'
+In C++, there are several methods of shortening and simplifying the code you’re
+creating. e ﬁrst is the increment operator ( ++ ), which is found in the name of
+the language, C++. is operator increases the value of the variable it’s applied to
+by 1. Conversely, the decrement ( -- ) operator decreases the value by 1.
+Keep in mind that order does maer with the increment and decrement operators. ey can be used as either preﬁxes or suﬃxes, but where you put the operator
+results in slightly diﬀerent behavior. Starting with similarities, C++ and ++C both
+increase value of C by one. e diﬀerence lies in when another variable is being set
+to that incremented value, such as B = C++. B will be set to C before C is incremented. B = ++C will cause B to be set to C+1, in a similar way to B = 1 + C.
+int A;
+A = 4;
+A+ + ;
+/ /A contains 5
+int A;
+A = 9;
+A−−;
+/ /A contains 8
+int
+B =
+A =
+/ /A
+
+A, B ;
+7;
+B++;
+contains 7 , B contains 8
+
+int
+B =
+A =
+/ /A
+
+A, B ;
+7;
+++B ;
+contains 8 , B contains 8
+
+int
+B =
+A =
+/ /A
+
+A, B ;
+3;
+B−−;
+contains 3 , B contains 2
+
+Expression
+A *= 3;
+B -= 5;
+C /= 10;
+
+Equivalent to
+A = A * 3;
+B = B - 5;
+C = C / 10;
+
+Table 7.1: Examples of compound assignment updates
+int
+B =
+A =
+/ /A
+
+A, B ;
+3;
+−−B ;
+contains 2 , B contains 2
+
+Compound assignment operators can decrease the amount you type and can
+make your code more readable. ese are the operators +=, -=, *=, and /=. What
+makes these operators special is that they use the value you want to change in the
+operation. For example, x += 2 is equivalent to x = x + 2.
+Keep in mind the order that was used, as this becomes important with subtraction and division. e variable being changed is equivalent to the two lemost
+variables in the longhand expression. Let’s say we have X and Y, and want to set
+X equal to the value of Y divided by the value of X. is is impossible with this
+method, as X /= Y is equivalent to X = X / Y, and Y /= X is equivalent to
+Y = Y / X.
+Here is some sample code using the concepts we presented in this chapter:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+int a = 5 , b = 10 , c = 15 , d = 20;
+cout
+cout
+cout
+cout
+}
+
+<<
+<<
+<<
+<<
+
+”a
+”d
+”a
+”d
+
++
+−
+*
+/
+
+b
+c
+b
+a
+
+=
+=
+=
+=
+
+”
+”
+”
+”
+
+<<
+<<
+<<
+<<
+
+a
+d
+a
+d
+
++
+−
+*
+/
+
+b
+c
+b
+a
+
+<<
+<<
+<<
+<<
+
+endl
+endl
+endl
+endl
+
+;
+;
+;
+;
+
+e output of this code is:
+a + b = 15
+d - c = 5
+a * b = 50
+d / a = 4
+
+7.1
+
+Review estions
+
+1. Write a statement declaring two integer variables a and b and initialize them
+to 6 and 3, respectively.
+2. Without changing the last line, ﬁx the following code so there will be an
+output of 12.
+i n t a = 4 , b= 2 ;
+a = a + 2 * b;
+c o u t << a ;
+
+3. What is the output of the following code?
+int a = 2 , b = 5 ,
+a ++;
+b = b * a;
+c = ( c − a ) + 3;
+c o u t << a << e n d l
+c o u t << b << e n d l
+c o u t << c << e n d l
+
+c = 6;
+
+;
+;
+;
+
+4. What is the output of the following code?
+int a , b , c ;
+a = 2;
+b = 8;
+c = 1;
+c = b − b;
+c = a + a;
+c = b * 8;
+b = b + b;
+c = a + c;
+b = a + b;
+a = a * c;
+b = a − c;
+c = b + a;
+c o u t << a << e n d l ;
+c o u t << b << e n d l ;
+c o u t << c << e n d l ;
+
+5. What is the output of the following code?
+int a = 4 , b = 2 ,
+a = b + 3;
+b ++;
+c = ( b + 4) * 2;
+c = c + 2;
+d = a + b − 3;
+a ++;
+a = a + 2 − b;
+b = b * 2;
+c o u t << ” a= ” << a
+c o u t << ” b= ” << b
+c o u t << ” c = ” << c
+c o u t << ” d= ” << d
+
+c , d;
+
+<<
+<<
+<<
+<<
+
+endl
+endl
+endl
+endl
+
+;
+;
+;
+;
+
+6. What is the output of the following code?
+int m = 3 , n = 2 ,
+x = m + 5;
+m−−;
+y = (m + 4 ) / 3 ;
+n = n + 2;
+m = m + n / 2;
+m+ + ;
+x = x * 2 − 3;
+y = y * 2;
+n = n + y * 3
+c o u t << ”m= ” << m
+c o u t << ” n= ” << n
+c o u t << ” x= ” << x
+c o u t << ” y= ” << y
+
+7.2
+
+x, y;
+
+<<
+<<
+<<
+<<
+
+Review Answers
+
+1. int a = 6, b = 3;
+2.
+
+int a = 4 , b = 2;
+a = ( a + 2) * b ;
+c o u t << a ;
+
+3. 3
+15
+5
+4. 132
+66
+198
+5. a=5
+b=6
+c=16
+d=5
+6. m=5
+n=16
+x=13
+y=4
+
+endl
+endl
+endl
+endl
+
+;
+;
+;
+;
+
+7.3 Further Reading
+• http://www.cplusplus.com/doc/tutorial/operators/
+• http://www.sparknotes.com/cs/c-plus-plus-fundamentals/basiccommands/section1.
+rhtml
+
+Chapter 8
+
+Comments
+As a C++ programmer, comments will make your life easier. ey are meant to
+serve as notes, not just for you, but for anyone that may aempt to read your code.
+To this end, comments are a quick explanation of the code. ere are two kinds of
+comments, single-line comments and multi-line comments.
+Single-line comments typically come aer a line of code. For a single-line comment, simply type a double slash // at the end of the line, and follow it with whatever notes you like, preferably to explain what that line of code does. Alternatively,
+the comment can start on a line of its own. Here are some examples:
+i n t c o u n t ; / / T h i s v a r i a b l e was d e c l a r e d
+/ / to count something
+c o u n t = c o u n t + 1 ; / / I n c r e m e n t s c o u n t by 1
+/ / V a r i a b l e d e c l a r e d , and i n i t i a l i z e d t o p i
+f l o a t length = 3.14159;
+
+Multi-line comments, sometimes called block comments, are used when you
+have a lot to say. ey begin with a slash star (/*) and are ended by a star slash
+(*/). Here is an example:
+/*
+* This i s a
+* m u l t i −l i n e
+* comment
+*/
+/ * T h i s i s a l s o a comment * /
+
+33
+
+Block comments do not need a star at the beginning of every line (as in the
+preceding example), but many programmers write it anyways, because it makes it
+easier to see and understand that “this is still a comment, don’t write code here.”
+Some development environments will automatically color-code certain pieces of
+code, so comments might be gray, for example, and the * at the beginning of each
+line might be unnecessary in that case. However, someone else may use a diﬀerent
+development environment that does not use colors, so the stars can still improve
+readability.
+Keep in mind when commenting, the point is to be clear and concise. Try to
+explain what’s happening as accurately as possible, but try to keep it short. As
+you learn C++, use comments to explain what you’re doing and why. You have to
+assume that the person reading your code needs an explanation for each non-trivial
+line.
+/ / Commenting a t t h e b e g i n n i n g o f t h e f i l e
+/ / A l l o w s you t o g i v e a summary o f your program
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+/ / This cout statement outputs to the screen
+c o u t << ” H e l l o w o r l d ” << e n d l ;
+c o u t << ” What ’ s t h e d a t e ? ” << e n d l ;
+/ / Comments s h o u l d be u s e d t o e x p l a i n t h i n g s t h a t may
+/ / n o t be o b v i o u s t o someone o t h e r t h a n you
+c i n >> d a t e ; / / Ta kes t h e d a t e from t h e u s e r
+/*
+* You can a l s o u s e comments t o remind y o u r s e l f o f
+* c h a n g e s you want t o make , e . g .
+* ” debug c o d e p a s t t h i s p o i n t ”
+*/
+return 0;
+}
+
+8.1 Review estions
+1. Comment each line of this code:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+i n t time ;
+c o u t << ” E n t e r t i m e \ n ” ;
+c i n >> t i m e ;
+i n t answer = ( 3 2 * t i m e * t i m e ) / 2 ;
+c o u t << ” The d i s t a n c e i s ” ;
+c o u t << answer ;
+c o u t << ” s e c o n d s \ n ” ;
+return 0;
+}
+
+2. Fix this code by removing or modifying comments so that it runs and compiles as it should.
+/ * # include <iostream > includes the iostream *
+u s i n g namespace s t d ;
+i n t main ( )
+{
+i n t time ;
+/ / A place to s t o r e the time
+c o u t << ” E n t e r t i m e \ n ” ; / / Ask t o e n t e r t h e t i m e
+c i n >> t i m e ;
+/ / Takes u s e r i n p u t
+i n t answer = ( 3 2 * t i m e * t i m e ) / 2 ; / / C a l c u l a t e s i t
+c o u t << ” The d i s t a n c e i s ” ;
+/ * Outputs
+c o u t << answer ;
+the distance
+c o u t << ” s e c o n d s \ n ” ;
+in seconds * /
+return 0;
+}
+
+3. Explain the purpose of commenting. How does it help you? Why would
+someone else need to be able to understand your code?
+4. Write and properly comment your own simple program.
+5. Go back to the program you wrote from the previous question. Add further
+comments that explain what’s happening and share the commented code
+
+with a classmate or friend. Ask them if they understand what’s happening
+from just the comments.
+6. Add comments to the following code.
+Note: Save percentages in hockey are shown to three decimal places and not
+multiplied by 100: .900 instead of 90%.
+# include <iostream >
+# include <cstdlib >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+double shots , goals , saves , save_perc ;
+char cont ;
+do {
+cout . unsetf ( ios : : f i x e d ) ;
+cout . u n s e t f ( i o s : : showpoint ) ;
+c o u t << ” E n t e r t h e number o f s h o t s on g o a l : \ t ” ;
+c i n >> s h o t s ;
+c o u t << ” E n t e r t h e number o f g o a l s s c o r e d : \ t ” ;
+c i n >> g o a l s ;
+c o u t << e n d l ;
+saves = shots − goals ;
+save_perc = ( saves / shots ) ;
+c o u t << ” I f t h e r e were ” << s h o t s << ” s h o t s and ”
+<< g o a l s << ” g o a l s \ n ” ;
+c o u t << ” t h e n t h e g o a l i e ’ s s a v e p e r c e n t a g e was ” ;
+cout . s e t f ( ios : : f i x e d ) ;
+cout . s e t f ( i o s : : showpoint ) ;
+cout . p r e c i s i o n ( 3 ) ;
+c o u t << s a v e _ p e r c << e n d l << e n d l ;
+c o u t << ” Run a g a i n ? Y /N \ t ” ;
+c i n >> c o n t ;
+cont = toupper ( cont ) ;
+} w h i l e ( c o n t == ’ Y ’ ) ;
+return 0;
+}
+
+8.2 Review estions
+1. Answers will vary
+# include <iostream > / * includes the iostream * /
+u s i n g namespace s t d ;
+
+2.
+
+i n t main ( )
+{
+i n t time ;
+/ / A place to s t o r e the time
+c o u t << ” E n t e r t i m e \ n ” ; / / Ask t o e n t e r t h e t i m e
+c i n >> t i m e ;
+/ / Takes u s e r i n p u t
+i n t answer = ( 3 2 * t i m e * t i m e ) / 2 ; / / C a l c u l a t e s i t
+c o u t << ” The d i s t a n c e i s ” ;
+/ / Outputs
+c o u t << answer ;
+/ / the distance
+c o u t << ” s e c o n d s \ n ” ;
+/ / in seconds
+return 0;
+}
+
+3. Comments help you check that you know what you’re doing and make sure
+you are doing everything that needs to be done. ey also help other people
+understand your code, which is especially useful if your logic is diﬀerent
+from theirs.
+4. Answers will vary.
+5. Keep trying until someone else understands the code from the comments
+alone.
+6. Answers will vary.
+
+Chapter 9
+
+Data Types and
+Conversion
+Suppose you need to carry two products across a farmyard: apples and water. e
+container you choose would depend on the product, and how much of the product
+you have to move. You might choose a small hand basket to carry a few apples,
+and a larger bushel basket to carry a large number of apples. Similarly, you could
+use a one-gallon bucket or a ﬁve-gallon bucket, depending on how much water you
+expected to move.
+In a similar way, we choose data types to describe the type of data we would
+like to store in a variable, and “how much” of that data we expect to store.
+Every variable has a data type which describes the range of possible values
+that may be stored in the variable. e C++ language deﬁnes a handful of basic
+types, some of which were discussed in Chapter 4. ese types, their sizes (which
+may vary depending on the operating system), and the range of possible values
+can be found in Table 9.1. Additionally, the C++11 standard provides for the long
+long int data type as described in Table 9.2.
+Several of the integer types have unsigned versions, which may only contain
+values greater than or equal to zero. e ﬂoating-point types do not have unsigned versions, as the sign is part of the standard that deﬁnes how these variables
+are represented in memory.
+
+39
+
+bool
+char
+short int (short)
+int
+
+1 byte
+1 byte
+2 bytes
+4 bytes
+
+long int (long)
+
+4 bytes
+
+float
+
+4 bytes
+
+double
+
+8 bytes
+
+long double
+
+8 bytes1
+
+true or false
+−128 to 127
+−32, 768 to 32, 767
+−2, 147, 483, 648 to
+2, 147, 483, 647
+−2, 147, 483, 648 to
+2, 147, 483, 647
+See “Floating-point Types”
+below
+See “Floating-point Types”
+below
+See “Floating-point Types”
+below
+
+Table 9.1: Common data types and their ranges of values
+Type
+long long int
+(long long)
+
+Size
+8 bytes
+
+Range of Values
+−9, 223, 372, 036, 854, 775, 808
+to 9, 223, 372, 036, 854, 775, 807
+
+Table 9.2: C++11’s long long int data type
+
+9.1
+
+Floating-point types
+
+Floating-point types are used to represent numbers that are not whole integers. For
+example:
+float f = 3.35;
+
+Variables of type float and of type double store these numbers in similar
+components as scientiﬁc notation, so the above value could be represented as 335 ×
+10−2 . e ﬁrst part, 335, (sometimes called the coeﬃcient or signiﬁcand) is stored
+separately from the second part, −2, (called the exponent). e types can represent
+1
+
+A long double might be stored as an 80-bit extended precision type, but
+this is dependent on the compiler. Variables of this type will be at least as large as
+a double.
+
+Type
+unsigned
+unsigned
+unsigned
+unsigned
+unsigned
+
+char
+short
+int
+long
+long long2
+
+Size
+1 byte
+2 bytes
+4 bytes
+4 bytes
+8 bytes
+
+Range of Values
+0 to 255
+0 to 65, 535
+0 to 4, 294, 967, 295
+0 to 4, 294, 967, 295
+0 to
+18, 446, 744, 073, 709, 551, 615
+
+Table 9.3: Unsigned types
+Type
+float
+double
+
+Exponent Range
+0 to 255
+0 to 2, 048
+
+long double
+
+0 to 2, 048
+
+Signiﬁcand Range
+223 : 8, 388, 608 possible values
+252 : 4, 503, 599, 627, 370, 496
+possible values
+252 : 4, 503, 599, 627, 370, 496
+possible values
+
+Table 9.4: Floating point types
+diﬀerent ranges of signiﬁcand and exponents, as shown in Table 9.4.
+In fact, we can use scientiﬁc notation in conjunction with ﬂoating-point variables. e previous code that assigned a value to f can also be wrien as:
+f l o a t f = 3 3 5 e −2; / / S e t s f t o 3 . 3 5
+
+Both float and double include a few special values that represent nonnumeric results, such as inﬁnity, negative inﬁnity, and NaN (Not a Number).
+f l o a t g = 10.0 / 0 . 0 ; / / g i s set to i n f i n i t y
+f l o a t h = g * −1.0;
+/ / h i s set to negative i n f i n i t y
+float i = g / h;
+/ / S i n c e i n f i n i t y d i v i d e d by n e g a t i v e i n f i n i t y i s
+/ / undefined , the r e s u l t of the d i v i s i o n i s not a
+/ / number , and i i s s e t t o NaN
+
+2
+
+is data type is found in the C++11 standard.
+
+9.2
+
+Other types introduced by C++11
+
+C++11 provides the cstdint library, which deﬁnes several additional types that
+may be convenient. ese types are listed in Table 9.5.
+
+Type
+intmax_t
+int8_t
+int16_t
+int32_t
+int64_t
+
+Purpose
+e integer of maximum size
+supported on the platform
+An integer of exactly 8 bits
+An integer of exactly 16 bits
+An integer of exactly 32 bits
+An integer of exactly 64 bits
+
+Unsigned version
+uintmax_t
+uint8_t
+uint16_t
+uint32_t
+uint64_t
+
+Table 9.5: Data types found in C++11’s cstdint library
+ese types are provided in part because the basic types like int and short
+are not guaranteed to be of any particular size, which can cause problems when
+compiling the same code on diﬀerent platforms.
+
+9.3
+
+Conversion Between Types
+
+It is sometimes necessary to convert a variable of one type to another, perhaps in
+order to pass the variable to a function that doesn’t support the variable’s original
+type. Here is an example of a variable of type int being converted (automatically)
+to a double:
+int x = 2;
+double y ;
+y = x ; / / Type c o n v e r s i o n : t h e i n t e g e r 2 i s c o n v e r t e d
+/ / to the double 2 . 0
+c o u t << ” y = ” << y << e n d l ; / / T h i s p r i n t s y = 2
+
+is example demonstrates a widening conversion, since any possible value
+of x can be represented in y. On the other hand, we can do the reverse conversion:
+int x ;
+double y = 2 . 0 ;
+x = y ; / / Type c o n v e r s i o n : t h e d o u b l e 2 . 0 i s c o n v e r t e d
+/ / to the i n t 2
+c o u t << ” x = ” << x << e n d l ; / / T h i s p r i n t s x = 2
+
+is code compiles and runs, but the compiler produces the following warning:
+warning: converting to 'int' from 'double'
+e compiler has a good reason for this warning: not all possible values that
+can be represented in a double can be represented in an int. We refer to this as a
+narrowing conversion. If we change the code slightly, we can see where problems
+can occur:
+int x ;
+double y = 2 . 9 ;
+x = y ; / / Type c o n v e r s i o n : t h e d o u b l e 2 . 9 i s c o n v e r t e d
+/ / to the i n t 2
+c o u t << ” x = ” << x << e n d l ; / / T h i s p r i n t s x = 2
+
+Because integers cannot represent the numbers aer the decimal point, they are
+simply dropped. is might seem counterintuitive, as we might expect the values to
+be rounded up from 2.9 to 3. Fortunately, C++11 provides a round() function
+in the <cmath> library that returns the integer closest to the passed parameter:
+int x ;
+double y = 2 . 9 ;
+x = round ( y ) ;
+/ / round ( y ) r e t u r n s t h e d o u b l e 3 . 0 ( t h e c l o s e s t i n t e g e r
+/ / to the passed parameter ) This double i s then
+/ / converted to the i n t 3
+c o u t << ” x = ” << x << e n d l ; / / T h i s p r i n t s x = 2
+
+9.4 Coercion & Casting
+e examples in the previous section relied on the compiler to perform the conversions from int to double and double to int. is implicit, automatic
+conversion is oen referred to as coercion, and can be found in the following example:
+i n t z = 3 . 3 + 4 . 8 ; / / z i s set to the i n t e g e r 8
+/ / ( c o e r c e d from t h e d o u b l e 8 . 1 )
+
+e compiler still warns us that it is converting the double to an int. In
+this case, we know that we want an integer value, so we can tell the compiler to
+explicitly convert the doubles to ints using explicit casts, as follows:
+i n t z = ( i n t ) 3.3 + ( i n t ) 4 . 8 ; / / z i s set to 7
+
+We enclose the “target” type in parentheses (in this case, int) and place it
+
+before the value or expression we want to convert. Doing this removes the warning
+that the compiler produces when it coerces the double to int. e above still
+isn’t quite what we want, though, since the individual doubles are converted to 3
+and 4, respectively. (Remember that converting from a double to an int drops
+the part aer the decimal point rather than rounding!) It would be beer to convert
+the result of the addition, rather than the individual values, like this:
+i n t z = ( i n t ) ( 3 . 3 + 4 . 8 ) ; / / z i s set to 8
+
+9.5
+
+Automatic Types in C++11
+
+C++11 introduces the auto data type, which leaves the determination of a variable’s type up to the compiler. At compile time, the data type of the value that is
+assigned determines the data type that replaces the auto type. Some of the syntax
+in the second line below may be unfamiliar—for a description of what’s happening
+there, refer to Chapter 19.
+a u t o myVar = 3 ;
+/ / myVar i s an i n t
+a u t o myVar2 = &myVar ; / / myVar2 i s an i n t *
+a u t o myVar3 = ’ t ’ ;
+/ / myVar3 i s a c h a r
+
+e decltype operator is another new feature, which extracts types from
+objects and is used in a similar way as auto:
+a u t o myVar = 3 ;
+/ / myVar i s an i n t
+d e c l t y p e ( myVar ) myVar4 ;
+/ / myVar4 i s an i n t
+d e c l t y p e ( myVar < 1 ) myVar5 ; / / myVar5 i s a b o o l
+
+In these examples, it is easy to determine the types assigned to the variable,
+but the power of auto is in conjunction with complicated types like iterators of
+container objects as discussed more in Chapter 23. Here is an example:
+std : : vector <int > v ; / / Create a vector of i n t e g e r s
+v . p u s h _ b a c k ( 2 ) ; / / Add an e l e m e n t c o n t a i n i n g 2 t o t h e v e c t o r
+v . p u s h _ b a c k ( 8 ) ; / / Add an e l e m e n t c o n t a i n i n g 8 t o t h e v e c t o r
+auto myIterator = v . begin ( ) ;
+/ / The ab o ve i s e q u i v a l e n t t o :
+/ / std : : vector <int > : : i t e r a t o r myIterator = v . begin ( ) ;
+
+9.6 Review estions
+1. What’s the diﬀerence between the various data types that store numbers?
+Why would you use one over the other?
+2. If you assign the result of an int divided by an int to a float (e.g.
+float num = 13/7;), what could happen to the resulting value?
+3. Declare a variable named sampleSize and set it to 14.58093.
+4. Write code that increases sampleSize by 12.495.
+
+9.7 Review Answers
+1. ints only store whole numbers. floats and doubles can store numbers with decimal points. ints are useful for anything that cannot have
+fractional parts, and you might also use a double for very large numbers.
+2. e fractional part is le oﬀ. (num is 1 in the example)
+3. double sampleSize = 14.58093;
+4. sampleSize += 12.495;
+
+9.8 Further Reading
+• http://www.cplusplus.com/reference/cstdint/
+• http://en.wikipedia.org/wiki/Floating_point
+• http://en.wikipedia.org/wiki/IEEE_floating_point
+• http://learncpp.com/cpp-tutorial/25-floating-point-numbers/
+
+Chapter 10
+
+Conditionals
+Conditionals are used to direct the program to diﬀerent sections of code. In plain
+English, we might have a statement “If X is greater than Y, do this…” Conditionals
+direct the program to behave diﬀerently depending on the results of a comparison.
+Several common comparison operators used in C++ are:
+
+Symbol
+==
+!=
+>=
+<=
+>
+<
+&&, and
+||, or
+
+Meaning
+Is equal to
+Is not equal to
+Greater than or equal to
+Less than or equal to
+Greater than
+Less than
+Logical AND: e condition on the le AND the condition
+on the right must be true
+Logical OR: e condition on the le OR the condition on
+the right must be true
+Table 10.1: Common comparison operators
+
+47
+
+10.1
+
+if, else, and else if
+
+e most popular conditional is the if statement. An if statement looks like this:
+i f ( v a r i a b l e == v a r i a b l e 2 )
+{
+/ / Code h e r e e x e c u t e s o n l y when
+/ / t h e v a l u e o f v a r i a b l e i s t h e same a s v a r i a b l e 2
+}
+
+e keyword if is used to start the statement. Parentheses are used to contain
+the conditional expression. If the expression inside the parentheses is true, then the
+following expression will be executed.
+
+10.1.1
+
+A small digression on expressions
+
+Note that curly braces merely surround expressions to become a single expression.
+e act of surrounding expressions creates a code block. However, having only one
+expression within a code block is the same as not having it in a code block.
+i f ( v a r i a b l e == v a r i a b l e 2 )
+{
+c o u t << ” Yes ! ” ;
+}
+
+is the same as
+i f ( v a r i a b l e == v a r i a b l e 2 )
+c o u t << ” Yes ! ” ;
+
+It is not recommended to go without braces for mere brevity at the cost of
+making mistakes later on. For example, suppose you have some code for baking
+bread, like the following.
+i f ( b r e a d T y p e == 1 0 )
+ovenFanOn = t r u e ;
+
+en later you are told that bread type 10 needs to be cooked at 350 ◦ F. So you
+make the following change:
+i f ( b r e a d T y p e == 1 0 )
+ovenFanOn = t r u e ;
+ovenTemp = 3 5 0 ;
+
+True
+int a = 0;
+
+if
+
+a = 1;
+
+var1 == var2
+Else
+
+a = 2;
+
+done
+
+False
+
+No Else
+
+Figure 10.1: if and else statement ﬂow of execution
+Except that is really the same as:
+i f ( b r e a d T y p e == 1 0 )
+ovenFanOn = t r u e ;
+ovenTemp = 3 5 0 ;
+
+Now the baker is upset because every loaf is being cooked wrong except bread
+of type 10! What you really meant was:
+i f ( b r e a d T y p e == 1 0 )
+{
+ovenFanOn = t r u e ;
+ovenTemp = 3 5 0 ;
+}
+
+Here’s another bear trap that you’ll likely hit:
+i f ( b r e a d T y p e == 9 ) ;
+ovenFanOn = t r u e ;
+
+It is still valid syntax, but the expression aer the if statement is an empty
+expression. An empty expression does nothing, and so now every bread type will
+have the fan on, which is not what the baker wanted.
+
+10.1.2
+
+Using else
+
+An else statement may be placed aer an if statement, and any time the expression inside the parentheses following the if is not true, the code inside the else
+
+block is executed. For example:
+int a = 0;
+i f ( v a r 1 == v a r 2 )
+{
+/ / Code h e r e e x e c u t e s o n l y when
+/ / t h e v a l u e o f v a r i a b l e i s t h e same a s v a r i a b l e 2
+a = 1;
+}
+else
+{
+/ / Code h e r e e x e c u t e s i f t h e y a r e n o t t h e same
+a = 2;
+}
+
+An else statement is used when you want some code to execute in any other
+case where the if statement is not true. An example of how this works is also
+shown in Figure 10.1.
+An else if could also be placed aer the if statement. An else if is
+an additional if statement checked only when the previous if statement is false.
+While else is a catch-all, else if chains an if to test for other conditions.
+Multiple else if statements can be used, and they are all checked sequentially,
+and if necessary, an else statement can be included at the end as a ﬁnal catch-all.
+Take a look at Figure 10.2 for a ﬂowchart example.
+Here’s what the three statements would look like all together:
+i f ( a == b )
+{
+c o u t << ” They a r e t h e same ! ” << e n d l ;
+}
+else if ( a > b)
+{
+c o u t << ” a i s b i g g e r ! ” << e n d l ;
+}
+else
+{
+c o u t << ” a i s s m a l l e r ! ” << e n d l ;
+}
+
+Note that every conditional expression is in parentheses. Each if must be
+followed by a (...) (with a Boolean expression inside the parentheses) in C++.
+Conditional expressions also appear in loops (discussed in Chapter 12) and switch
+statements.
+
+start
+
+if (a == b)
+
+if (a > b)
+
+false
+
+true
+
+else
+
+Outputs "They are the same!"
+
+false
+
+true
+
+Outputs "a is bigger"
+
+else
+
+Outputs "a is smaller"
+
+Figure 10.2: How if-else chaining works
+
+10.2
+
+switch statements
+
+switch statements (also sometimes called switch-case statements) make a
+menu-like set of blocks. It does the same job as many if statements, but can simplify the job when used correctly. Here is an example:
+switch ( v a r i a b l e ) :
+{
+case 1:
+/ / c o d e t o e x e c u t e when v a r i a b l e i s e q u a l t o 1
+break ;
+case 2:
+/ / c o d e t o e x e c u t e when v a r i a b l e i s e q u a l t o 2
+break ;
+default :
+/ / c o d e t o e x e c u t e when v a r i a b l e i s n e i t h e r 1 nor 2
+break ;
+}
+/ / Resume h e r e a f t e r a b r e a k
+
+If variable is equal to 1 then the code following case 1: will be executed.
+If it is equal to 2, then the code following case 2: will be executed, and if it is
+
+equal to neither, then the code following default: will be executed. e cases
+are separated by the break statement, which forces the code to leave the switch
+statement’s block of code. is code:
+switch ( v a r i a b l e )
+{
+case 1:
+c o u t << ” You p i c k e d c a s e 1 . Lame . ” ;
+break ;
+case 2:
+c o u t << ” Case two i s way b e t t e r . ” ;
+break ;
+default :
+c o u t << ”WRONG! ” ;
+break ;
+}
+
+is equivalent to this code:
+i f ( v a r i a b l e == 1 )
+{
+c o u t << ” You p i c k e d c a s e 1 . Lame . ” ;
+}
+e l s e i f ( v a r i a b l e == 2 )
+{
+c o u t << ” Case two i s way b e t t e r . ” ;
+}
+else
+{
+c o u t << ”WRONG! ” ;
+}
+
+When there are only a few cases, if, else if, and else statements are
+oen easier. However, when you get to a greater number of cases, switch statements become easier.
+In switch statements, only one case’s code executes, provided that each
+case is followed by break. Otherwise, the program continues execution until
+it reaches a break statement or the end of the switch block. With an if and
+else if, only one branch may be executed, and the condition in the else if
+is only evaluated if the condition in the if is false.
+Here is some code that uses both switch and if statements. Compiling and
+running the following code results in the output in Table 10.2.
+
+User enters
+//Program start
+
+1
+2
+3
+//anything
+other than
+2, or 3
+
+Output
+<1> Addition
+<2> Subtraction
+<3> Compare
+Type the number of your desired option:
+e result of this addition is 9.3
+e result of this subtraction is 0.9
+A is greater than B
+Not an option
+
+1,
+
+Table 10.2: e sample program’s output
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( ) {
+int choice ;
+double a = 5 . 1 , b = 4 . 2 ;
+c o u t << ” <1> A d d i t i o n \ n<2> S u b t r a c t i o n \ n<3> Compare \ n ” ;
+c o u t << ” Type t h e number o f your d e s i r e d o p t i o n : \ t ” ;
+c i n >> c h o i c e ;
+switch ( choice ) {
+case 1:
+c o u t << ” The r e s u l t o f t h i s a d d i t i o n i s ”
+<< a + b << e n d l << e n d l ;
+break ;
+case 2:
+c o u t << ” The r e s u l t o f t h i s s u b t r a c t i o n i s ”
+<< a − b << e n d l << e n d l ;
+break ;
+case 3:
+if (a > b)
+c o u t << ”A i s g r e a t e r t h a n B ” ;
+else if ( a < b)
+c o u t << ”A i s l e s s t h a n B ” ;
+e l s e / / a == b
+c o u t << ”A e q u a l s B ” ;
+break ;
+default :
+c o u t << ” Not an o p t i o n ” ;
+break ;
+}
+return 0;
+}
+
+10.3
+
+Review estions
+
+1. What is the output of the following code?
+int a = 5;
+int b = 10;
+if (a > b)
+c o u t << ” a i s g r e a t e r t h a n b . ” ;
+else
+c o u t << ” b i s g r e a t e r t h a n a . ” ;
+
+2. Why are switch statements useful?
+3. When are braces ({}) needed in an if statement?
+4. Write a program that checks which number is higher than another and prints
+out an appropriate message. is program should use 2 variables, an if
+statement and an else statement. Bonus: Rewrite it to also check if the
+numbers are equal.
+
+10.4
+
+Review Answers
+
+1. b is greater than a.
+2. switch statements are useful for making menus for the user. (Other answers are also possible)
+3. Braces are needed for any code longer than 2 lines following an if.
+
+4.
+
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+i n t input1 , input2 ;
+c o u t << ” e n t e r a number :
+c i n >> i n p u t 1 ;
+c o u t << ” e n t e r a number
+c i n >> i n p u t 2 ;
+i f ( input1 > input2 )
+c o u t << i n p u t 1 << ” i s
+else
+c o u t << i n p u t 2 << ” i s
+}
+
+”;
+t o compare t o t h e f i r s t : ” ;
+g r e a t e r t h a n ” << i n p u t 2 ;
+g r e a t e r t h a n ” << i n p u t 1 ;
+
+Chapter 11
+
+Strings
+Let’s discuss strings. A string is a data type typically used to hold a collection
+of printable characters such as words, sentences, or longer sequences. In order to
+use strings in your program you must ﬁrst include the string library:
+# include <string >
+u s i n g namespace s t d ;
+
+Also note that a string, for convenience, can be treated like an array of individual
+characters.
+When we declare variables of type string, we declare them just like we
+would an int, float, or double. We can create a variable named myString
+of type string by doing this:
+# include <string >
+u s i n g namespace s t d ;
+s t r i n g myString ;
+
+If you choose not to have using namespace std; in your code, the variable
+myString must be declared as follows:
+# include <string >
+s t d : : s t r i n g myString ;
+
+We can then store anything we want in that string as long as it is made up of
+characters. When a literal value is assigned to a string, it should be surrounded
+
+55
+
+by double quotes such as in the case of "Hello":
+# include <string >
+s t r i n g myString = ” Hello ” ;
+
+If we are storing the value of a string entered by a user, the user does not
+have to use quotes. We can store "Hello" in the string by doing the following:
+s t r i n g myString ;
+c i n >> m y S t r i n g ; / / U s e r t y p e s : H e l l o
+/ / m y S t r i n g i s now ” H e l l o ”
+
+It is also possible to use the arithmetic operator + with strings to concatenate (combine) the two strings. If we combined one string that contained "Hello" and
+another string that contained "World" the connected string would then read
+"HelloWorld".
+s t r i n g v1 = ” H e l l o ” ,
+v2 = ” World ” ;
+c o u t << v1 + v2 << e n d l ;
+/ / Outputs :
+/ / HelloWorld
+
+In order to have a space between the two words, one of the strings would need to
+contain a space such as this:
+s t r i n g v1 = ” H e l l o ” , v2 = ” World ” ;
+/ /−−−−−−−−−−−−−−−−−−−−−−−−−^−−−−−−−
+c o u t << v1 + v2 << e n d l ;
+/ / Outputs :
+/ / H e l l o World
+
+Or it can be represented as:
+s t r i n g v1 = ” H e l l o ” , v2 = ” World ” ;
+/ /−−−−−−−−−−−−−−−−^−−−−−−−−−−−−−−−−
+c o u t << v1 + v2 << e n d l ;
+/ / Outputs :
+/ / H e l l o World
+
+Alternatively, a space can be added like so:
+s t r i n g v1 = ” H e l l o ” , v2 = ” World ” ;
+c o u t << v1 + ” ” + v2 << e n d l ;
+/ /−−−−−−−−−−−−^−−−−−−−−−−−−−−−−−−−
+/ / Outputs :
+/ / H e l l o World
+
+e ﬁrst two concatenates the two strings to create one string that contains “Hello
+World”, and the third concatenates three strings to produce the same result.
+When reading strings from std::cin, the default behavior is to collect all
+characters until the ﬁrst whitespace (a tab, space, or newline) character that it ﬁnds
+in the input. For example, if the user inputs “Hello World” in the following code,
+std::cin stops reading at the ﬁrst whitespace, and thus the string would contain only “Hello”. If we want to read the entire line of text, we need to use the
+getline() function, which reads until the ﬁrst newline character. is is how
+you use the getline() function:
+s t r i n g myString ;
+g e t l i n e ( cin , myString ) ;
+
+is function call will take the entire line of input, including all whitespace characters, and store it in the variable myString.
+We can also ﬁnd out the length of the string by using the member function
+length() with any string object. For example, if we wanted to ﬁnd the length
+of a string entered by a user and store it in a variable named stringLength,
+we might do this:
+s t r i n g myString ;
+int stringLength ;
+g e t l i n e ( cin , myString ) ;
+s t r i n g L e n g t h = myString . length ( ) ;
+c o u t << ” The s t r i n g you e n t e r e d was ”
+<< s t r i n g L e n g t h
+<< ” c h a r a c t e r s l o n g . ”
+<< e n d l ;
+
+Aside from ﬁnding the length of a string, we can search for certain characters in the
+string by using the find() and rfind() member functions. For example, if we
+wanted to ﬁnd a single space in a string variable named myString that contains
+“Hello World”, we would do this:
+s t r i n g m y S t r i n g = ” H e l l o World ” ;
+i n t spot = myString . f i n d ( ” ” ) ;
+
+0
+
+1
+
+2
+
+3
+
+4
+
+H
+
+e
+
+l
+
+l
+
+o
+
+5
+
+6
+
+7
+
+8
+
+9 10
+
+W
+
+o
+
+r
+
+l
+
+d
+
+myString
+
+Figure 11.1: A string viewed as an array
+is code results in the value 5 being stored in the variable named spot because the space character is stored at index 5 if you treat the string as an array, as
+shown in Figure 11.1.
+Remember that we start at index 0, so even though the space is in the sixth
+position, it is at index 5 in the string. When a line of text is stored in a string, think of
+it as being stored in memory in an array of the same length as there are characters in
+the string. For example, the string "Hello World" can be contained in an array
+with 11 slots, therefore the space character would be found in myString[5].
+e find() function can also search within a string from some arbitrary starting
+point, instead of from the beginning:
+s t r i n g m y S t r i n g = ” H e l l o World ” ;
+i n t spot , spot2 ;
+s p o t = m y S t r i n g . f i n d ( ” ” ) ; / / Found a t i n d e x 5
+/ / S t a r t i n g from i n d e x 5 , f o u n d a t i n d e x 7
+spot2 = myString . f i n d ( ” o ” , spot ) ;
+
+e second argument that is passed to the function (in this case, spot) is the index
+at which you want to start your search.
+We can also use the rfind() function to ﬁnd a character in reverse direction
+from the end of the string, or from some starting point, as above. If we wanted to
+ﬁnd the single character string "o" before the space we might do something like
+this:
+s t r i n g m y S t r i n g = ” H e l l o World ” ;
+i n t spot , spot2 ;
+s p o t = myString . r f i n d ( ” ” ) ; / / found a t index 5
+/ / s t a r t i n g from i n d e x 5 , f o u n d a t i n d e x 4
+spot2 = myString . r f i n d ( ” o ” , spot ) ;
+
+is function call to rfind() uses the arguments "o" and spot. is stores
+the position of the ﬁrst "o" it comes across aer going in reverse from the index
+
+stored in spot (which contains 5). e last line would be equivalent to:
+/ / s t a r t i n g from i n d e x 5 , f o u n d a t i n d e x 4
+spot2 = myString . r f i n d ( ” o ” , 5 ) ;
+
+Both of these function calls will start searching for the string "o" backwards from
+the same spot in the string, at index 5.
+Sometimes the string you search for cannot be found, as in this example:
+s t r i n g m y S t r i n g = ” H e l l o World ” ;
+i n t s p o t = m y S t r i n g . f i n d ( ”Q” ) ; / / No Q i n t h i s s t r i n g !
+
+In this case, the find() (or rfind(), for that maer) returns a special value
+named string::npos. When we use find() or rfind() and believe that
+they could fail, we should verify that the string was found, as below:
+string userInput ;
+int spot ;
+c i n >> u s e r I n p u t ;
+spot = u s e r I n p u t . f i n d ( ”Z” ) ;
+i f ( s p o t == s t r i n g : : npos )
+c o u t << ” Th e re was no Z i n what you t y p e d ! ” << e n d l ;
+else
+c o u t << ” The f i r s t Z was i n p o s i t i o n ” << s p o t << e n d l ;
+
+11.1
+
+Review estions
+
+1. Write code to declare a string and take input from a user.
+2. Can a string be treated as a character array?
+3. When do you use a string?
+4. What is the #include needed to use strings?
+5. What function do you have to use to take an input with a space?
+6. Write code that takes in 5 words and outputs each of them 4 times.
+7. Write a program that takes in an input of at least two words of the same
+length. e program should then switch the last word and the ﬁrst word.
+
+11.2
+1.
+
+Review Answers
+s t r i n g myString ;
+c o u t << ” P l e a s e i n p u t a s t r i n g : ” ;
+g e t l i n e ( cin , myString ) ;
+/ / c i n >> m y S t r i n g ; i s a l s o a c c e p t a b l e
+
+2. Yes
+3. When you need to hold a collection of printable characters such as words,
+sentences, or longer sequences.
+4. #include <string>
+5. getline
+
+6.
+
+11.3
+
+s t r i n g myString ;
+c o u t << ” P l e a s e i n p u t a s t r i n g : ” ;
+g e t l i n e ( cin , myString ) ;
+/ / c i n >> m y S t r i n g ; i s a l s o a c c e p t a b l e
+
+Further Reading
+
+• http://www.harding.edu/fmccown/cpp_strings.pdf
+• http://www.stanford.edu/class/cs106x/handouts/08-C++-Strings.pdf
+
+Chapter 12
+
+Loops
+12.1
+
+Introduction
+
+Okay, so you know how to do some programming, but now you need to be able to
+handle a dozen or more operations that are obnoxiously repetitive. Imagine that you
+have a program that needs to allow data to be entered about your employees. Do
+you really want to have to write out the code to do that for every single individual?
+No—you want to set it up so you write it out as concisely as possible, and copy and
+paste just won’t work. What we need to do is write the relevant code once and have
+it repeated for us as many times as necessary.
+For this, we’ll use a structure known as a loop, which does exactly what you
+expect it would. A loop allows you to repeat a section of code as many times as you
+need. When the code reaches the end of the section, it goes back to the top of the
+section and the loop starts again. Aer each repetition of the loop (which we call an
+iteration), it will check for an end condition that is speciﬁed by the programmer.
+
+12.2
+
+Having Fun while Programming
+
+e ﬁrst loop we’ll cover is the while loop, probably the simplest and easiest-touse loop. It’s referred to as a pretest loop as it’s designed to check the loop’s end
+condition prior to a repetition of the loop.
+In Figure 12.1, the basic model of a pretest loop is shown. A diamond is used
+to represent where a decision must be made. In this case, it’s a Boolean expression.
+If the expression is true, control passes to the rectangle, which represents an action
+(or actions) to be performed: the statements that represent the body of the loop.
+
+61
+
+Figure 12.1: Logic of a while loop
+As with everything else we’ve learned so far, syntax is important. e structure
+is simple enough, as the pseudocode below shows:
+while ( BooleanExpression )
+{
+statement ;
+statement ;
+/ / w h a t e v e r e l s e n e e d s t o be done
+}
+
+e important thing to remember here is to be sure you have some statement
+to eventually allow the loop to exit. When the Boolean expression is false, remember, the loop is ﬁnished.
+Also, note that, like an if statement, the braces are not necessary if there
+is only one statement following the line with the while keyword and Boolean
+expression. Is it recommended to use the braces with only one statement? For your
+own sanity, and that of others reading your code, yes. Do you have to? No, but
+some organizations’ coding standards might say otherwise, because it makes the
+code easier to read and edit. So remember, it’s best to start with good habits early.
+
+Let’s look at an actual example of a while loop.
+i n t i = 1 0 ; / / i n i t i a l i z e s i a t 10
+c o u t << ” T−minus ” ;
+/ / w h i l e l o o p t h a t i s ended when i i s l e s s t h a n 0
+while ( i >=0)
+{
+/ / o u t p u t s t h e v a l u e o f i , t h e n moves t o a new l i n e
+c o u t << i << e n d l ;
+/ / d e c r e a s e s t h e v a l u e o f i by 1
+i −−;
+};
+c o u t << ” L i f t O f f ! ” ;
+
+e above code prints a countdown:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Lift Off!
+
+12.3
+
+do-while Loops
+
+Remember how the while loop is known as a pretest loop? Well, a do-while
+loop is known as a post-test loop for a similar reason. Let’s take a look at the
+ﬂowchart in Figure 12.2 and take a guess as to why.
+Post-test loops perform the statements in the body of the loop before it tests
+the end condition. Let’s look at how this will aﬀect the syntax you will use when
+implementing the loop.
+
+Figure 12.2: Logic of a do-while loop
+do
+{
+something ;
+something ;
+/ / w h a t e v e r e l s e n e e d s t o be done
+} while ( BooleanExpression )
+
+e diﬀerence between a while and a do-while loop is where each checks
+its end condition. In this case, the line with the while and the end condition are
+aer the main section of code. In a normal while loop, the program can potentially
+meet the end condition before even entering the loop body, and just pass over it. In
+a do-while loop, the program checks the end condition aer each iteration of the
+loop, so it will run at least once before the loop ends.
+ere’s not a whole lot more to add then hasn’t been stated in the while loop
+section, so here’s an example.
+
+char cont ; / / Short for continue ;
+/ / c o n t i n u e i s a key word and can ’ t be u s e d
+do {
+c o u t << ” Go C a d e t s ! \ n ” ;
+c o u t << ” Do you want t o c o n t i n u e ? Type Y f o r y e s : \ t ” ;
+c i n >> c o n t ;
+} w h i l e ( c o n t == ’ Y ’ ) ;
+
+12.4
+
+Event-Based Loops vs Count-Based Loops
+
+Loops can be organized into two categories based on how you use them. ese two
+categories are deﬁned by if you want to do a certain number of iterations of the loop
+(a count-controlled loop) or continue until some event occurs, such as a particular
+user input (an event-controlled loop). Let’s look at code examples to diﬀerentiate
+the two. e ﬁrst example shows an event-controlled while loop.
+/ / D e c l a r e s sum and temp .
+i n t sum = 0 , temp ;
+
+I n i t i a l i z e s sum t o 0 .
+
+c o u t << ” P l e a s e g i v e a number t o add : ” ;
+/ / U s e r i n p u t s i n t o a t e m p o r a r y v a r i a b l e t o add t o sum
+c i n >> temp ;
+w h i l e ( temp ! = 0 )
+{
+/ / S e t s sum e q u a l t o sum+temp a t s t a r t o f l o o p
+sum += temp ;
+c o u t << e n d l << ” t o t a l : ” << sum << e n d l ;
+/ / a s k s u s e r t o i n p u t temp v a r i a b l e a g a i n
+c o u t << ” Add a n o t h e r number ? I f yes , i n p u t ”
+<< ” a n o n z e r o i n t e g e r . I f no , i n p u t 0 . ” << e n d l ;
+c i n >> temp ;
+}
+
+is example shows a count-controlled while loop:
+int counter = 1;
+while ( counter != 12)
+{
+c o u t << c o u n t e r << e n d l ;
+counter ++;
+}
+
+12.5
+
+for work or for play
+
+Consider what we have needed for each loop we’ve covered. We’ve needed to initialize a variable that we want to check. We’ve also needed an end condition to test
+that variable against. Finally, we needed a way of modifying that variable to meet
+that end condition. Aer that, it’s whatever we’ve felt like puing in. With the for
+loop, we put those three elements into the loop header, separated by semicolons (;).
+A for loop would would look something like this:
+f o r ( I n t i a l i z a t i o n ; T e s t ; Update )
+{
+something ;
+something ;
+/ / w h a t e v e r e l s e you need
+}
+
+e for loop by its nature lends itself to being a count-controlled loop. You use
+this kind of loop to count up (or down) each iteration until you get to the speciﬁed
+value.
+Let’s run through how a for loop should run, following the code below. Assuming everything is correct, you would initialize the ﬁrst value to something such
+as an int counter that is set to 1. e TestExpression will include the
+same Boolean logic you would use in while and do-while loops, so let’s just say
+when counter is less than or equal to 5, the loop will terminate. Finally, let’s say
+counter++ is the update expression. In each iteration (unless you also decide to
+change counter from the body of the loop) you will move through this pretest
+loop four times.
+is code corresponds to the logic in Figure 12.3:
+f o r ( i n t c o u n t e r = 1 ; c o u n t e r <= 5 ; c o u n t e r + + )
+{
+c o u t << c o u n t e r << e n d l ;
+}
+
+…which produces the following output:
+1
+2
+3
+4
+5
+
+Figure 12.3: Logic of a for loop
+
+12.6
+
+Picking a Loop
+
+Which loop you use is dependent on your preferences and needs. A for loop
+is nice, but it’s more convenient as a count-controlled loop. If you needed to use
+an event-controlled loop, you may prefer to use a while or do-while loop. A
+for loop is a nice way to condense the initialization, end conditions and update
+statement of the loop into one short line. When choosing between a do-while
+and a while loop, you should remember that with a do-while, it will always
+run at least once, while a while loop may run zero or more times.
+
+12.7
+
+Nested Loops
+
+Much like if statements, loops can be nested within each other. Just remember to
+practice good formaing habits to keep the code from being too confusing. Take a
+look at the example below, then let’s talk our way through it.
+/ / a s i n g l e day
+f o r ( i n t h o u r s = 0 ; h o u r s < 2 4 ; h o u r s + +)
+{
+/ / a s i n g l e hour
+f o r ( i n t m i n u t e s = 0 ; i < 6 0 ; m i n u t e s + +)
+{
+/ / a s i n g l e mi nu t e
+f o r ( i n t s e c o n d s = 0 ; s e c o n d s < 6 0 ; s e c o n d s ++ )
+{
+/ / outputs the cu r r e n t time
+c o u t << h o u r s << ” : ” << m i n u t e s
+<< ” : ” << s e c o n d s << e n d l ;
+}
+}
+}
+
+For those readers who concluded that this is a clock simulation, you are correct!
+Our system of time is set up that we have 24 hours in a day, and each hour is a
+60 minute cycle, and each minute is a 60 second cycle. e code mimics this by
+advancing the seconds 60 times before advancing each minute. Aer 60 minutes, the
+hour counter loop is incremented. Each time an outer loop starts another iteration,
+variables inside the inner loops are reset.
+
+12.8
+
+Inﬁnite Loops
+
+Remember to have some way of advancing towards the end condition. What will
+happen if you can’t reach that end condition from within the loop? Most likely an
+inﬁnite loop will occur, which is a loop that can’t stop itself. Depending on the
+operation of the loop, you may not know what is happening, and the loop could
+potentially cause disastrous results. Let’s look at an example of a while loop that
+suﬀers from an inﬁnite loop.
+
+int counter = 1;
+while ( counter != 12)
+{
+c o u t << c o u n t e r << e n d l ;
+c o u n t e r += 2 ;
+}
+
+Because counter starts with a value of 1, and adds 2 each time the loop
+executes, counter will always be odd, and never equal twelve. erefore, the
+loop will never end.
+
+12.9
+
+Review estions
+
+1. Create a while loop that increments some integer variable x initialized
+with a value of 0 by 3 until the value of x reaches a value of 30. Make sure
+you declare the variable and initialize it ﬁrst!
+2. Create a do-while loop that reads integer values given by the user into an
+integer variable x, initialized to 0, then adds those values onto some variable
+named totalVal until totalVal reaches at least 20.
+3. Create a for loop that outputs your name to the screen 10 times before
+exiting the loop.
+4. Spot the logic error and correct it in the following code:
+f o r ( i n t j = 1 0 , j > 0 , j −−)
+{
+c o u t << j << e n d l ;
+i f ( j = 1)
+{
+c o u t << ”BOOM ! \ n ” ;
+}
+}
+
+5. In the last question, was the loop an event-controlled loop or count-controlled
+loop?
+
+12.10 Review Answers
+1.
+
+2.
+
+3.
+
+4.
+
+int x = 0;
+while ( x < 10)
+{
+x ++;
+}
+
+int x = 0;
+int totalVal = 0;
+do
+{
+c o u t << ” Type i n a number : ” ;
+c i n >> x ;
+t o t a l V a l += x ;
+}
+while ( t o t a l V a l < 20) ;
+
+f o r ( i n t i = 0 ; i < 1 0 ; i ++ )
+{
+c o u t << ” Your name h e r e \ n ” ;
+}
+
+f o r ( i n t j = 1 0 ; j > 0 ; j −−)
+{
+c o u t << j << e n d l ;
+i f ( j == 1 )
+{
+c o u t << ”BOOM ! \ n ” ;
+}
+}
+
+5. Count-controlled
+
+12.11 Further Reading
+• http://www.cplusplus.com/doc/tutorial/control/
+• http://www.cprogramming.com/tutorial/lesson3.html
+• http://www.cprogramming.com/c++11/c++11-ranged-for-loop.html
+
+Chapter 13
+
+Arrays
+An array is a series of variables that are the same of the same type (int, float,
+double, char, and so on). Arrays are held in a computer’s memory in a strict
+linear sequence. An array does not hold anything other than the elements of the
+speciﬁed type, so there is no assigning an array of type float and hoping to store
+a string there. Doing so would cause a “type mismatch error” and the program
+wouldn’t compile. To create an array, the programmer types something like this:
+char S c o t t [ 5 ] ;
+
+e char is the data type for all elements in the array, Scott is the name of
+the array (you can be as creative as you want with the name), and the 5 inside the
+square brackets represents the size of the array. So char Scott[5] can hold 5
+pieces of data that are of type char.
+When trying to visualize an array, think of a rectangle split up into as many
+pieces as the array has places to hold data. In Figure 13.1, the rectangle has ﬁve
+spaces, each of type char awaiting some values.
+In order to refer to the individual elements in an array, we start with the number
+0 and count upwards. We use [0] to access the ﬁrst element in the array, [1] for
+the second, [2] for the third, and so on. In order to read or write certain locations
+of the array, we state the name of the array and the element we want to access. It
+should look like this:
+S c o t t [ 3 ] = ’Q ’ ;
+c o u t << S c o t t [ 3 ] ;
+
+e diagram below depicts how the computer interprets this.
+
+71
+
+0
+
+1
+
+2
+
+3
+
+4
+
+char Scott[5]
+Figure 13.1: e array named Scott has ﬁve spaces for char data
+
+0
+
+1
+
+2
+
+3
+
+4
+
+Q
+char Scott[5]
+Figure 13.2: e fourth element of Scott now contains 'Q'
+You can also store values inside the array ahead of time when you declare the
+array. To do so, you need to enclose the values of the appropriate type in brackets
+and separate the values with a comma. Below are two examples, one an array where
+each element is of type char and another where each element is of type int.
+char S c o t t [5] = { ’ S ’ , ’ c ’ , ’ o ’ , ’ t ’ , ’ t ’ } ;
+i n t John [ 5 ] = { 9 9 , 5 , 1 , 2 2 , 7 } ;
+
+Note that, in the C and C++ language, arrays of characters intended to be
+treated as a string must contain a special character called the null character1 or
+1
+
+Oen abbreviated NUL; Note that this is not the same as the NULL pointer
+
+null terminator. e null terminator marks the end of the string. In C++, this is
+represented by the special character '\0'. Because the null temrinator takes up
+one element in the array, any character array that is intended to be used as a printable string must be declared having a size one larger than the longest string that
+you expect to store. Initializing the above character array should really be done as
+the following (notice that we make the array one element larger!):
+char S c o t t [6] = { ’ S ’ , ’ c ’ , ’ o ’ , ’ t ’ , ’ t ’ , ’ \0 ’ } ;
+
+Alternatively, you can initialize a character array with a string literal, as below.
+We discuss string literals in more detail in Chapter 3.
+char S c o t t [6] = ” S c o t t ” ;
+
+It is also possible to let the computer ﬁgure out the appropriate length for an
+array when the array is being initialized at the same time as when it is declared.
+e below code produces an identical array as the previous example:
+char S c o t t [ ] = ” S c o t t ” ;
+
+13.1
+
+Multi-dimensional Arrays
+
+A two-dimensional array (some might call it a “matrix”) is the same thing as an
+array, but is an “array of arrays”. Here’s a two-dimensional three-by-three array:
+i n t R i c h [ 3 ] [ 3 ] ; / / 2D
+
+Declaring arrays with more dimensions are possible with similar syntax. Here’s
+a three-dimensional 10 × 10 × 10 example:
+i n t Sam [ 1 0 ] [ 1 0 ] [ 1 0 ] ; / / 3D
+
+And here is a four-dimensional 10 × 10 × 10 × 10 array. is is possible even
+though it’s hard to visualize.
+i n t T r a v i s [ 1 0 ] [ 1 0 ] [ 1 0 ] [ 1 0 ] ; / / 4D
+
+A user can input values into a multi-dimensional array in a similar way as a
+single-dimensional array.
+described in Chapter 19.
+
+i n t neo [ 3 ] [ 3 ] = { { 1 , 2 , 3 } , { 4 , 5 , 6 } , { 7 , 8 , 9 } } ;
+c o u t << neo [ 0 ] [ 0 ] << e n d l << e n d l ; / / f i r s t number , 1
+c o u t << ” ” << neo [ 2 ] [ 2 ] ; / / l a s t number , 9
+
+e same logic is applied for 3-dimensional and 4-dimensional arrays, but when
+ﬁlling them be mindful of the order of the input so that when you want to view
+certain elements in the array you are able to correctly access them.
+
+13.2
+
+Review estions
+
+1. Declare an integer array named myInt with a size of 10.
+2. If an array has a size of 20, how many indexes are there in the array and
+what are they?
+3. Declare a character array named myArray with a size of 4, and initialize
+the characters in the array to 'Z', 'a', 'c', and 'h'.
+4. Create a program in which an integer array named myArray is declared
+with a size of 10. Use a for loop to prompt the user to store a value in every
+index of the array. Aer the array is given values, output the values of the
+array to the screen using a for loop. Output each value of the array on its
+own line.
+
+13.3
+
+Review Answers
+
+1. int myInt[10];
+2. ere are 20: indexes 0 through 19.
+3. char myArray[4] = 'Z', 'a', 'c', 'h';
+
+4.
+
+13.4
+
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+i n t myArray [ 1 0 ] ;
+c o u t << ” E n t e r 10 i n t e g e r s , p r e s s [ ENTER ] ”
+<< ” a f t e r e v e r y i n t e g e r . \ n ” ;
+f o r ( i n t i = 0 ; i < 1 0 ; i + +)
+{
+c i n >> myArray [ i ] ;
+}
+f o r ( i n t j = 0 ; j < 1 0 ; j + +)
+{
+c o u t << myArray [ j ] << e n d l ;
+}
+return 0;
+}
+
+Further Reading
+
+• http://www.cplusplus.com/doc/tutorial/arrays/
+• http://www.cplusplus.com/forum/beginner/43663/
+• http://msdn.microsoft.com/en-us/library/7wkxxx2e.aspx
+• https://www.youtube.com/watch?v=SFGOAKYXfOo
+
+Chapter 14
+
+Blocks, Functions, and
+Scope
+14.1
+
+Blocks
+
+Since we’ve covered if statements and loops, let’s go into more detail about the
+code that’s contained within them. When you need to contain multiple lines of
+code, we’ve shown how to use braces. ese braces will create a new layer in the
+code, and the lines within would be grouped into what is known as a compound
+statement, sometimes called a block.
+Take a look at the example below. ere are two blocks here: the one where x
+is less than 5, and one where x is greater than 5. Notice the variables declared in
+each, y and z. When these are declared, they are only usable within the blocks that
+they were declared. When that block reaches its end, they are lost to the rest of the
+program. is is because the scope of the variables within the blocks is limited to
+those blocks. We discuss scope further at the end of this chapter.
+
+77
+
+int x ;
+c i n << x ;
+i f ( x < 5)
+{
+int y ;
+c i n << y ;
+x += y ;
+}
+else if (x >
+{
+int z ;
+c i n << z ;
+x −= z ;
+}
+
+// Declares y
+/ / User i np u t s t o r e d in y
+/ / Sets y to x + y
+5)
+// Declares z
+/ / User i np u t s t o r e d in z
+/ / Sets x to x − z
+
+c o u t >> x ;
+
+14.2
+
+Basic Functions in C++
+
+14.2.1
+
+What are functions and why do we use them?
+
+Functions are an important part of C++ programming. Without them, programs
+would be confusing and diﬃcult to troubleshoot. When programs are wrien, they
+tend to be wrien in logical chunks which we call subprograms. ese subprograms
+are known as functions in C++ which, when called in a program, may execute whatever the programmer wants. Simply put, functions are like miniature programs that
+when pieced together form the actual program that you are trying to write.
+
+14.2.2
+
+e parts of a basic function
+
+A function declaration (sometimes known as the prototype) is normally placed
+before the main() function in your code. is lets the compiler know that there
+is a function that will be deﬁned in more detail further on in your program. With
+basic functions, your declarations should start with a return type such as double,
+int, and so on; this is the data type your function will return.
+Aer the return type, the next item that needs to be wrien is the function’s
+name, which can be almost anything you want. Remember that you will be using
+it again later in your code, so it makes sense to make it something short and logical
+that you can remember! Now that you have your data type and your function name,
+it’s time for zero or more function parameters. ese will be wrien inside parentheses immediately following your function’s name. Each parameter is in turn made
+
+Function return type
+
+Function Name
+
+Parameters, with type definition
+
+void myFunction (int parameter);
+Figure 14.1: e structure of a function declaration
+up of a data type and a name like a variable declaration. A comma separates function parameters and your declaration must end with a semicolon aer the closing
+right parenthesis. Here is an example of a function declaration:
+/ / c o s t and p r i c e a r e p a r a m e t e r s
+double p r o f i t ( i n t cost , double p r i c e ) ;
+
+Using a function looks much like an abbreviated version of the function declaration. A function call is responsible for telling the compiler when and how to
+execute a function. Function calls are found in another function like main(). Often the user is prompted to enter necessary data with cout statements and his or
+her response is collected with cin. Once this data is collected, the program holds
+it until a function call is made somewhere in the code. Once the function call is
+made, the compiler takes the entered data and then uses the code in the function
+deﬁnition (which we will go over shortly) to operate on the parameters and return
+a value. For your function call, write your function name followed by the variables
+or values you want to pass in. In a functiton call, it is not necessary to speciy the
+data types, as they are already understood.
+
+Here is an example of a function call:
+# include <iostream >
+u s i n g namespace s t d ;
+/ / function declaration ( prototype )
+double p r o f i t ( i n t cost , double p r i c e ) ;
+i n t main ( )
+{
+double a , b ;
+int c ;
+c o u t << ” E n t e r t h e m a n u f a c t u r i n g c o s t o f t h e i t e m : ” ;
+c i n >> c ;
+c o u t << ” E n t e r t h e r e t a i l p r i c e o f t h e i t e m : ” ;
+c i n >> b ;
+/ / f u n c t i o n c a l l t o p r o f i t w i t h c o s t = c and p r i c e = b
+a = profit (c , b) ;
+c o u t << a << e n d l ;
+return 0;
+}
+
+You have a declaration and a function call now. e only thing le is the code
+inside the function deﬁnition—the function body is the most important part because it contains the code needed by the compiler to execute the function.
+e function deﬁnition will usually have a lot more code than both the declaration and the function call. As a result, the deﬁnition and body are also more
+diﬃcult to write than the declaration or call. e function deﬁnition and body is
+oen placed aer your main() function. Multiple function deﬁnitions and bodies
+can be placed aer your main() in no particular order, though it makes it less
+confusing if you use the same order as when they were declared. Start your function deﬁnition with your function heading, which looks exactly like your function
+declaration but without a semicolon. Following your heading, you need your function body. Start your function body by placing an opening le brace ({) on the
+line following your heading. e code that makes up the function body follows the
+brace. Aer the code in the body is ﬁnished, you end the body with a closing right
+brace (}). Notice that the semicolon is not necessary either aer your heading or
+aer your closing brace. e standard rules for semicolons apply within the body
+of the function, though. What goes inside the function body depends completely
+on what you want the function to do. You may declare variables to be used just in
+your function and can leave the function using return statements at any time.
+
+Below is an example of a function deﬁnition:
+// function definition
+double p r o f i t ( i n t cost , double p r i c e )
+{
+double p ; / / temporary v a r i a b l e
+p = price − cost ; / / c a l c u l a t e the p r o f i t
+return p ; / / return the r e s u l t to the c a l l i n g function
+}
+
+Great, now that you have a grasp of the three major parts of basic functions we
+can move on to other related material!
+e functions we just described are known as programmer deﬁned functions since the programmer deﬁnes these functions. ere are also predeﬁned
+functions which are available for your convenience. Predeﬁned functions are functions that are already wrien and deﬁned. In order to use predeﬁned functions, the
+programmer needs to include the necessary library and then call the function wherever they need it.
+In the following example we will use the sqrt() function to calculate the
+square root of the user’s input. e sqrt() function is described in more detail
+in Chapter 17.
+# include <iostream >
+# i n c l u d e <cmath >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+d o u b l e num ;
+c o u t << ” P l e a s e e n t e r a number : ” ;
+c i n >> num ;
+c o u t << s q r t ( num ) << e n d l ;
+return 0;
+}
+
+14.3
+
+void Functions
+
+void functions are functions that do not return a value. Notice that other function declarations that do return a value start with their return type such as double,
+int, or the like. void functions behave the same except no value is returned. A
+common application where a void function is used is printing the result of calculations to the screen. e calculations might be performed elsewhere, but the results
+would be printed using the void function. Syntax for void functions works in
+the same way as normal functions, but the keyword void is wrien where the
+
+return data type would normally go. e declaration, function call and deﬁnition
+for void functions will follow the same format as other functions. Note that, like
+other functions, there does not necessarily need to be parameters in a void function. Here is an example of a simple void function declaration:
+void displayMessage ( ) ;
+
+Remember the deﬁnition and calling of displayMessage() would be the
+same as any other function with the exception of the void return type and that
+no value is returned! Here is an example of a deﬁnition, declaration, and how this
+function would be called:
+# include <iostream >
+u s i n g namespace s t d ;
+void displayMessage ( ) ;
+i n t main ( )
+{
+int x = 2 , y ;
+y = x + 1;
+/ / This doesn ’ t r e t u r n anything
+displayMessage ( ) ;
+return 0;
+}
+void displayMessage ( )
+{
+c o u t << ” C a l c u l a t i o n s a r e done ! ” << e n d l ;
+}
+
+14.4
+
+Overloading Function Names
+
+Overloading function names allows the same name to be used in multiple function
+deﬁnitions but with diﬀerent parameter listings. Function names can be reused
+using this feature. Function name overloading eliminates problems associated with
+having multiple names for functions with similar purposes and can make the code
+both more understandable and more convenient for the programmer to write.
+Below is an example of an overloaded function name. Notice that both functions have the same name, but diﬀerent parameter types.
+
+i n t p l u s ( i n t num , i n t numr ) ;
+f l o a t p l u s ( f l o a t num , f l o a t numr ) ;
+
+Here is an example of improper function overloading. Simply changing the
+return type does not work—the parameters must be diﬀerent!
+i n t p l u s ( i n t num , i n t numr ) ;
+f l o a t p l u s ( i n t num , i n t numr ) ;
+
+14.5
+
+Scope
+
+As we dive into more complex programs there is a need for a wide variety of variables in diﬀerent locations in the code. Some of these variables are declared within
+individual blocks of code, such as within loops or conditionals. Others are declared
+completely outside functions. e two primary types of variables we are going to
+look at here are local and global. e location of the declaration of a variable within
+the code changes how that variable may be used.
+Local variables are declared within a block of code. A local variable is available
+to code from the point of its declaration through the end of that block of code. A
+simple example is a variable declared in main():
+i n t main ( )
+{
+i n t games ;
+return 0;
+}
+
+e variable games is a local variable because it exists only within the local
+function, main(). It cannot be used anywhere outside main() without some
+additional work (such as passing it by reference to a function). Similarly, variables
+declared in other functions are not available to code in main().
+
+# include <iostream >
+u s i n g namespace s t d ;
+v o i d my_games ( ) ;
+i n t main ( )
+{
+my_games ( ) ;
+c o u t << games ; / / ERROR ! No s u c h v a r i a b l e h e r e !
+return 0;
+}
+v o i d my_games ( )
+{
+i n t games = 1 0 ;
+c o u t << games ;
+}
+
+In the previous example function, my_games() is called by main() and
+outputs 10. e variable games is local to that function. If games is referenced
+anywhere else outside that function, the program will not compile.
+An easy way to understand local variables is to compare them to your neighbors. Everyone that lives on your street and around you are variables, and since
+you all share the same street, they are local. e neighbors on an adjacent street
+might be close to where you live, but since they do not share the same street, they
+might not be considered neighbors. You can think of these neighbors on the adjacent street as other functions. While they might be close by, they do not share the
+same street.
+Global variables are quite diﬀerent from local variables. Global variables can
+be used by code anywhere within the program. A global variable is declared outside
+of any function. Using similar code as in the example above, we make the games
+
+variable global:
+# include <iostream >
+u s i n g namespace s t d ;
+i n t games ;
+v o i d my_games ( ) ;
+void their_games ( ) ;
+i n t main ( )
+{
+games = 5 ;
+my_games ( ) ;
+their_games ( ) ;
+return 0;
+}
+v o i d my_games ( )
+{
+c o u t << games << e n d l ;
+}
+void their_games ( )
+{
+c o u t << games << e n d l ;
+}
+
+Both functions print the same variable, causing the program to produce the
+following output:
+5
+5
+To sum it up, local variables work only within the block of code that it is declared. Global variables are declared outside functions, and can be used at any point
+in the program.
+
+14.6
+
+Review estions
+
+1. What are the three parts of a function?
+2. Can a void function return a value?
+3. How many functions can one program have?
+
+4. What is the output of the following code snippet?
+# include <iostream >
+u s i n g namespace s t d ;
+v o i d example ( ) ;
+i n t main ( )
+{
+return 0;
+}
+v o i d example ( )
+{
+c o u t << ” H e l l o World ” ;
+}
+
+5. Write code using at least one function that will ask the user to guess a
+“magic” number (of your choice) between 1 and 100 until they get it right.
+Aer a guess, the program should output whether the number they guessed
+is higher or lower than the “magic” number. It should also display how many
+guesses the user makes, and loop until the guess is correct.
+6. Using at least one function, write code that prompts the user for a number
+of miles travelled and a number of hours, then calculates the user’s speed in
+miles per hour.
+
+14.7
+
+Review Answers
+
+1. Return type, function name, parameter(s)
+2. No
+3. As many as you want
+4. ere is no output
+
+# include <iostream >
+u s i n g namespace s t d ;
+void guessing_game ( ) ;
+i n t main ( ) {
+guessing_game ( ) ;
+}
+
+5.
+
+void guessing_game ( ) {
+i n t g u e s s , c o u n t e r = 0 , number = 5 ;
+bool found = f a l s e ;
+do {
+c o u t << ” Guess a number : \ t ” ;
+c i n >> g u e s s ;
+i f ( g u e s s > 1 0 0 o r g u e s s <= 0 )
+{
+c o u t << ” Number i s between 1 and 1 0 0 ! \ n \ n ” ;
+counter ++;
+}
+e l s e i f ( g u e s s < number )
+{
+c o u t << ” Too low . Guess a g a i n . \ n \ n ” ;
+counter ++;
+}
+e l s e i f ( g u e s s > number )
+{
+c o u t << ” Too h i g h . Guess a g a i n . \ n \ n ” ;
+counter ++;
+}
+e l s e / / g u e s s == number
+{
+c o u t << ” You g o t i t ! \ n ” ;
+found = t r u e ;
+counter ++;
+}
+} while ( ! found ) ;
+c o u t << ” I t t o o k you ” << c o u n t e r << ” g u e s s e s ! \ n ” ;
+c o u t << ” Thanks f o r p l a y i n g ! \ n \ n ” ;
+}
+
+# include <iostream >
+u s i n g namespace s t d ;
+d o u b l e mph ( d o u b l e m i l e s , d o u b l e h o u r s ) ;
+
+6.
+
+i n t main ( )
+{
+double miles = 0 , hours = 0 , milesPerHour ;
+c o u t << ” E n t e r t h e number o f m i l e s t r a v e l e d : ” ;
+c i n >> m i l e s ;
+c o u t << ” E n t e r t h e t r a v e l t i m e i n h o u r s : ” ;
+c i n >> h o u r s ;
+c o u t << ” Your s p e e d i n m i l e s p e r hour : ”
+<< mph ( m i l e s , h o u r s ) ;
+return 0;
+}
+d o u b l e mph ( d o u b l e m i l e s , d o u b l e h o u r s )
+{
+r e t u r n miles / hours ;
+}
+
+14.8
+
+Further Reading
+
+• http://www.cplusplus.com/doc/tutorial/functions/
+• http://www.cplusplus.com/doc/tutorial/functions2/
+• http://www.cprogramming.com/tutorial/lesson4.html
+
+Chapter 15
+
+Problem Solving &
+Troubleshooting
+Problem solving and troubleshooting in programming is oen referred to as debugging. Does your program not compile? Does it not achieve the desired eﬀect?
+Debugging is your answer. And, unless you are a perfect programmer, you are likely
+to do quite a bit of debugging. e ﬁrst step to debugging is looking for common
+errors.
+
+15.1
+
+e Compilation Error
+
+ese errors happen when your compiler returns an error message aer you hit
+compile. e messages usually tell you what is wrong, and what line the error is
+on, but be sure to double-check the lines immediately before and aer the reported
+error. Because the code is incorrect, the compiler can only guess at what you meant
+and give you a hint.
+For example, one of the most common errors a beginning programmer will encounter is forgeing a semicolon. In some development environments (like NetBeans
+in Figure 15.1), this will cause the error to be reported not on the line with the missing semicolon, but on the following line.
+
+89
+
+Figure 15.1: A syntax error in the NetBeans development environment
+
+15.2
+
+e Logic Error
+
+Logic errors are oen subtle, and occur aer the code compiles. When the code is
+executed, however, the result is wrong. is may happen when arithmetic operators like +, -, *, and / get mixed up. Another common issue is misplacement of
+parentheses, as a misplaced parenthesis can cause problems in complex expressions.
+
+15.3
+
+e Inﬁnite Loop
+
+Another speciﬁc logic error is the inﬁnite loop. e inﬁnite loop is a common error
+that can result in your program repeating the same block of code over and over.
+For an inﬁnite loop to occur, the conditional expression of a while, for, or
+do-while loop remains true. ere are many ways for this to happen, such as
+accidentally using = instead of == to compare two numbers, or using the wrong
+operators, like a > in the place of a <.
+
+Figure 15.2: An inﬁnite loop in the NetBeans development environment
+
+15.4
+
+Review estions
+
+1. Consider the following function:
+d o u b l e a v e r a g e ( d o u b l e s1 , d o u b l e s2 , d o u b l e s3 , s 4 ) ;
+{
+retun s1+s2+s3+s4 /4
+}
+
+(a) Find the syntax errors in the function.
+(b) ere is a logic error in the function. What is it? How does it aﬀect
+the output of the code?
+2. e below program compiles, but does not get the result the programmer
+
+wanted. Why?
+i n t main ( )
+{
+i n t shots , goals , saves ;
+double save_perc ;
+char cont ;
+cout . unsetf ( ios : : f i x e d ) ;
+cout . u n s e t f ( i o s : : showpoint ) ;
+c o u t << ” E n t e r t h e number o f s h o t s on g o a l : \ t ” ;
+c i n >> s h o t s ;
+c o u t << ” E n t e r t h e number o f g o a l s s c o r e d : \ t ” ;
+c i n >> g o a l s ;
+c o u t << e n d l ;
+saves = shots − goals ;
+/ / Hockey shows s a v e % a s d e c i m a l t o t h r e e p l a c e s
+save_perc = ( saves / shots ) ;
+c o u t << ” I f t h e r e were ” << s h o t s << ” s h o t s and ”
+<< g o a l s << ” g o a l s , ”
+<< ” t h e n t h e g o a l i e ’ s s a v e p e r c e n t a g e was ” ;
+cout . s e t f ( ios : : f i x e d ) ;
+cout . s e t f ( i o s : : showpoint ) ;
+cout . p r e c i s i o n ( 3 ) ;
+c o u t << s a v e _ p e r c << e n d l << e n d l ;
+return 0;
+}
+
+15.5
+1.
+
+Review Answers
+(a) retun should be return. ere is an extra semicolon at the end
+of the function header, and one missing aer the return statement.
+(b) ere are no parentheses around the addition, so s4 will be divided
+by 4, then added to s1 + s2 + s3, instead of adding all four
+variables and then dividing the sum by 4.
+
+2. Remove the unused variable cont and cout.unsetf lines. Because
+shots and goals are both integers, the program does the math as though
+you are looking for an int result and doesn’t store the fractional parts,
+even though it stores the result in a double. Change shots, goals,
+and saves to be of type double and the program will work as intended.
+
+Chapter 16
+
+e Preprocessor
+Preprocessor directives are lines of code that are executed before the compilation of
+the code begins. ese directives are like geing everyone in a room before starting
+a project or doing warmups before running a race. One of the most frequently-used
+preprocessor directives is #include.
+When we want to include in our code a system library or some other ﬁle, we
+use the keyword #include followed by the library name or the ﬁle name. e
+way we distinguish between including libraries and including ﬁles is with angle
+brackets and quotes, respectively. For example, when we want to use objects like
+cout or cin, we need to include the iostream library like so:
+# include <iostream >
+
+If we want to include a ﬁle, such as a ﬁle named myFile.h, we can write:
+# include ” myFile . h”
+
+However, when we include ﬁles, they must be in the same directory as the
+ﬁle where the #include appears. We discuss the Standard Template Library in
+Chapter 23, and include a short sample of other libraries in Table 16.1.
+
+93
+
+Library
+<iostream>
+<cstdlib>
+<cmath>
+
+Provides
+Input/output
+stream objects
+e C standard
+library
+Mathematical
+functions
+
+<iomanip>
+
+Input/output
+manipulation
+
+<ctime>
+
+Time-related
+functions
+e string
+class
+File input and
+output streams
+
+<string>
+<fstream>
+
+Some common uses
+cout, cin:
+see Chapters 6 and 5
+rand(), abs(), NULL
+pow(), sqrt(),
+cos(), tan(), sin():
+see Chapter 17
+set_iosflags(),
+setfill(),
+setprecision()
+clock(), time()
+See Chapter 11
+See Chapter 18
+
+Table 16.1: Some useful libraries and a sampling of what they provide
+
+16.1
+
+Review estions
+
+1. Which of the following demonstrate correct syntax for #include statements? (Note: some of these may be syntactically correct but not do what
+you would expect!)
+(a) #include <aFile.txt>
+(b) #include <iostream>;
+(c) include <iostream>
+(d) #include myFile.txt;
+(e) #include "myFile.txt"
+() #include <cmath>;
+(g) include <cmath>
+(h) include "cmath"
+
+(i) #include <cmath>
+(j) #include (iostream);
+(k) #include <iostream>
+2. Identify the the preprocessor statements in the following code:
+# include <cstdlib >
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( i n t a r g c , c h a r * a r g v [ ] )
+{
+c o u t << ” I n c l u d e d ! ” << e n d l ;
+return 0;
+}
+
+3. Which library is required to use the cout object?
+4. Is using namespace std; a preprocessor directive?
+5. If you want to be able to use the funtion pow(), which library do you need?
+
+16.2
+
+Review Answers
+
+1. a, e, i, and k.
+2. e ﬁrst two lines are preprocessor directives.
+3. e iostream library.
+4. No.
+5. e cmath library.
+
+Chapter 17
+
+Advanced Arithmetic
+Advanced arithmetic in C++ includes mathematics that can’t be used in code without the use of the <cmath> library. is is mathematics that goes above and
+beyond the primitive operations: addition (+), subtraction (-), multiplication (*),
+and division (/). As we have seen before, some simple arithmetic might look like:
+int x ;
+x = 1;
+x += 5 ;
+
+e variable x is declared as an integer. e next line sets it to one. e +=
+operator adds ﬁve to x, which makes x contain six. Doing simple operations like
+these does not require any special libraries or unusual commands. Any compiler
+can look at a +, -, *, or / in a line of code and know exactly what the programmer
+expects to happen. Some math requires a lile extra help, though. In this case, help
+is the <cmath> library.
+<cmath> is a library that is needed for trigonometric, hyperbolic, exponential, logarithmic, rounding, and absolute value functions. e <cmath> library is
+designed to make your life simple and to make complicated mathematics easier in
+C++. Using the <cmath> library in code is as simple as including it at the top of
+your source code ﬁle with the rest of your libraries. For example:
+# include <iostream >
+# i n c l u d e <cmath >
+
+Aer the inclusion of the <cmath> library, you can use certain mathematical
+functions in your code such as pow(x, y), which raises the parameter x to the
+
+97
+
+power of parameter y, and sqrt(z), which returns the square root of z. In your
+ﬁrst few C++ programs you will probably not use the more advanced mathematical functions included in the <cmath> library, but for a full list of the functions
+provided in <cmath>, refer to “Further Reading” at the end of this chapter.
+
+17.1
+
+Examples
+
+17.1.1
+
+pow()
+
+pow is the function called when you want to raise a value or variable to a certain
+power. Take a look at the code below and we’ll break it down line by line.
+int x , y ;
+x = 4;
+y = pow ( x + 1 , 3 ) + 6 ;
+
+First, we are declaring two variables: x and y. Aer that we set x to 4. Now
+we get to a more interesting section of code. We are asking the compiler to raise
+the value of x plus 1 to the power of 3, add 6, and then place the result in y. To use
+the pow function, you must understand its syntax. Here is the breakdown:
+pow ( s t a r t i n g v a l u e , power b e i n g r a i s e d )
+
+In pow(x + 1, 3) + 6, we are raising the starting value x + 1 to the
+power of 3. Before the power of 3 is applied, 1 is added to x. In this case it is the
+simple operation of 4+1, which yields 5. Aer we get 5, we raise it to the 3rd power
+to get a value of 125. Aer we reach the value of 125 we are ﬁnished with the pow
+function and resume using normal operators when we add 6 to 125 resulting in the
+ﬁnal value of 131.
+Undoubtedly there are more complicated uses of the pow function, such as
+multiple uses of pow in the same line of code. You might use multiple pow operations in code that calculates the length of one side of a triangle using the Pythagorean
+eorem. Look at the following code and see if you can ﬁgure out what the output
+value would be:
+int x , y , z ;
+x = 3;
+y = x + 1;
+z = pow ( x , 2 ) + pow ( y , 2 ) ;
+c o u t << z ;
+
+If you got 25, then you have the right answer! Aer initializing the variables
+x and y and seing their values (3 for x and x+1 for y), we raise each value to the
+
+power of 2. For visual reference,
+z = pow ( 3 , 2 ) + pow ( x + 1 , 2 ) ;
+
+results in
+z = 9 + 16;
+
+z’s value is set to 25. e pow function is simple to use and can make the
+program simpler from a readability standpoint.
+
+17.1.2
+
+sqrt()
+
+Square roots are calculated using the sqrt function. Take a look at the example
+below to see how it is called in a program:
+int a , b ;
+a = 25;
+b = sqrt ( a ) ;
+
+sqrt is simpler than pow in that it only requires one parameter. Since sqrt
+returns a double, you should usually assign the result to a double variable, but
+in this example, sqrt returns exactly 5, so it is implicitly converted to an int
+without any issues.
+ere are cases where both sqrt and pow are used in the same formula, such
+as when calculating the distance between two points. When writing such code, it
+is very important to keep track of the parentheses and to use correct syntax. One
+such syntax mistake is made when programmers think that C++ syntax is the same
+as algebraic syntax. is is not the case in C++!
+i n t x = ( 5 ) ( pow ( 3 , 3 ) ) ; / / I n c o r r e c t s y n t a x !
+
+When the compiler sees this, it doesn’t view it as multiplication, but instead as
+(according to a professional), “function shenanigans.” It is important to be explicit
+with mathematical symbols in C++. So instead of the incorrect code above, use:
+i n t x = 5 * ( pow ( 3 , 3 ) ) ;
+
+As an example, we will use code to compute the distance between the two
+points (4, 4) and (6, 10) on a plane.
+
+i n t x1 , x2 , y1 , y2 ;
+float dist ;
+x1 = 4 ;
+y1 = 4 ;
+x2 = 6 ;
+y2 = 1 0 ;
+d i s t = s q r t ( pow ( x2 − x1 , 2 ) + pow ( y2 − y1 , 2 ) ) ;
+c o u t << d i s t ;
+
+Your ﬁnal answer aer the calculation is executed is roughly 6.342555. Without the help of the advanced arithmetic operations, geing to this result would be a
+diﬃcult, long, drawn-out process. pow and sqrt are handy functions that make
+life easier, all with the help of the <cmath> library.
+
+17.1.3
+
+Modulo
+
+e modulo operator (the percent sign: %) ﬁnds the remainder, or what was le over
+from division. is program uses the modulo operator to ﬁnd all prime numbers (all
+the numbers that never have a remainder of 0 when divided by every number except
+1 and itsel) that can be held by an int.
+# include <iostream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+i n t divby , remainder ;
+f o r ( i n t t e s t = 1 ; t e s t < 2 1 4 7 4 8 3 6 4 7 ; t e s t ++ )
+{
+bool isprime = true ;
+f o r ( d i v b y = 2 ; d i v b y < t e s t ; d i v b y ++ )
+{ / / Store the remainder of testprime / divby
+remainder = t e s t % divby ;
+i f ( r e m a i n d e r == 0 ) / / I f t h e number i s n o t p r i m e
+{
+isprime = f a l s e ;
+break ; / / Leave the f o r loop
+}
+}
+i f ( i s p r i m e ) / / I f i t p a s s e s t h e t e s t , i t i s pr i m e .
+c o u t << ” ” << t e s t p r i m e ; / / P r i n t t h e pr i m e
+}
+return 0;
+}
+
+17.2
+
+Review estions
+
+1. Which #include library is needed to use advance arithmetic operators?
+2. Write C++ code to calculate 29 .
+3. Write a statement to set the value of a variable of type double to the square
+root of 10001.
+4. Complete the code below to ﬁnd the length of the hypotenuse of a right
+triangle (remember that a2 + b2 = c2 ) given the lengths of the other two
+sides. What is the ﬁnal output of your code?
+# include <iostream >
+/ / Add n e c e s s a r y l i b r a r i e s h e r e
+u s i n g namespace s t d ;
+i n t main ( )
+{
+double a = 3 . 0 , b = 4 . 0 ;
+double c ;
+//
+/ / F i n i s h t h e program . . .
+//
+c o u t << ” The h y p o t e n u s e o f t h e r i g h t t r i a n g l e i s ”
+<< c << e n d l ;
+}
+
+17.3
+
+Review Answers
+
+1. #include <cmath> must be included to include advanced operators.
+2. pow(2, 9)
+3. double b = sqrt(10001);
+
+# include <iostream >
+# i n c l u d e <cmath >
+u s i n g namespace s t d ;
+
+4.
+
+i n t main ( )
+{
+float a = 3.0 , b = 4.0;
+double c ;
+a = pow ( a , 2 ) ;
+b = pow ( b , 2 ) ;
+c = s q r t ( a+b ) ;
+c o u t << ” The h y p o t e n u s e o f t h e r i g h t t r i a n g l e i s ”
+<< c << e n d l ;
+}
+
+e ﬁnal output of the code is:
+The hypotenuse of the right triangle is 5.0
+
+17.4
+
+Further Reading
+
+• http://pages.cpsc.ucalgary.ca/~jacob/Courses/Fall00/CPSC231/Slides/08-Arithmetic.
+pdf
+• http://www.cplusplus.com/reference/cmath/
+
+Chapter 18
+
+File I/O
+File I/O refers to the input and output (I/O) from and to ﬁles. So far we have been
+using cin to get input from the keyboard and cout to output to the screen. Just
+like output can be sent to the screen, output can be sent to a ﬁle. Input can be taken
+either from a keyboard or from a ﬁle. Input and output is handled in the program
+through objects called streams. is chapter will discuss how to take input from a
+ﬁle and send output to the same ﬁle or a diﬀerent one.
+File I/O is useful because ﬁles provide a way to store data permanently. With
+keyboard input and screen output, the data is temporary and goes away once the
+program is ﬁnished. When it comes to ﬁles, the data is there for us and we do not
+have to waste our time typing it over and over again.
+
+18.1
+
+I/O Streams
+
+If data is ﬂowing into your program it is called an input stream. If data is ﬂowing
+out of the program it is called an output stream. We have actually been using both
+types of streams already! cin, which handles a ﬂow of data from the keyboard, is
+an input stream and cout, which produces a ﬂow of data to the screen, is an output
+stream. If an input stream object is connected to a ﬁle, then the program can get its
+input from that ﬁle. Similarly, an output stream object can send data to the screen
+or to a ﬁle. A ﬁle can be opened for both reading and writing, in which case it can
+be accessed by both input and output streams.
+
+103
+
+18.2
+
+File I/O
+
+When the program opens a ﬁle for input, the program is reading from the ﬁle. When
+the program opens a ﬁle for output, the program is writing to the ﬁle. C++ provides
+us with the ifstream, ofstream, and fstream classes for reading from and
+writing to ﬁles. All of these classes are available through the fstream library,
+which means we must #include it in our code in order to use them:
+# include <fstream >
+
+e ofstream type (read that as “output file stream”) is used to write data
+to ﬁles. e ifstream type (“input file stream”) is used to read data from ﬁles.
+Objects of type fstream (“file stream”) can combine the behavior of ifstream
+and ofstream and allow us to both read from and write to ﬁles.
+e cin and cout objects are already declared for you. However, in order
+to use ifstream, ofstream and fstream objects, you must declare one like
+you would any other variable. Declaring these objects looks like this:
+/ / D e c l a r e s a v a r i a b l e o f t y p e i f s t r e a m named i n p u t
+ifstream inFile ;
+/ / D e c l a r e s a v a r i a b l e o f t y p e o f s t r e a m named o u t p u t
+ofstream outFile ;
+
+e variable inFile will deal with geing input from a ﬁle, while the variable
+outFile will deal with outpuing data to a ﬁle.
+Every ﬁle on a computer has its own name and a location (or path). An example
+of a text ﬁle name is TextFile.txt and its location in a Windows operating
+system might be c:\storage\TextFile.txt. In a UNIX-based operating
+system, the same ﬁle might be in /home/user1/TextFile.txt. Regardless
+of the operating system, we need to know the ﬁle’s path in order to tell the program
+where to ﬁnd the ﬁle.
+
+18.3
+
+Opening and closing a File
+
+Before we can even start reading from and writing to a ﬁle we must open it. In order
+to open a ﬁle you must ﬁrst make an object of type ifstream, ofstream, or
+fstream just like we did earlier. We open a ﬁle using a member function named
+open. e ofstream object will create a ﬁle for you if the ﬁle you’re opening
+for output does not exist. Otherwise, if the ﬁle already exists, the open function
+will erase existing data in the ﬁle by default. e following example demonstrates
+how to open ﬁles for both input and output:
+
+# i n c l u d e < i o s t r e a m > / / F o r c i n and c o u t
+# i n c l u d e < f s t r e a m > / / F o r i f s t r e a m and o f s t r e a m
+u s i n g namespace s t d ;
+i n t main ( )
+{
+/ / Declares a v a r i a b l e of type i f s t r e a m c a l l e d i n F i l e
+ifstream inFile ;
+/ / Declares a v a r i a b l e of type ofstream c a l l e d o u t F i l e
+ofstream outFile ;
+/ / Opens t e x t f i l e f o r i n p u t
+i n F i l e . open ( ” T e x t F i l e . t x t ” ) ;
+/ / Creates t e x t f i l e for output
+o u t F i l e . open ( ” O u t p u t T e x t F i l e . t x t ” ) ;
+return 0;
+}
+
+Once you are done with the ﬁle, it is good practice to close it. Closing the ﬁle
+disconnects it from the program and prevents the program from continuing to read
+from or write to the ﬁle. If the program ends normally or crashes, the ﬁles will be
+automatically closed. Closing ﬁles is even simpler than opening them. All you need
+to do is use the close function with empty parentheses. For example, to close
+both inFile and outFile:
+inFile . close () ;
+outFile . close () ;
+
+18.4
+
+Reading from a File
+
+We use the ifstream class to read data from a ﬁle. Instead of having a user input
+data from the keyboard, we now input the data from a ﬁle. As you recall from earlier
+in the book, we used cin with >>, the extraction operator. is is the operator
+we use when we would like get input from the keyboard and it is also used with
+ifstream objects. Once we have declared our variable of type ifstream and
+opened a ﬁle, we can use it to input data. Using this is very similar to cin except
+
+we replace cin with the name of our variable. For example:
+# include <iostream >
+# include <fstream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+i n t number = 5 ;
+ifstream inFile ;
+i n F i l e . open ( ” T e x t F i l e . t x t ” ) ;
+i n F i l e >> number ;
+/ / The v a l u e 5 i n number i s o v e r w r i t t e n
+/ / by t h e i n t e g e r s t o r e d i n t h e f i l e
+return 0;
+}
+
+is will read in one integer from the ﬁle and store it into the variable number. You can input all diﬀerent types of data including characters, doubles, and
+floats. Overall, ifstream objects are very similar to cin—you just have to
+declare one and remember to use the variable name instead of cin.
+
+18.5
+
+Writing data to a File
+
+We use the ofstream class to output data to ﬁles. cout outputs data to our
+screen whereas ofstream stores data in ﬁles. Just like cout, ofstream objects use <<, the insertion operator. Using this is very similar to cout except we
+
+replace the cout with the name of our variable. For example:
+# include <iostream >
+# include <fstream >
+u s i n g namespace s t d ;
+i n t main ( )
+{
+c h a r L e t t e r = ’A ’ ;
+ofstream outFile ;
+o u t F i l e . open ( ” O u t p u t T e x t F i l e . t x t ” ) ;
+o u t F i l e << L e t t e r ; / / P u t s t h e l e t t e r
+
+’A ’ i n t o t h e f i l e
+
+return 0;
+}
+
+is example would write the leer 'A' to the text ﬁle we created named
+OutputTextFile.txt. You can also create numeric variables and output them
+to the ﬁle just like:
+i n t num = 1 0 ;
+o u t F i l e << num << e n d l ;
+
+is example would output the number 10 and create a new line in the text ﬁle
+we created.
+
+18.6
+
+Introduction to Classes and Objects
+
+We will go into more detail about classes and objects in Chapter 21 but it is necessary to go over it brieﬂy in this section. Both cin and cout are objects. An
+object is a variable that has functions built in and may have multiple pieces of data
+associated with it. ifstream and ofstream are object types that deﬁne which
+operations may be performed on and which data are stored in the objects. For example, the function open() (along with close() and many others) is considered a
+member function of ifstream and ofstream, which means it is a function
+that is associated with object of those two types. Geing a lile more into detail,
+these object types are deﬁned as part of a class. A class is a blueprint for complex
+data types. We already know data types such as integers, doubles, and chars,
+but using classes, you will be able to design your own data type.
+When calling the functions open or close, you will notice we use a period
+between the object name and the function. We call this the dot operator and it is
+used to reference member functions and member variables of a class.
+
+18.7
+
+Other functions
+
+e <fstream> library comes with many functions to help test to see if things are
+working. One example is the fail() function. We use this function to determine
+whether the ﬁle was opened successfully or not. We usually use if statements with
+the function so that if the ﬁle does not open correctly we can warn the user. For
+example:
+i n F i l e . open ( ” T e x t F i l e . t x t ” ) ;
+if ( inFile . fail () )
+{
+c o u t << ” F a i l e d t o open ! ” ;
+}
+
+is will warn the user if the ﬁle did not open correctly. If the ﬁle did open
+correctly, the program would continue without printing the error message.
+e next function is the eof() (end of file) function. is function tests to
+see if the stream has reached the end of the ﬁle. is function is very useful in order
+to know when to stop reading from the ﬁle. For example:
+i n t number ;
+i n F i l e . open ( ” T e x t F i l e . t x t ” ) ;
+while ( ! i n F i l e . eof ( ) )
+{
+i n F i l e >> number
+}
+
+is example shows how the eof() function can be used in a while loop.
+e while loop will read integers from the ﬁle until the program reaches the end
+of the ﬁle. is is useful for gathering all the data from one ﬁle.
+e get() and put() functions are used to read and write single characters,
+respectively. e function get() allows the program to read in a single character
+into a variable of type char. When we use the >> operator, spaces, tabs and newlines—the whitespace characters—around data are skipped automatically. However
+with get(), nothing is done automatically, so the whitespace characters can be
+extracted, too. e member function get() takes one argument in parentheses
+that must be a char variable. For example:
+char Character ;
+ifstream inFile ;
+cin . get ( Character ) ;
+/ / or
+i n F i l e . get ( Character ) ;
+
+is will read in the next character typed on the keyboard or from the ﬁle. Even
+if the next character is a space, tab, or newline, the program will store that character
+in the variable.
+e put() function is used to output one character. is function takes one
+argument of type char in the parentheses. For example:
+char Character = ’ \ n ’ ; / / newline c h a r a c t e r
+ofstream outFile ;
+cout . put ( Character ) ;
+/ / or
+o u t F i l e . put ( Character ) ;
+
+18.8
+
+Review estions
+
+1. What do we call the type of object used to control data ﬂowing into your
+program?
+2. What do we call the type of object used to control data ﬂowing out of your
+program?
+3. What header ﬁle must you #include in order to use ifstream and
+ofstream?
+4. What are ifstream and ofstream used for?
+5. How do you declare an ifstream object named input and an ofstream object named output?
+6. How would you open a ﬁle named TextFile.txt with an ifstream
+object called input?
+7. How would you close a ﬁle named TextFile.txt with an ofstream
+object called output?
+8. What kind of function is the eof() function and what does it do?
+9. What are the beneﬁts of using ﬁles for input and output?
+10. What is the diﬀerence between cin >> c; and cin.get(c); if c is
+of type char?
+11. Write a program that outputs the contents of some ﬁle to the screen.
+12. Write a program that reads in a text ﬁle and prints to the screen the number
+of times the character 'e' shows up.
+
+18.9
+
+Review Answers
+
+1. An input stream
+2. An output stream
+3. You need to #include <fstream>
+4. ifstream is used to read data from a ﬁle. ofstream is used to write
+data to a ﬁle.
+5. ifstream input;
+ofstream output;
+6. input.open("TextFile.txt");
+7. output.close();
+8. e eof() function is a member function. It returns true if the program
+has reached the end of the ﬁle.
+9. File input and output are useful because ﬁles provide a way to store data
+permanently. With keyboard input and screen output, the data is temporary
+and disappears once the program is ﬁnished. e data stored in ﬁles on the
+other hand remains the same until another program changes it. Also, an
+input ﬁle can be used by many programs at the same time without having
+to store multiple copies or re-enter the data over and over again.
+10. e ﬁrst cin statement the next non-whitespace character into c, but the
+call to cin.get() stores the next character in c whether it is whitespace
+or not.
+
+18.10 Further Reading
+• http://www.cprogramming.com/tutorial/lesson10.html
+• http://www.cplusplus.com/doc/tutorial/files/
+• http://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
+
+Chapter 19
+
+Pointers
+Pointers do just what they sound like they do. ey point to a space in memory,
+usually a location occupied by a variable. A pointer is an address in memory. e
+pointer itself is a variable, but it also refers to a variable. It is declared using an
+asterisk following the data type:
+int * ptr ;
+
+e variable named ptr is of type int*, an “integer pointer” that stores the
+address of a variable of type int.
+To indicate that a pointer variable is not pointing toward any usable data,
+we oen set its value to NULL, which is deﬁned as zero when you #include
+<cstdlib>:
+i n t * p t r = NULL ;
+
+C++11 provides a dedicated null pointer object called nullptr that can be
+used similarly:
+int * ptr = nullptr ;
+
+ere are two operators used in conjunction with pointers. e * operator,
+beyond being used for multiplication and for pointer declarations, also acts as the
+dereference operator. e dereference operator changes the pointer into the value
+it is pointing to. It “follows” the address stored in the pointer and returns whatever
+is in that location.
+e & operator is the reference operator. e dereference operator returns
+the memory address of the variable it precedes. You will use this to produce a pointer
+
+111
+
+Figure 19.1: e state of the variables aer lines 1-3
+to the indicated variable. Let’s declare pointer p and use it:
+int *p ;
+i n t var1 = 2 ;
+p = &v a r 1 ;
+c o u t << * p ;
+
+//
+//
+//
+//
+//
+
+D e c l a r e an i n t p o i n t e r
+D e c l a r e an i n t , s e t i t t o 2
+Take t h e a d d r e s s o f v a r 1 and s t o r e i t i n p
+Go t o t h e a d d r e s s s t o r e d i n p ;
+r e t u r n the value ; p r i n t i t out
+
+e output of this code is:
+2
+Here is a slightly longer example:
+int *p ;
+i n t var1 =
+i n t var2 =
+p = &v a r 1 ;
+*p = var2 ;
+
+2;
+4;
+/ / Take t h e a d d r e s s o f v a r 1 and s t o r e i t i n p
+/ / Go t o t h e a d d r e s s s t o r e d i n p ;
+/ / assign i t the value stored in var2
+
+/ / The p r e c e d i n g two l i n e s a r e e q u i v a l e n t t o v a r 1 = v a r 2
+c o u t << * p << e n d l ;
+c o u t << v a r 1 << e n d l ;
+c o u t << v a r 2 << e n d l ;
+
+e output of this code is:
+4
+4
+4
+Figure 19.1 shows the state of the variables in the second example aer they
+are declared and initialized (lines 1-3). Aer the fourth line is executed, p will store
+the address of var1. Figure 19.2 shows the state of the variables. Aer the ﬁh
+line of code is executed, the location where p points is assigned the value stored in
+var2. Since p contains the address of var1, var1 receives that value. Figure
+
+Figure 19.2: e state of the variables aer line 4
+
+Figure 19.3: e state of the variables aer line 5
+19.3 shows the state of the variables.
+Use caution when declaring pointers. If you are declaring more than one pointer
+in a single line, make sure to indicate each pointer variable with the * before the
+variable name. Here is a correct declaration of two pointers:
+int *p , *q ;
+
+is results in an integer pointer named p and an integer pointer named q.
+Contrast that with the below code:
+int *p , q ;
+
+is results in an integer pointer named p and an integer named q. An equiv-
+
+alent way to write the above is:
+int q , *p ;
+
+19.1
+
+Review estions
+
+1. What is the output of the following code?
+int *a , b , c ;
+a = &b ;
+b = 5;
+c = 1;
+b = b − b;
+c = b * b;
+*a = c − *a ;
+a = &c ;
+*a = c − 7;
+c = c + c;
+*a = *a + b;
+c = c + b;
+b = c − 3;
+c = *a − 7;
+c o u t << * a << e n d l ;
+c o u t << b << e n d l ;
+c o u t << c << e n d l ;
+
+2. What is the output of the following code?
+int a , b , *c ;
+a = 7;
+b = 4;
+c = &a ;
+a = *c − a;
+*c = *c + 4;
+a = b + a;
+c = &b ;
+a = a − b;
+*c = b + a;
+*c = *c − 1;
+a = a * 1;
+a = b − *c ;
+a = a − *c ;
+c o u t << a << e n d l ;
+c o u t << b << e n d l ;
+c o u t << * c << e n d l ;
+
+19.2
+
+Review Answers
+
+1. -21
+-17
+-21
+2. -7
+7
+7
+
+Chapter 20
+
+Dynamic Data
+Up to this point, we have only discussed variables that are set up at compile time.
+Allocating space for variables at compile time is adequate in many cases, but occasionally a program will need to allocate space for data in memory while it is running.
+Consider the following code:
+int arraySize ;
+c o u t << ” E n t e r t h e number o f e l e m e n t s i n your a r r a y : ” ;
+c i n >> a r r a y S i z e ;
+/ / We want t o c r e a t e an a r r a y w i t h a r r a y S i z e e l e m e n t s
+i n t myArray [ a r r a y S i z e ] ; / / SYNTAX ERROR !
+
+In order to allocate the space for myArray, the compiler needs to know how
+many elements make up the array so that there is enough room in memory to accommodate the array. Unfortunately, the value of arraySize is not known until
+the user enters something on the keyboard aer the program has started running and
+as a result, the compiler returns a syntax error.
+In C++, pointers are used to keep track of dynamically-allocated data:
+f l o a t * f P t r = NULL ; / / ( 1 ) D e c l a r e a p o i n t e r t o a f l o a t ,
+/ / which c u r r e n t l y p o i n t s nowhere
+
+In order to dynamically allocate an object of type float, we use the new
+operator:
+f P t r = new f l o a t ; / / ( 2 )
+
+e created object of type float does not have a name, so the new operator
+
+117
+
+(1)
+
+NULL
+
+float*
+
+fPtr
+(2)
+
+float*
+
+float
+
+fPtr
+(3)
+
+float*
+
+2.2
+
+float
+
+fPtr
+Figure 20.1: Allocation and dereferencing of pointers
+returns a float* that can be used to access the object. is pointer is stored in
+fPtr. We use the dereference operator (*, that is) to access the data:
+* fPtr =
+c o u t <<
+/ / This
+/ / Note
+/ / Also
+
+2.2; //
+” Data a t
+outputs :
+that the
+note the
+
+( 3 ) Goes t o a d d r e s s a t f P t r & p u t s 2 . 2 t h e r e
+” << f P t r << ” : ” << * f P t r << e n d l ;
+Data a t 0 x 2 0 0 1 0 2 b 0 : 2 . 2
+a d d r e s s l i s t e d may d i f f e r
+d i f f e r e n c e between p r i n t i n g f P t r and * f P t r
+
+Notice that when a value is assigned to fPtr, the pointer is being changed.
+When a value is assigned to *fPtr (notice the dereference operator), the ﬂoatingpoint value at the address stored in fPtr is changed.
+
+Memory leak
+
+(4)
+
+float*
+
+2.2
+
+float
+
+fPtr
+float
+Memory leak
+
+(5)
+
+float*
+
+2.2
+
+float
+
+fPtr
+3.3
+
+float
+
+Figure 20.2: Allocation and memory leaks
+float * fPtr ;
+f P t r = new f l o a t ;
+* f P t r = 2 . 2 ; / / Goes t o a d d r e s s a t f P t r & p u t s 2 . 2 t h e r e
+c o u t << ” Data a t ” << f P t r << ” : ” << * f P t r << e n d l ;
+f P t r = new f l o a t ; / / ( 4 ) f P t r now h o l d s a d d r e s s o f
+//
+a new f l o a t o b j e c t
+* fPtr = 3.3; // (5)
+c o u t << ” Data now a t ” << f P t r << ” : ” << * f P t r << e n d l ;
+/ / This outputs :
+/ / Data a t 0 x 2 0 0 1 0 2 b 0 : 2 . 2
+/ / Data now a t 0 x 2 0 0 4 8 3 c 0 : 3 . 3
+
+In this example, the float containing the value 2.2 still resides in memory,
+but is no longer reachable. is condition is called a memory leak, and results in
+programs that consume more memory than they require. In order to free up the
+
+memory properly, we use the delete operator:
+float * fPtr ;
+f P t r = new f l o a t ;
+* f P t r = 2 . 2 ; / / ( 6 ) Goes t o t h e a d d r e s s a t f P t r and s t o r e s
+2.2 there
+c o u t << ” Data a t ” << f P t r << ” : ” << * f P t r << e n d l ;
+d e l e t e f P t r ; / / ( 7 ) F r e e s up t h e d y n a m i c a l l y −a l l o c a t e d
+/ / memory a t t h e a d d r e s s s t o r e d i n f P t r
+
+At this point in the code, fPtr can be referred to as a dangling pointer, since
+the memory location it refers to is no longer valid, and the pointer just “dangles”
+there, pointing to nothing useful.
+
+(6)
+
+float*
+
+2.2
+
+float
+
+fPtr
+dangling
+pointer
+
+(7)
+
+float*
+fPtr
+
+Figure 20.3: Deallocation and dangling pointers
+Arrays can be dynamically allocated, too:
+f l o a t * f P t r = new f l o a t [ 1 0 ] ; / / A l l o c a t e an a r r a y o f t e n
+/ / f l o a t s and s t o r e t h e i r l o c a t i o n i n f P t r
+
+Arrays must be deleted in a similar fashion, but the syntax changes slightly:
+d e l e t e [ ] f P t r ; / / F r e e up t h e e n t i r e a r r a y
+
+20.1
+
+Review estions
+
+1. Write code to declare an integer pointer and dynamically allocate an integer.
+On the next line, assign this dynamically-allocated integer the value 13.
+2. Given the following code, write a few lines that deallocate any dynamicallyallocated memory and set all pointer values to NULL:
+int
+int
+int
+b =
+
+20.2
+1.
+
+2.
+
+20.3
+
+* a = new i n t [ 2 4 ] ;
+*b ;
+c;
+&c ;
+
+Review Answers
+i n t * i P t r = new i n t ;
+* iPtr = 13;
+
+delete [] a ;
+a = NULL ;
+b = NULL ;
+
+Further Reading
+
+• http://www.cplusplus.com/doc/tutorial/dynamic/
+
+Chapter 21
+
+Classes and Abstraction
+Imagine for a second you’re behind the wheel of an automobile. You’re driving
+along, but do you know your engine is working right if it’s not making any horrendous screeching sounds? Do you have any idea how your steering actually works
+when you turn the wheel? So long as you can press down on the accelerator to
+move forward and the steering handles correctly, you probably don’t care about the
+speciﬁcs of how things work.
+Abstract data types (ADTs) are the automobiles of C++, and one of the reasons C++ is known as an object-oriented programming language. It’s their job
+to package and obscure the information from the average user, and at the same time
+make their lives more convenient. ADTs can be thought of as a group of data of different types that are treated as a single item. For example, if we wanted to record
+the name, identiﬁcation number, age, graduation date, and sex of all of the students
+on a campus, we could create a new data type named Student with those variables. In the following sections we will show you how to use and deﬁne two types
+of ADTs: structures and classes.
+
+21.1
+
+structs
+
+A common example of a struct is a Point. Points store int, float, or
+double variables x and y, which represent the position of the Point on the the
+
+123
+
+X and Y axes on a coordinate plane. Such a struct might look like this:
+struct Point
+{
+double x ;
+double y ;
+};
+
+In the example, the keyword struct is used to declare the structure deﬁnition
+while the identiﬁer, the word directly to the right of struct (Point), is the structure
+name and the name of a new data type. e braces are used just like when we deﬁne
+a function. However, directly aer the closing brace, there must be a semicolon!
+Once a structure is deﬁned, it can be used just like the data types int, char,
+string, and so on. For example, we might declare a Point structure named
+input like this:
+Point input ;
+
+21.2
+
+Assigning values to member variables
+
+Any variable of type Point such as the one above is a collection of two variables,
+x and y. Any variables contained in the struct can be accessed by combining
+the structure name—input in our example—followed by a symbol called the dot
+operator (the period, .) and the member variable’s name. For example, if we
+wanted to set x in input, we would use the dot operator as follows:
+input . x = 5;
+
+21.3
+
+Classes
+
+classes are like structs except classes contain both variables and functions,
+whereas structs only contain variables.1 Also, in a struct, member variables
+are public by default while all members of a class are private by default. We’ll
+discuss the distinction more in a minute. First, let’s take a look at an actual class
+deﬁnition.
+1
+
+is has been the conventional way to think about classes and structs,
+but in reality the only diﬀerence between the two is that members of a struct
+are public by default and members of a class are private by default.
+
+class Rectangle
+{
+public :
+Rectangle ( ) ;
+/ /A default constructor
+/ / The f o l l o w i n g two l i n e s a r e m u t a t o r s
+void setBase ( f l o a t length ) ;
+void setHeight ( f l o a t length ) ;
+/ / The f o l l o w i n g two l i n e s a r e a c c e s s o r s
+f l o a t getHeight ( ) ;
+f l o a t getBase ( ) ;
+/ / The f o l l o w i n g two l i n e s p e r f o r m o p e r a t i o n s
+f l o a t findArea ( ) ;
+float findPerimeter ( ) ;
+private :
+f l o a t Base ;
+f l o a t Height ;
+};
+
+Notice the similar syntax to the struct. Like a struct, the declaration
+starts with the class keyword, followed by the name of the class, and aer the
+closing right brace, a semicolon. Notice the public: and private: sections
+of the deﬁnition. To indicate that a set of member variables or functions is private,
+we use the private keyword followed by a colon. Everything aer the keyword
+will be considered private. We will discuss what this means in the next section.
+On the other hand, if we want to indicate that a set a member variables or
+functions is public, we use the keyword public followed by a colon. Everything
+aer this keyword will be considered public.
+
+21.4
+
+public and private variables and
+functions
+
+e biggest diﬀerence between classes and structs is the ability to determine
+how accessible the data within the class is. A general rule of thumb is to put variables in the private: section, where they would be referred to as private member variables, and related functions in the public: section, where they would
+be referred to as public member functions. Private members can only be accessed
+by the class’s member functions and nowhere else, while public members can be
+used anywhere, in the same way that the members of a struct can be used.
+Within the above class deﬁnition, we have seven member functions that we
+need to deﬁne. Each function has a speciﬁc purpose to set the values of private
+member variables, return the values of private member variables, or perform some
+other operation using those member variables.
+
+Functions that are declared in the above code with names starting with the
+word get will be used to access the variables; these functions are called accessors.
+Functions that are declared in the above code that have names starting with the
+word set will be used to change the variables’ values; these functions are called
+mutators. Accessors and mutators can be named whatever you like, but it is a
+common convention to name them get and set plus the name of the variable you
+are accessing or mutating.
+e functions whose names start with find perform operations using the variables, but do not change them or return their values directly. e function named
+Rectangle() is known as a constructor. When a Rectangle object is created, it will be initialized according to the code in this constructor. By the end of this
+chapter, you’ll understand how useful these are in object-oriented programming.
+
+21.5
+
+Deﬁning member functions
+
+We now describe how to use member functions with private member variables.
+When we deﬁne a member function, all the member variables within the class
+are accessible to the function. For example, we can deﬁne the member function
+setBase() from Rectangle above like this:
+void Rectangle : : setBase ( f l o a t length )
+{
+Base = l e n g t h ;
+}
+
+In this code, we are able to directly access the member variable Base because
+both the function setBase() and the member variable Base are a part of the
+class. Since we are not returning anything to the user, the function is deﬁned as
+a void function. In order to deﬁne a member function, we have to use a special
+operator called the scope resolution operator (::). e function is deﬁned by
+using the return type, the class name, scope resolution operator, then the member
+function name with any parameters listed just like any other non-class function.
+
+21.6
+
+Using member functions
+
+All member functions have direct access to member variables even if the variable
+is private. e reason we use mutators is because we do not want the user to have
+direct access to any variables within the class—we give them indirect access instead.
+We do this by requiring them to pass a value to the mutator member function which
+sets the member variable. at might look like this:
+
+i n t main ( )
+{
+Rectangle r ;
+float b;
+c o u t << ” P l e a s e i n p u t t h e l e n g t h o f t h e b a s e : ” ;
+c i n >> b ;
+r . setBase ( b ) ;
+return 0;
+}
+
+In the above code, we start by creating a Rectangle variable named r. Aer
+the user is prompted for the length of the base, which is stored in the variable b,
+we call the setBase() member function with the dot operator and pass b as a
+parameter to the function.
+We are able to pass the value of the variable entered by the user to the setBase()
+function which then sets the member variable Base to the passed value. is is how
+we “mutate” private member variables in a class using a public member function.
+To retrieve the value of a member variable, we need to create accessor functions. ese are deﬁned like this:
+f l o a t Rectangle : : getBase ( )
+{
+r e t u r n Base ;
+}
+
+When it comes to using accessors, it is very simple. Just match the data type
+that you want to access, in this case it was a float, and deﬁne the member function
+with that return type. en, in order to access the variable, all we need to do is
+use the keyword return followed by the identiﬁer. is enables us to access the
+private variable when we need to.
+
+21.7
+
+classes and structs together
+
+We can also combine structs and classes if need be. For example, if we wanted
+to take in three points we could create a Triangle class with these points which
+are individually of type Point, a struct that contains x and y variables:
+
+struct Point
+{
+double x ;
+double y ;
+};
+class Triangle
+{
+public :
+/ / a c c e s s o r s f o r p o i n t s a , b , and c
+/ / m u t a t o r s f o r p o i n t s a , b , and c
+private :
+Point a ;
+Point b ;
+Point c ;
+};
+
+Here we have the ability to combine a struct with a class in order to have
+all three points, a, b, and c that each contain their own variables x and y. Despite
+the fact that the variables in the struct are public, we cannot access those speciﬁc
+values outside the Triangle unless we use a member function. is is because
+they’re still private members of the class Triangle, so their scope is limited to
+functions within the class. If we had a mutator function for Point a, it might
+look like this:
+v o i d T r i a n g l e : : s e t A ( d o u b l e userX , d o u b l e u s e r Y )
+{
+a . x = us erX ;
+a . y = userY ;
+}
+
+e values of userX and userY are passed in by the calling function. Notice
+again that in order to access the x and y coordinates, we must use the dot operator
+with any of the Point objects a, b, or c.
+
+21.8
+
+Constructors
+
+Another way to set the values of the variables in a class is through constructors. A
+constructor is a member function with the same name as the class and cannot be
+called directly. Constructors are what we use to initialize the variables of the class
+when it’s ﬁrst created. For example, if we wanted to set default values for a class
+
+named student deﬁned as:
+class student
+{
+public :
+student ( ) ; // constructor
+// accessors
+/ / mutators
+private :
+s t r i n g name ;
+i n t age ;
+i n t grad_year ;
+string id ;
+};
+
+we would have a default constructor with the name student() without any return type. To initialize the variables in the class through the constructor, we use
+syntax similar to a function deﬁnition:
+student : : student ( )
+{
+name = ”N/A” ;
+age = 0 ;
+grad_year = 0;
+i d = ” A00000000 ” ;
+}
+
+21.9
+
+Overloading Member Functions
+
+Note that, like other functions, you can overload any of the functions in a class.
+Going back to the Rectangle example used earlier, take a look at the following
+code.
+
+class Rectangle
+{
+public :
+Rectangle ( ) ;
+/ /A default constructor
+/ / Overloaded c o n s t r u c t o r
+Rectangle ( f l o a t userBase , f l o a t userHeight ) ;
+v o i d s e t B a s e ( f l o a t l e n g t h ) ; / / These two l i n e s a r e m u t a t o r s
+void setHeight ( f l o a t length ) ;
+f l o a t getHeight ( ) ;
+/ / These two l i n e s a r e a c c e s s o r s
+f l o a t getBase ( ) ;
+f l o a t f i n d A r e a ( ) ; / / These two l i n e s p e r f o r m o p e r a t i o n s
+float findPerimeter ( ) ;
+private :
+f l o a t Base ;
+f l o a t Height ;
+};
+
+Notice the second constructor, Rectangle(float userBase, float
+userHeight). We deﬁne it very similarly to the default constructor:
+Rectangle : : Rectangle ( f l o a t userBase , f l o a t userHeight )
+{
+Base = userBase ;
+Height = userHeight ;
+}
+
+21.10 Review estions
+1. Given the following struct deﬁnition and global variable:
+struct personInfo
+{
+s t r i n g name ;
+int birth_year ;
+i n t birth_month ;
+int birth_day ;
+i n t age ;
+};
+personInfo pinfo ;
+
+which of the following are incorrect ways to use the dot operator?
+(a) pinfo.age
+
+(b) personInfo.birth_year
+(c) information.name
+(d) pinfo.(string name)
+(e) birth_year.pinfo
+2. Create a class called Animal that can store information about animals
+in a zoo and has the following private variables:
+s t r i n g name ; / / t h e name o f t h e a n i m a l
+i n t pounds ;
+/ / number o f pounds o f f o o d e a t e n
+char animalType ; / / the type of animal :
+/ / ’h ’ for herbivore
+// ’c ’ for carnivore
+
+You should have public member functions that get and set each variable, and
+a function called print() that prints all the information about the animal.
+3. is program will require a struct and a class.
+Write a program that can calculate the slope of a line.
+You will have a struct called Point which contain the following variables:
+double x , y ;
+
+You will then have a class called Line, and it will have the following private
+variables:
+Point a , b ;
+
+Your class should have accessor and mutator functions, a function that calculates and returns the slope of a line between the two Points as a double,
+and a function that outputs the data to the user called print().
+
+21.11 Review Answers
+1. Only (a) is correct: (b) through (e) will result in syntax errors.
+
+2.
+
+c l a s s Animal
+{
+public :
+Animal ( ) ;
+s t r i n g getName ( ) ;
+v o i d setName ( s t r i n g inputName ) ;
+i n t getPounds ( ) ;
+void setPounds ( i n t inputPounds ) ;
+char getType ( ) ;
+void setType ( char inputType ) ;
+void p r i n t ( ) ;
+private :
+s t r i n g name ;
+/ / t h e name o f t h e a n i m a l
+i n t pounds ;
+/ / number o f pounds o f f o o d e a t e n
+char animalType ; / / the type of animal
+};
+
+21.12 Further Reading
+• http://pages.cpsc.ucalgary.ca/~jacob/Courses/Fall00/CPSC231/Slides/08-Arithmetic.
+pdf
+• http://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm
+• http://www.cprogramming.com/tutorial/lesson7.html
+
+Chapter 22
+
+Separate Compilation
+Separate compilation is the process of breaking a C++ program into separate ﬁles
+to improve organization. Parts of the program can be spread out over a number
+of diﬀerent ﬁles that are later compiled individually, then linked using a linker
+to produce the ﬁnal, working program. When changes are made, only those ﬁles
+with changes need to be recompiled, the result of which can then be relinked with
+the previously-compiled ﬁles. is process is nearly invisible in most development
+environments, which recompile and relink these ﬁles automatically. When the development environment takes care of these details, the user is le with the sole task
+of making changes where they are needed.
+One of the most basic applications of separate compilation is used when writing
+abstract data types. Recall from Chapter 21 that there are declaration and deﬁnition
+sections in a class. e declaration contains class functions and variables, both
+public and private, while the deﬁnition section is where the function deﬁnitions and
+most actual code can be found. e process of separate compilation requires the
+two sections to be split into separate ﬁles, each of which is wrien and maintained
+separately and later used together to create a working program.
+Declarations will be put into the interface ﬁle or the header ﬁle which typically has a .h suﬃx. In most code wrien by novice programmers, there will be
+only one class declaration in each header ﬁle. To use the class in your code
+elsewhere, you should use #include followed by the ﬁle name in double quotes.
+Below is an example of the contents of an interface ﬁle called student.h.
+
+133
+
+# include <string >
+u s i n g namespace s t d ;
+class student
+{
+public :
+student ( ) ;
+i n t getAge ( ) ;
+void setAge ( i n t update ) ;
+i n t getID ( ) ;
+void setID ( i n t update ) ;
+s t r i n g getName ( ) ;
+v o i d setName ( s t r i n g u p d a t e ) ;
+private :
+i n t age ;
+i n t ID ;
+s t r i n g name ;
+};
+
+To use the student class in some other source code ﬁle, that ﬁle should include the following line:
+# include ” student . h”
+
+e quotes around student.h tell the compiler to ﬁnd the header ﬁle in the
+same directory as the current ﬁle.
+e implementation ﬁle will include all the function deﬁnitions for the student class. e implementation ﬁle can be called anything the programmer wants,
+but typically ends with a .cpp suﬃx. For example, the implementation ﬁle for
+student will probably be student.cpp.
+To ensure that a new implementation ﬁle is compiled into your program, you
+do not need to #include anything. However, the development environment will
+automatically compile and link the implementation ﬁle if it has been added to your
+project. e only ﬁles that you should #include are header ﬁles.
+To avoid linker errors, your ﬁles should have safeguards to ensure that classes
+and functions are not declared more than once within the same program. ese
+safeguards are simple, and should be included in each header ﬁle. For example, we
+place the following two lines at the top of the ﬁle student.h:
+# i f n d e f STUDENT_H / / STUDENT_H c o u l d be a n y t h i n g
+# d e f i n e STUDENT_H / / a s l o n g a s i t i s u n i q u e t o t h i s f i l e
+
+e following line should go at the end of the same ﬁle:
+# e n d i f / / STUDENT_H − a r e m i n d e r a b o u t t h e # i f n d e f ab o ve
+
+e above three lines do the following:
+1. Test if STUDENT_H has been previously #defined, usually because this
+header ﬁle has been #included elsewhere.
+2. If it has not been #defined, #define it now and proceed with compiling
+the code between the #ifndef and #endif.
+3. Close the #ifndef block. If STUDENT_H was previously deﬁned, skip
+to the line aer this one.
+Here is an example of what these lines look like alongside some actual code:
+# i f n d e f STUDENT_H
+# d e f i n e STUDENT_H
+class student
+{
+/ / c l a s s d e c l a r a t i o n b e c a u s e t h i s i s an i n t e r f a c e
+};
+
+file
+
+# e n d i f / / STUDENT_H
+
+is combination of preprocessor directives will ensure that the student
+class is only deﬁned once.
+
+22.1
+
+Review estions
+
+1. What is a header ﬁle?
+2. What ﬁle extension do we typically use for a C++ header ﬁle?
+3. What ﬁle extension do we typically use for a C++ implementation ﬁle?
+4. In which ﬁle would would you typically store an abstract data type’s (ADT’s)
+declaration?
+5. How do you incorporate a header ﬁle named something.h into a ﬁle
+named main.cpp?
+6. Do you incorporate an implementation ﬁle into your project the same way?
+7. How do you prevent redeclaration of ADTs and functions in header ﬁles?
+
+22.2
+
+Review Answers
+
+1. A header ﬁle stores the interface of an ADT
+2. A header ﬁle ends in .h
+3. An implementation ﬁle ends in .cpp
+4. In the interface ﬁle
+5. Add #include "something.h" alongside the other #include
+statements in main.cpp.
+6. No, the implementation ﬁle will automatically be compiled and linked by
+your development environment as long as the implementation ﬁle is in your
+project.
+7. You prevent redeclaration by adding lines similar to the following to the top
+of your header ﬁle:
+# i f n d e f SOMETHING_H
+# d e f i n e SOMETHING_H
+
+en add the following to the end of the header ﬁle:
+# e n d i f / / SOMETHING_H
+
+22.3
+
+Further Reading
+
+• http://elm.eeng.dcu.ie/~ee402/ee402notes/html/ch03s14.html
+• http://web-ext.u-aizu.ac.jp/~fayolle/teaching/2012/C++/pdf/1-separate_compilation.
+pdf
+
+Chapter 23
+
+STL
+e Standard Template Library (STL) provides a set of tools beyond those that are
+provided by the “base” C++ language. While a comprehensive discussion of the
+features of the STL is far beyond the scope of this text, there are several libraries
+that oﬀer extremely important features with which you should become comfortable.
+Note: rather than assuming that
+u s i n g namespace s t d ;
+
+is at the top of every code example, each data type, function, or variable derived
+from the STL will be shown with the preﬁx std::. is highlights which parts of
+the examples below come from the STL, and which are part of the language.
+
+23.1
+
+#include <utility>
+#include <tuple> (C++11)
+
+e pair class, found in <utility>, links two values which may be of diﬀerent
+types. e tuple class, introduced in C++11, links any number of values which
+may be of diﬀerent types. For example, to link a student’s identiﬁcation number (an
+integer) and their grade point average (a float), we can write:
+std : : pair <int , float > grades = { 112233 , 3.81 } ;
+
+137
+
+We can assign diﬀerent values to the pair later with the make_pair function:
+grades = s t d : : make_pair ( 1 2 3 4 5 0 , 2 . 7 9 ) ;
+
+e first and second members are used to extract the individual components of the pair:
+s t d : : c o u t << ” ID : ” << g r a d e s . f i r s t << ” ( GPA ”
+<< g r a d e s . s e c o n d << ” ) ” << s t d : : e n d l ;
+/ / This p r i n t s :
+/ / ID : 1 2 3 4 5 0 ( GPA 2 . 7 9 )
+
+If we wanted a more complicated set of values linked together, such as a student’s name, identiﬁcation number, grade point average, and major, we could construct the following:
+tuple < std : : s t r i n g , int , f l o a t , std : : s t r i n g > ethan =
+{ ” Ethan A l l e n ” , 8 0 2 8 0 2 , 3 . 1 5 , ” E n g i n e e r i n g ” } ;
+
+Unfortunately, the tuple class does not have first or second members.
+e ﬁrst and second elements can be retrieved in a slightly more complicated way
+than with pair objects:
+s t d : : c o u t << s t d : : g e t <0 >( e t h a n ) << ” ’ s m a jo r i s ”
+<< s t d : : g e t <3 >( e t h a n ) << s t d : : e n d l ;
+/ / This p r i n t s :
+/ / Ethan A l l e n ’ s ma j o r i s E n g i n e e r i n g
+
+In the code below, the get function returns a reference to the third element
+(the GPA) of the tuple ethan, and sets that value to 3.99:
+s t d : : g e t <2 >( e t h a n ) = 3 . 9 9 ;
+
+ese types may not be all that useful by themselves, but are oen used in
+conjunction with container classes like vector and map, described below.
+
+23.2
+
+#include <iterator>
+
+Iterators are objects that refer to elements within a container object (like std::vector,
+std::map, and std::array) and allow for traversal through those elements.
+e list of features in iterators vary depending on the container class. While the
+speciﬁcs of the iterators vary, most iterators belong to one of the following categories, based on the operations that may be performed on them.
+
+23.2.1
+
+Forward iterators
+
+• Can be incremented to move forward in the container to the next item
+• Can be dereferenced like a pointer variable
+s t d : : a r r a y < i n t > myArray = { 5 , 1 0 , 1 5 , 2 0 , 25 } ;
+s t d : : array : : i t e r a t o r myIterator , arrayEnd ;
+a r r a y E n d = myArray . end ( ) ;
+/ / Demonstrating forward i t e r a t i o n
+f o r ( m y I t e r a t o r = myArray . b e g i n ( ) ;
+my I te r a to r != arrayEnd ;
+++ m y I t e r a t o r )
+s t d : : c o u t << * m y I t e r a t o r << ” ” ;
+s t d : : c o u t << s t d : : e n d l << ” The end ! ” << s t d : : e n d l ;
+/ / This p r i n t s :
+/ / 5 10 15 20 25
+/ / The end !
+
+23.2.2
+
+Bidirectional iterators
+
+• Everything a forward iterator can do and:
+• Can be decremented to move backward in the container to the previous item
+s t d : : a r r a y < i n t > myArray = { 5 , 1 0 , 1 5 , 2 0 , 25 } ;
+std : : array : : i t e r a t o r myIterator , arrayBegin ;
+a r r a y B e g i n = myArray . b e g i n ( ) ;
+/ / D e m o n s t r a t i n g backward i t e r a t i o n
+f o r ( m y I t e r a t o r = myArray . end ( ) ;
+myIterator != arrayBegin ;
+−−m y I t e r a t o r )
+s t d : : c o u t << * m y I t e r a t o r << ” ” ;
+s t d : : c o u t << s t d : : e n d l << ” The b e g i n n i n g ! ” << s t d : : e n d l ;
+/ / This p r i n t s :
+/ / 25 20 15 10 5
+/ / The b e g i n n i n g !
+
+23.2.3
+
+Random access iterators
+
+• Everything a bidirectional iterator can do and:
+• Can use arithmetic operators to move forward and backward a certain number of items at once
+• Allows comparisons between iterators to determine relative positions in the
+container
+• Can use array-style access to elements in the container
+/ / C r e a t e an a r r a y o f 5 i n t e g e r s
+s t d : : a r r a y < i n t , 5> myArray = { 5 , 1 0 , 1 5 , 2 0 , 25 } ;
+s t d : : array < int , 5 > : : i t e r a t o r myIterator , arrayEnd ;
+a r r a y E n d = myArray . end ( ) ;
+m y I t e r a t o r = myArray . b e g i n ( ) ;
+/ / D e m o n s t r a t i n g random a c c e s s
+s t d : : c o u t << m y I t e r a t o r [ 1 ] << ” ”
+<< m y I t e r a t o r [ 3 ] << s t d : : e n d l ;
+/ / Demonstrating i t e r a t o r comparisons
+i f ( m y It e r at o r < arrayEnd )
+s t d : : c o u t << ” Not a t t h e end o f t h e a r r a y y e t ! ”
+<< s t d : : e n d l ;
+/ / D e m o n s t r a t i n g a r i t h m e t i c o p e r a t i o n s on an i t e r a t o r
+f o r ( m y I t e r a t o r = myArray . b e g i n ( ) ;
+my I te r a to r != arrayEnd ;
+m y I t e r a t o r += 2 )
+s t d : : c o u t << * m y I t e r a t o r << ” ” ;
+s t d : : c o u t << s t d : : e n d l << ” The end ! ” << s t d : : e n d l ;
+//
+//
+//
+//
+//
+
+23.3
+
+This p r i n t s :
+10 20
+Not a t t h e end o f t h e a r r a y y e t !
+5 15 25
+The end !
+
+#include <vector>
+
+Vectors are containers similar to arrays that are ﬂexible in size and quite fast. While
+we can use iterators as above, we can also treat the vector much like an array.
+
+/ / S t a r t w i t h 10 e l e m e n t s , a l l w i t h t h e v a l u e 9 8 . 6
+std : : vector < float > temperatures (10 , 9 8 . 6 ) ;
+/ / The l a s t e l e m e n t h a s a f e v e r o f 1 0 3 . 1 d e g r e e s !
+temperatures [9] = 1 0 3 . 1 ;
+f o r ( i n t i = 0 ; i < t e m p e r a t u r e s . s i z e ( ) ; i ++ )
+{
+s t d : : c o u t << ” P a t i e n t ” << i << ” ’ s t e m p e r a t u r e i s ”
+<< t e m p e r a t u r e s [ i ] << s t d : : e n d l ;
+}
+
+e vector class also provides member functions front() and back()
+which return references to the ﬁrst element and the last element in the vector, respectively. For example:
+std : :
+<<
+std : :
+<<
+
+c o u t << ” The l a s t p a t i e n t ’ s t e m p e r a t u r e i s ”
+t e m p e r a t u r e s . b a c k ( ) << s t d : : e n d l ;
+c o u t << ” The f i r s t p a t i e n t ’ s t e m p e r a t u r e i s ”
+t e m p e r a t u r e s . f r o n t ( ) << s t d : : e n d l ;
+
+Don’t confuse the back() and front() functions with the end() and
+begin() functions. e back() and front() functions return references
+to the elements, while end() and begin() return iterators pointing to those
+elements.
+
+23.4
+
+#include <map>
+
+is library provides one of the STL’s associative container object classes. An associative container diﬀers from an array in that items in an array are referenced with
+a number which indicates the item’s position in memory:
+i n t myArray [ 1 0 ] ; / / An a r r a y o f t e n i n t e g e r s
+myArray [ 0 ] = −5; / / S e t t h e f i r s t i n t e g e r i n t h e a r r a y t o −5
+
+An associative container, on the other hand, can use any data type to reference
+the items in the container. For example, you might choose to use a string to
+reference a collection of int items to store a list of students’ ages according to
+their names.
+s t d : : map< s t d : : s t r i n g , i n t > s t u d e n t s ;
+
+“John”
+
+string
+
+“Max”
+
+string
+
+“Christine”
+
+“Maria”
+
+string
+
+string
+
+19
+
+19
+
+20
+
+18
+
+int
+
+int
+
+map<string,int>
+
+int
+
+int
+
+ages
+
+Figure 23.1: Pairing strings and ints in a map object
+Perhaps you want to create the object with some initial values:
+s t d : : map< s t d : : s t r i n g , i n t > s t u d e n t s =
+{ { ” John ” , 1 9 } ,
+{ ” Max ” , 1 9 } ,
+{ ” Christine ” , 20} ,
+{ ” Maria ” , 1 8 } } ;
+
+is code produces a structure like in Figure 23.1. With these names and ages
+paired, we can now retrieve the ages using the names.
+s t r i n g name = ” C h r i s t i n e ” ;
+s t d : : c o u t << name << ” i s ” << s t u d e n t s [ name ]
+<< ” y e a r s o l d . ” << s t d : : e n d l ;
+/ / This code p r i n t s :
+/ / C h r i s t i n e i s 20 y e a r s o l d .
+
+New students may also be added in the following way:
+s t u d e n t s [ ” June ” ] = 1 8 ;
+s t u d e n t s [ ” Omar ” ] = 1 9 ;
+
+Objects of type map may be iterated, and in C++11, their contents can be
+printed in a range-based for loop as we brieﬂy demonstrate here. Each item in the
+std::map<std::string, int> is of type std::pair<std::string,int>.
+f o r ( a u t o& i t e m : s t u d e n t s )
+{
+s t d : : c o u t << i t e m . f i r s t << ” i s ” << i t e m . s e c o n d << ”
+y e a r s o l d . ” << s t d : : e n d l ;
+}
+//
+//
+//
+//
+//
+//
+//
+
+23.5
+
+This code p r i n t s :
+John i s 19 y e a r s o l d
+Max i s 19 y e a r s o l d
+C h r i s t i n e i s 20 y e a r s o l d
+Ma r i a i s 18 y e a r s o l d
+J u n e i s 18 y e a r s o l d
+Omar i s 19 y e a r s o l d
+
+Further Reading
+
+• http://en.wikipedia.org/wiki/Standard_Template_Library
+• http://www.cplusplus.com/reference/stl/
+
+Index
+void functions, 81
+
+function heading, 80
+
+Abstract data types, 123
+accessors, 126
+assignment operator, 5, 11
+
+header ﬁle, 133
+
+block comments, 33
+casts, 43
+class, 107
+coeﬃcient, 40
+coercion, 43
+constructor, 126, 128
+count-controlled, 65
+dangling pointer, 120
+data type, 39
+declaration, 4
+dereference operator, 111
+dot operator, 107, 124
+end condition, 61
+event-controlled, 65
+exponent, 40
+extraction operator, 21, 105
+File I/O, 103
+ﬂoating-point types, 39
+function body, 80
+function call, 79
+function declaration, 78
+function deﬁnition, 79
+
+identiﬁer, 4
+implementation, 134
+initializing, 5
+input stream, 103
+insertion operator, 15, 106
+interface, 133
+iteration, 61
+linked, 133
+local variable, 83
+loop, 61
+lvalue, 11
+member function, 107
+memory leak, 119
+multi-line comments, 33
+mutators, 126
+narrowing conversion, 43
+null character, 72
+null terminator, 73
+object, 107
+object-oriented programming language,
+123
+output stream, 103
+parameters, 78
+
+144
+
+path, 104
+post-test loop, 63
+predeﬁned functions, 81
+pretest loop, 61
+programmer deﬁned functions, 81
+prototype, 78
+reference operator, 111
+return type, 78
+rvalue, 12
+scope resolution operator, 126
+signiﬁcand, 40
+single-line comments, 33
+streams, 103
+strings, 55
+syntax, 4
+widening conversion, 42
+
+

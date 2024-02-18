@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}"/>
+    <title>Home</title>
+</head>
+<body>
+    <div class="topnav">
+      <h1 class="title">CMantle++</h1>
+    </div>
+    <main>
+      <div>
+          <p>Enter your equation (ONLY ADDITION / SUBTRACTION): </p>
+              <form method="POST">
+                  <p><input name="equation" type="text"/></p>
+                  <p><input type="submit" value="Do Calculation" /></p>
+              </form>
+      </div>
+      <div>
+          <p class = "calculate">{{data}}</p>
+      </div>
+    </main>
+
+      <nav>
+        <div>
+          <a href="/"><button id="vec-btn">Home</button></a>
+        </div>
+      </nav>
+    <footer>
+      <p>Inspired from the original <a href="https://semantle.novalis.org/">Semantle</a> by David Turner.</p>
+    <footer>
+
+</body>
+</html>

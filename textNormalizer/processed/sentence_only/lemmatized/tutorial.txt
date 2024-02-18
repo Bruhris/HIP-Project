@@ -1,0 +1,1403 @@
+right reserve document content copyright  
+right reserve 
+redistribution reproduction part content form prohibit print personal copy entire document download local hard disk  modify content way include  limit copyright notice 
+express write permission  distribute content document 
+transmit store website form electronic retrieval system 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved table content table content introduction instruction 
+right reserve preprocessor directive 
+right reserve introduction instruction whom tutorial direct 
+tutorial people who want learn programming necessarily previous knowledge programming_language 
+course knowledge programming_language general computer skill useful understand tutorial  essential 
+suitable who need little update language acquire late standard 
+familiar language  take first part tutorial review concept  mainly explain part 
+slight difference syntax recommend reading anyway 
+part object orient programming 
+part introduce ansi standard 
+structure tutorial tutorial divide part part divide turn section cover topic
+access section directly section index left side bar  begin tutorial point follow link bottom section 
+section include example newly acquire knowledge
+recommend read example able understand code line constitute pass next
+way gain experience programming_language modify add example program fully understand 
+scared modify example tutorial  way learn 
+compatibility note ansi standard acceptation international standard recent 
+first publish november  revise 
+language exist long time 
+compiler support include ansi  especially release prior publication standard 
+tutorial think follow modern compiler support least ansi specification 
+encourage adapt 
+option  commercial free 
+compiler example include tutorial console program 
+mean text communicate user show result 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve compiler support compilation console program 
+check user manual compiler compile
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve basic structure program way start learn programming_language write program 
+here first program  first program 
+first panel show source_code first program 
+second show result program once compile execute 
+way edit compile program depend compiler
+depend development interface version 
+consult compiler section manual help include compiler doubt compile console program 
+previous program typical program programmer apprentice write first time  result printing screen hello  sentence 
+simple program write  contain fundamental component program
+look line line code just write  first program comment line 
+line begin slash sign comment effect behavior program 
+programmer short explanation observation source_code
+case  line brief description program
+regular code line expression indication compiler preprocessor 
+case directive iostream tell preprocessor iostream standard file 
+specific file iostream include declaration basic standard_input output library  include functionality later program 
+order access functionality declare expression will entity 
+line frequent program standard_library  will include source_code include tutorial 
+function point program start execution  independently location source_code 
+matter function name define instruction contain function definition will first execute program 
+reason  essential program function 
+word follow code pair parenthesis 
+function_declaration   differentiate function_declaration type expression parenthesis follow name 
+optionally  parenthese enclose list parameter
+right parenthesis find body function enclose brace 
+contain brace function execute 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve cout  hello   line statement 
+statement simple compound expression actually produce effect 
+statement perform only action generate visible effect first program 
+notice statement end semicolon character 
+character mark end statement include end expression statement program common syntax_error forget semicolon statement 
+return code function generally interpret program work expect error execution 
+usual way end console program 
+notice line program perform action code execute 
+line contain only comment begin 
+line directive compiler preprocessor begin 
+line begin declaration function case  function finally line statement like insertion  include block delimit brace function 
+program structure line order readable   strict rule separate instruction line 
+example  int  hello   
+ separation statement specify end semicolon end separation code line matter purpose 
+write statement line write single statement take code line 
+division code line serve only legible schematic human read
+let add additional instruction first program  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve second program 
+program case  perform insertion statement 
+once separation line code just give great readability program  perfectly valid define way  int  hello world 
+preprocessor directive begin general rule statement 
+line read process preprocessor produce code
+preprocessor directive specify line end semicolon 
+comment comment part source_code disregard compiler 
+purpose only allow programmer insert note description embed source_code 
+support way insert comment  line comment block comment first know line comment  discard pair slash sign find end line 
+second know block comment  discard character first appearance character  possibility include line 
+add comment second program  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve second program comment iostream 
+program return  hello world 
+program comment source_code program comment character combination   compiler_will take expression  likely cause error_message compile
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved variable 
+usefulness hello world  program show previous section questionable 
+write line code  compile execute result program just obtain simple sentence write screen result 
+certainly fast type output sentence
+programming limit only print simple text screen 
+order little able write program perform useful task work need introduce concept variable 
+let think ask retain number mental memory  ask memorize number time 
+just store value memory 
+now  ask add first number retain number + memory 
+value now example subtract obtain
+whole process just mental memory simile computer variable 
+process express follow instruction set    +   obviously  simple example only small integer_value  computer store million number like time conduct sophisticated mathematical operation
+define variable portion memory store determined value 
+variable need identifier distinguish example  previous code variable identifier call variable name want invent  long valid identifier 
+identifier valid identifier sequence letter  digit underscore character 
+space punctuation mark symbol part identifier 
+only letter  digit single underscore character valid 
+addition  variable identifier begin letter 
+begin underline character  case reserve compiler specific keyword external identifier  identifier contain successive underscore character
+case begin digit 
+rule invent identifier match keyword language compiler specific reserve keyword 
+standard reserved keyword asm  auto  bool  break  case  catch  char  class  const   continue  default  delete  double   enum  explicit  export  extern  false  float  friend  goto  inline  int  long  mutable  namespace    private  protect  public  register   return  short  sign  sizeof  static   struct  switch  template  throw  true  try  typedef  typeid  typename  union  unsigned  virtual  void  volatile   additionally  alternative representation operator identifier reserve word circumstance   bitand  bitor  compl    xor  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve compiler additional specific reserved keyword 
+important  language  case sensitive  language 
+mean identifier write capital letter equivalent name write small letter 
+example  result variable variable result variable 
+variable identifier 
+fundamental data_type programming  store variable computer memory  computer know kind datum want store occupy amount memory store simple number store single letter large number  interpret way 
+memory computer organize byte 
+byte minimum amount memory manage 
+byte store small amount data  single character small integer generally integer 
+addition  computer manipulate complex data_type come group byte  long number non integer number 
+next summary basic fundamental data_type  range value represent name description size range char character small integer 
+take value  true false 
+value show find bit system 
+system  general specification int natural size suggest system architecture word  integer type char  short  int long least large precede char byte size 
+applie float_point type float  double long double  least precision precede
+declaration variable order  first declare specify data_type want
+syntax declare write specifier desire data_type like int  bool  follow valid identifier 
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve int float mynumber  valid declaration variable 
+first declare type_int identifi
+second declare type float identifi mynumber 
+once declare  variable mynumber rest scope program 
+declare type  declare single statement separate identifier comma 
+example  int declare variable  type_int  exactly meaning int int int integer data_type char  short  long int sign unsigned depend range number need represent 
+sign type represent positive negative value  unsigned type only represent positive value zero 
+specify specifier sign specifier unsigned type_name 
+example  unsigned short int numberofsister  sign int myaccountbalance  default  specify sign unsigned compiler setting will assume type sign  second declaration write  int myaccountbalance  exactly meaning keyword sign exception general rule char type  exist fundamental data_type sign char unsigned char  think store character 
+sign unsigned intend store numerical value char sized 
+case  refer respective integer fundamental type  short equivalent short int long equivalent long int 
+follow declaration equivalent  short year  short int year  finally  sign unsigned standalone type specifier  mean sign int unsigned int
+follow declaration equivalent  unsigned nextyear  unsigned int nextyear  see declaration look like action program  see code example mental memory propose beginning section  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve operate variable 
+will see rest detail come section 
+scope variable variable intend program declare type specifier early point code  like previous code beginning body function declare  type_int 
+global local scope 
+global declare body source_code  function  local declare body function block 
+global variable refer code  inside function  declaration 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve scope local_variable limit block enclose brace declare 
+example  declare beginning body function like function scope declaration point end function 
+example mean function exist addition local_variable declare access function vice versa 
+initialization variable declare regular local_variable  value default undetermined 
+want variable store concrete value moment declare 
+order initialize variable 
+way  first know like  append equal sign follow value variable will initialize  type  example  want declare int variable call initialize value moment declare  write  int  way initialize variable  know constructor initialization  enclose initial value parenthesis type  example  int  way initialize variable valid equivalent 
+language library support string standard string class 
+fundamental type  behave similar way fundamental type basic usage 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve first difference fundamental data_type order declare object variable type need additional header_file source_code  stre access std namespace previous program thank namespace statement 
+initialization format valid string  string  string   string  string   string perform basic operation fundamental data_type like declare initial assign_value execution  
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved constant constant expression fix 
+literal literal express value source_code program 
+previously give concrete value variable express message want program print example  write   piece code literal constant 
+literal constant divide integer numeral  float point numeral  character  string boolean value 
+integer numeral numerical constant identify integer decimal value 
+notice express numerical constant write quote  special character 
+doubt constant  write program  will refer 
+addition decimal number day allow literal constant octal number base hexadecimal number base 
+want express octal number precede zero character 
+order express hexadecimal number precede character zero  
+example  following literal constant equivalent decimal octal hexadecimal represent number  seventy express numeral  octal numeral hexadecimal numeral 
+literal constant  like variable  specific data_type 
+default  integer literal type_int 
+force unsigned append character long append 
+case  suffix specify upper lowercase letter 
+float point number express number decimal exponent 
+decimal_point  character express  xth height   integer follow character  decimal_point character  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+valid number decimal express 
+first number pi  second number avogadro  third electric charge electron extremely small number last number express float point numeric literal 
+default type float_point literal double 
+explicitly want express float long double numerical literal  suffix long double float letter part float point numerical constant write low uppercase letter difference meaning 
+character string literal exist non numerical constant  like     hello world    first expression represent single character constant  follow represent string literal compose character 
+notice represent single character enclose single quote  express string generally consist character enclose double quote  
+write single character string literal  put quotation mark surround distinguish possible variable identifier reserve keyword 
+notice difference expression  alone refer variable identifi enclose single quotation mark refer character constant  
+character string literal peculiarity  like escape code 
+special character difficult impossible express source_code program  like newline tab 
+precede backslash 
+here list escape code  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve newline carriage return tab vertical tab backspace form feed page feed alert beep  single quote   double quote 
+first case octal digit follow backslash example  second case hexadecimal  character write digit example 
+string literal extend single_line code put backslash sign end unfinished line 
+boolean literal only valid boolean value  true false 
+express value type bool boolean literal true false 
+define constant define define name constant resort memoryconsume variable  simply define preprocessor directive 
+format tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve define identifi value example  define pi define newline   define pi newline 
+once define  rest code regular constant  example  define  calculate circumference iostream namespace std  define pi define newline   int double  radius double  pi  cout  cout newline  return  only compiler preprocessor encounter define directive literally replace occurrence identifi previous example  pi newline code define  
+define directive statement directive preprocessor  assume entire line directive require semicolon end 
+append semicolon character end  will append occurrence body program preprocessor replace 
+declare const const prefix declare specific type way variable  const int  const char    here  type 
+treat just_like regular variable value modify definition 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve operator once know existence variable begin operate
+purpose  integrate operator 
+language operator mainly keyword  operator sign part alphabet keyboard 
+code short international  rely english word  require little learn effort beginning 
+memorize content page 
+detail only serve later reference case need
+part left assignment know lvalue left right rvalue right 
+lvalue variable rvalue constant  variable  result operation combination
+important rule assign right leave rule  assignment operation take place right leave  way  statement assign variable lvalue contain variable rvalue 
+store moment operation  lose 
+only assign moment assignment operation 
+later change will affect
+example  let look follow code include evolution content store variable comment  assignment 
+notice affect final modification declare early right toleft rule 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve property programming_language assignment operation rvalue part rvalue assignment operation 
+example  +  equivalent  +  mean  first assign variable assign plus result previous assignment 
+follow expression valid   assign variable  
+arithmetic operator +     arithmetical operation support language + addition subtraction multiplication division modulo operation addition  subtraction  multiplication division literally correspond respective mathematical operator 
+only see modulo  percentage sign 
+modulo operation give remainder division value 
+example  write   variable will contain  remainder divide 
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve compound operator 
+ +   equivalent functionality  increase
+early compiler  previous expression produce executable code depend
+nowadays  type code optimization generally automatically compiler  expression produce exactly executable code 
+characteristic operator prefix suffix 
+mean write variable identifier 
+simple expression like exactly meaning  expression result increase decrease operation evaluate outer expression important difference meaning  case increase operator prefix increase result expression evaluate increase outer expression  case suffix store increase evaluate store increase operation evaluate outer expression 
+notice difference  example example   contain  contain   contain  contain example  increase copy 
+example  copy increase 
+relational equality      order evaluate comparison expression relational equality 
+result relational operation boolean only true false  accord boolean result 
+want compare expression  example  know equal great
+here list relational equality  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve equal equal great great equal equal here example  
+last expression  first assign compare  store  result operation true 
+logical   operator 
+basically  return opposite boolean evaluate operand 
+example  evaluate false expression true 
+operation result true operand true  false
+operation result true operand true  false only operand false
+here possible result  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve operator true true true true false true false true true false false false example  evaluate false true false 
+format condition 
+comma  comma  separate expression include only expression expect 
+set expression evaluate value  only rightmost expression
+example  follow code    tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve first assign value assign variable 
+end  variable contain value variable contain value 
+bitwise operators      bitwise operator modify variable bit pattern represent value store 
+simple inherit language  precede expression convert enclose parenthesis int  float  int  previous code convert float number integer_value  remainder lose 
+here  typecast operator int 
+way functional notation  precede expression convert enclose expression parenthese  int  way cast valid 
+value_return sizeof constant  determined program execution 
+operator later tutorial  will see operator  like refer pointer specific object orient programming 
+treat respective section 
+precedence operator write complex expression operand  doubt operand evaluate first later 
+example  expression  + tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve doubt mean  + result  + result correct answer first expression  result 
+establish order priority operator  only arithmetic preference come mathematic operator 
+great low priority  priority order follow  level operator description group   scope leave toright 
+precedence level operator manipulate legible remove possible ambiguity parenthese sign  example  +  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve write +  +  depend operation want perform 
+want write complicated expression completely sure precedence level  include parenthesis 
+will code easy read 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve basic input output now  example program previous section little interaction user 
+standard_input output library  will able interact user print message screen user input keyboard 
+convenient abstraction call stream perform input output operation sequential medium screen keyboard 
+stream object program insert extract character
+need care specification physical medium associate stream only need know will accept character sequentially 
+standard library include header_file iostream  standard_input output_stream object declare 
+standard output default  standard output program screen  stream object define access
+example insert constant string output sentence  numerical constant variable standard output_stream 
+notice sentence first instruction enclose double quote  constant string character 
+want constant string character enclose double quote  clearly distinguish variable_name 
+example  sentence result   hello   print hello hello  print content hello variable insertion operator once single statement   hello     statement   last statement print message hello  statement screen 
+utility repeat insertion operator demonstrate want print combination variable constant variable   hello  age  year old zipcode zipcode  assume age variable contain value zipcode variable contain output previous statement hello  year old zipcode important notice add line break output explicitly follow statement  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve       will show screen follow break sentence 
+order perform break output explicitly insert character
+character specify backslash   first    second   produce follow output  first sentence 
+additionally  add  endl manipulator 
+example   first  endl   second  endl  print first sentence 
+endl manipulator produce newline_character  exactly insertion  additional behavior buffer stream  buffer flush 
+anyway  will unbuffered stream case  generally escape character endl manipulator order specify difference behavior 
+standard input cin 
+standard_input device keyboard 
+handle standard_input apply overloaded operator extraction cin stream 
+operator follow variable will store datum extract stream 
+example  int age  cin age  first statement declare variable type_int call age  second wait input cin keyboard order store integer variable 
+request single character  extraction cin will process input user press return character introduce 
+type variable container cin extraction 
+request integer will integer  request character will character request string character will string character 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve example 
+user program factor generate error simple program cin like just see 
+request integer_value user introduce name generally string character  result cause program misoperate expect user 
+datum input cin extraction will trust user program_will cooperative will introduce name similar integer_value request 
+little ahead  see stringstream class will see possible solution error cause type user input 
+cin request datum input user  cin equivalent cin cin case user give datum  variable variable separate valid blank separator  space  tab character newline 
+behavior want  example want sentence user  extraction operation useful 
+order entire line  function getline  recommendable way user input cin  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+juan hello juan
+favorite team 
+isotope like isotope
+notice call getline string identifi mystr 
+program second call simply replace previous content introduce 
+way perform extraction insertion operation string  especially useful convert string numerical value vice versa 
+example  want extract integer string write  string mystr    int myint  myint  declare string object value   int object 
+stringstream constructor construct object type string object 
+stringstream object streams  extract integer cin apply extractor operator follow variable type_int 
+piece code  variable myint will contain numerical value 
+extract numeric_value directly standard_input  line standard_input cin string object mystr  extract integer_value string variable type_int 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve method  direct extraction integer_value  control happen input numeric_value user  separate process obtain input user now simply ask line interpretation input 
+method prefer numerical value user program intensive user input 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve control structure control structure program limit linear sequence instruction 
+process bifurcate  repeat code take decision 
+purpose  control structure serve specify program  circumstance 
+introduction control structure introduce compoundstatement block 
+block group statement separate semicolon like statement  group block enclose brace      control structure will see section require generic statement part syntax 
+statement simple statement simple instruction end semicolon compound statement instruction group block  like just
+case want statement simple statement  need enclose brace 
+case want statement compound statement enclose brace  form block 
+conditional structure  keyword execute statement block only condition fulfil 
+form condition statement condition expression evaluate 
+condition true  statement execute 
+false  statement ignore execute program continue right conditional structure 
+example  follow code fragment print only value_store variable  cout    want single statement execute case condition true specify block brace  cout   cout  additionally specify want happen condition fulfil keyword
+form conjunction condition example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve cout    cout    print screen value  only print 
+structure concatenate intention verify range value 
+following example show tell value currently store positive  negative 
+iteration structure loop loop purpose repeat statement number time condition fulfil 
+loop format expression statement functionality simply repeat statement condition set expression true 
+example  program countdown loop  custom countdown
+program start user prompt insert starting number countdown 
+loop begin  value enter user fulfill condition great zero block follow condition will execute repeat condition remain true 
+whole process previous program interpret accord follow script begin tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+user assign value 
+condition check 
+point posibilitie  condition true  statement execute step condition false  ignore statement continue step 
+execute statement  cout      print value screen decrease 
+end block 
+return automatically step 
+continue program right block  print fire 
+create loop  end point  block method force condition false point  loop will continue loop
+case include  decrease value variable evaluate condition will eventually condition false number loop iteration  specific   loop countdown end 
+course simple action computer whole countdown perform instantly practical delay number 
+loop format statement condition  functionality exactly loop  condition loop evaluate execution statement grant least execution statement condition fulfil 
+example  follow example program echo number enter enter 
+enter value previous example prompt number
+loop format initialization  condition  increase statement  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve function repeat statement condition remain true  like loop 
+addition  loop specific location contain initialization statement increase statement 
+loop specially design perform repetitive action counter initialize increase iteration 
+work following way  
+generally initial value set counter variable 
+execute only once 
+true loop continue  loop end statement skip execute 
+usual  single statement block enclose brace 
+here example countdown loop  countdown loop 
+initialization increase field optional 
+remain empty  case semicolon sign write 
+example write  want specify initialization increase  want increase field initialization maybe variable initialize 
+optionally  comma operator  specify expression field include loop  like initialization  example 
+comma operator  expression separator  serve separate expression only generally expect 
+example  suppose want initialize variable loop      
+increase decrease loop condition will false loop  will equal 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve jump statement 
+break_statement break leave loop condition end fulfil 
+end infinite loop  force end natural end 
+example  count natural end maybe engine check break loop example 
+continue statement continue statement cause program skip rest loop current iteration end statement block reach  cause jump start follow iteration 
+example  skip number countdown  continue loop example 
+goto statement goto allow absolute jump point program 
+feature caution execution cause unconditional jump ignore type nest limitation 
+destination point identify label  argument goto statement 
+label valid identifier follow colon 
+generally speak  instruction concrete structured object_oriented_programming low level programming fan find
+example  here countdown loop goto  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve goto loop example 
+exit function exit function define cstdlib library 
+purpose exit terminate current program specific exit code 
+prototype void exit int exitcode  exitcode operating_system call program 
+convention  exit code mean program finish normally value mean error unexpected result happen 
+selective structure  switch 
+syntax switch_statement bit peculiar 
+objective check possible constant value expression 
+similar beginning section concatenation instruction 
+form follow  switch expression case  group statement  break  case  group statement  break  
+find break_statement program jump end switch selective structure 
+expression equal will check 
+equal will execute group statement break keyword find  will jump end switch selective structure 
+finally  value expression match previously specify constant case label value want check  program_will execute statement include default  label  exist optional 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve follow code fragment behavior  switch example equivalent switch case  cout    break  case  cout    break  default  cout  value unknown   
+force put break_statement group statement want execute specific condition 
+remainder statement correspond will execute end switch selective block break_statement reach 
+example  break_statement first group case program_will automatically jump end switch selective block continue execute rest statement reach break instruction end switch selective block 
+unnecessary brace surround statement case  useful execute block instruction possible value expression evaluate 
+example  switch case  case  case  cout     break  default  cout     notice switch only compare expression constant 
+put variable label example case  variable range case valid constant 
+need check range value constant  concatenation statement 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved function function structure program modular way  access potential structured programming offer 
+function group statement execute call point program 
+following format  type_name   statement 
+allow pass argument function call 
+parameter separate comma 
+block statement surround brace 
+here first function example  function example iostream 
+will begin
+see function begin declare variable type_int 
+right see call function_call addition 
+pay attention will able see similarity structure call function declaration function code line parameter argument clear correspondence 
+function call addition pass value   correspond int int parameter declare function addition 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve point function call control lose pass function addition 
+value argument pass call copy local_variable int int function 
+function addition declare local_variable int  mean expression  assign result plus
+actual parameter pass result 
+follow line code  return  finalizes function addition  return control back function call first place case  
+moment program follow regular course point interrupt call addition 
+additionally  return_statement function addition specify value  content variable return  moment value 
+value value evaluate function_call 
+value_return function value give function_call evaluate  variable will set value_return addition   
+explain way  imagine call function addition literally replace value return 
+follow line code cout  result  expect  produce printing result screen 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve scope variable scope variable declare function inner block only function block
+example  previous example impossible variable directly function variable local function addition 
+impossible variable directly function addition  variable local function
+scope local_variable limit block level declare 
+possibility declare global_variable  visible point code  inside function 
+order declare global_variable simply declare variable function block  mean  directly body program 
+here example function  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve function example iostream 
+only function subtract pass parameter return result 
+examine function will see call function subtraction 
+calling method see way moment function call 
+order fully understand example once call function replace value function_call return 
+example  first case know pattern previous example subtraction  cout  first result  replace function_call value return    cout  first result  cout  second result subtraction  result previous call  case call subtraction directly insertion parameter cout 
+simply result write  cout  second result  value_return subtraction 
+case cout  third result subtraction   tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve only introduce parameter subtraction variable constant 
+perfectly valid 
+case value pass function subtraction value give result 
+fourth case
+simply note + subtraction   write  subtraction  +  exactly result 
+switch place see semicolon sign end whole statement 
+necessarily right function_call 
+explanation once imagine function replace return_value  +  +  function type 
+remember syntax function_declaration  type_name  statement will see declaration begin type  type function  type datum will return function return_statement 
+want return value 
+imagine want function just show message screen 
+need return value 
+case void type specifier function 
+special specifier absence type 
+example  function printmessage declare void printmessage void cout    optional specify void parameter list 
+ parameter list simply leave blank want function parameter 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve remember format call function include specify name enclose parameter parenthesis 
+non existence parameter exempt obligation write parenthesis 
+reason call printmessage printmessage  parenthesis clearly call function name variable statement 
+follow call incorrect  printmessage  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved function ii argument pass value reference 
+now  function see  argument pass function pass value 
+mean call function parameter  pass function copy value variable
+example  suppose call first function addition follow code  int    addition   case call function addition pass value 
+way  function addition call  value local_variable modification function addition will effect value variable pass function  only copy value moment function call 
+case need manipulate inside function value external variable 
+purpose argument pass reference  function duplicate following example  pass parameter reference iostream 
+ampersand specify corresponding argument pass reference value 
+variable pass reference pass copy value  pass variable function modification local_variable will effect counterpart variable pass argument call function 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve explain way  associate  argument pass function_call  change function_will affect value
+change will affect 
+program output  show value_store call duplicate  show value variable double 
+declare follow function  void duplicate int  int  int declare way  void duplicate int  int  int  ampersand sign  pass variable reference  copy value output screen program value modify 
+pass reference effective way allow function return value 
+example  here function return previous number first parameter pass 
+declare function specify default_value last parameter 
+value will corresponding argument leave blank call function 
+simply assignment_operator value argument function_declaration 
+value parameter pass function call  default_value value specify default_value ignore pass value
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve default_value function iostream 
+first divide only specify argument  function divide allow
+function divide assume second parameter specify happen parameter pass notice function_declaration  finish int  just int 
+second call  divide parameter  default_value int ignore take value pass argument   result return equal 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve overloaded function 
+function name parameter_type number
+mean give name function number parameter type parameter 
+example  overloaded function iostream 
+compiler know call case examine type pass argument function call 
+call int argument call function int parameter prototype call float will call float parameter prototype 
+first call operate argument pass type_int  function first prototype call  function_return result multiply parameter 
+second call pass argument type float  function second prototype call 
+behavior  divide parameter
+behavior call operate depend type argument pass function overload 
+notice function overload only return_type 
+least parameter type 
+inline specifier compiler inline substitution prefer usual function_call mechanism specific function 
+change behavior function suggest compiler code generate function_body insert point function call  insert only once perform regular call generally involve additional overhead run time 
+format declaration inline type_name argument 
+inline keyword call function  only declaration 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve compiler optimize code generate inline function convenient 
+specifier only compiler inline prefer function 
+recursivity property function call
+useful task  like sort calculate factorial number 
+example  obtain factorial number mathematical formula 
+function limitation data_type design long simplicity 
+result give will valid value great 
+now  define function first appearance call source_code 
+call generally function leave end source_code 
+try repeat example function place function function call will likely obtain compile error 
+reason able call function declare early point code  like example 
+alternative way avoid write whole code function function 
+achieve declare just prototype function entire definition 
+declaration short entire definition  significant compiler determine return_type type parameter 
+form tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve type_name    identical function definition  body function  function statement normal definition enclose brace end prototype declaration mandatory semicolon 
+parameter enumeration need identifier  only type specifier 
+inclusion name parameter function definition optional prototype declaration 
+example  declare function_call protofunction int parameter follow declaration  int protofunction int first  int second  int protofunction int  int  anyway  include name variable prototype legible 
+type exit number
+type exit number
+type exit number
+example example efficiency 
+sure point program result  only half code line example 
+anyway example illustrate prototype work 
+concrete example prototyping least function order compile code error 
+first see declaration function odd void odd int  void int  allow function define  example  now locate people find logical place start program  beginning source_code 
+anyway  reason program need least function declare define odd call call odd 
+function tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve previously declare  compilation error happen  odd visible still declare  visible odd reason 
+prototype function place source_code find practical programmer  easily achieve declare function prototype beginning program 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved compound data_type array array series element type place contiguous memory location individually reference add index unique identifier 
+mean example  store value type_int array declare variable  identifier 
+array store value type  int example  unique identifier 
+example  array contain integer_value type_int call billy represent like blank panel represent element array  case integer_value type_int 
+element number array first index  independently length 
+like regular variable  array declare
+typical declaration array type_name element  type valid type like int   name valid identifi element field enclose square bracket  specify element array contain 
+order declare array call billy show diagram simple int billy  note  element field bracket represent number element array hold  constant value  array block non dynamic_memory size determine execution 
+order create array variable length dynamic_memory need  explain later tutorial 
+declare regular array local scope function  example  specify element will initialize value default  content will undetermined store value
+element global static array  hand  automatically initialize default_value  fundamental type mean fill zero 
+case  local global  declare array  possibility assign initial value element enclose value brace 
+example  int      declaration create array like tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve amount value brace large number element declare array square bracket 
+example  example array declare element list initial value brace specify value  element 
+initialization value array  allow possibility leave square bracket empty 
+case  compiler_will assume size array match number value include brace  int      declaration  array int long  initialization value 
+access value array 
+point program array visible  access value element individually normal variable  able read modify value 
+format simple follow previous example element element type_int  name refer element following  example  store value third element write follow statement   example  pass value third element variable call  write   expression purpose like variable type_int 
+notice third element specify  first  second  third 
+reason  last element 
+write  access sixth element exceed size array 
+syntactically correct exceed valid range index array 
+create problem  access range element cause compilation error cause runtime error 
+reason allow will see ahead begin pointer 
+point important able clearly distinguish bracket array 
+perform task  specify size array declare  second specify index concrete element 
+confuse possible bracket array 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve int  declaration  access element
+read carefully  will see type specifier precede variable declaration  precede access 
+valid operation array     +  array example 
+example  bidimensional imagine bidimensional table element  uniform data_type 
+way declare int jimmy  example  way reference second element vertically fourth horizontally expression tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve remember index begin zero 
+multidimensional array limit index  dimension 
+contain index need 
+amount memory need rapidly increase dimension 
+example  char century  declare char element second century  billion char 
+declaration consume gigabyte memory 
+multidimensional array just abstraction programmer  obtain result simple just put factor index  int  equivalent int  only difference multidimensional array compiler remember depth imaginary dimension
+take example piece code  exactly
+bidimensional simple  multidimensional pseudo multidimensional define width define height int  int   int 
+right reserve defined constant  define simplify possible future modification program 
+example  case decide enlarge height simply change line  define height define height need modification program 
+array parameter moment need pass function parameter 
+possible pass complete block memory value parameter function  allow pass address 
+practice effect fast efficient operation 
+order accept array parameter only declare function specify parameter element_type array  identifi pair void bracket 
+example  follow function  void procedure int arg accept parameter type  array int  call arg 
+order pass function array declare int myarray  write call like procedure myarray  here complete example  array parameter 
+reason include second parameter tell function length array tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pass first parameter 
+allow loop print array know range iterate pass array out_of_range 
+function_declaration possible multidimensional array 
+format tridimensional array parameter example  function multidimensional array argument void procedure int notice first bracket leave blank follow
+compiler able determine function depth additional dimension 
+array  simple multidimensional  pass function_parameter common source error novice programmer 
+recommend reading pointer understanding array operate 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved character sequence know  standard_library implement powerful string class  useful handle manipulate string character 
+string sequence character  represent plain array char element 
+example  follow array  char jenny  array store element type char 
+represent array  theory  store sequence character character long 
+store short sequence 
+example  jenny store point program sequence  hello  sequence  merry christmas   short character 
+array character store short sequence total length  special character signal end valid sequence  null character  literal constant write  backslash  zero 
+array element type char  call jenny  represent store character sequence  hello  merry christmas  notice valid content null character   include order end sequence 
+panel gray color represent char element undetermined value 
+initialization null terminate character sequence array character ordinary array follow rule 
+example  want initialize array character predetermine sequence character just_like array  char              case declare array element type char initialize character form word  hello  plus null character   end 
+array char element additional method initialize value  string literal 
+expression example previous constant represent entire string character show time 
+specify enclose text string literal double quote  
+example   result  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve constant string literal
+double quote string  literal constant type null terminate array character 
+string literal enclose double quote null character   automatically append end 
+initialize array char element call null terminate sequence character method  char              char  hello   case array character declare size element type char  character compose word  hello  plus final null character   specify end sequence second case  double quote  append automatically 
+notice talk initialize array character moment declare  assign_value once declare 
+type nullterminate array character regular array restriction array  able copy block datum assignment operation 
+assume char variable  expression source_code like   hello    hello   valid  like              reason comprehensible once know bit pointer  will clarify array constant pointer pointing block memory 
+null terminate sequence character null terminate sequence character natural way treat string  procedure 
+regular string literal type char case 
+example  cin cout support null terminate sequence valid container sequence character  directly extract string character cin insert cout 
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve null terminate sequence character 
+see  declare array char element 
+first initialize string literal constant  third leave uninitialized 
+case  speficify size array  first size implicitly define length literal constant initialize
+yourname explicitly specify size char 
+finally  sequence character store char array easily convert string object just assignment_operator  string  char  text    tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pointer see variable see memory cell access identifier 
+way care physical location datum memory  simply identifi want refer variable 
+memory computer imagine succession memory cell  minimal size computer manage byte 
+single byte memory cell number consecutive way  block memory  cell number previous plus
+way  cell easily locate memory unique address memory cell follow successive pattern 
+example  look cell know right cell  exactly thousand cell exactly thousand cell cell 
+reference operator soon declare variable  amount memory need assign specific location memory memory address 
+generally actively decide exact location variable panel cell imagine memory fortunately  task automatically perform operating_system runtime 
+case interested know address variable store runtime order operate relative position
+address locate variable memory call reference variable 
+reference variable obtain precede identifier variable ampersand sign  know reference operator  literally translate address 
+example   assign address variable  precede name variable reference operator long talk content variable reference  address memory 
+now assume place runtime memory address 
+number just arbitrary assumption invent right now order help clarify concept tutorial  reality  know runtime real value address variable will memory 
+follow code fragment     value contain variable execution show follow diagram  first  assign value variable address memory assume 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve second statement copy content variable 
+standard assignment operation  time
+finally  third statement copy value contain reference  address  assume 
+reason third assignment operation precede identifi reference operator  long refer value reference address memory 
+variable store reference variable like previous example call pointer 
+pointer powerful feature language advanced programming 
+ahead  will see type variable declare 
+dereference operator just see variable store reference variable call pointer 
+pointer point variable reference store 
+pointer directly access value_store variable point
+simply precede pointer identifi asterisk  act dereference operator literally translate value point 
+follow value previous example  write   read  equal value point take value   value point 
+clearly differentiate expression refer value  asterisk precede identifier refer value_store address  case 
+notice difference include include dereference operator include explanatory commentary expression read  equal  equal value point notice difference reference dereference operator  
+right reserve complementary opposite meaning 
+variable reference dereference 
+early perform follow assignment operation    right statement  follow expression give true result  first expression clear assignment operation perform 
+second reference operator  return address variable  assume value 
+third obvious second expression true assignment operation perform 
+fourth expression dereference operator just see  read value point  value point 
+infer long address point remain unchanged follow expression will true  declare variable pointer type due ability pointer directly refer value point specify declaration data_type pointer point
+point char point int float 
+declaration pointer follow format  type name  type data_type value pointer intend point
+type type pointer
+example  int number  char character  float greatnumber  declaration pointer 
+intend point data_type  pointer will occupy amount space memory size memory pointer depend platform code run 
+datum point occupy amount space type  first point int  second char last float 
+example variable pointer occupy size memory  type  int  char float depend type point
+want emphasize asterisk sign declare pointer only mean pointer part type compound specifi  confuse dereference operator see bit early  write asterisk 
+simply represent sign 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve now look code  first pointer 
+procedure  first  assign value reference firstvalue reference operator 
+assign value memory location point moment point memory location modify value
+order demonstrate pointer take value program repeat process pointer  
+here example little bit elaborate  pointer 
+notice expression pointer  dereference operator 
+meaning expression dereference operator operator precede pointer name  expression refer value point  pointer name operator  refer value pointer 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve call attention line  int   declare pointer previous example 
+notice asterisk pointer  order type_int pointer int 
+type second variable declare line int int precedence relationship 
+write  int   int type  type_int space matter purpose 
+due operator precedence rule 
+anyway  simply remember put asterisk pointer pointer user 
+pointer array concept array bind pointer 
+identifier array equivalent address first element  pointer equivalent address first element point concept 
+example  suppose declaration  int  int  follow assignment operation valid   equivalent property 
+only difference change value pointer will point first element type_int define 
+ordinary pointer  array  array constant pointer 
+follow allocation valid   array  operate constant pointer  assign_value constant 
+due characteristic variable  expression pointer following example perfectly valid  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pointer 
+bracket sign operator dereference operator know offset operator 
+dereference variable follow just add number bracket address dereference 
+example   offset  point expression equivalent valid pointer array 
+pointer initialization declare pointer want explicitly specify variable want point int number  int number  behavior code equivalent int number  int  number  pointer initialization take place assign reference value pointer point  value point 
+moment declare pointer  asterisk only pointer  dereference operator sign  
+remember  function sign 
+take care confuse previous code int number  int  number  incorrect  anyway sense case think
+case array  compiler allow special case want initialize content pointer point constant moment pointer declare  char  hello   tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve case  memory space reserve contain  hello  pointer first character memory block assign
+imagine hello  store memory location start address  represent previous declaration important contain value  hello   address
+pointer point sequence character read array remember array just_like constant pointer 
+example  access fifth element array expression  expression value  fifth element array 
+pointer arithmetic conduct arithmetical operation pointer little conduct regular integer data_type 
+begin only addition subtraction operation allow conduct sense world pointer 
+addition subtraction behavior pointer accord size data_type point 
+see fundamental data_type  see occupy space memory 
+example  let assume give compiler specific machine  char take byte  short take byte long take 
+suppose define pointer compiler  char mychar  short myshort  long mylong  know point memory location 
+write     mychar  expect  contain value 
+obviously  myshort contain value  mylong contain  increase only once 
+reason add pointer point follow element type define  size byte type point add pointer 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve applicable add subtract number pointer 
+happen exactly write  +  +  +  increase decrease operator great operator precedence dereference operator  special behavior suffix expression evaluate value increase 
+follow expression lead confusion  great precedence  expression equivalent 
+increase value now point next element  postfix whole expression evaluate value point original reference address pointer point increase 
+notice difference here  expression evaluate value point increase
+value pointer modify modify point pointer 
+write   high precedence  increase  increase operator postfix prefix  value assign increase 
+roughly equivalent   like recommend parenthesis order avoid unexpected result give legibility code 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pointer pointer allow pointer point pointer  turn  point data pointer 
+order only need add asterisk level reference declaration  char  char  char      suppose randomly choose memory location variable   represent value variable write inside cell  cell respective address memory 
+example variable  level indirection  correspond value  
+ void represent absence type  void pointer pointer point value type undetermined length undetermined dereference property 
+allow void pointer point data_type  integer_value float string character 
+exchange great limitation  datum point directly dereference logical  type dereference  reason will cast address void pointer pointer type point concrete data_type dereference
+pass generic parameter function  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve increaser iostream 
+nondynamic data_type value constant 
+example   char type byte long 
+null pointer null pointer regular pointer pointer type special value point valid reference memory address 
+value result type cast integer_value zero pointer type 
+null pointer value pointer take represent point  void pointer special type pointer point specific type 
+refer value_store pointer type datum point
+pointer function allow operation pointer function 
+typical pass function argument function  pass dereference 
+order declare pointer function declare like prototype function name function enclose parenthesis asterisk insert name  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pointer function iostream 
+assign point function subtraction  single_line  minus  subtraction  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve dynamic_memory now  program  only memory declare variable  size determine source_code  execution program 
+need variable amount memory only determine runtime 
+example  case need user input determine amount memory space 
+answer dynamic_memory  integrate operator delete 
+operator order request dynamic_memory operator 
+return beginning memory allocate 
+form  first expression allocate_memory contain single element
+second assign array element  integer_value represent amount
+example    case  system dynamically assign space element return first element sequence  assign
+now  point valid memory space element
+first element point access expression expression 
+equivalent explain section pointer 
+second element access 
+wonder difference declare normal array assign dynamic_memory just
+important difference size array constant value  limit size decide moment design program  execution  dynamic_memory allocation allow assign memory execution program runtime variable constant value size 
+dynamic_memory request program allocate system memory heap 
+computer memory limited resource  exhaust 
+important mechanism check request allocate_memory successful
+standard method check allocation successful  handle exception 
+method exception throw allocation
+exception powerful feature explain later tutorial 
+now know exception throw handle specific handler  program execution terminate 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve exception method default method declaration like   exception throw method know  happen memory allocation throw exception terminate program  return null  program continue execution 
+method specify special object call  declare header  argument  case  allocation memory failure detect check take null value    error assign memory 
+anyway method tedious large project  exception method generally prefer 
+exception method will explain detail later tutorial 
+operator delete delete necessity dynamic_memory limit specific moment program  once long need free memory request dynamic_memory 
+purpose operator delete  format  delete  delete  first expression delete memory allocate single element  second memory allocate array element 
+value pass argument delete memory previously allocate null case null  delete produce effect 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+example  try give value billion number  question  system allocate memory program text message prepare case error  memory allocate 
+remember case try allocate memory specify parameter exception throw  handle terminate program 
+practice check dynamic_memory block successfully allocate 
+method  check value pointer return 
+exception method  handle exception 
+way  program_will terminate point cause unexpected result continue execute code assume block memory allocate
+dynamic memory ansi operator delete exclusive 
+pure language library  dynamic_memory function malloc  calloc  realloc free  include cstdlib header_file see cstdlib 
+memory block allocate function necessarily compatible return manipulate set function operator 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve data_structure learn group sequential datum 
+restrictive  occasion want store mere sequence element data_type  set element data_type 
+data structure data_structure group data element group name 
+datum element  know member  type length 
+data structure declare follow syntax  struct    
+brace list datum_member  specify valid identifier name 
+first know data_structure create  once data_structure declare  identifier specify create rest program
+example  struct product int weight  float price   product apple  product banana  melon  first declare structure call product member  weight price  fundamental 
+name structure product declare object apple  banana melon fundamental datum 
+once declare  product name like fundamental int  char short point able declare object variable compound  like apple  banana melon 
+right end struct declaration  end semicolon  optional field directly declare object structure 
+example  declare structure object apple  banana melon moment define data_structure way  struct product int weight  float price  apple  banana  melon  important clearly differentiate structure name  object variable structure 
+instantiate object 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve once declare object determined structure apple  banana melon operate directly member 
+dot insert object name member name 
+example  operate element standard variable respective type  datum correspond member refer  int   float 
+let see real example see structure way fundamental type  
+example  member
+object mine treat variable  example pass function printmovie regular variable 
+important advantage data_structure refer member individually entire structure block only identifier 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve data_structure feature represent database  especially possibility build array 
+follow code valid  amovie  value pointer assign reference object amovie memory address 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve will now example include pointer  will serve introduce arrow arrow_operator 
+dereference exclusively pointer object member 
+serve access member object reference 
+example purpose equivalent expression valid mean evaluate member title data_structure point pointer call 
+clearly differentiate equivalent access value point hypothetical pointer member call title structure object case pointer 
+follow panel summarize possible combination pointer structure member  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved expression evaluate equivalent member object member object point value point member object nest structure structure nest valid element structure turn structure 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve data_type define data_type typedef allow definition type base exist data_type 
+keyword typedef  format typedef  fundamental compound name define 
+example  typedef char typedef unsigned int word  typedef char pchar  typedef char field  case define data_type  word  pchar field char  unsigned int  char perfectly declaration later valid  mychar  anotherchar   word myword  pchar  field name  typedef create type 
+only create synonym exist type 
+mean myword word unsigned int 
+useful define type possible will need change later version program  want name long confusing 
+union union allow portion memory access data_type  location memory 
+declaration similar structure functionality totally union    
+size great element declaration 
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved union char int float mytype  define element  data 
+refer location memory  modification element will affect value
+store value independent
+union unite elementary array structure small element 
+example  union long struct short hi  short lo  char  mix  define name allow access group byte   accord want access byte  single datum  short element array char element 
+mixed type  array structure union see way access datum 
+little endian system pc platform  union represent exact alignment order member union memory platform dependant 
+aware possible portability issue
+anonymous union option declare anonymous union 
+declare union name  union will anonymous will able access member directly member name 
+example  look difference structure declaration  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve structure regular union structure anonymous union struct char  char  union float dollar  
+difference see access member dollar yen object
+object first  object second  once remind union struct  member dollar yen occupy physical space memory store value simultaneously 
+set value price dollar yen 
+enumeration enum enumeration create type contain limit value fundamental type take 
+form following  enum    
+create whole scratch base exist 
+possible value variable take value include brace 
+example  once enumeration declare follow expression will valid   blue  green red  enumeration compatible numeric variable  constant assign integer numerical value internally 
+specify  integer_value equivalent first possible value equivalent follow follow progression 
+define black equivalent  blue equivalent  green 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve explicitly specify integer_value value enumerate take 
+value follow give integer_value  automatically assume value previous plus
+example  enum  february  march  april  june  july  august  september  october  november  december  case  variable enumerate contain possible value december equivalent value  equal 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve object_oriented_programming class class expand concept structure  hold only  hold function 
+object instantiation class 
+term variable  class object variable 
+class generally declare keyword class  following format  class class_name     
+body declaration contain member  function_declaration  optionally access specifier 
+similar declaration structure  now include function member  call access specifier 
+access specifier follow keyword  private  public protect 
+specifier modify access right member follow acquire  
+finally  public member accessible object visible 
+default  member class declare class keyword private access member 
+member declare class specifier automatically private access 
+example  class crectangle int public  void set_value int  int  int area void  rect  declare class  call crectangle object  variable class_call rect 
+class_contain member  member int member member private access private default access level member_function public access  set_value area  now only include declaration  definition 
+notice difference class_name object name  previous example  crectangle class_name   rect object crectangle 
+relationship int follow declaration  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve int int name class variable_name object 
+previous declaration crectangle rect  refer body program public member object rect normal function normal variable  just put object name follow dot name member 
+similar plain structure
+example    only member rect access body program class private access only refer member class 
+define member class class definition
+notice definition member_function include directly definition crectangle class give extreme simplicity  set_value only prototype declare class  definition
+declaration  operator scope specify define function member class crectangle regular global function 
+scope operator specify class member declare belong  grant exactly scope property function definition directly include class definition 
+example  function set_value previous code  able variable private member class crectangle  mean only accessible member class 
+only difference define class_member function completely class only prototype later definition  first case function_will automatically inline member_function compiler  second will normal inline class_member function  suppose difference behavior 
+member private access remember member class define keyword class private access 
+declare private deny access tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved class 
+sense  define member_function set_value member object  member_function set_value 
+rest program need direct access
+simple example difficult see utility protect variable  great project important value modify unexpected way unexpected point view object 
+great advantage class type  declare object
+example  follow previous example class crectangle  declare object rectb addition object rect  example  class  object 
+member variable member_function 
+notice call give result call 
+object class crectangle variable way  function_member set_value object variable operate 
+basic concept object orient programming  datum function member object 
+long set global_variable pass function parameter  handle object datum function embed member 
+notice give parameter call rect 
+member_function directly datum_member respective object rect rectb 
+constructor destructor object generally need initialize variable assign dynamic_memory process creation operative avoid return unexpected value execution 
+example  happen previous example call member_function call_function set_value 
+undetermined result member assign value 
+order avoid class special function_call constructor  automatically call class create 
+constructor function name class  return_type  void 
+implement crectangle include constructor  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve example  class constructor 
+crectangle rectb  
+now remove member_function set_value  include constructor perform similar action  initialize value parameter pass
+notice argument pass constructor moment object class create  crectangle rect  crectangle rectb  constructor call explicitly regular member_function 
+only execute class create 
+see constructor prototype declaration class constructor definition return_value  void 
+destructor fulfill opposite functionality 
+automatically call destroy  scope existence finish example  define local function function end dynamically assign release operator delete 
+destructor name class  precede tilde sign return value 
+destructor especially suitable assign dynamic_memory lifetime moment destroy want release memory allocate 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve example constructor destructor iostream namespace std  class crectangle   public  
+delete  delete  
+remember overloaded function compiler_will call parameter match argument function_call 
+case constructor  automatically call create  execute match argument pass declaration  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve overload class constructor 
+important  notice declare want default constructor parameter  parenthesis crectangle rectb  right crectangle rectb  wrong 
+default constructor declare constructor class definition  compiler assume class default constructor argument 
+declare class like class cexample public     void multiply    compiler assume cexample default constructor  declare object class simply declare argument  cexample soon declare constructor class  compiler long implicit default constructor 
+declare object class accord constructor prototype define class  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved class cexample public  
+follow declaration correct  cexample  cexample correct  declare class explicit constructor  replace default constructor 
+compiler only create default constructor specify
+special member_function total implicitly declare declare
+copy_constructor  copy assignment_operator  default destructor 
+copy_constructor copy assignment_operator copy datum contain datum_member current 
+cexample  copy_constructor implicitly declare compiler similar const cexample rv    follow declaration correct  cexample  cexample  copy_constructor datum copy pointer class perfectly valid create pointer point class 
+simply once declare  class valid type  class_name type pointer 
+example  crectangle prect  pointer class crectangle 
+happen data_structure  order refer directly member point pointer arrow_operator arrow_operator indirection 
+here example possible combination  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pointer class example 
+doubt  read section consult previous section pointer data_structure 
+class define struct union class define only keyword class  keyword struct union 
+concept class data_structure similar keyword struct class declare class 
+only difference member class declare keyword struct public access default  member class declare keyword class private access 
+purpose keyword equivalent 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve concept union class declare struct class  union only store data member time  class hold function_member 
+default access union class public 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved class ii overload_operator incorporate option standard operator perform operation class addition fundamental type 
+example  int    +  obviously valid code  variable addition fundamental type 
+obvious perform operation similar follow struct string product  float price     +  will cause compilation error  define behavior class addition operation 
+thank feature overload_operator  design class able perform operation standard operator 
+here list operator overload  overloadable operator + +
+format type operator sign parameter here example overload addition operator + 
+create class store bidimensional vector add 
+addition bidimensional vector operation simple add coordinate obtain result coordinate add coordinate obtain result
+case result will + + 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve vector  overload_operator example 
+refer class_name type cvector function name constructor name class 
+confuse cvector int  int  function_name cvector constructor cvector cvector  function_return cvector function class cvector charge overload addition operator + 
+function call implicitly operator  explicitly function_name  +  expression equivalent 
+notice include empty constructor parameter define empty block  cvector  explicitly declare constructor  cvector int  int  explicitly declare constructor  number parameter  default constructor parameter compiler declare automatically declare  need declare order able construct object type parameter 
+declaration  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve  include valid 
+anyway  warn empty block bad implementation constructor  fulfill minimum functionality generally expect constructor  initialization member variable class 
+case constructor leave variable undefined 
+advisable definition similar    order simplify show only point code include example 
+class include default constructor copy_constructor declare  include default definition assignment class parameter 
+behavior define default copy whole content datum_member object pass argument right side sign left side    copy assignment copy assignment function only member_function implement default 
+course  redefine functionality want  like example  copy only class_member perform additional initialization procedure 
+overload operator force operation bear relation mathematical usual meaning recommend 
+example  code intuitive + subtract class fill zero class  perfectly possible
+prototype function + obvious take right side parameter member_function object left side  operator obvious 
+here table summary function declare replace case expression operator member_function global function + 
+see panel way overload class operator  member_function global function 
+indistinct  remind function member class access private protect member class global function friend friendship explain later 
+keyword_this keyword_this represent pointer object member_function execute 
+pointer object
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve check parameter pass member_function object
+follow vector example see write function similar   const   return function similar code compiler generate implicitly class member_function copy object class 
+static member class contain static member  datum function 
+static datum_member class know class variable   only unique value object class 
+content object class
+example  variable class contain counter number object class currently allocate  following example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve static member class 
+reason  avoid declare time  only prototype declaration class declaration definition initialization 
+order initialize static data member formal definition class  global scope  previous example  int    unique variable value object class  refer member object class directly class_name course only valid static member cout  cout    call include previous example refer variable  static variable class share object class 
+once remind global_variable 
+only difference name possible access restriction class 
+just static datum class  static function 
+represent global function call object member give class 
+only refer static datum  case non static member class  allow keyword_this  reference object pointer function member object direct member class 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved friendship inheritance friend_function principle  private protect member class access class declare 
+rule affect friend 
+friend function class declare
+want declare external function friend class  allow function access private protect member class  declare prototype external function class  precede keyword friend  friend_function 
+function able access member object type crectangle  private member 
+notice declaration duplicate later duplicate member class crectangle 
+simply access private protect member member 
+friend_function serve  example  conduct operation class 
+generally  friend_function object orient programming methodology  possible member class perform operation
+previous example  short integrate duplicate class crectangle 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve friend_class just possibility define friend_function  define class friend grant first class access protected private member second
+see beginning program  empty declaration class csquare 
+declaration crectangle refer csquare parameter convert 
+definition csquare include later  previous empty declaration csquare class visible definition crectangle 
+friendship correspond explicitly specify
+example  crectangle friend_class csquare  crectangle csquare friend  crectangle access protected private member csquare reverse way 
+course  declare csquare friend crectangle want
+property friendship transitive  friend friend friend explicitly specify 
+inheritance class key feature class inheritance 
+inheritance allow create class derive class  automatically parent  member  plus
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve suppose want declare series class polygon like crectangle  like ctriangle 
+common property  mean only side  base 
+represent world class class cpolygon derive crectangle ctriangle 
+class cpolygon contain member common type polygon 
+case  crectangle ctriangle derived_class  specific feature type polygon
+class derive inherit accessible member base_class 
+mean base_class include member derive class member call derived_class will contain member
+order derive class colon declaration derived_class following format  class  public  name derived_class name class base 
+public access specifier replace access specifier protect private 
+access specifier minimum access level member inherit base_class 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve derived_class 
+protect access specifier similar private 
+only difference occur inheritance 
+class inherit member derived_class access protect member inherit base_class  private member 
+want accessible member derived_class crectangle ctriangle only member cpolygon  protect access private 
+summarize access type accord who access following way  access public protect private member class yes yes yes member derived_class yes yes member yes member  represent access class   class function 
+example  member inherit crectangle ctriangle access permission base_class cpolygon  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved cpolygon   protect access 
+public keyword define inheritance relationship derived_class  class crectangle  public cpolygon 
+public accessible level  specify keyword derived_class will inherit member level base_class 
+specify restrictive access level like protect  public member base_class inherit protect derived_class 
+specify restrict access level  private  base_class member inherit private 
+example  daughter class derive mother define class daughter  protect mother  set protect maximum access level member daughter inherit mother 
+member public mother protect daughter 
+course  restrict daughter declare public member 
+maximum access level only set member inherit mother 
+explicitly specify access level inheritance  compiler assume private class declare class keyword public declare struct 
+principle  derived_class inherit member base_class 
+base_class default constructor want overloaded constructor call derive create  specify constructor definition derived_class  parameter  parameter example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve constructor derived_class 
+difference constructor declaration son  int specify  call default son int  mother constructor specify  call multiple inheritance perfectly possible class inherit member class 
+simply separate base_class comma derived_class declaration 
+example  specific class print screen coutput want class crectangle ctriangle inherit member addition cpolygon write  class crectangle  public cpolygon  public coutput  class ctriangle  public cpolygon  public coutput  here complete example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve multiple inheritance 
+right reserve polymorphism section  recommend proper understanding pointer class inheritance 
+follow statement strange review section  statement  explain int  class data_structure class public friendship inheritance pointer base_class key feature derived_class pointer derived_class type compatible pointer base_class 
+polymorphism art take advantage simple powerful versatile feature  bring object orient methodology full potential 
+start rewrite program rectangle triangle previous section take consideration pointer compatibility property  pointer base_class 
+assign reference rect trgl pointer  object class derive valid assignment operation 
+only limitation rect trgl type only pointer refer member crectangle tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved ctriangle inherit
+reason call member end program directly object rect trgl pointer 
+order pointer class  member declare class  only derived_class  problem crectangle ctriangle implement version implement base_class 
+virtual member handy  virtual member member class redefine derived_class know virtual member 
+order declare member class virtual  precede declaration keyword virtual  virtual member 
+member_function declare virtual base_class later redefine derived_class 
+verify want remove virtual keyword declaration run program result will polygon  
+call correspond function object crectangle   ctriangle     will call case call pointer type 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve virtual keyword allow member derived_class name base_class appropriately call pointer  precisely type pointer pointer base_class point object derived_class  example 
+class declare inherit virtual_function call polymorphic class 
+note virtuality  able declare object type call function  return 
+abstract base_class abstract base_class similar class previous example 
+only difference previous example define valid function minimal functionality object class like object poly  abstract base_class leave member_function implementation
+equal zero function_declaration 
+abstract base class look like abstract_class class protect  int   public  void set_value int int virtual int   notice virtual int specify implementation function 
+type function call pure virtual_function  class contain least pure virtual_function abstract base_class 
+difference abstract base_class regular polymorphic class abstract base_class least member lack implementation create instance object
+class instantiate object totally useless 
+create pointer take advantage polymorphic ability 
+declaration like  poly  valid abstract base_class just declare  try instantiate object 
+follow pointer    perfectly valid 
+long include pure virtual_function abstract base_class 
+pointer abstract base_class point object derived_class 
+here complete example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve abstract base_class 
+tremendously useful 
+example  now create function_member abstract base_class able print screen result function implementation function  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve pure virtual member call abstract base_class iostream namespace std  class protect  int   public  set_value int int virtual int  printarea 
+course  see simple feature  feature apply array object dynamically allocate object 
+let end example time object dynamically allocate  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve dynamic allocation polymorphism 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve advanced concept template function template function template special function operate generic type 
+allow create function template functionality adapt type class repeat entire code type 
+achieve template parameter 
+template parameter special kind parameter pass type argument  just_like regular function_parameter pass value function  template parameter allow pass type function 
+function template parameter regular type 
+format declare_function template type parameter template class identifi function_declaration  template typename identifier function_declaration  only difference prototype keyword class keyword typename 
+indistinct  expression exactly meaning behave exactly way 
+example  create template function return great object template class mytype mytype getmax mytype mytype return   here create template function mytype template parameter 
+template parameter represent type specify  template function regular type 
+see  function template getmax return great parameter stillundefined type 
+function template follow format function_call  function_name type parameter  example  call getmax compare integer_value type_int write  int getmax int  compiler encounter call template function  template automatically generate function replace appearance mytype type pass actual template parameter int case call
+process automatically perform compiler invisible programmer 
+here entire example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve function template iostream 
+identifier like 
+example function template twice 
+first time argument type_int second argument type long 
+compiler instantiate call time version function 
+see  type template function declare type  will object type parameter function template instantiate specific type 
+specific case generic type parameter compiler find automatically data_type instantiate explicitly specify angle bracket like specify int long 
+write int     type_int  compiler automatically find template parameter only int 
+implicit method produce exactly tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve function template ii iostream 
+return   int 
+compiler automatically determine type need call 
+template function include only template parameter class function template accept parameter  type  call function template type argument  int  long    correct  function template expect argument type  call type 
+define function template accept type parameter  simply specify template parameter angle bracket 
+example  template class class getmin return   case  function template getmin accept parameter type return object type first parameter pass 
+example  declaration call getmin int   long  getmin int  long   simply  getmin   type  compiler determine instantiation anyway 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve class possibility write class  class member template parameter type 
+example  template class class mypair  public  mypair first  second    class just define serve store element valid type 
+example  want declare object class store integer type_int write  mypair int myobject   class create object store type  mypair double myfloat   only member_function previous class_template define inline class declaration
+case define function_member declaration class_template  precede definition template prefix  class iostream 
+right reserved template class confuse 
+declaration  first template parameter 
+second refer type return function 
+third angle bracket requirement  specify function template parameter class_template parameter 
+template specialization want define implementation template specific type pass template parameter  declare specialization template 
+example  let suppose simple class_call mycontainer store element type just member_function call increase  increase value 
+find store element type char convenient completely implementation function_member uppercase  decide declare class_template specialization type  template specialization 
+explicitly declare specialization 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve important prefix  char specialization parameter class name 
+specialization parameter identify type declare class specialization char 
+notice difference generic class specialization  class class 
+declare specialization class  define member  exactly equal generic class  inheritance  member generic specialization 
+non type parameter argument precede class typename keyword  represent type  regular typed parameter  similar find function 
+example  look class contain sequence element  sequence iostream 
+example  previous class definition class char  int class  create object default parameter declare  myseq  equivalent tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve myseq  template multiple file project point view compiler  template normal function class 
+compile demand  mean code function compile instantiation specific argument require 
+moment  instantiation require  compiler generate function specifically argument
+project grow usual split code program source_code file 
+case  interface implementation generally separate 
+take library function example  interface generally consist declaration prototype function call 
+generally declare header_file  extension  implementation definition function independent file code 
+template compile require  force restriction multi file project  implementation definition class function file declaration 
+mean separate interface separate header_file  interface implementation file template 
+code generate instantiate require  compiler prepare allow inclusion once file declaration definition project generate linkage error 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve namespace namespace allow group entity like class  object function name 
+way global scope divide sub scope   name 
+format namespace namespace identifi entity identifier valid identifier entity set class  object function include namespace 
+example  namespace mynamespace int case  variable normal variable declare namespace call mynamespace 
+order access variable mynamespace namespace scope operator   
+example  access previous variable mynamespace write  functionality namespace especially useful case possibility global object function identifier cause redefinition error 
+example  namespace iostream 
+define namespace first second 
+redefinition error happen thank namespace 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve keyword introduce name namespace current declarative region 
+example  iostream 
+still access first   second   fully qualified name 
+keyword directive introduce entire namespace  iostream 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve namespace validity only block state entire code directly global scope 
+example  intention first object namespace like  namespace example iostream 
+generally include namespace std  statement program entity define iostream 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve exception exception way react exceptional circumstance like runtime error program transfer control special function_call handler 
+catch exception place portion code exception inspection 
+enclose portion code try block 
+exceptional circumstance arise block  exception throw transfer control exception handler 
+exception throw  code continue normally handler ignore 
+exception throw throw keyword inside try block 
+exception handler declare keyword catch  place try block  exception 
+example code simply throw exception  throw  throw expression accept parameter case integer_value  pass argument exception handler 
+exception handler declare catch keyword 
+see  follow closing brace try block 
+catch format similar regular function least parameter 
+type parameter important  type argument pass throw expression check only case match  exception catch 
+chain multiple handler catch expression  parameter_type 
+only handler match type argument specify throw statement execute 
+ellipsis parameter catch  handler will catch exception matter type throw exception
+default handler catch exception catch handler specify last  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+case last handler catch exception throw parameter int char 
+exception handle program execution resume try catch block  throw 
+possible nest try catch block external try block 
+case  possibility internal catch block forwards exception external level 
+expression throw  argument 
+only exception function throw exception type_int 
+throw exception type  directly indirectly  catch regular int type handler 
+throw specifier leave empty type  mean function allow throw exception 
+function throw specifi regular function allow throw exception type  int myfunction int param throw  exception allow int myfunction int param  exception allow standard exception standard_library base_class specifically design declare object throw exception 
+call exception define exception header_file namespace std 
+class usual default copy_constructor  operator destructor  plus additional virtual member_function call return null terminate character sequence char overwrite derived_class contain sort description exception 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+place handler catch exception object reference notice ampersand type  catch class derive exception  like myex object class myexception 
+exception throw component standard_library throw exception derive class 
+exception description throw allocation failure throw reference type throw exception type match catch throw typeid throw function iostream library example  operator memory allocate  exception type throw  try  
+want force exception see action  try allocate huge array  system  try allocate billion int throw exception 
+derive standard base_class exception  handle exception catch reference exception class  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+right reserve type cast convert expression give type type know type casting 
+see way type cast  implicit conversion implicit conversion require operator 
+automatically perform value copy compatible type 
+example  short    here  value promote short specify type cast operator 
+know standard conversion 
+standard conversion affect fundamental data_type  allow conversion conversion numerical type short float  double  bool  pointer conversion 
+conversion imply loss precision  compiler signal warning 
+avoid explicit conversion 
+implicit conversion constructor operator conversion  affect class specific constructor operator function perform conversion 
+example  class  class public    here  implicit conversion happen object class class  constructor take object class parameter 
+implicit conversion allow 
+explicit conversion strong type language 
+conversion  specially imply interpretation value  require explicit conversion 
+see notation explicit type_conversion  functional like casting  short    like cast notation  functional notation functionality explicit conversion operator need fundamental data_type 
+operator apply indiscriminately class pointer class  lead code syntactically correct cause runtime error 
+example  follow code syntactically correct  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve class type casting 
+subsequent call member result will_produce run time error unexpected result 
+order control type conversion class  specific cast operator    
+format follow enclose angle bracket expression convert parenthesis 
+purpose ensure result conversion valid complete object requested class 
+successful cast class base_class  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve class cbase  class cderive  public cbase  cbase  cbase  cderive cderive   ok  derive base cderive  wrong  base derive second conversion piece code produce compilation error base derive conversion allow base_class polymorphic 
+class polymorphic  perform special checking runtime ensure expression yield valid complete object requested class  
+compiler support feature option disable default 
+enable runtime check work properly 
+code try perform dynamic cast pointer_object pointer_object  only first successful 
+notice respective initialization  pointer  point object  point object
+respective perform point full object class  point object class  incomplete object class 
+cast pointer complete object require class second conversion previous return null pointer failure 
+convert reference conversion possible  exception throw
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve perform conversion pointer class  only derived_class base  base_class derive 
+ensure least class compatible proper object convert  safety check perform runtime check object convert full object destination 
+programmer ensure conversion safe 
+side  overhead check avoid 
+operation result simple binary copy value pointer
+pointer conversion allow  content point pointer check 
+cast pointer integer type 
+format integer_value represent pointer platform specific 
+only guarantee pointer cast integer large fully contain grant able cast back valid pointer 
+conversion perform specific low level operation  interpretation result code generally system specific  non portable 
+example  class  class   valid code  sense  now pointer point object incompatible class  dereference unsafe 
+example  order pass const argument function expect non constant parameter  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve iostream 
+return_value compare serve obtain null terminate character sequence represent data_type class_name name member 
+typeid apply expression type polymorphic class  result type derive complete object  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+typeid apply object like typeid yield dynamic type 
+type typeid evaluate pointer precede dereference operator  pointer null value  typeid throw exception 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve preprocessor directives preprocessor directive line include code program program statement directive preprocessor 
+line precede hash sign 
+preprocessor execute actual compilation code begin  preprocessor digest directive code generate statement 
+preprocessor directive extend only across single_line code 
+soon newline_character find  preprocessor directive end 
+semicolon expect end preprocessor directive 
+only way preprocessor directive extend line precede newline_character end line backslash 
+format  define identifi replacement preprocessor encounter directive  replace occurrence identifi rest code replacement 
+replacement expression  statement  block simply
+preprocessor understand  simply replace occurrence identifi replacement 
+macro last undefined undef preprocessor directive  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve define int  undef define int  generate code int  int  function macro definition accept special operator replacement sequence  operator parameter replacement sequence  parameter replace string literal enclose double quote define str  translate 
+operator concatenate argument leave blank space define glue    test   translate  test   preprocessor replacement happen syntax check  macro definition tricky feature  careful  code rely heavily complicated macro result obscure programmer  syntax expect occasion regular expression programmer expect 
+conditional inclusion ifdef  ifndef  endif  elif directive allow discard part code program condition meet 
+example  ifdef int  endif case  line code int  only compile previously define define  independently value 
+define  line will include program compilation 
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve ifndef define endif int  case  arrive piece code  macro define define value 
+exist keep previous value define directive execute 
+elif   directive serve specify condition meet order portion code surround compile 
+condition follow elif only evaluate constant expression  include macro expression 
+example  undef define elif undef define undef define endif int  notice whole structure elif chain directive end endif 
+behavior ifdef ifndef achieve special operator define elif directive  define elif define define int  line control compile program error happen compile process  compiler show error_message reference name file error happen number  easy find code generate error 
+directive allow control number code file file name want error take place 
+format number  filename  number number will assign next code 
+number successive line will increase point
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve  assign variable  int  code will generate error will show error file  assign variable   
+error directive error directive abort compilation process find  generate compilation error specify parameter  ifndef cplusplus error compiler require 
+source file inclusion directive assiduously section tutorial 
+preprocessor find directive replace entire content specified file 
+way specify file include   file  file only difference expression place directory compiler look file 
+first case file name specify double quote  file search first directory include file contain directive 
+case compiler search file default directory configure look standard header_file 
+file name enclose angle bracket file search directly compiler configure look standard header_file 
+standard header_file include angle bracket  specific header_file include quote 
+pragma directive pragma directive specify diverse option compiler 
+option specific platform compiler
+consult manual reference compiler possible parameter define pragma 
+compiler support specific argument pragma  ignore error generate 
+predefine macro name follow macro name define time  macro value line integer_value represent current source_code file compile 
+compiler constant define value 
+compiler fully compliant standard value equal great depend version standard comply 
+example  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve standard macro name 
+compilation begin nov 
+compiler give cplusplus value tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve standard_library input output file follow class perform output input character file  
+class derive directly indirectly class istream  ostream 
+object type class  cin object class istream cout object class ostream 
+therfore  class file stream 
+file stream way cin cout  only difference associate stream physical file 
+let see example  
+let step step  open file first operation generally perform object class associate real file 
+procedure know open file 
+open file represent program stream object instantiation class  previous example myfile input output operation perform stream object will apply physical file associate
+order open file stream object member_function open open filename  mode  filename null terminate character sequence type const char type string literal represent name file open  mode optional parameter combination follow flag  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserved open input operation 
+flag set value  initial position beginning file 
+flag only stream open output only operation 
+flag combine bitwise operator 
+example  want open file binary mode add datum follow call member_function open ofstream myfile      open member_function class ofstream  ifstream fstream default mode file open second argument  class default mode parameter ofstream ifstream fstream ifstream ofstream class  automatically assume  mode pass second argument open member_function 
+default_value only apply function call specify value mode parameter 
+function call value parameter default mode overridden  combine 
+file stream open binary mode perform input output operation independently format consideration 
+non binary file know text file  translation occur due formatting special character like newline carriage return character 
+first task perform file stream object generally open file  class constructor automatically call open member_function exact parameter member 
+declare previous myfile object conduct opening operation previous example writing  ofstream myfile     combine object construction stream opening single statement 
+form open file valid equivalent 
+check file stream successful open file  call member argument 
+member_function return bool value true case stream object associate open file  false ok  proceed output tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve close file finish input output operation file close resource
+order call stream member_function close 
+member_function take parameter  flush associated buffer close file   once member_function call  stream object open file  file open process 
+case object destruct still associate open file  destructor automatically call member_function close 
+text file text file stream flag opening mode 
+file design store text value input output suffer formatting transformation  necessarily correspond literal binary value 
+datum output operation text file perform way operate cout  write text file iostream 
+datum input file perform way cin  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+last example read text file print content screen 
+notice member_function  call eof return true case end file reach 
+create loop finish true  end file reach 
+check state flag addition eof  check end file reach  member_function exist check state stream return bool value bad return true reading write operation
+example case try write file open writing device try write space leave 
+order reset state flag check member_function just see member_function clear  take parameter 
+tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve ofstream  like ostream  pointer know put pointer point location next element write 
+finally  fstream  inherit put pointer  iostream derive istream ostream 
+internal stream pointer point reading write location stream manipulate follow member_function  tellg tellp member_function parameter return value member type  integer data_type represent current position stream pointer case tellg put stream pointer case tellp 
+function overload prototype 
+first prototype seekg position  seekp position  prototype stream pointer change absolute position position count beginning file 
+type parameter return function tellg tellp  member type  integer_value 
+prototype function seekg offset  direction  seekp offset  direction  prototype  position put pointer set offset value relative specific point determine parameter direction 
+direction type seekdir  enumerate type enum determine point offset count take follow value  offset count beginning stream offset count current position stream pointer offset count end stream following example member_function just see obtain size file  tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve 
+binary file binary file  input output datum extraction insertion operator function like getline efficient  need format datum  datum separation code text file separate element like space  newline  
+file stream member_function specifically design input output binary datum sequentially  write read 
+first write member_function ostream inherit ofstream 
+read member_function istream inherit ifstream 
+object class fstream member 
+prototype write  size  read  size  type  pointer char  char  represent address array byte read data element store data element write take 
+size parameter integer_value specify number character read write memory block 
+let examine tthhee llaanngguuaaggee ttuuttoorriiaall 
+right reserve first  file open flag  mean pointer will position file 
+way  call member tellg  will directly obtain file 
+notice type declare variable   specific type buffer file positioning type return 
+type define integer type  conduct operation conduct integer_value  safely convert integer type large contain file 
+file gb int  int  int  once obtain file  request allocation memory block large hold entire file   right proceed set pointer beginning file remember open file pointer  read entire file  finally close      point operate datum obtain file 
+program simply announce content file memory terminate 
+buffer synchronization operate file stream  associate internal buffer type streambuf 
+buffer memory block act intermediary stream physical file 
+example  ofstream  time member_function put write single character call  character write directly physical file stream associate 
+character insert stream intermediate buffer 
+buffer flush  datum contain write physical medium output_stream simply free input stream 
+process call synchronization take place follow circumstance  
+file closed  close file buffer flush synchronize pende datum write read physical medium 
+buffer full  buffer
+buffer full automatically synchronize 
+explicitly  manipulator  manipulator stream  explicit synchronization take place 
+manipulator flush endl 
+explicitly  member_function sync call stream member_function sync  take parameter  cause synchronization 
+function_return int value equal stream associated buffer case failure 
+stream buffer successfully synchronize return 

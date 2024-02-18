@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CMantle++</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}"/>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/08bea279a4.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <div class="topnav">
+    <img src="{{ url_for('static', filename='images/logoBW.svg') }}" width="375" height="110" id="cmantlelogo">
+    <button id="help-btn" onclick="showDialog()">
+      <i class="material-icons">help_outline</i>
+    </button>
+    <div class="dialog-underlay" id="rules-underlay">
+      <div class="dialog" id="rules" aria-labelledby="rules-heading" aria-modal="true" role="dialog">
+        <div class="dialog-content" id="rules-content">
+          <h3 id="rules-heading">Guess the secret word</h3>
+          <p>
+            Each guess must be a word (of any length). Unlike the original,
+            only regular, lowercase words are allowed. The game will tell
+            you how semantically similar it thinks your word is to the
+            secret word.  Unlike that other word game, it's not about the
+            spelling; it's about the meaning. The similarity value comes
+            from Word2vec trained off of our model. The highest possible
+            similarity is 100 (indicating that the words are identical
+            and you have won). The lowest in theory is -100, but in practice
+            the lowest is something like -34.  By "semantically similar", I mean,
+            roughly" used in the context of similar words, in a database C++ textbooks"
+          </p>
+          <p>
+            Secret words may be any part of speech, but will always be
+            single words.  It's tempting to think only of nouns, since that
+            is how normal semantic word-guessing games work. Don't get
+            caught in the trap!
+          </p>
+          <p>
+            Hints will return a sentence using the secret word, represented as "_____"
+            in the sentence, and the user's CLOSEST guess.
+          </p>
+          <p>
+            The "Getting close" indicator tells you how close you are --if
+            your word is one of the 1,000 nearest words to the target word,
+            the rank will be given (1000 is the target word itself). If
+            your word is not one of the nearest 1000, you're "cold". (THIS IS NOT DONE YET LOL)
+          </p>
+          <p>
+            You will need more than six guesses.  You might need
+            dozens of guesses. You could need hundreds of guesses.
+          </p>
+          <button id="rules-close" onclick="closeDialog()" aria-label="Close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p id="error">{{message}}</p>
+    <form id="guess-wrapper" method="POST">
+      <input name = "guess" placeholder="Guess" autocorrect="off" autocapitalize="none" autocomplete="off" type="text" id="guess">
+      <input type="submit" value="Guess" id="guess-btn">
+    </form>
+  </div>
+
+  <div>
+    <table id="guesses">
+      <tr>
+        <th id="chronoOrder">#</th>
+        <th id="alphaOrder">Guess</th>
+        <th id="similarityOrder">Similarity</th>
+        <th>Getting close?</th>
+      </tr>
+      <tr><td colspan=4><hr></td></tr>
+      <p>
+        <b>{{result}}</b>
+      </p>
+      <p>
+        <b>{{closestguess}}</b>
+      </p>
+      <td>
+        <p>
+          {% for text in data %}
+          <p><b>{{loop.index}}</b></p>
+          {% endfor %}
+        </p>
+      </td>
+      <td>
+        <p>
+          {% for text in data %}
+          <p><b>{{text}}</b></p>
+          {% endfor %}
+        </p>
+      </td>
+      <td>
+          {% for text in similarities %}
+          <p><b>{{text}}</b></p>
+          {% endfor %}
+      </td>
+      <td>
+        {% for text in similarities %}
+          <p>
+            <span class="progress-container">
+              <span class="progress-bar" id="progress-bar" >
+                <span class="percentile" id="bar-value">{{text}}/100</span>
+              </span>
+            </span>
+          </p>
+
+        {% endfor %}
+      </td>
+    </table>
+  </div>
+
+
+  <div>
+  <p>{{hint_text}}</p>
+    </div>
+
+  <nav id="menu">
+    <div class="buttons">
+      <form id = "functionality", method="POST">
+        <input type="submit" value="Hint" name="hint" id="hint-btn">
+        <input type="submit" value="Give Up" name="restart-btn" id="give-up-btn">
+      </form>
+      <div id="features">
+        <h2>Addition Features</h2>
+        <div id="extra-btns">
+          <a href="/VectorMath"><button id="vec-btn">Vector Math</button></a>
+          <a href="/WordSim"><button id="compare-btn">Word Comparison</button></a>
+          <a href="/SimilarWords"><button id="sim-btn">Similar Words</button></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <p>Inspired from the original <a href="https://semantle.com/">Semantle</a> by David Turner.</p>
+  </div>
+
+
+</body>
+<script type="text/javascript">
+  function showDialog() {
+      document.getElementById("rules-underlay").style.display = "block";
+    }
+  function closeDialog() {
+      document.getElementById("rules-underlay").style.display = "none";
+    }
+  window.onload = function remove() {
+    let text = document.getElementById("error").textContent;
+    if(text === ""){
+      document.getElementById("error").style.display = "none";
+    }
+  }
+</script>
+</html>

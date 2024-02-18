@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-size: 17px;
+    line-height: 1.59;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-family:-apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight:400;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1em;
+    background: #111;
+    color: #fafafa;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0;
+}
+
+#menu {
+    margin-top: 100px;
+    display: flex;
+    column-gap: .5em;
+}
+
+#submit {
+    position: relative;
+    left: 300px;
+    bottom: 50px;
+}
+
+#help-btn {
+    position: absolute;
+    margin-left: 15em;
+    margin-top: 1em;
+    height: 2em;
+    width: 2em;
+}
+
+#cmantlelogo {
+    position: relative;
+    right: 30px;
+}
+
+#menu button,
+#give-up-btn,
+#hint-btn,
+#help-btn,
+.dialog-close {
+    cursor: pointer;
+    background: rgb(94, 94, 94);
+    border: none;
+    padding: 4px;
+    color: #fafafa;
+    border-radius: 3px;
+}
+
+#menu button svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.dialog-underlay {
+    background: rgba(0,0,0,.5);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.dialog {
+    background: rgb(156, 156, 156);
+    color: rgb(34, 34, 34);
+    left: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50em;
+    overflow: hidden;
+    position: fixed;
+    right: 2em;
+    top: 2em;
+    z-index: 1;
+    animation: fadeIn 1s;
+}
+
+.dialog-close {
+    color: black;
+    font-size: 1.5em;
+    height: 1em;
+    line-height: 1em;
+    right: .5em;
+    position: absolute;
+    top: .5em;
+    width: 1em;
+    z-index: 2;
+}
+
+.dialog-content {
+    max-height: calc(100vh - 4em);
+    padding: 2em;
+    overflow: auto;
+}
+
+.dialog-content > *:first-child {
+    margin-top: 0;
+}
+
+.dialog-content > *:last-child {
+    margin-bottom: 0;
+}
+
+#error {
+    font-size: 19px;
+    background: rgb(15, 48, 139);
+    height: 2em;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+
+#guess-btn{
+    cursor: pointer;
+    text-align: center;
+    width: 5em;
+    margin-left: 20px;
+}
+
+#guess-wrapper {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+}
+
+#extra-btns button{
+    height: 3em;
+    width: 10em;
+}
+
+#give-up-btn,
+#hint-btn {
+    width: 6.0em;
+}
+
+#guess-wrapper input,
+#give-up-btn,
+#hint-btn {
+    border-radius: 5px;
+    height: 2.5em;
+    padding: 5px;
+}
+
+#guesses {
+    margin-bottom:40px;
+}
+
+#guess {
+    width: 100%;
+}
+
+th {
+    padding-right: 3em;
+    text-align: start;
+}
+
+.percentile,
+.progress-container,
+.progress-bar {
+    display: inline-block;
+    text-align: center;
+}
+
+.percentile {
+    width: 10em;
+}
+
+#bar-value::before {
+    content: attr(bar-value);
+}
+
+.progress-container {
+    background-color: rgb(94, 94, 94);
+    width: 10em; 
+}
+
+.progress-bar {
+    background-color:#008000;
+}
+
+footer {
+    position: absolute;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    height: -10%;
+}
+
+
+#features {
+    margin-top: 50px;
+}
+
+#features h2 {
+    border-bottom: 2px solid white;
+}
+
+@keyframes fadeIn {
+    0% {top: 0em; opacity: 0%;}
+  100% {top: 2em; opacity: 100%;}
+  }

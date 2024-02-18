@@ -1,0 +1,763 @@
+hansen right reserve 
+isbn rook guide press black road berlin  vt november preface read ﬁrst hope everimprove iteration useful textbook 
+fairly quickly whim print volunteer basis  result  add change inﬁnite amount time schedule 
+mine  add crack team technical editor translate sleep deprive poor grammar sleep deprive grammar 
+section miss need clariﬁcation  take bit time change 
+want bother github repository  addition modiﬁcation directly 
+want ﬁrst thank family time spend writing weekend summer edit 
+promise will next summer 
+next thank technical editor  whom ugly book 
+thank craig robbins iii levi schuck  who  diﬀerent side planet  manage contribute extensively heavy book shape now 
+meet  owe beer
+like thank kickstarter backer only money possible  reinforce idea worthwhile contribution community 
+peter stephenson andrew pedley contribute food directly textbook write hackathon weekend  saturate fat quota 
+russo shoot video organize medium social networking eﬀort kickstarter project writing weekend 
+special thank allyson textbook photography  diagram  extensive search semiﬁnal textbook turn bunch mistake miss 
+last least thank student who show person digitally 
+grandiose  remind world show
+keep show
+jeremy november  la fave   content history variable decide data_type need 
+review review answer 
+hansen license creative common noncommercial sharealike unported license  license nc legalcode xi dramatis personæ manage editor  jeremy
+hansen  phd  cissp technical editing typeset  jeremy
+hansen jadud  phd craig
+robbin
+levi schuck medium outreach 
+russo cover art graphic design  allyson
+lefebvre content author  tyler atkinson  troy
+dunda  connor
+fortune  jeremy
+hansen 
+heimann  benjamin
+jones  michelle kellerman  michael
+kirl  zachary leblanc  allyson
+lefebvre  gerard
+mceleney  phung
+pham  megan rioux  alex robinson  kyle
+robinson  jesse
+rodimon  matthew
+russo  yosary silvestre  dale
+stevens  ryan
+sutherland  james
+verderico  christian
+vergne  rebecca weaver  richard
+branden
+funding support  peter stephenson  phd  vsm  cissp  cism  ficaf  lpi norwich university center advanced computing digital forensic andrew pedley depot square pizza xiii kickstarter contributor  nathan adams  chris aldrich  jay anderson  kent archie  erik arvedson  astrolox  phoebe ayer  papa joe barr  julia benson slaughter  georgia perimeter college  patrick berthon  francis bolduc  greg borenstein  patrick breen  igor bronshteyn  valdemar bučilko  ross buckley  nikita burtsev  jakob bysewski  david camara  dave
+campbell  brian
+campbell iii 
+canero  serge canizare  andrew carlberg  casey
+cessnun  winston chow 
+jesse clements  greg crawford  sean cristofori  jordan cundiﬀ  michael david  joseph davies  ashley davis  david c
+dean  djs  carlton doc dodd  phil dodds  dominic  sankar dorai  dryack  duharte  brandon duong  van van duong  daniel egger  chris fabian  jorge
+falcon  tek francis  fuchsi  steve gannon  michael gaskins  gavlig  adam gibson  russell
+gibson  goldenwyrm  james green  brian
+green  casey groom  vitalik gruntkovskiy  vegar guldal  felix gutbrodt  jeremy gwinnup  beau
+hahn  paul
+harm norwich  corey
+hart  mba  aaron
+haviland  josh heﬀner  greg holland  henry howard  mark howe  ivaliy ivanov  jadud  joseph jaoudi  tim
+johnson  ibi wan kentobi  mark king  mitchell kogut iii  sigmund kopperud  michael korolev  jamie kosoy  aria  alexander týr kristjánsson  richard kutscher  eric laberge  john lagerquist  philip lawrence  mark brent lee  john nancy lefebvre  nevin liber  jonathan lindquist  lockney  stuart
+pedro maciel  troel holstein madsen  william marone  fred mastropasqua  mile mawyer  michael mazzello  ryan mcdonough  matthew mcfadden  john mcintosh ii  sean mcnamara  mdsaravanan  brandon meskimen  andrew mike  
+miller iv  marcus millin  salvador torre morale  danny morgan  ken moulton  aaron murray  mvi  jon nebenfuhr  philip
+nicholson  chris nielsen  pontus nilsson  mike noble  aleksander
+nordgarden rødner  greg  doug  randy padawer   palmer  tasos papastylianou  paul  james pearson kirk  peterson  grigory petrov  pezmanlou  joachim pileborg  kyle pinche  pkh  mary purdey  marshall reeve  ringman  craig
+robbin  antonio rodriguez  armando emanuel roggio  victor suarez rovere  christian sandberg  jaymes  paolo scalia  patrice scheidt  daniel  levi schuck  raman  michael shashoua  daniel shiﬀman  clay shirky  sillygoatgirl  kevin
+slonka  brian smith  hazel smith rebecca twigg  andrey soplevenko  kasper souren  derek
+spangler  speckman  kellan  nick stefanou  steve  andrew stewart  jeremy sturdivant  cyrille tabary  adam tannir  taylor  telecat production  aron temkin  mitchell tilbrook  nathan tolbert  devin
+tomlinson vermont bear  todd trimble  michiel van slobbe  james
+velez  marco verdecchia  david walter  lothar werzinger  wayne west  sean whaley   mark wheeler  tommy widenﬂycht  dylan widis  tony williamitis  adam
+williams  stephen
+williams  dylan wilson  wesley wiser  wizzy  sam wright  janet hong yam  jy yaworski 
+history develop bjarne stroustrup  popular programming_language world 
+originally  design improvement language  develop bell lab 
+develop early  name derive programming_language  turn derive bcpl language 
+gain large following  part due development unix operating_system 
+due popularity form create standard language  adopt 
+stroustrup begin idea object_oriented_programming important addition create class 
+ stroustrup contribution oﬃcially know  name stem add increment operator 
+international standard establish 
+change minor 
+ report release iso feature intend include next version 
+book  will favor old technique  pre 
+feature discuss  will point
+feature discuss  will try explain
+simply put  variable space memory store range value 
+basic data_type show table 
+deep discussion data_type  refer 
+decide data_type need 
+variable depend type datum contain 
+instance  store number char char store only character datum 
+store programmer int 
+think deal number fractional part  need least float 
+generally want small variable_type will job
+simply put  round number  int work ﬁne  true false  bool   char  fractional number  float  big number number digit decimal_point  double 
+program diﬀerentiate multiple int  char  double 
+identiﬁer like  identiﬁer begin number remember variable_name only word long 
+underscore replace space desire  note case sensitive 
+declaration declaration integer variable_name myvariable look like myvariable  speciﬁc syntax set grammatical rule language important follow declare variable 
+notice ﬁrst part int data_type variable 
+think semicolon equivalent period end sentence  exception  include word data_type table keyword will learn later
+note declare variable
+variable name follow equal  assignment_operator  value  semicolon 
+example  int  double 
+variable declare  contain space memory  give unpredictable value 
+assignment statement variable assign value side equal value assign right side 
+note expression right side assignment contain arithmetic operation multiplication  division  addition  subtraction  variable 
+follow example  
+declare variable type_int initialize value 
+declare integer variable  sum   
+initialize variable integer assignment statement assign sum result plus 
+declare double variable call number initialize 
+create program variable declare 
+create float name myfloat  int name myint  double name mydouble 
+literal constant literal literal value variable    
+int  literal data_type 
+word  convince compiler give literal value  constant 
+table contain example 
+declare constant  unable change
+constant  will need initialize value time declare variable 
+here example cover cout object shortly const 
+diﬀerence literal declare constant 
+declare constant useful literal constant 
+diﬀerence normal variable constant 
+build program following  declare double variable_name foot 
+initialize height 
+set foot multiply metersperfoot 
+create program display diameter circle give const float represent 
+literal value store variable  constant unchanging value_store variable 
+normal variable change  constant change 
+assignment assignment way user programmer assign value variable 
+mathematic allow  only acceptable way assign value type 
+here example value diﬀerent type variable  
+able declare variable assign value variable assignment_operator 
+assign literal value variable type char  value surround single quote example   
+assign_value variable type string  literal value surround double quote example   alpha  
+initialize value variable 
+set later code like   
+line code section variable set assignment_operator  give value  know lvalue  
+example  value  assign value code 
+store result arithmetic expression variable like +  write +  error 
+sure variable  variable  literal type 
+example  follow code will result error  
+try combine diﬀerent variable_type  compiler_will mad
+exception rule try combine float  int  numeric_value 
+double float hold value decimal_point   int only hold round value   
+refer convert data_type 
+following incorrect way assign value variable 
+store value variable  variable assignment_operator  value store variable right assignment_operator 
+string literal surround double quote  single quote  single quote single character like  
+output output object cout  console output  
+example  want prompt user type name  cout 
+let program output screen  include iostream namespace 
+case  display string literal   
+know  statement end semicolon  exception 
+want print
+try compile run
+work  desire output 
+diﬀerent line 
+way object endl 
+will need redirect operator string literal endl 
+look like include iostream namespace 
+alternatively  combine line cout single like 
+console output object special character   
+print character press tab key keyboard  indentation 
+let  look example newline_character  tab character  text  include iostream namespace 
+don  output word screen cout 
+print variable type_int  double  float control number digit decimal_point 
+example  variable contain value only care ﬁrst number decimal_point just want output screen 
+follow code  number digit set  include iostream namespace 
+notice left ﬂag follow code  position output side ﬁeld  default output right side  include iostream namespace 
+write line code width fill function print program 
+write code value    string 
+follow program 
+input programmer want user enter datum  price item  will cin object  pronounce  see  conjunction  extraction operator program 
+let look follow code  include iostream namespace 
+enter value user want check value enter 
+simply add additional statement like include iostream 
+afraid insert additional statement program check value variable debug 
+want user input value  just repeat code individual variable  include iostream namespace 
+trust user will input correct datum variable 
+example  user prompt input age variable type_int type character program behave properly user enter wrong data_type 
+check improper input like function conditional statement 
+look follow code  
+follow numbered line code proper cin statement 
+redirect operator  process user input 
+cin store value variable value 
+write code allow user enter integer_value store variable 
+code prompt user  receive input  print input value back
+add functionality code write previous exercise 
+add char float double 
+prompt user properly value 
+only cin correct 
+need cin statement exclusively statement  practice adequate feedback user 
+yes  previous value 
+arithmetic important ability math 
+computer see number 
+computer  ability math manipulate number essential breathing
+addition still plus sign + subtraction still minus sign 
+hand  multiplication asterisk division forward slash 
+math  will want variable store answer  output answer user 
+complicated equation  parenthesis help 
+familiar order operation parenthese  exponent  multiply  divide  add  subtract  pemda  exponent operation topic cover 
+normal arithmetic  parenthese imply multiplication 
+example   expect mean  time  mean  correct syntax 
+conversely  decrement operator decrease value 
+keep mind order increment decrement operator 
+start similarity  increase value
+table  example compound assignment update int
+compound assignment decrease amount type code readable 
+special value want change operation 
+example  + equivalent + 
+keep mind order important subtraction division 
+let  want set equal value divide value
+here sample code concept present include iostream namespace  int     cout cout cout cout     + + endl endl endl endl 
+write statement declare integer variable initialize 
+change last line  ﬁx follow code will output 
+comment programmer  comment will life easy 
+end  comment quick explanation code 
+single line comment typically come line code 
+single line comment  simply type double slash end line  follow note like  preferably explain line code
+alternatively  comment start line
+here example   count +    multi line comment  call block comment 
+here example  comment comment block comment need star beginning line precede example  programmer write anyways 
+comment line code  include iostream namespace  
+explain purpose comment 
+need able understand code 
+write properly comment simple program 
+back program write previous question 
+add comment explain happen share comment code classmate friend 
+ask understand happen just comment 
+add comment follow code 
+note  percentage hockey show decimal place multiply  
+comment help check know sure need
+answer will vary 
+keep try understand code comment alone 
+answer will vary 
+data_type conversion suppose need carry product across farmyard  apple water 
+choose small hand basket carry apple  large bushel basket carry large number apple 
+similarly  gallon bucket ﬁve gallon bucket  depend water expect move 
+similar way  choose data_type type datum like store variable  datum expect store 
+variable data_type range possible value store variable 
+additionally  standard long long int data_type table 
+integer type unsigned version  only contain value great equal zero 
+variable type will least large double 
+type unsigned unsigned unsigned unsigned unsigned char short int long long size byte byte bytes byte bytes range value              table  unsigned type_type float double exponent range  long double  signiﬁcand range    possible value       possible value       possible value table  float_point type diﬀerent range signiﬁcand exponent  show table 
+scientiﬁc notation conjunction ﬂoating point variable 
+type introduce cstdint library  deﬁne additional type convenient 
+type purpose integer maximum size support platform integer exactly bit integer exactly bit integer exactly bit integer exactly bit unsigned version table  data_type find cstdint library type part basic type like int short guarantee size  cause problem compile code diﬀerent platform 
+hand  reverse conversion  int  double 
+refer narrow conversion 
+change code slightly  see problem occur  int  double 
+case  know want integer_value  tell compiler explicitly convert double int explicit cast  follow  + 
+remove warning compiler produce coerce double int 
+compile time  data_type value assign determine data_type replace auto type 
+syntax second line unfamiliar description happen refer 
+here example  std   int create
+diﬀerence data_type store number 
+assign result int divide int float 
+declare variable_name set 
+write code increase 
+conditional conditional direct program diﬀerent section code 
+plain english  statement  great  conditional direct program behave diﬀerently depend result comparison 
+common comparison operator symbol   meaning equal equal great equal equal great logical condition condition right true logical condition condition right true table  common comparison operator 
+statement look like code keyword start statement 
+parenthesis contain conditional expression 
+expression inside parenthesis true  follow expression will execute 
+only expression code block code block 
+example  suppose code bake bread  like following 
+figure  statement ﬂow execution 
+empty expression now bread type will fan baker want 
+statement want code execute case statement true 
+example work show figure 
+place statement 
+additional statement check only previous statement false 
+catch chain test condition 
+multiple statement check sequentially  statement include end ﬁnal catch
+take look figure ﬂowchart example 
+here statement look like 
+note conditional expression parenthesis 
+follow boolean expression inside parenthesis 
+conditional expression loop discuss switch_statement 
+job statement  simplify job correctly 
+here example  switch  case  break  case  break  default  
+variable equal code follow case  will execute 
+equal  code follow case  will execute  equal code follow default  will execute 
+only case  statement easy 
+great number case  switch_statement easy 
+switch_statement  only case code execute  case follow break 
+program continue execution reach break_statement end switch block 
+only branch execute  condition only evaluate condition false 
+here code switch statement 
+compile run follow code result output table 
+user enter start  output addition subtraction compare type number desire option  result addition result subtraction great option  
+brace need statement 
+write program check number high print message 
+bonus  rewrite check number equal 
+brace need code long line follow
+string let discuss string 
+string data_type typically hold collection printable character word  sentence  long sequence 
+order string program ﬁrst include string library  include string namespace note string  convenience  treat like array individual character 
+declare variable type string  declare just_like int  float  double 
+create variable_name mystring type string include string namespace mystring  
+store  hello  string following   possible arithmetic_operator + string concatenate combine string 
+combine string contain  hello  string contain  world  connected string read  helloworld  
+alternatively  space add like    world   +   +  output  world ﬁrst concatenate string create string contain  hello world   third concatenate string produce result 
+read string  default behavior collect character ﬁrst whitespace tab  space  newline character ﬁnd input 
+example  user input  hello world  follow code  read ﬁrst whitespace  string contain only  hello  
+want read entire line text  need getline function  read ﬁrst newline_character 
+ﬁnd length string member_function length string object 
+example  want ﬁnd length string enter user store variable_name stringlength  
+figure  string view array code result value store variable_name space character store index treat string array  show figure 
+remember start index  space sixth position  index string 
+line text store string  think store memory array length character string 
+example  string  hello world  contain array slot  space character find 
+rfind function ﬁnd character reverse direction end string  starting point 
+want ﬁnd single character_string  space like  world     
+string search find  example   world   
+write code declare string take input user 
+string treat character array 
+include need string 
+function take input space 
+write code take word output time 
+write program take input least word length 
+need hold collection printable character word  sentence  long sequence 
+loop introduction okay  know programming  now need able handle dozen operation obnoxiously repetitive 
+imagine program need allow datum enter employee 
+want write code single individual 
+want set write concisely possible  copy paste just win  work 
+need write relevant code once repeat time
+will structure know loop  exactly expect
+loop allow repeat section code time need 
+code reach end section  back top section loop start
+repetition loop call iteration  will check end condition speciﬁe programmer 
+refer pretest loop design check loop end condition prior repetition loop 
+figure  basic model pretest loop show 
+diamond represent decision
+case  boolean expression 
+expression true  control pass rectangle  represent action action perform  statement represent body loop 
+boolean expression false  remember  loop ﬁnishe 
+note like statement  brace only statement follow line keyword boolean expression 
+recommend brace only statement 
+sanity  read code  yes 
+organization  coding standard code easy read edit 
+remember  start habit early 
+let look actual example loop 
+loop know post test loop similar reason 
+let take look ﬂowchart figure take guess
+post test loop perform statement body loop test end condition 
+let look will aﬀect syntax will implement loop 
+figure  logic loop 
+case  line end condition section code 
+normal loop  program potentially meet end condition enter loop body  just pass
+loop  program check end condition iteration loop  will run least once loop end 
+event base loop count base loop loop organize category base
+let look code example diﬀerentiate
+need initialize variable want check 
+need end condition test variable
+finally  need way modifying variable meet end condition 
+feel like
+loop  put element loop header  separate semicolon 
+loop look like 
+kind loop count iteration speciﬁed value 
+let run loop run  follow code
+assume correct  initialize ﬁrst value int set 
+finally  let update expression 
+iteration decide change body loop will move pretest loop time 
+pick loop loop dependent preference need 
+loop nice  convenient count control loop 
+need event control loop  prefer loop 
+loop nice way condense initialization  end condition update statement loop short line 
+choose loop  remember will run least once  loop run zero time 
+just remember practice habit keep code confusing 
+take look example let  talk way
+reader who conclude clock simulation  correct 
+system time set hour day  hour minute cycle  minute second cycle 
+minute  hour loop incremente 
+time outer loop start iteration  variable inside inner loop reset 
+will happen reach end condition loop 
+likely inﬁnite loop will occur  loop
+depend operation loop  know happen  loop potentially cause disastrous result 
+let  look example loop suﬀer inﬁnite loop 
+create loop increment integer variable initialize value value reach value 
+sure declare variable initialize ﬁrst 
+create loop read integer_value give user integer variable initialize  add value variable_name totalval totalval reach least 
+create loop output name screen time exit loop 
+spot logic error correct follow code  
+array array series variable type int  float  double  char  
+array hold computer  memory strict linear sequence 
+array hold element speciﬁed type  assign array type float hope store string
+cause type mismatch error  program wouldn  compile 
+create array  programmer type like char  char data_type element array  scott name array creative want name  inside square bracket represent size array 
+char hold piece datum type char 
+try visualize array  think rectangle split piece array place hold datum 
+figure  rectangle ﬁve space  type char await value 
+order refer individual element array  start number count upwards 
+access ﬁrst element array  second  third 
+order read write location array  state name array element want access 
+look like   
+need enclose value type bracket separate value comma 
+example  array element type char element type_int 
+ represent special character   
+null temrinator take element array  character array intend printable string declare size large long string expect store 
+initialize character array following notice array element char                
+multi dimensional array dimensional array call matrix  array  array array  
+here dimensional array   declare array dimension possible similar syntax 
+here dimensional example  sam  here dimensional array 
+declare integer array name myint size 
+array size  index array
+declare character array name myarray size  initialize character array      
+create program integer array name myarray declare size 
+loop prompt user store value index array 
+array give_value  output value array screen loop 
+output value array line 
+block  function  scope block cover statement loop  let detail code contain
+need contain multiple line code  show brace 
+take look example
+notice variable declare
+declare  only usable block declare 
+block reach end  lose rest program 
+discuss scope end
+function important part programming 
+program confusing diﬃcult troubleshoot 
+program  tend logical chunk call subprogram 
+simply put  function like miniature program piece form actual program try write 
+basic function  declaration start return_type double  int  data_type function_will return 
+return_type  next item need function name  want 
+remember will later code  sense short logical remember 
+now data_type function_name  time zero function_parameter 
+parameter turn function_return type 
+comma separate function_parameter declaration end semicolon close right parenthesis 
+here example function_declaration  double cost  double  function look like abbreviate version function_declaration 
+function_call responsible tell compiler execute function 
+function call find function like 
+user prompt enter datum cout statement response collect cin 
+once data collect  program hold function_call code 
+once function_call compiler take enter datum code function deﬁnition will shortly operate parameter return value 
+function_call  write function_name follow variable value want pass
+functiton call  data_type  understand 
+here example function_call  include iostream namespace 
+declaration function_call now 
+result  deﬁnition body diﬃcult write declaration call 
+multiple function deﬁnition body place order  confusing order declare 
+start function deﬁnition function heading  look exactly like function_declaration semicolon 
+follow heading  need function_body 
+start function_body place opening brace line follow heading 
+code body ﬁnishe  end body close right brace 
+notice semicolon heading closing brace 
+inside function_body depend completely want function
+declare variable just function leave function return_statement time 
+example function deﬁnition  function definition double  temporary price cost  return  return function great  now grasp major part basic function move material 
+predeﬁne function function deﬁne 
+order predeﬁne function  programmer need include library call function need
+follow example will sqrt function calculate square root user input 
+notice function_declaration return value start return_type double  int  like 
+common application void function print result calculation screen 
+syntax void function work way normal function  keyword void return data_type normally
+note like function  necessarily need parameter void function 
+here example simple void function_declaration  void displaymessage  remember deﬁnition call displaymessage function exception void return_type value return 
+here example deﬁnition  declaration  function call  include iostream namespace 
+overload function_name overload function_name allow name multiple function deﬁnition diﬀerent parameter listing 
+function name reuse feature 
+function name overloading eliminate problem associate multiple name function similar purpose code understandable convenient programmer write 
+example overloaded function_name 
+notice function name  diﬀerent parameter_type 
+scope dive complex program need wide variety variable diﬀerent location code 
+variable declare individual block code  loop conditional 
+declare completely function 
+local variable declare block code 
+local_variable code point declaration end block code 
+simple example variable declare 
+additional work pass reference function 
+similarly  variable declare function code 
+reference function  program_will compile 
+easy way understand local_variable compare neighbor 
+live street variable  share street  local 
+think neighbor adjacent street function 
+close share street 
+global variable diﬀerent local_variable 
+global variable code program 
+global_variable declare function 
+similar code example variable global  
+function print variable  cause program produce follow output  sum local_variable work only block code declare 
+global variable declare function  point program 
+part function 
+void function_return value 
+function program
+output follow code snippet 
+write code least function will ask user guess magic  number choice right 
+guess  program output number guess high low magic  number 
+display guess user loop guess correct 
+least function  write code prompt user number mile travel number hour  calculate user speed mile hour 
+problem solve troubleshooting problem solve troubleshoot programming refer debug 
+program compile 
+achieve desire eﬀect 
+debugging answer 
+perfect programmer  likely bit debugging 
+code incorrect  compiler only guess mean give hint 
+example  common error beginning programmer will encounter semicolon 
+development environment like netbean figure  will cause error report line missing semicolon  follow line 
+code execute  result wrong 
+common issue misplacement parenthesis  misplace parenthesis cause problem complex expression 
+inﬁnite loop occur  conditional expression loop remain true 
+figure  inﬁnite loop netbeans development environment 
+aﬀect output code 
+review answer retun return 
+remove unused variable cont line 
+shot goal integer  program math look int result doesn  store fractional part  store result double 
+change shot  goal  type double program_will work intend 
+preprocessor preprocessor directive line code execute compilation code begin 
+frequently preprocessor directive include 
+want include code system library ﬁle  keyword include follow library name ﬁle name 
+example  want object like cout cin  need include iostream library like include iostream want include ﬁle  ﬁle name  write  include ﬁle  directory ﬁle include
+discuss standard template library  include short sample library table 
+table  useful library sampling
+follow demonstrate correct syntax statement 
+identify preprocessor statement follow code  cstdlib iostream namespace  
+namespace std  preprocessor directive 
+want able funtion pow  library need 
+advanced arithmetic advanced arithmetic include mathematic code cmath library 
+see simple arithmetic look like  
+simple operation like require special library unusual command 
+compiler look    line code know exactly programmer expect happen 
+math require extra help 
+case  help cmath library 
+cmath library code simple include top source_code ﬁle rest library 
+example  iostream cmath inclusion cmath library  mathematical function code pow   raise parameter power parameter  return square root
+ﬁrst program will advanced mathematical function include cmath library  full list function cmath  refer reading  end
+first  declare variable 
+now interesting section code 
+ask compiler raise value plus power  add  place result
+pow function  understand syntax 
+here breakdown  pow +  +  raise starting value + power 
+power apply  add
+case simple operation +  yield 
+ raise power value 
+reach value ﬁnishe pow function resume normal operator add result ﬁnal value 
+undoubtedly complicated pow function  multiple pow line code 
+multiple pow operation code calculate length side triangle pythagorean 
+look follow code see ﬁgure output value 
+visual reference  
+sqrt return double  assign result double variable  example  sqrt return exactly  implicitly convert int issue 
+write code  important keep track parenthesis correct syntax 
+syntax mistake programmer think syntax algebraic syntax 
+compiler see doesn  view multiplication  accord professional   function  important explicit mathematical symbol 
+incorrect code pow   
+include library need advance arithmetic_operator 
+write code calculate 
+write statement set value variable type double square root 
+complete code ﬁnd length hypotenuse right triangle remember + give length side 
+ﬁnal output code 
+file file refer input output ﬁle 
+cin input keyboard cout output screen 
+just like output screen  output ﬁle 
+input take keyboard ﬁle 
+input output handle program object call stream 
+file useful ﬁle way store datum permanently 
+keyboard input screen output  datum temporary away once program ﬁnishe 
+come ﬁle  datum waste time type
+data ﬂowe program call output_stream 
+actually type stream
+input stream object connect ﬁle  program input ﬁle 
+similarly  output_stream object datum screen ﬁle 
+ﬁle open reading writing  case access input output_stream 
+file program open ﬁle input  program read ﬁle 
+program open ﬁle output  program write ﬁle 
+ifstream  ofstream  fstream class read write ﬁle 
+class fstream library  mean include code order include fstream ofstream type read output file stream  write datum ﬁle 
+object type fstream  file stream  combine behavior ifstream ofstream allow read write ﬁle 
+order ifstream  ofstream fstream object  declare like variable 
+declare object look like name ifstream infile  name ofstream outfile  variable infile will deal input ﬁle  variable outfile will deal datum ﬁle 
+ﬁle computer name location path 
+example text ﬁle name location window operating_system 
+unix base operating_system  ﬁle 
+regardless operating_system  need know ﬁle path order tell program ﬁnd ﬁle 
+order open ﬁle ﬁrst object type ifstream  ofstream  fstream just_like early 
+open ﬁle member_function name open 
+ﬁle exist  open function_will erase exist datum ﬁle default 
+once ﬁle  practice close
+close ﬁle disconnect program prevent program continue read write ﬁle 
+program end normally crash  ﬁle will automatically close 
+closing ﬁle simple open
+need close function empty parenthesis 
+example  close infile outfile  infile 
+read file ifstream class read datum ﬁle 
+user input datum keyboard  now input datum ﬁle 
+recall early book  cin  extraction operator 
+once declare variable type ifstream open ﬁle  input datum 
+similar cin replace cin name variable 
+example  include iostream include fstream namespace 
+ifstream object similar cin just declare remember variable_name cin 
+just like cout  ofstream object  insertion operator 
+similar cout replace cout name variable 
+example  include iostream include fstream namespace 
+cin cout object 
+object variable function build multiple piece datum associate
+example  function open close member_function ifstream ofstream  mean function associate object type 
+detail  object type deﬁne part class 
+class blueprint complex data_type 
+know data_type integer  double  char  class  will able design data_type 
+call function open close  will notice period object name function 
+call dot_operator reference member_function member variable class 
+example function 
+function determine ﬁle open successfully
+statement function ﬁle open correctly warn user 
+operator  space  tab newline whitespace character datum skip automatically 
+ automatically  whitespace character extract 
+example  char character  
+next character space  tab  newline  program_will store character variable 
+example  char   newline ofstream outfile  
+call type object control datum ﬂowe program 
+call type object control datum ﬂowe program 
+header ﬁle include order ifstream ofstream 
+ifstream ofstream
+declare ifstream object name input ofstream object name output 
+open ﬁle name ifstream object call input 
+close ﬁle name ofstream object call output 
+kind function eof function
+beneﬁts ﬁle input output 
+diﬀerence cin  type char 
+write program output content ﬁle screen 
+write program read text ﬁle print screen time character show
+input stream 
+need include fstream 
+return true program reach end ﬁle 
+file input output useful ﬁle way store datum permanently 
+keyboard input screen output  datum temporary disappear once program ﬁnishe 
+input ﬁle program time store multiple copy enter datum
+pointer pointer just sound like
+pointer address memory 
+declare asterisk follow data_type  int ptr  variable_name type_int  integer pointer  store address variable type_int 
+pointer variable point usable datum  set value null  deﬁne zero include cstdlib  null  
+follow  address store pointer return location 
+will produce pointer 
+ take  value  output code here slightly long example  int  
+fourth line execute  will store address 
+figure show state variable 
+line code execute  location point assign value_store 
+contain address  receive value 
+figure figure  state variable line figure  state variable line show state variable 
+caution declare pointer 
+declare pointer single_line  sure pointer variable variable_name 
+here correct declaration pointer  int  
+review answer 
+allocate space variable compile time adequate case  occasionally program_will need allocate space datum memory run 
+follow code  int arraysize   number   
+order allocate space myarray  compiler need know element array room memory accommodate array 
+unfortunately  value arraysize know user enter keyboard program start run result  compiler return syntax_error 
+ pointer keep track dynamically allocate datum  null   order dynamically allocate object type float  new_operator  create object type float name  new_operator 
+value assign notice dereference operator  ﬂoatingpoint value address store change 
+order free memory properly  delete_operator  float  
+write code declare integer pointer dynamically allocate integer 
+next line  assign dynamically allocate integer value 
+give follow code  write line deallocate dynamicallyallocate memory set pointer value null  int_int int 
+class abstraction imagine second wheel automobile 
+drive know engine work right horrendous screeching sound 
+idea steering actually work turn wheel 
+long press accelerator move forward steering handle correctly  don  care speciﬁcs work 
+abstract type adts automobile  reason know object orient programming_language 
+job package obscure average user  time life convenient 
+adts think group type treat single item 
+example  want record name  identiﬁcation number  age  graduation date  sex student campus  create type_name student variable 
+follow section will show deﬁne type adts  structure class 
+point store int  float  double variable represent position point 
+example  keyword struct declare structure deﬁnition identiﬁer  word directly right struct point  structure name name type 
+directly closing brace  semicolon 
+once structure deﬁne  just_like type_int  char  string 
+example  declare point structure name input like point input  
+assign value member variable variable type point collection variable 
+variable contain struct access combine structure name input example follow symbol call dot_operator period  member variable name 
+example  want set input  dot_operator follow  input 
+class class like struct class_contain variable function  struct only contain struct  member variable public default member class private default 
+will discuss distinction minute 
+first  let take look actual class deﬁnition 
+notice similar syntax struct 
+like struct  declaration start class keyword  follow name class  close right brace  semicolon 
+notice public  private  section deﬁnition 
+set member variable function private  private keyword follow colon 
+keyword will private 
+will discuss mean next section 
+hand  want set member variable function public  keyword public follow colon 
+keyword will public 
+general rule thumb put variable private  section  refer private member variable  function public  section  refer public member_function 
+private member only access class member_function public member way member struct
+class deﬁnition  member_function need deﬁne 
+function speciﬁc purpose set value private member variable  return value private member variable  perform operation member variable 
+function declare code name start word will access variable  function call accessor 
+function declare code name start word set will change variable  value  function call mutator 
+accessor mutator name like  common convention name set plus name variable access mutate 
+rectangle object create  will initialize accord code constructor 
+end will understand useful object orient programming 
+deﬁne member_function  member variable class accessible function 
+example  deﬁne member_function setbase rectangle like 
+code  able directly access member variable function setbase member variable part class 
+return user  function deﬁne void function 
+order deﬁne member_function  special operator call scope resolution operator 
+require pass value mutator member_function set member variable 
+code  start create rectangle variable_name
+user prompt length base  store variable call setbase member_function dot_operator pass parameter function 
+retrieve value member variable  need create accessor function 
+come accessor  simple 
+just match type want access  case float  deﬁne member_function return_type 
+example  want take point create triangle class point individually type point  struct contain variable  
+here ability combine struct class order point  contain variable
+variable struct public  access speciﬁc value triangle member_function 
+mutator function point look like 
+constructor member_function name class call directly 
+constructor initialize variable class ﬁrst create 
+example  want set default_value class_name student deﬁne class student 
+overload member_function note like function  overload function class 
+back rectangle example early  take look follow code 
+create class_call animal store animal zoo follow private variable   pound  number pound char animaltype  type animal   herbivore  carnivore public member_function set variable  function_call print print animal 
+write program calculate slope line 
+will struct call point contain follow variable  double   
+point class accessor mutator function  function calculate return slope line point double  function output datum user call print 
+only correct  will result syntax_error 
+separate compilation separate compilation process break program separate ﬁle improve organization 
+part program spread number diﬀerent ﬁle later compile individually  link linker produce ﬁnal  work program 
+change only ﬁle change need recompile  result relinke previously compile ﬁle 
+development environment take care detail  user sole task change need 
+basic application separate compilation write abstract data_type 
+recall declaration deﬁnition section class 
+declaration will put interface ﬁle header ﬁle typically suﬃx 
+code novice programmer  will only class declaration header ﬁle 
+class code include follow ﬁle double quote 
+example content interface ﬁle call 
+example  ﬁle student will 
+ensure ﬁle compile program  need include
+development environment will automatically compile link ﬁle add project 
+avoid linker error  ﬁle safeguard ensure class function declare once program 
+example  place follow line top ﬁle  follow line end ﬁle  ab ve line following  
+test previously define  header ﬁle include
+define  define now proceed compile code ifndef endif 
+close ifndef block 
+previously deﬁne  skip line
+here example line look like actual code  class student
+header ﬁle 
+ﬁle extension typically header ﬁle 
+ﬁle extension typically ﬁle 
+incorporate header ﬁle name ﬁle name 
+incorporate ﬁle project way 
+prevent redeclaration adts function header ﬁle 
+header ﬁle store interface adt 
+header ﬁle end 
+ﬁle end 
+interface ﬁle 
+add include   include statement 
+ﬁle will automatically compile link development environment long ﬁle project 
+prevent redeclaration add line similar following top header ﬁle  add following end header ﬁle  
+stl standard template library stl set tool base  language 
+comprehensive discussion feature stl scope text  library oﬀer extremely important feature comfortable 
+note  assume namespace top code example  data_type  function  variable derive stl will show preﬁx std   
+example  link student identiﬁcation number integer grade point average float  write  std   int  float   
+iterator object refer element container object like   allow traversal element 
+speciﬁcs iterator vary  iterator belong follow category  base operation perform
+bidirectional iterator 
+arithmetic_operator move forward backward number item once 
+allow comparison iterator determine relative position container 
+access element container
+example  std   std   
+associative container diﬀer item reference number item position memory    associative container  hand  data_type reference item container 
+example  choose string reference collection int item store list student  age accord name 
+object type iterate   content print range base loop brieﬂy demonstrate here 
+item  int type  int 
+code  john max ma

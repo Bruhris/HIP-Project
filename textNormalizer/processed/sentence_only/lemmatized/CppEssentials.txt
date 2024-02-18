@@ -1,0 +1,2037 @@
+essential sharam hekmat pragsoft corporation content 
+preliminarie simple program compile simple program compilation work variable simple input output comment memory integer number real number character_string name exercise 
+expression arithmetic_operator relational operator logical_operator bitwise operator increment decrement operator assignment_operator conditional operator comma operator sizeof operator operator precedence simple type_conversion exercise 
+statement simple compound statement statement switch_statement statement statement statement continue statement break_statement goto statement return_statement exercise 
+function simple function_parameter argument global local scope scope operator auto variable register variable static variable function extern variable function symbolic constant enumeration runtime stack inline function recursion default argument variable number argument command line argument exercise 
+arrays  pointer  reference arrays multidimensional array pointer dynamic_memory pointer arithmetic function pointer reference typedef exercise essential copyright pragsoft 
+class simple class inline member_function example  set class constructor destructor friend default argument implicit member argument scope operator member initialization list constant member static member member pointer reference member_class member array class scope structure union bit field exercise 
+overload function overload_operator overloading example  set operator type_conversion example  binary number class overloading output overload input overload memberwise initialization memberwise assignment overload delete overloading arrow_operator   overload 
+derive class illustrative class simple derived_class 
+template function definition function instantiation example  binary search class definition class instantiation nontype parameter class specialization class member_class friend example  doubly link list derived_class template exercise 
+exception handle flow control throw clause try block catch clause function throw list exercise 
+io library role streambuf stream output ostream stream input istream ios class stream manipulator file io fstream array io strstream example  program annotation essential 
+preprocessor preprocessor directives macro definition quote concatenation operator file inclusion conditional compilation directive predefine identifier exercise solution exercise 
+preface introduction decade ago  experience grow acceptance practical object orient programming_language suitable teaching  research  commercial software development 
+language rapidly evolve period acquire number  template exception_handling add richness 
+book serve introduction language 
+teach program properly
+attempt teach object orient design depth  believe cover book right 
+design book  strive achieve goal 
+first  produce concise introductory text  free unnecessary verbosity  beginner develop understanding language short period time 
+second  try combine tutorial style base explanation concept example reference style base flat structure 
+result  consist list short section page  subdivision 
+hope  simplify reader task 
+finally  consciously avoid try present absolutely complete description 
+important topic omit  description minor idiosyncrasy avoid sake clarity avoid overwhelming beginner
+experience suggest small knowledge gap leave result  will easily fill time selfdiscovery 
+intend audience book introduce object orient programming_language 
+previous knowledge programming_language assume 
+copyright pragsoft who expose high level programming_language pascal will able skip early material book 
+book primarily design undergraduate computer science course  will equally useful professional programmer hobbyist who intend learn language
+entire book easily cover lecture  suitable term semester course 
+basis intensive day industrial training course 
+structure book book divide
+flat structure  consist unnumbered sequence section  limit page 
+aim present confine space quickly grasp 
+end list exercise 
+answer exercise appendix 
+reader encourage attempt exercise feasible compare solution
+convenience reader  sample program present book include solution exercise electronic form 
+preliminary introduce basic element program 
+will simple example show structure program way compile 
+elementary concept constant  variable  storage memory will discuss 
+following cursory description concept programming benefit who subject 
+program digital computer useful tool solve great variety problem 
+solution problem call algorithm  sequence step perform problem solve 
+simple example problem algorithm problem  algorithm  sort list name ascend lexicographic order 
+call give list  create empty list   hold sorted list 
+repeatedly find small  name  remove  next entry  empty 
+algorithm express abstract term 
+intelligible computer  need express language understand
+only language understand computer machine language 
+program express machine language executable 
+program write language need first translate machine language execute 
+machine language cryptic suitable direct programmer 
+abstraction language assembly language mnemonic name instruction intelligible notation datum 
+assembly language program translate machine language translator call assembler 
+assembly language difficult work
+high level language convenient notation implement algorithm 
+liberate programmer think low level term  help focus algorithm
+program write high level language translate assembly language translator call compiler 
+assembly code produce compiler assemble produce executable program 
+standard header_file contain definition input output 
+function zero parameter  function_name  pair bracket 
+word void bracket parameter 
+return_type int  integer number 
+program exactly function 
+program execution begin
+statement computation step produce value 
+end statement mark semicolon 
+statement cause string  hello  output_stream 
+string sequence character enclose double quote 
+last character string newline_character similar carriage return type writer 
+stream object perform input output 
+cout standard output_stream standard output mean computer monitor screen 
+symbol output operator take output_stream left operand expression right operand  cause value 
+copyright pragsoft compile simple program dialog show program list compile run typical unix environment 
+user input bold system response plain 
+unix command line prompt dollar symbol 
+dialog cc hello world annotation command invoke translator unix environment cc 
+argument command name file contain program 
+convention  file name end   result compilation executable file default name 
+run program  just command 
+cc command accept variety useful option 
+option name  name name option single letter 
+option take argument 
+example  output option allow specify name executable file produce compiler 
+bookmark define 
+dialog cc hello hello hello world actual command depend compiler  similar compilation procedure ms
+windowsbase compiler offer user friendly environment compilation simple choose menu command 
+name convention ms window source_file name end 
+first  preprocessor program text carry instruction specify preprocessor directive  
+result modify program text long contain directive 
+compiler translate program code 
+compiler true compiler generate native assembly machine code  just translator translate code c
+case  result code pass compiler produce native object code 
+case  outcome incomplete due program refer library routine define part program 
+example  list refer operator actually define separate io library 
+finally  linker complete object code link object code library module program refer
+final result executable file 
+figure illustrate step translator native compiler 
+practice step invoke single command  cc user will see intermediate file generate 
+figure compilation program translator program native compiler code compiler object code linker 
+copyright pragsoft variable variable symbolic name memory location datum store subsequently recall 
+variable hold data value utilize computation program 
+variable important attribute  
+type establish variable define  integer  real  character 
+once define  type variable change 
+change assign variable 
+kind value variable assume depend type 
+example  integer variable only take integer_value    
+list illustrate simple variable 
+general rule  variable define specify type first  follow variable_name  follow semicolon 
+illustrate line  multiple variable type define once separate comma 
+assign variable statement execute  denote 
+result store
+run  program_will produce follow output  variable define  undefined actually assign
+example  undefined  happen memory location variable denote time line execute 
+assigning variable first time call initialization 
+important ensure variable initialize computation 
+possible define variable initialize time 
+programming practice  pre empt possibility variable prior initialize 
+list revise version list technique 
+intent purpose  program equivalent 
+copyright pragsoft simple input output common way program communicate world simple  character orient input output io operation 
+useful operator purpose  input output 
+see example output 
+list illustrate input 
+input operator take input stream left operand cin standard input stream correspond datum enter keyboard variable input data copy right operand 
+run  program_will produce follow output user input bold hourly pay rate 
+illustrate list now allow input daily work hour hourly pay rate 
+value separate white space  space tab character 
+statement equivalent cin  result left operand  cin evaluate cin left operand next operator 
+output    follow value follow newline_character 
+statement equivalent      evaluate left operand next operator 
+run  program_will produce follow output  work hour hourly pay rate 
+copyright pragsoft comment comment piece descriptive text explain aspect program 
+program comment totally ignore compiler only intend human reader 
+type comment delimiter  
+end line comment 
+enclose pair comment 
+list illustrate form 
+list program calculate weekly gross pay worker  base total number hour work hourly pay rate 
+follow point  note  
+comment easy read understand code try explain 
+confusing unnecessarily complex comment bad comment
+comment lead readability 
+program contain comment see code mean readable 
+descriptive name variable entity program  proper indentation code reduce need comment 
+guideline comment simply apply common sense 
+memory think contiguous sequence bit  capable store binary digit 
+typically  memory divide group consecutive bit call byte 
+byte sequentially address 
+byte uniquely identify address see figure 
+figure bit byte memory 
+byte address 
+byte byte 
+example  variable definition int  cause compiler allocate byte represent 
+exact number byte allocate method binary representation integer depend specific implementation  let byte encode complement integer 
+compiler address first byte allocate refer
+assignment cause value store complement integer byte allocate see figure 
+figure representation integer memory 
+memory exact binary representation datum item rarely interest programmer  general organization memory address refer datum item will see later important 
+copyright pragsoft integer number integer variable define type short  int  long 
+only difference int least number byte short  long least number byte int 
+example  author pc  short byte  int byte  long byte 
+default  integer variable assume sign  sign representation assume positive negative value 
+integer define unsigned keyword unsigned definition 
+keyword sign allow redundant 
+literal integer  assume type_int  suffix  case treat long 
+literal integer specify unsigned suffix
+decimal notation
+integer take octal precede zero  hexadecimal precede 
+octal number base  only digit 
+hexadecimal number base  letter represent  
+octal hexadecimal number calculate follow  + + + + + + 
+byte offer great range accuracy represent real number 
+example  author pc  float double byte 
+literal real  assume type double  suffix  case treat float  suffix  case treat long double 
+byte double accuracy  byte author pc 
+example  write scientific notation letter stand exponent 
+scientific notation interpret follow  
+copyright pragsoft character character variable define type char 
+character variable occupy single byte contain code character 
+code numeric_value depend character code system  machine dependent 
+common system ascii american standard code interchange 
+example  character ascii code  character ascii code 
+default system char mean sign char 
+system mean unsigned char 
+sign character variable hold numeric_value range 
+unsigned character variable hold numeric_value range 
+result  represent small integer program assign numeric_value like integer sign char unsigned char 
+literal character write enclose character pair single quote   
+nonprintable character represent escape sequence 
+literal character specify numeric code value 
+general escape sequence  backslash follow octal digit purpose 
+example assume ascii         
+string variable define type char  pointer character 
+pointer simply address memory location 
+string variable  simply contain address first character string
+example  definition  char  hello   figure illustrate string variable string  hello  memory 
+figure string string variable memory 
+literal string write enclose character pair double quote   hello  
+compiler append null character literal string mark end 
+character string specify notation specify literal character 
+long string extend single_line  case precede line terminate backslash 
+example   example show backslash backslash context mean rest string continue next line 
+string equivalent single_line string  common programming error result confuse single character_string   single character   
+consist byte character  follow character    consist single byte 
+shortest possible string null string   simply consist null character 
+copyright pragsoft name programming_language name refer entity program 
+see example important category name  variable_name 
+category include  function_name  type_name  macro name  will later book 
+name programming convenience  allow programmer organize quantity plain datum meaningful human readable collection 
+result  trace name leave final executable generate compiler 
+example  temperature variable eventually byte memory refer executable address  name 
+impose follow rule create valid name call identifier 
+name consist character  letter      digit     underscore character    first character digit 
+upper low case letter distinct 
+example  salary salary salary 
+limit large cause  character 
+word reserve specific purpose identifier 
+call reserved word keyword summarize table  table keyword 
+behavior resemble temperature degree degree celsius 
+follow represent valid identifier 
+age person 
+expression introduce build operator compose expression 
+expression computation yield value 
+discuss expression  term evaluation 
+example  expression evaluate value 
+final value only reason evaluate expression 
+case  expression produce side effect 
+permanent change program state 
+sense  expression mathematical expression 
+operator compose arithmetic  relational  logical  bitwise  conditional expression 
+operator produce useful sideeffect  assignment  increment  decrement 
+will look category operator turn 
+will discuss precedence rule govern order operator evaluation multi operator expression 
+summarize table 
+operator + name addition subtraction multiplication division remainder example + 
+generally  operand integer result will integer 
+operand real result will real double exact 
+operand division operator integer division perform integer division normal division
+integer division result integer outcome  result round 
+unintended integer division common source programming error 
+obtain real division operand integer  cast operand real  double 
+remainder operator expect integer operand 
+return remainder integer divide operand 
+example calculate integer dividing give outcome remainder  result 
+possible outcome arithmetic operation large store designate variable 
+situation call overflow 
+outcome overflow machine dependent undefined 
+example  unsigned 
+copyright pragsoft relational operator relational operator compare numeric quantity 
+summarize table 
+relational operator evaluate represent true outcome represent false outcome 
+table relational operator 
+operator name equality inequality equal great great equal example 
+invalid mean
+operand relational operator evaluate number 
+character valid operand represent numeric_value 
+example assume ascii coding   relational operator compare string  will result string address compare  string content 
+example  expression cause address hello  compare address bye  
+address determine compiler machine dependent manner  outcome  undefined 
+library function  strcmp lexicographic comparison string 
+will later book 
+summarize table 
+like relational operator  logical_operator evaluate 
+logical negation unary operator  negate logical value single operand 
+operand nonzero produce  produce 
+logical produce operand evaluate 
+logical produce operand evaluate 
+note here talk zero nonzero operand zero 
+general  nonzero value represent logical true  only zero represent logical false 
+follow valid logical expression  
+copyright pragsoft bitwise operator bitwise operator manipulate individual bit integer quantity 
+summarize table 
+table bitwise operator 
+operator name bitwise negation bitwise bitwise bitwise exclusive bitwise leave shift bitwise right shift example                  
+bitwise negation unary operator reverse bit operand 
+bitwise compare corresponding bit operand produce bit 
+bitwise compare corresponding bit operand produce bit 
+bitwise exclusive compare corresponding bit operand produce bit bit 
+bitwise leave shift operator bitwise right shift operator take bit sequence left operand positive integer quantity right operand 
+produce bit sequence equal left operand shift bit position left 
+produce bit sequence equal left operand shift bit position right 
+vacate bit end set 
+table illustrate bit sequence sample operand result table 
+avoid worry sign bit machine dependent  common declare bit sequence unsigned quantity  unsigned char    unsigned char    table 
+bit calculate 
+example octal value bit sequence 
+summarize table 
+example assume follow variable definition  int  table increment decrement operator 
+operator name example + + + + 
+difference significant 
+prefix form  operator first apply outcome expression 
+postfix form  expression evaluate first operator apply 
+operator apply integer real variable  practice real variable rarely useful form 
+copyright pragsoft assignment_operator assignment_operator store value memory location typically denote variable 
+left operand lvalue  right operand arbitrary expression 
+evaluate outcome store location denote lvalue 
+lvalue stand left value denote memory location value store 
+only kind lvalue see book variable 
+kind lvalue base pointer reference will later book 
+assignment_operator number variant  obtain combine arithmetic bitwise operator 
+summarize table 
+example assume integer variable 
+operator + example equivalent + assignment operation expression value value_store left operand 
+assignment operation right operand assignment operation 
+number assignment concatenate fashion form expression 
+general form  
+result nonzero evaluate value final result 
+evaluate value final result 
+example  int 
+conditional operation expression  operand conditional operation  conditional expression nest 
+example  int     
+copyright pragsoft comma operator multiple expression combine expression comma operator 
+comma operator take operand 
+first evaluate left operand right operand  return value final outcome 
+evaluate value store
+take single operand type_name  int expression  return size specified entity byte 
+outcome totally machine dependent 
+list illustrate sizeof build type encounter
+list int cout cout cout cout cout cout cout  char  char  short  int  long  float  double cout  cout  cout  hello size size size size size size size 
+run  program_will produce follow output author pc byte bytes bytes bytes bytes byte byte byte byte byte 
+copyright pragsoft operator precedence order operator evaluate expression significant determine precedence rule 
+rule divide operator number precedence level see table 
+operator high level take precedence operator low level 
+table operator precedence level 
+level highest low 
+leave right example  evaluate first high precedence + 
+result add high precedence  evaluate 
+precedence rule overridden bracket 
+example  rewrite expression + cause + evaluate 
+operator precedence level evaluate order specify last column table 
+example  + evaluation order right leave  first + evaluate  follow  expression simple type_conversion type 
+example  int convert int give long convert long give double convert double give char convert char code unsigned short give unsigned short show example  build type identifier type operator 
+type operator unary  take operand inside bracket left operand 
+call explicit type_conversion 
+type_name just word  alternate notation bracket operand  
+last example  + involve mismatching type  first convert double promote add
+result double match type left side assignment  convert int demote assign
+rule represent simple common case type_conversion 
+complex case will examine later book discuss data_type class 
+copyright pragsoft exercise write expression following  
+test number
+give number character null terminate string literal
+add extra bracket follow expression explicitly show order operator evaluate  will value follow variable initialization  double long char char 
+write program input positive integer output raise power
+statement introduce form statement compose program 
+statement represent low level building block program 
+roughly speak  statement represent computational step side effect 
+run program spend time execute statement 
+order statement execute call flow control control flow 
+term reflect currently execute statement control cpu  complete will hand flow statement 
+flow control program typically sequential  statement next  divert path branch statement 
+flow control important consideration determine execute run affect outcome program 
+like procedural language  form statement purpose 
+declaration statement define variable 
+assignment like statement simple  algebraic computation 
+branch statement specify alternate path execution  depend outcome logical condition 
+loop statement specify computation need repeat logical condition satisfied 
+flow control statement divert execution path part program 
+will discuss turn 
+copyright pragsoft simple compound statement simple statement computation terminate semicolon 
+last example represent useless statement  side effect add result just discard 
+null statement side effect  will see later genuine
+multiple statement combine compound statement enclose brace 
+compound statement useful way  allow put multiple allow introduce program 
+part program text variable remain define 
+example   example define closing brace compound statement 
+compound statement  variable define 
+compound statement contain variable definition define call block 
+variable limit block enclose
+block rule will detail discuss function next
+statement way express general form statement  first expression evaluate 
+outcome nonzero statement execute 
+example  divide value  want check denominator nonzero  sum  
+variant form statement allow specify alternative statement  execute condition satisfied execute condition satisfied 
+call statement general form    first expression evaluate 
+outcome nonzero statement
+copyright pragsoft give similarity alternative part  whole statement simplify creditrate  
+statement nest statement inside
+copyright pragsoft switch_statement switch_statement way choose set alternative  base value expression 
+general form switch_statement switch expression case  statement  
+first expression call switch tag evaluate  outcome compare numeric constant call case label  order match find 
+statement follow matching case execute 
+note plural  case follow zero statement just statement 
+execution continue break_statement encounter intervene statement end switch_statement execute 
+final default case optional exercise early case match 
+example  suppose parse binary arithmetic operation component store variable operator   
+follow switch_statement perform operation store
+illustrate example  include break_statement end case 
+break terminate switch_statement jump end
+situation sense case break 
+example  extend statement allow multiplication  will 
+case  break_statement statement  case satisfied  execution proceed statement next case multiplication perform 
+obvious switch_statement write multiple statement 
+statement  example  write +   
+general  preference give switch version possible 
+approach reserve situation switch job  condition involve simple equality expression  case label numeric constant 
+copyright pragsoft statement statement call loop way repeat statement condition hold 
+flavor iteration 
+general form statement statement  first expression call loop condition evaluate 
+outcome nonzero statement call loop body execute whole process repeat 
+loop terminate 
+example  suppose wish calculate number integer denote
+set  table trace loop list value variable involve loop condition 
+table loop trace 
+iteration first second third fourth fifth sixth + unusual loop empty body  null statement 
+follow loop  example  set great odd factor 
+loop condition only test divide ensure loop will terminate zero 
+general form statement statement  expression  first statement execute expression evaluate 
+outcome nonzero whole process repeat 
+loop terminate 
+loop frequently loop 
+useful situation need loop body execute least once  regardless loop condition 
+example  suppose wish repeatedly read value print square  value zero 
+express follow loop  
+loop  loop situation null body 
+loop null body equivalent similar loop  prefer superior readability 
+copyright pragsoft statement statement call loop similar statement  additional component  expression evaluate only once expression evaluate once end iteration 
+general form statement statement  first evaluate 
+time round loop  evaluate 
+outcome nonzero statement execute evaluate 
+loop terminate 
+general loop equivalent follow loop  
+follow loop  example  calculate integer
+example  call loop variable 
+allow first expression loop variable definition 
+loop  example  define inside loop +  contrary scope body loop 
+example  remove first third expression give identical loop  
+remove expression give infinite loop 
+loop condition
+word  loop nest 
+example          produce product set give output  
+copyright pragsoft continue statement continue statement terminate current iteration loop jump next iteration 
+apply loop enclose continue statement 
+error continue statement loop 
+loop  next iteration commence loop condition 
+loop  next iteration commence loop third expression 
+example  loop repeatedly read number  process ignore negative number  terminate number zero  express 
+continue statement inside nest loop  apply loop enclose outer loop 
+example  follow set nest loop  continue apply loop  loop  
+cause jump construct  terminate
+like continue statement  break_statement only apply loop switch enclose
+error break_statement loop switch 
+example  suppose wish read user password  like allow user limited number attempt   attempt  
+here assume function_call verify check password return true correct  false
+rewrite loop break_statement possible additional logical variable add loop condition  
+copyright pragsoft 
+goto statement low level jump 
+general form  goto label  label identifi mark jump destination goto 
+label follow colon statement function goto statement
+example  role break_statement loop previous section emulate goto   attempt  
+goto free unstructured form jump break continue  easily misuse 
+programmer day avoid altogether favor clear programming 
+goto legitimate rare
+potential complexity case  furnish example postpone later part book 
+general form  return expression  expression denote value_return function 
+type value 
+return_value program return operating_system complete execution 
+unix  example  conventional return program execute error 
+non zero error code return 
+function non void return_value example  return value will result compiler warning 
+actual return_value will undefined case  will value happen corresponding memory location time 
+copyright pragsoft exercise write program input person centimeter kilogram output message  underweight  normal  overweight  criterion  underweight  normal  overweight  assume  will follow code fragment output execute 
+example  december  
+write program input octal number output decimal equivalent 
+following example illustrate expect behavior program  input octal number  write program produce simple multiplication table follow format integer range  
+function user define function building block program 
+building block user define class will discuss 
+function convenient way package computational recipe  require 
+function definition consist specifie
+consist entity  
+simply unique identifier 
+function_parameter call signature 
+set zero typed identifier pass value function 
+specify type value function_return 
+function return return_type void 
+body function contain computational step statement comprise function 
+function involve  call 
+function_call consist function_name follow call operator bracket    inside zero comma separate argument
+number argument match number function_parameter 
+argument expression type match type corresponding parameter function interface 
+function_call execute  argument first evaluate result value assign correspond parameter 
+finally  function_return value pass caller 
+call function return_type void yield return_value  call expression expression 
+contrast  call function return_type void statement 
+list annotation 
+line define function interface 
+start return_type function int case 
+function_name next follow parameter list 
+power parameter base exponent type_int unsigned int  note syntax parameter similar syntax define variable  type identifier follow parameter name 
+possible follow type identifier multiple comma separate parameter  
+line local_variable definition 
+brace mark end function_body 
+list illustrate function call 
+effect call first argument value assign parameter base exponent  function_body evaluate 
+copyright pragsoft general  function declare
+function_declaration simply consist function prototype  specify function_name  parameter_type  return_type 
+line list show declare program 
+function declare parameter name  int int  unsigned int  recommend role parameter 
+list int int base  unsigned int exponent  function_declaration 
+function definition contain prototype  serve declaration 
+definition function additional declaration need 
+function prototype encourage circumstance 
+collect separate header_file enable programmer quickly access function read entire definition 
+value parameter receive copy value argument pass
+function change parameter  will affect argument 
+function behave just_like local_variable inside function 
+function call pass receive copy value
+set function  affect 
+program produce follow output    reference parameter  hand  receive argument pass work directly 
+change function reference parameter effect directly apply argument 
+reference parameter will discuss 
+context function_call  style pass argument call pass value pass reference 
+perfectly valid function pass value parameter pass reference
+copyright pragsoft global local scope define program scope level  function class global scope 
+sample function see global scope 
+variable define global scope  int  
+uninitialized global_variable automatically initialize zero 
+global entity visible program level  unique program level 
+mean global_variable function define once global level 
+block program define local scope 
+body function represent local scope 
+parameter function scope function_body 
+variable define local scope visible scope only 
+variable need only unique scope 
+local scope nest  case inner scope override outer scope 
+example  int xyz  
+generally  lifetime variable limit scope 
+example  global_variable last duration program execution  local_variable create scope enter destroy scope exit 
+memory space global_variable reserve prior program execution commencing  memory space local_variable allocate fly program execution 
+example  int error  
+problem overcome unary scope operator   take global entity argument  int  
+copyright pragsoft auto variable lifetime local_variable limited determine automatically  variable call automatic 
+storage class specifi auto explicitly specify local_variable automatic 
+program code refer variable  expression  compiler generate machine code access memory location denote variable 
+frequently variable  loop variable  efficiency gain obtain keep variable register avoid memory access variable 
+storage class specifi register compiler variable store register possible 
+example  +  here  time round loop  time  once compare once add once incremente 
+sense keep register duration loop 
+note register only hint compiler  case compiler choose register ask
+reason machine limited number register case
+programmer register declaration  optimize compiler try intelligent guess register likely improve performance program 
+register declaration leave thought  add later review code insert place 
+copyright pragsoft static variable function useful confine accessibility global_variable function single file 
+facilitate storage class specifier static 
+example  puzzle game program consist file game generation  game solution  user interface 
+game solution file contain solve function number function ancillary solve 
+only private solve  accessible file  static int findnextroute void only accessible file 
+local_variable function define static 
+variable will remain only accessible local scope  lifetime will long confine scope  will global 
+word  static local_variable global_variable only accessible local scope 
+static local_variable useful want value local_variable persist across call function
+example  error function keep error abort program exceed preset limit  
+compiler object variable undefined 
+facilitate extern declaration 
+example  declaration 
+call variable declaration definition lead storage allocate
+poor programming practice include initializer extern variable  cause variable definition storage allocate 
+definition program  will eventually clash
+function prototype declare extern  effect prototype global scope 
+useful declare_function prototype inside function 
+copyright pragsoft symbolic constant precede variable definition keyword const variable readonly  symbolic constant 
+constant initialize value define 
+example  const int  
+useful declare set closely constant 
+example  enum  south   west  introduce enumerator integral value start  
+default numbering enumerator overrule explicit initialization  enum  south   west  here  south west 
+enumeration name  name user define type 
+useful define variable only assign limited set value 
+example  enum direction  south   west  
+enumeration useful name case switch_statement 
+copyright pragsoft runtime stack like modern programming_language  function_call execution base runtime stack 
+function call  memory space allocate stack function_parameter  return_value  local_variable  local stack area expression evaluation 
+allocate space call stack frame 
+function_return  allocate stack frame release reuse 
+example  situation call function_call solve turn call function_call normalize  
+figure function_call stack frame 
+function  overhead negligible compare actual computation function perform 
+value denote express replicate expression place program  define function  
+function version number advantage 
+first  lead readable program 
+second  reusable 
+third  avoid undesirable sideeffect argument expression side effect 
+disadvantage function version  frequent lead considerable performance penalty due overhead associate call function 
+example  ab loop iterate thousand time  will impact performance 
+overhead avoid define ab inline function  
+effect ab call  compiler  generate code call ab  expand substitute body ab place call 
+essentially computation perform  function_call involve stack frame allocate 
+call inline function expand  trace function will leave compile code 
+function define inline file  file 
+inline function commonly place header_file share 
+like register keyword  inline hint compiler oblige observe 
+generally  inline restrict simple  frequently function 
+function contain couple statement unlikely candidate 
+inline excessively long complex function certainly ignore compiler 
+copyright pragsoft recursion function call recursive 
+recursion general programming technique applicable problem define term
+take factorial problem  instance  define 
+factorial positive number time factorial 
+second line clearly factorial define term express recursive function  
+set  table trace call factorial 
+stack frame call sequentially runtime stack 
+table execution trace 
+call first second third fourth 
+return recursive function least termination condition satisfied 
+function_will call indefinitely runtime stack overflow 
+factorial function  example  termination condition satisfy  cause recursive call fold back 
+general rule  recursive function rewrite iteration 
+situation number stack frame involve large  iterative version prefer 
+case  elegance simplicity recursive version give edge 
+factorial  example  large argument will lead stack frame 
+iterative version preferred case  
+example  function report error  void error char message  int  
+first call illustrate  default argument overridden explicitly specify argument 
+default argument suitable situation function_parameter frequently take value 
+error  example  error common candidate default argument 
+default argument int power int base  unsigned int  value unlikely frequently situation 
+avoid ambiguity  default argument trail argument 
+follow declaration illegal  
+default argument need necessarily constant 
+arbitrary expression long variable expression scope function definition  global_variable 
+accepted convention default argument specify function_declaration  function definition 
+function_declaration header_file  enable user function control default argument 
+default argument specify situation 
+illegal specify default argument function file 
+copyright pragsoft variable number argument desirable  function take variable number argument 
+simple example function take set menu option argument  display menu  allow user choose option 
+general  function able accept number option argument 
+express int menu char  state menu give argument
+menu access argument set macro definition header_file  illustrate list 
+relevant macro highlight bold 
+list include include 
+args initialize call 
+second argument last function_parameter explicitly declare function header  here 
+second argument expect type argument  here 
+technique work  last argument  mark end argument list 
+call repeatedly reach 
+sample call will_produce follow output  
+open file 
+close file 
+revert file 
+delete file 
+copyright pragsoft command line argument program execute operating_system unix  pass zero argument 
+argument program executable name separate blank 
+line operating_system command issue  call command line argument 
+example  program name sum print sum set number command line argument 
+dialog illustrate number pass argument sum unix prompt 
+dialog sum command line argument program
+first parameter  argc  denote number argument pass program include name program 
+second parameter  argv  array string constant represent argument 
+example  give command line dialog  argc
+arrays  pointer  reference introduce array  pointer  reference data_type illustrate define variable 
+array consist set object call element  type arrange contiguously memory 
+general  only array symbolic name  element 
+element identify index denote position element array 
+number element array call dimension 
+dimension array fix predetermine  change program execution 
+array suitable represent composite datum consist similar  individual item 
+example  list name  table world city current temperature  monthly transaction bank account 
+pointer simply address object memory 
+generally  object access way  directly symbolic name  indirectly pointer 
+act object pointer call dereference pointer 
+pointer variable define point object specific type pointer dereference  type object obtain 
+pointer useful create dynamic object program execution 
+normal global local object allocate storage runtime stack  dynamic object allocate_memory storage area call heap 
+dynamic object obey normal scope rule 
+scope explicitly control programmer 
+reference alternative symbolic name alias object 
+access object reference exactly access original name 
+reference offer power pointer convenience direct access object 
+support call reference style function_parameter  especially large object pass function 
+example  array represent height measurement integer quantity define int  individual element array access index array 
+first array_element index 
+denote  first last element
+element treat integer variable 
+example  set third element  write   attempt access nonexistent array_element  lead runtime error call  index bound  error 
+processing array involve loop array_element element 
+list illustrate function take array integer return average element 
+list const int  
+complete initializer array dimension redundant  number element implicit initializer 
+first definition
+situation dimension omit array function_parameter 
+example  average function improve rewrite dimension fix constant  specify additional parameter 
+list illustrate
+list double  
+easy calculate dimension array sizeof operator 
+example  give array ar element_type type  dimension ar
+organization array memory still contiguous sequence element  programmer perceive organization element
+example  suppose wish represent seasonal temperature major australian capital city see table 
+table average seasonal temperature 
+spring sydney melbourne brisbane summer autumn winter represent dimensional array integer  int  organization array memory consecutive integer element 
+programmer  imagine row integer entry see figure 
+figure organization seasontemp memory 
+third row element access index array 
+separate index need dimension 
+example  sydney summer temperature first row  second column give 
+array initialize nest initializer  
+example  possible initialize only first element row rest default zero  essential 
+process multidimensional array similar dimensional array  nest loop single loop 
+list illustrate show function find high temperature
+list const int row const int column 
+pointer variable define point datum specific type 
+example  int char 
+symbol address operator  take variable argument return memory address variable 
+effect assignment address num assign 
+point num 
+figure illustrate diagrammatically 
+figure simple integer pointer 
+symbol dereference operator  take pointer argument return content location point 
+general  type pointer match type datum set point
+pointer type void  will match type 
+useful define pointer point datum type  type originally unknown 
+pointer cast type convert type 
+example  char  convert char pointer assign 
+regardless type  pointer assign value call null pointer 
+null pointer initialize pointer  mark end pointer base data_structure  link list 
+copyright pragsoft dynamic_memory addition program stack store global_variable stack frame function_call  memory area  call heap 
+heap dynamically allocate_memory block program execution 
+result  call dynamic_memory 
+similarly  program stack call static memory 
+operator allocate deallocate memory block heap 
+take type argument allocate memory block object type 
+return pointer allocate block 
+example   allocate  block store single integer block large store array character 
+memory allocate heap obey scope rule normal variable 
+remain allocate explicitly release programmer 
+delete release memory block allocate
+take pointer argument release memory block point 
+note block delete array  additional include
+significance will explain later discuss class 
+delete apply pointer point dynamically allocate object  variable stack  runtime error occur 
+harmless apply delete pointer 
+dynamic object useful create datum last function_call create
+list illustrate function take string parameter return copy string 
+null character include count  add total allocate array character size 
+limited memory resource  possibility dynamic_memory exhaust program execution  especially large block allocate release 
+unable allocate block requested size  will_return
+responsibility programmer deal possibility 
+exception_handle mechanism explain practical method deal problem 
+copyright pragsoft pointer arithmetic add integer quantity subtract integer quantity pointer 
+frequently programmer call pointer arithmetic 
+pointer arithmetic integer arithmetic  outcome depend size object point
+example  suppose represent byte 
+figure illustrate diagrammatically 
+figure pointer arithmetic 
+similarly  element refer  +  +  + 
+form pointer arithmetic allow involve subtract
+pointer arithmetic handy process element array 
+list show example string copying function similar strcpy 
+condition final null character src copy dest 
+turn array variable address first element array represent 
+element refer pointer arithmetic equivalent + 
+difference constant  point variable point integer 
+list show highesttemp function show early list improve pointer arithmetic 
+list int  
+way  function restrict specific array size 
+highesttemp simplify treat temp onedimensional array row column integer 
+show list 
+list int  
+copyright pragsoft function pointer possible take address function store function pointer 
+pointer indirectly call function 
+example  int const char  const char  define function pointer name hold address function take constant character pointer argument return integer 
+string comparison library function strcmp  example 
+common function pointer pass argument function  typically require version circumstance 
+example binary search function search sorted array string 
+function comparison function strcmp compare search string array string 
+example  strcmp case sensitive 
+want search non case sensitive manner comparison function need 
+show list  comparison function parameter search function  independent
+search list denote table array string dimension
+search item denote item 
+repeat end search span denote collide  match find 
+following example show binsearch call pass comparison function   boston    london    sydney    tokyo   
+copyright pragsoft reference reference introduce alias object 
+notation define reference 
+definition refer object  variable 
+emphasize reference create copy object  merely symbolic alias
+ will denote value 
+first third line likely object compiler constant optimization allocate memory location 
+expect  turn 
+force copy  compiler guarantee object denote will 
+common reference function_parameter 
+reference parameter facilitate pass reference style argument  oppose pass value style
+observe difference  swap function list 
+swap effect argument pass function  receive copy argument 
+happen copy affect original 
+dereference pointer  original value swap
+parameter alias argument pass function swap intend 
+add advantage call syntax involve addressing dereferencing 
+follow function illustrate difference  
+run  will_produce follow output     
+copyright pragsoft typedef typedef syntactic facility introduce symbolic name data_type 
+just reference define alias object  typedef define alias type 
+simplify complicated type declaration improved readability 
+here example  
+effect definition string alias char  name alias array char  uint alias unsigned int 
+string name uint 
+binsearch signature arguably simple 
+follow table specify major content brand breakfast cereal 
+define dimensional array capture data  top flake cornabix oatabix ultrabran fiber sugar fat salt write function output table element element 
+bubble sort involve repeat scan list  scan adjacent item compare swap order 
+scan involve swapping list sort 
+class introduce class construct define type 
+concrete representation object
+set operation manipulate object 
+add restriction designate operation  operation able manipulate object 
+reason  operation characterize decide happen object 
+reason  proper type call abstract type abstract internal representation object hide operation belong
+class definition consist part  header body 
+class header specify class_name base_class 
+type support  
+datum syntax variable definition specify representation class object 
+member function syntax function prototype specify class operation  call class interface 
+class fall access permission category  
+protect only accessible class derived_class 
+type define class exactly way build type 
+copyright pragsoft simple class list show definition simple class represent point dimension 
+list class point int xval  yval  public  
+class definition begin keyword class  follow class_name 
+open brace mark beginning class body 
+default access permission class_member private 
+xval yval private 
+integer parameter void return_type 
+order member_function class present largely irrelevant 
+class  example  equivalently write 
+list show separate definition setpt offsetpt 
+function_name precede class_name double colon 
+identify setpt member point 
+function interface match early interface definition class  take integer parameter return_type void 
+once class define way  name denote type  allow define variable type 
+member function call dot notation  call setpt object pt  pt implicit argument setpt 
+private class  ensure user class manipulate directly  
+will compile 
+stage  clearly distinguish object class 
+class denote type  only
+object element type class 
+example  point    define object   class point 
+operation class apply object class  class
+class concept concrete existence reflect object 
+class point  example  member_function short only statement 
+define inline improve efficiency considerably 
+member_function define inline insert keyword inline definition 
+example show set define class 
+simplicity  will restrict set integer finite number element 
+list show set class definition 
+list include const 
+addelem add set 
+set happen 
+result overflow insert 
+parameter function reference destination set 
+set equal contain exactly element order immaterial 
+copyright pragsoft intersect compare set produce third set denote last parameter element set 
+example  intersection 
+example  union 
+example  set contain number   print 
+only first entry elem valid element 
+separate definition member_function class refer implementation class 
+implementation set class follow 
+run  program_will produce follow output  
+support special member_function call constructor 
+constructor name class
+example  class point 
+now define object type initialize once 
+compulsory class contain constructor require argument  
+set class improve constructor emptyset  class set 
+distinct advantage programmer need long remember call emptyset 
+constructor ensure set initially empty 
+set class improve give user control maximum size set 
+define elem integer pointer integer array 
+constructor give argument specify desire size 
+mean maxcard will long set object therfore need data member class set public  set const int size  
+important note object  constructor apply object create 
+turn depend object  scope 
+example  global object create soon program execution commence  automatic object create scope enter  dynamic object create new_operator apply
+destructor name class precede symbol 
+constructor  class destructor 
+destructor take argument explicit return_type 
+destructor generally useful class pointer datum_member point memory block allocate class
+case important release member allocate_memory object destroy 
+destructor just
+example  revise version set dynamically allocate array member 
+memory release destructor  class set public  
+foo call  constructor invoke  allocate storage initialize datum_member 
+next rest body foo execute 
+finally  foo return  destructor invoke  delete storage occupy 
+storage allocation behave just_like automatic variable build type  create scope enter destroy scope leave 
+general  object  constructor apply just object destroy 
+turn depend object  scope 
+example  global object destroy program execution complete  automatic object destroy scope leave  dynamic object destroy delete_operator apply
+copyright pragsoft friend occasionally need grant function access nonpublic member class 
+access obtain declare function friend class 
+possible reason require access  
+only correct way define function 
+function implement efficiently 
+example first case will  discuss overloaded input output operator 
+example second case discuss
+suppose define variant set class  set integer set real  class intset public  
+work  overhead call addelem member set unacceptable 
+implementation improve gain access private member intset realset 
+arrange declare settoreal friend realset 
+friend declaration inside class  function member class 
+general  position friend declaration class irrelevant  private  protect  public section  meaning 
+copyright pragsoft default argument global function  member_function class default argument 
+rule apply  default argument trail argument  argument expression consist object define scope class
+example  constructor point class default argument variation way point object define  class point 
+give constructor  follow definition valid  point point point 
+example  point   
+offsetpt rewrite 
+example redundant 
+programming case pointer essential 
+will see example case  discuss overloaded operator 
+pointer refer member_function exactly way datum_member 
+important bear mind  define member_function class only 
+undefined global function include global friend_function 
+copyright pragsoft scope operator call member_function  abbreviate syntax 
+full form binary scope operator   offsetpt member point 
+situation  scope operator essential 
+example  case name class_member hide local_variable  member_function parameter overcome scope operator  class public  
+refer explicitly   
+first approach involve initialize datum_member assignment body constructor 
+example  class image public  image 
+example  class image public  image 
+effect declaration initialize initialize
+only difference approach previous here member initialize body constructor execute 
+member initialization list initialize data member class 
+place constructor header body 
+colon separate header 
+consist comma separate list data member initial value pair bracket 
+copyright pragsoft constant member class data member define constant 
+example  class image const int 
+expect  member_function allow assign constant data member 
+constant data member define dimension array data member 
+example  class set public  set 
+reason maxcard bind value compilation  program run constructor invoke 
+member function define constant 
+specify member_function class invoke constant object 
+example  class set public  bool void 
+set member addelem 
+keyword const insert function header  inside class function definition 
+constant object only modify constant member_function class  
+give constant member_function allow invoke constant object  illegal attempt modify class data member 
+constructor destructor need define constant member  permission operate constant object 
+exempt rule assign data member constant object  data member constant 
+copyright pragsoft static member data member class define static 
+ensure will exactly copy member  share object class 
+example  window class represent window bitmap display  class window static window 
+here  matter object type define  will only instance
+like static variable  static data member default initialize 
+initialize arbitrary value scope member_function definition   mywindow  alternative variable global  exactly static member intend avoid  include variable class  ensure will inaccessible class 
+member function define static 
+semantically  static member_function like global function friend class  inaccessible class 
+receive implicit argument refer
+static member_function useful define call back routine parameter list predetermine control programmer 
+example  class call back function repaint expose area window  
+static member share rely pointer  refer syntax 
+example  paintproc refer   paintproc 
+public static member refer syntax nonmember function  global function 
+possible obtain manipulate address member_function class similar fashion 
+idea function flexible independent function 
+syntax define pointer member_function slightly complicated  class_name include function pointer type 
+example  typedef int char  const char  define member_function pointer type call compare class_call table 
+type will match address member_function table take constant character pointer return int 
+compare pass pointer search member table  class table public  table int search int_int private  int char 
+definition table include sample comparison member_function pass search 
+search slightly complicated syntax invoke comparison function comp  
+copyright pragsoft note comp only invoke table object pointer case 
+follow attempt  seemingly reasonable  
+class_member pointer syntax apply member static 
+static member essentially global entity scope limit class 
+pointer static member conventional syntax global entity 
+general  protection rule apply take address class_member datum function access
+example  function access private member class take address member 
+copyright pragsoft class member data member class user define type  object class 
+example  rectangle class define point datum_member represent bottom right corner rectangle  class rectangle public  rectangle int leave  int  int right  int bottom  
+constructor rectangle initialize object member class 
+assume point constructor  include topleft botright member initialization list constructor rectangle  
+constructor point take parameter  default argument parameter  member initialization list omit 
+course  constructor still implicitly call 
+order initialization follow 
+first  constructor topleft invoke  follow constructor botright  finally constructor rectangle
+first destructor rectangle invoke  follow destructor botright  finally topleft 
+reason topleft initialize botright first member initialization list  botright class
+define constructor follow change initialization destruction order  
+example  pentagon define array point   definition assume argument constructor  invoke argument 
+constructor apply element array 
+array initialize normal array initializer 
+entry initialization list invoke constructor desire argument 
+initializer entry array dimension  remain element initialize argument constructor 
+constructor invoke single argument  sufficient just specify argument 
+include  delete will way know denote array point just single point 
+destructor apply element array reverse order array delete 
+omit will cause destructor apply just first element array  delete  
+object dynamic array explicitly initialize time creation  class argument constructor handle implicit initialization 
+implicit initialization insufficient  programmer explicitly reinitialize element later  
+example  general polygon class way know advance vertice polygon class polygon public  
+class_member belong class scope hide entity identical name enclosing scope 
+global scope 
+lead global class  refer scope 
+great majority class include example present define global scope 
+class scope class 
+lead nested class  class contain class 
+local scope block function 
+lead local class  class completely contain block function 
+nest class useful class only class 
+copyright pragsoft define nest rectangle 
+member_function define inline inside class global scope 
+require qualification member_function name precede rectangle   
+local class completely define inside scope
+function_member  need define inline inside class 
+imply local scope suitable define simple class 
+example  struct 
+struct construct originate only contain data member 
+retain mainly backward compatibility reason 
+structure initializer syntax similar array 
+allow initializer structure class data member public  class public  char 
+initializer consist value assign data member structure class order
+style initialization largely supersede constructor 
+class constructor 
+union class data member map address object sequentially case class 
+size object union size large data member 
+union situation object assume value type  only time 
+example  interpreter simple programming_language  call support number data_type integer  real  string  list 
+value language define type  essential copyright pragsoft union value long double char pair 
+assume long byte  double byte  pointer byte  object type_value exactly byte   size double pair object equal pointer 
+object represent class  class object 
+example  type set strobj  refer value 
+unique way datum_member map memory  union static data member data member require constructor 
+like structure  member union default public 
+keyword private  public  protect inside struct union exactly way inside class define private  public  protect member 
+example  datum communication  datum transfer discrete unit call packet 
+addition user datum carry  packet contain header comprise network manage transmission packet across network 
+minimize cost transmission  desirable minimize space take header 
+figure illustrate header field pack adjacent bit achieve
+figure header field packet 
+bit field necessarily start byte boundary  illegal take address 
+reason  bit field define static 
+enumeration work bit field easy 
+example  give enumeration enum packettype datapack  controlpack  supervisorypack  enum bool 
+copyright pragsoft exercise explain set parameter set member_function declare reference 
+complex number general form ib  real part imaginary part stand imaginary 
+complex arithmetic rule follow  
+nest class  option  represent set element 
+define constructor  destructor  follow member_function menu  
+insert insert give position 
+default argument item append end 
+delete delete existing 
+nest class  element  represent set element 
+define constructor  destructor  follow member_function sequence  
+insert insert sort position 
+find search sequence give return true find false
+define class_name bintree store sorted string binary tree 
+define set member_function sequence previous exercise 
+function define constructor bintree take sequence argument 
+define inline member_function return
+will keep track last allocate
+overload discuss overloading function operator 
+term overloading mean  multiple definition 
+overload function involve define distinct function share name  unique signature 
+function overloading 
+define function essentially operate data_type 
+alternate interface function 
+function overloading purely programming convenience 
+operator similar function take operand argument return value 
+build operator overload 
+example  operator add integer  real  address 
+multiple definition 
+build definition operator restrict build type 
+additional definition programmer  operate user define type 
+additional definition implement function 
+overloading operator will illustrate number simple class 
+will discuss conversion rule reduce need multiple overloading operator 
+will present example container class  pointer operator 
+will discuss memberwise initialization assignment  importance correct implementation class dynamically allocate data member 
+function operator  class overload  class unique name 
+will see  class alter extend facility call inheritance 
+function class write template  independent data_type employ 
+will discuss template 
+function overloading function  gettime  return current time day  suppose require variant function  return time second midnight  return time hour  minute  second 
+give function serve purpose  reason name 
+allow function overload  function definition  
+copyright pragsoft operator overload allow programmer define additional meaning predefine operator overload
+example  overload operator add subtract object  class public  
+binary operator  
+unary operator  
+table summarize operator overload 
+remain operator overload  
+support definition token  lead ambiguity 
+precedence rule predefine operator fix alter 
+example  matter overload  will high precedence 
+equivalence rule hold overloaded operator 
+example  overload + +  explicitly overload 
+avoid copying large object pass overloaded  reference
+pointer suitable purpose overloaded operate exclusively pointer 
+copyright pragsoft example  set set class introduce 
+set member_function define overloaded operator 
+list illustrate 
+list include const 
+here  decide define function global friend 
+just easily define member_function 
+implementation function follow 
+run  program_will produce follow output  
+copyright pragsoft type_conversion normal build type_conversion rule language apply function operator 
+type_conversion require addition explicitly define programmer 
+example  suppose want overload + point type add point  add integer_value coordinate point  
+commutative  define function add integer point  integer first operand  integer second operand 
+obvious start type addition int  approach will ultimately lead unmanageable variation
+approach constructor convert object type class handle job 
+case  need constructor take int  specify coordinate point  class 
+temporary object destroy 
+effect implicit type_conversion int
+final value 
+want opposite conversion  class type type 
+case  constructor return object class belong 
+define member_function explicitly convert object desire type 
+example  give rectangle class  define type_conversion function convert rectangle point  overload type rectangle  class rectangle 
+define convert rectangle point  coordinate represent width height rectangle 
+code fragment rectangle 
+type_conversion apply explicitly normal type cast notation 
+constructor define take single argument type will implicitly convert object object need 
+disadvantage user define type_conversion method sparingly  lead program behavior difficult predict 
+additional risk create ambiguity 
+ambiguity occur compiler option open apply user define type_conversion rule  unable choose 
+case report error compiler 
+illustrate possible ambiguity occur  suppose define type_conversion constructor rectangle take argument overload operator  class rectangle 
+list include include 
+addition bit bit 
+simplicity  attempt detect overflow 
+implementation function follow  
+first convert addition  convert result int 
+equivalent int      
+output produce program evidence conversion perform correctly  
+copyright pragsoft overloading output simple uniform treatment output build type easily extend user define type overload 
+give userdefined type define function output object type ostream ostream   first parameter reference ostream multiple concatenate 
+second parameter need reference  efficient large object 
+example  class print member_function  overload class 
+first operand ostream object  overload member_function 
+define global function  
+overload  last example write assume remove print 
+give user define type define function input object type istream istream   first parameter reference istream multiple concatenate 
+second parameter reference  will modify function 
+continue class example  overload input bit stream 
+first operand istream object  overload member_function  
+copyright pragsoft overloading list define simple associative vector class 
+associative vector dimensional array element look content position array 
+assocvec  element string name look associated integer 
+list include include class assocvec public  
+function overload exactly parameter 
+give string index  search vector match 
+matching index find reference associated value return 
+create reference value return 
+vector consist string denote index integer_value denote value 
+implementation member_function follow  
+note  return valid reference  reference static integer return vector full
+reference expression lvalue side assignment 
+function_return reference call function assign
+return_type  operator define reference 
+now create associative vector behave like normal vector  
+list define matrix class 
+matrix table value similar dimensional array size denote number row column table 
+example simple matrix standard mathematical notation refer matrix element bracket 
+example   first row second column refer 
+matrix algebra set operation manipulate matrix  include addition  subtraction  multiplication 
+list include class matrix public  private  friend friend friend friend matrix const short row  const short col  
+function overload zero parameter 
+return reference specify 
+copyright pragsoft memberwise initialization follow definition overloaded + matrix  matrix   
+form initialization call memberwise initialization special constructor initialize object member member 
+data member object initialize object class  memberwise initialize 
+result default memberwise initialization  data member object will point dynamically allocate block 
+destructor delete block point  leave return object data member pointing invalid block 
+ultimately lead runtime failure typically bus error 
+figure illustrate 
+figure pointer 
+danger default memberwise initialization object memberwise copy destroy matrix memberwise copy dynamic block memberwise copy invalid block memberwise initialization occur follow situation   overload 
+define initialize object declaration statement object initializer   foo
+pass object argument function applicable reference pointer argument   foo
+return object value function applicable reference pointer return_value   return foo
+problem cause default memberwise initialization class avoid explicitly define constructor charge memberwise initialization 
+give class constructor form  const  
+copyright pragsoft memberwise assignment object class assign internal overloading automatically generate compiler 
+example  handle assignment
+identical approach memberwise initialization call memberwise assignment 
+suffer exactly problem  turn overcome explicitly overload 
+example  class  follow overload 
+result  impose memory requirement 
+small object  efficiently handle default version delete 
+block allocate overhead housekeeping purpose 
+large object significant  small object overhead big block
+addition  small block severely slow subsequent allocation deallocation 
+performance program dynamically create small object significantly improve simple memory management strategy object 
+dynamic storage management operator delete overload class  case override global definition operator object class 
+example  suppose wish overload delete point class  point object allocate array  
+return void 
+parameter size block allocate byte 
+corresponding argument automatically pass compiler 
+first parameter delete block delete 
+second parameter optional size allocate block 
+correspond argument automatically pass compiler 
+static affect size object still integer 
+initialize follow       
+take next block return address 
+delete free block insert front link list denote reach  return first block link list  return link list empty  
+call type argument will invoke global definition  call occur inside member_function 
+function overload delete class assume compiler static  mean will access pointer nonstatic class_member 
+operator invoke object class  object exist  invoke object construct  delete call destroy 
+extra pointer processing  facilitate overload unary operator arrow_operator   
+class overload arrow_operator  binary  leave operand pointer class object right operand class_member name 
+leave operand arrow_operator object reference type pointer  expect overload arrow_operator unary 
+case  arrow_operator first apply leave operand produce result
+pointer class leave operand binary arrow_operator right operand expect member
+leave operand unary arrow_operator whole procedure repeat class
+follow class overload arrow_operator  
+word  apply obj give apply give pointer final result xval 
+unary operator overload semantic correspondence arrow_operator   preserve 
+example  library system represent book record raw string follow format  
+copyright pragsoft field start field specifi  specifie author end null character  
+field order 
+field miss record  case default_value
+efficiency reason want keep datum format follow structure need access field record  struct book short short 
+reduce frequency mapping simple memory record 
+correspond static member initialize follow  short short 
+book rawtobook load book current position  return +  
+overload_operator arrow_operator   easily define term rawtobook  
+identical definition arrow_operator surprising arrow_operator unary context semantically equivalent 
+follow test case demonstrate operator behave expect 
+set book record print operator 
+will_produce follow output  peter  blue earth  phedra  sydney  
+jackson  pregnancy  mile    
+distinguish postfix version specify take extra integer argument 
+example  prefix postfix version overload binary class follow  class binary 
+choose define global friend_function  define member_function 
+easily define term operator define early  
+will_produce follow output  prefix postfix version overload exactly way 
+copyright pragsoft exercise write overloaded version max function compare integer  real  string  return large 
+overload follow operator class  
+simplicity  assume first operand great second operand 
+practice  sparse matrix size uncommon 
+machine bit representation real  store matrix array require megabyte storage 
+define sparsematrix class link list record only nonzero element  overload   operator
+define memberwise initialization constructor memberwise assignment_operator class 
+note version constructor require  initialize assign string char  memberwise initialization assignment index string character position 
+bit vector vector binary element  element 
+small bit vector conveniently represent unsigned integer 
+example  unsigned char represent bit vector element 
+large bit vector define array small bit vector 
+complete implementation bitvec class  define
+allow bit vector size create manipulate associated operator 
+derive class practice  class entirely unique  variation exist
+example  class_name recfile represent file record  class_name sortedrecfile represent sorted file record 
+class common 
+example  similar member_function insert  delete  find  similar data member 
+sortedrecfile specialized version recfile add property record organize sorted order 
+member_function class identical  depend file sort
+example  find sortedrecfile take advantage file sort perform binary search linear search perform find member recfile 
+give share property class  tedious define independently 
+clearly lead considerable duplication code 
+code only take long write hard maintain  change share property consistently apply class 
+object orient programming facility call inheritance address problem 
+inheritance  inherit property existing 
+inheritance possible define variation redefine scratch 
+share property define only once  reuse desire 
+ inheritance support derived_class 
+derive like ordinary  definition base existing class  call base_class 
+derive share select property function datum_member base_class  change definition base_class 
+derive base derive 
+inheritance relationship class program call hierarchy 
+derive call subclass  subordinate base hierarchy 
+similarly  base call superclass  class derive 
+class define list support creation directory personal contact 
+list include include contact public  private  char char char  
+contact capture detail  name  address  telephone number personal 
+copyright pragsoft insert insert directory 
+will overwrite exist identical name 
+exist lookup return index slot entry insert 
+lookup define private auxiliary function only insert  delete  find 
+implementation member_function friend follow    const  
+run  will_produce follow output  delete jack 
+smartdir define derivation contactdir  illustrate list 
+list class smartdir  public contactdir public  int max   recent void  find const  private  
+colon separate
+here  contactdir specify base_class smartdir derive 
+keyword public contactdir specifie contactdir public base_class 
+pointer set point last look entry 
+contactdir public base_class smartdir  public member contactdir public member smartdir 
+mean invoke member_function insert smartdir object essential copyright pragsoft will simply call 
+similarly  private member contactdir private member smartdir 
+accordance principle hiding  private member contactdir will accessible smartdir 
+smartdir will unable access datum_member contactdir private member_function lookup 
+smartdir redefine find member_function 
+confuse overload 
+distinct definition function  signature  signature desire 
+invoke find smartdir object cause invoke 
+illustrate definition find smartdir  still invoke full 
+follow code fragment illustrate smartdir behave contactdir  keep track recently look entry  smartdir 
+object type smartdir contain datum_member contactdir additional data member introduce smartdir 
+figure illustrate physical contactdir smartdir object 
+figure base derived_class object 
+contactdir object smartdir object 
+figure illustrate uml notation will book 
+class represent box label class_name 
+inheritance class illustrate direct line draw derived_class base_class 
+line diamond shape end depict composition  class object compose object class 
+number object contain object depict label  
+figure simple class hierarchy contactdir
+smartdir figure interpret follow 
+contactdir compose zero object 
+smartdir derive contactdir 
+copyright pragsoft constructor destructor derived_class constructor destructor 
+derived_class data member top base_class  role constructor destructor initialize destroy additional member 
+object derived_class create  base_class constructor apply first  follow derived_class constructor 
+object destroy  destructor derived_class apply first  follow base_class destructor 
+word  constructor apply order derivation destructor apply reverse order 
+example  class derive turn derive
+figure illustrate object type create destroy 
+constructor derived_class base_class constructor require argument specify definition constructor 
+derived_class constructor explicitly invoke base_class constructor member initialization list 
+example  smartdir constructor pass argument contactdir constructor way  
+idea private member completely hide tamper class client 
+restriction prove prohibitive class class likely derive 
+deny derived_class access base_class private member convolute implementation impractical define 
+restriction relax define base_class private member protect
+client class protect member private member  access class client 
+protect base_class member access class derive
+example  private member contactdir protect substitute keyword protect private  class contactdir 
+result  lookup datum_member contactdir now accessible smartdir 
+access keyword private  public  protect occur time desire class definition 
+access keyword specify access characteristic member follow next access keyword  class foo public  public 
+copyright pragsoft private  public  protect base_class base_class specify private  public  protect 
+specify  base_class assume private  class private  
+private base_class private base_class public base_class protect base_class behavior follow see table summary 
+member private base_class private member derived_class 
+fx  fy  fz private member c
+member public base_class keep access characteristic derived_class 
+fx private member fy public member fz protect member
+private member protect base_class private member derived_class 
+public protect member protect base_class protect member derived_class 
+fx private member fy  fz protect member
+base class access inheritance rule 
+base class_private member public member protect member private derive private private private public derive private public protect protect derive private protect protect possible individually exempt base_class member access change specify derived_class  retain original access characteristic 
+exempted member fully name derived_class original access characteristic 
+example  class private 
+obvious advantage search speed improve binary search algorithm linear search 
+actual search perform lookup member_function 
+need redefine function sorteddir binary search algorithm 
+redefine refer
+follow approach  value inheritance questionable  practically redefine whole class 
+want find way express lookup tie type object invoke
+object type sorteddir invoke lookup member_function contactdir mean 
+similarly  object type contactdir call lookup mean 
+achieve dynamic binding lookup  decision version lookup call runtime depend type object 
+ dynamic binding support virtual member_function 
+member_function declare virtual insert keyword virtual prototype base_class 
+member_function  include constructor destructor  declare virtual 
+lookup declare virtual contactdir  class contactdir 
+only nonstatic member_function declare virtual 
+virtual_function redefine derived_class exactly prototype base_class 
+virtual function overload like member_function 
+list show definition sorteddir derived_class contactdir 
+copyright pragsoft class sorteddir  public contactdir public  sorteddir const int max  protect  
+lookup follow  
+will_produce follow output  
+alternatively  derived_class multiple base_class 
+refer multiple inheritance 
+example  suppose define class represent list option bitmappe window  class optionlist 
+multiple inheritance  derived_class inherit member base_class 
+base_class private  public  protect 
+base member access principle apply 
+figure illustrate class hierarchy menu 
+figure menu class hierarchy optionlist window menu base_class menu constructor take argument  constructor derived_class invoke member initialization list  essential 
+order base_class constructor invoke order specify derived_class header order derived_class constructor member initialization list 
+menu  example  constructor optionlist invoke constructor window  change order constructor  
+destructor apply reverse order   follow  follow 
+obvious implementation derived_class object contain object base_class 
+figure illustrate relationship menu object base_class object 
+figure base derived_class object 
+optionlist object optionlist data member window object menu object window data member optionlist data member window data member menu data member general  derived_class number base_class 
+example  suppose optionlist window member_function call highlight highlight specific part object type  class optionlist 
+ambiguity resolve call explicit   alternatively  define highlight member menu turn call
+copyright pragsoft type_conversion derived_class implicit type_conversion derived_class public base_class 
+convert derived_class object base_class object  proper object  reference  pointer  menu window window window 
+conversion safe derived_class object contain base_class object 
+first assignment  example  cause window component menu assign
+contrast  implicit conversion base_class derived_class 
+reason conversion potentially dangerous due derived_class object data member present base_class object 
+extra data member will end unpredictable value 
+conversion explicitly cast confirm programmer intention  menu menu 
+example  give class menu  public optionlist  public window 
+represent table  illustrate table 
+table message transmission time second 
+sydney melbourne perth sydney melbourne perth row column index table string integer  matrix class will adequate represent table 
+need way mapping string index 
+support assocvec class 
+show list  define derived_class matrix assocvec 
+list class  matrix  assocvec public    entry  
+copyright pragsoft class  matrix public  
+answer lie relationship table matrix associative vector  
+table form matrix 
+table associative vector  associative vector manage association row column label positional index 
+general  relationship realize inheritance  imply property object share object 
+hand  relationship realize composition  imply object contain object 
+preferred solution 
+worth version table lend generalization 
+obvious generalization remove restriction table square  allow row column label 
+need set index  row column 
+need associative vector 
+arguably easy expand modify see list 
+figure show class hierarchy variation table 
+figure matrix variation table 
+derived_class class object datum_member  order object construction follow 
+first base_class constructor invoke order derived_class header 
+class object data member initialize constructor invoke order declare class 
+finally  derived_class constructor invoke 
+derived_class object destroy reverse order construction 
+figure illustrate object 
+figure object construction destruction order 
+copyright pragsoft virtual base_class recall menu class suppose base_class multiply derive  class optionlist  public widget  list  class window  public widget  port 
+desirable menu single widget lead ambiguity 
+example  apply widget member_function menu object  clear widget object apply 
+problem overcome widget virtual base_class optionlist window 
+base_class virtual place keyword virtual name derived_class header  class optionlist  virtual public widget  list class window  virtual public widget  port 
+ensure menu object will contain exactly widget object 
+word  optionlist window will share widget object 
+object class derive virtual base_class directly contain object  pointer see figure 
+enable multiple occurrence virtual class hierarchy collapse see figure 
+class hierarchy instance base_class declare virtual instance nonvirtual  derived_class object will contain object nonvirtual instance single object virtual occurrence
+virtual base_class object initialize  necessarily derived_class  derived_class farth class hierarchy 
+rule ensure virtual base_class object initialize only once 
+example  menu object  widget object initialize menu constructor override invocation widget constructor optionlist window int rect bound  
+figure nonvirtual virtual base_class 
+widget data member 
+optionlist data member optionlist data member window object widget virtual widget data member widget data member port data member port datum_member window data member window data member menu data member menu object widget virtual list data member optionlist data member widget data member port datum_member window data member menu datum_member class hierarchy virtual base declare conflict access characteristic  combination private  protect  public  accessible will dominate 
+example  widget declare private base_class optionlist  public base_class window  still public base_class menu 
+copyright pragsoft overload_operator assignment_operator  derived_class inherit overloaded operator base_class 
+overload derived_class hide overload base_class exactly way member_function derived_class hide member_function base_class 
+memberwise initialization assignment see extend derived_class 
+give class derive memberwise initialization handle automatically generate user define constructor form    const  similarly  memberwise assignment handle automatically generate user define overloading  memberwise initialization assignment derived_class object involve memberwise initialization assignment base_class class object member 
+special care need derived_class rely overloading delete_operator base_class 
+example  recall overload operator point class  suppose wish derived_class  class  public point public  
+implementation point   request block size point object  inheritance class lead problem  account extra space need datum_member  depth 
+avoid problem  overloading attempt allocate exact amount storage specify size parameter  assume predefine size 
+similarly  overloading delete note size specify second parameter attempt release exactly byte 
+day binary value  year easily derive bitvec  enum month jan  feb  mar  apr  jun  jul  aug  sep  oct  nov  dec  class year  public public  year void workday void offday bool work short day protect  short 
+complete year class implement member_function 
+derive class_name lineareqns matrix purpose define follow member_function 
+constructor accept matrix  destructor 
+generate randomly generate system linear equation matrix
+take positive integer coef argument generate set equation  ensure range coefficient exceed coef 
+random number generator  random unix generate coefficient 
+ensure solution equation denote last element row denote + 
+solve gaussian elimination solve equation generate generate 
+solve output matrix display augment matrix time element pivot eliminate 
+application need construct set enumeration 
+copyright pragsoft example  parser  parse routine pass set symbol skip parser attempt recover syntax_error 
+derive class_name enumset bitvec facilitate
+enumset overload follow operator  
+abstract_class class directly skeleton class derive
+typically  member_function abstract virtual dummy implementation 
+following simple example abstract_class  class database public  virtual void virtual void virtual datum  insert delete search 
+first derive tree class database derive tree  class btree  public database  class bstar  public btree  see comer description tree 
+purpose exercise  build type_int key double datum 
+template template facility define function_class 
+template facilitate generic definition function class tie specific implementation type 
+invaluable dispense burden redefine function class will work data_type 
+function template define algorithm 
+algorithm generic recipe accomplish task  independent data_type implementation 
+example  binary search algorithm operate sorted array item  exact type irrelevant algorithm 
+binary search define function template type parameter denote type array item 
+template blueprint generate executable function substitute concrete type type parameter 
+process call instantiation outcome conventional function 
+class_template define parameterized type 
+parameterized type data_type define term data_type  unspecified 
+data_type define independently concrete data_type implementation 
+example  stack data_type involve set item exact type irrelevant concept stack 
+stack define class_template type parameter specify type item store stack 
+template instantiate  substitute concrete type type parameter  generate executable stack class 
+template direct support write reusable code 
+turn ideal tool define generic library 
+will present simple example illustrate template define  instantiate  specialized 
+will nontype parameter class_template  discuss role class_member  friend  derivation context class_template 
+copyright pragsoft function template definition function template definition declaration precede template clause  consist keyword template list type parameter 
+example  template class max  declare function template name max return maximum object 
+denote unspecified generic type 
+max specify compare object type return large
+argument return_value type
+definition function template similar normal function  specify type parameter refer definition 
+definition max show list 
+list template class 
+type parameter arbitrary identifier scope limit function
+type parameter inside 
+type parameter consist keyword class follow parameter name 
+multiple type parameter separate comma 
+specify type parameter actually refer function prototype 
+keyword class factor template class  class  class   ok 
+example  give early template definition code fragment 
+second call  argument real  bind double 
+final call  argument character  bind char 
+total function generate compiler handle case  int double char 
+compiler encounter call template function  attempt infer concrete type substitute type parameter examine type argument call 
+compiler attempt implicit type_conversion ensure match 
+result  resolve binding type parameter reasonable unidentical type 
+example    error require first argument convert double argument match
+restriction apply ordinary parameter function template 
+example  alternative definition list find maximum value array
+ordinary parameter denote number array_element 
+match argument parameter type_int  unsigned  
+copyright pragsoft template class  
+illustrate listing  function template overload exactly way normal function 
+rule apply  overload definition unique signature 
+definition assume operator define type substitute instantiation 
+case  compiler flag error  
+binary search define function template search array type 
+list template definition 
+list template class type int  
+introduce type type parameter  scope entire definition binsearch function 
+instantiate binsearch type bind build type int desire effect 
+example  int            
+copyright pragsoft now let instantiate binsearch user define type rawbook see 
+first  need ensure comparison operator define user define type  class rawbook public  
+code fragment  
+example  class type class stack  declare class name stack 
+class clause follow syntax rule function clause 
+definition class similar normal class  specify type parameter refer definition 
+definition stack show list 
+list class class stack 
+member_function stack define inline push 
+overload display stack content testing purpose 
+define follow  class stack val  
+class definition reference class include parameter list 
+definition push name stack stack 
+example  give early definition easy generate stack variety type instantiation  int 
+combination class argument type parameter  int represent valid type specifier 
+class part definition class function  type parameter bind parameter 
+example  class 
+value parameter define type
+list show variation class  maximum size stack denote parameter data member 
+list template class  int maxsize class public  void  maxsize  delete stack  void push val  void pop  top return stack  private  
+example  push now define follow  template class  int maxsize 
+type value match type value parameter exactly 
+value constant expression evaluate compile time 
+example  int  int  int  + int  
+copyright pragsoft class specialization algorithm define member_function class_template inappropriate type 
+example  instantiate class type lead problem push function_will simply push string pointer stack copy
+result  original string destroy stack entry will invalid 
+case properly handle specialize inappropriate member_function 
+like global function template  member_function class_template specialize implementation base type 
+pop need specialize 
+friend declaration nonmember function  early definition suffice 
+constant reference member exactly
+static datum_member share object instantiation 
+will instance static datum_member instantiation class_template 
+example  add static data member class enable top return value stack empty  template class class public  
+instantiate instantiation
+alternatively  explicit instance initialization instantiation
+int instantiation  example  follow initialization int int   
+copyright pragsoft class friend function class declare friend class  friendship take form  illustrate follow example 
+class function name  class void  wish define class_name sample declare friend 
+follow specific instance friend instance sample  class 
+mean example  int int friend sample int  sample double 
+extreme case instance friend instance sample express class 
+link list represent simple popular form container type 
+consist set element  contain pointer next element list 
+doubly link list  element contain pointer previous element list 
+figure illustrate doubly link list integer 
+figure doubly link list integer 
+last container class conceivably contain object type  define class 
+list show definition doubly link list class_template 
+list include 
+value return val  listelem prev return  listelem next return  friend_class  friendship 
+insert const type  
+member const type  friend ostream ostream   protect  
+listelem type  element list  
+consist value type denote type parameter_type  pointer point previous element list 
+note declare type type  declaration class 
+insert  remove  element define virtual allow class derive override
+member_function define inline 
+definition member_function follow  class type 
+copyright pragsoft 
+will_produce follow output  remove 
+example derived_class  derive set class give set consist unique element only  repetition  need override insert member_function ensure see list 
+list class class set  public public  virtual void     
+copyright pragsoft exercise define swap function swap object type 
+specialization function string 
+specialization class string 
+exception handle exception run time error 
+proper handling exception important programming issue 
+exception happen practice program generally expect behave gracefully face exception 
+exception properly handle  likely result abnormal program termination potential loss work 
+example  undetected division zero dereferencing invalid pointer will certainly terminate program abruptly 
+exception handle consist detecting run time error  ii raise exception response error  ii take corrective action 
+call recovery 
+exception fully recover execution proceed unaffected 
+example  invalid argument value pass function handle substitute reasonable default_value
+exception only partially handle 
+example  exhaustion heap memory handle abandon current operation return state operation currently open file avoid lose content attempt 
+language facility uniform handling exception 
+scheme  section code execution lead run time error label try block 
+fragment code activate execution try block raise exception throw clause 
+exception type  exception denote object specific type 
+try block follow catch clause 
+catch clause responsible handling exception type 
+exception raise  type compare catch clause follow
+matching clause find handler execute 
+exception propagate enclosing try block 
+process repeat exception handle match catch clause handle default handler 
+copyright pragsoft flow control figure illustrate flow control exception_handling 
+show function try block call call function try block  turn call
+try block follow catch clause 
+function throw exception type
+enclosing try block catch clause examine   match
+exception propagate catch clause enclose try block   match
+propagate exception catch clause follow try block  examine next  result match 
+point flow control transfer exception raise catch clause
+intervene stack frame unwound  automatic object create function properly destroy implicit call destructor 
+figure flow control exception_handling 
+throw point worth note 
+first  once exception raise handle match catch clause  flow control return exception raise 
+program attempt code result exception  call example 
+second  only role catch clause life handle exception 
+exception raise execution try block  catch clause follow simply ignore 
+exception raise throw clause  general form throw object  object object build user define type 
+exception match type object value  customary define class exact purpose 
+example  recall stack class_template discuss see list 
+list template class type class stack public  stack int max  delete stack  void push type val  void pop void  type top void  friend ostream ostream  type  private  
+constructor parameter give nonsensical value 
+constructor attempt dynamically allocate storage due heap exhaustion 
+raise exception badsize heapfail response template class 
+raise overflow exception response essential copyright pragsoft template class 
+attempt pop empty result underflow 
+raise underflow exception response template class 
+attempt examine element empty clearly error 
+raise empty exception response template class 
+suppose define class_name error exception_handling purpose 
+exception easily define derivation error  class_class class class_class class error badsize heapfail overflow underflow empty      public public public public public 
+word  try block like compound statement precede try keyword 
+try block follow catch clause exception raise execution block 
+role catch clause handle respective exception 
+catch clause call handler general form statement type type object raise matching exception  par optional identifier bind object raise exception  statement represent zero semicolon terminate statement 
+example  continue class  write  
+exception raise code try block  catch clause examine order
+first matching catch clause select statement execute 
+remain catch clause ignore 
+catch clause type match exception type 
+pointer convert implicit type_conversion rule 
+way catch clause evaluate  order appearance significant 
+care take place type likely mask type last 
+example  clause type void will match pointer pointer type clause  try 
+statement catch clause throw exception 
+case match exception propagate signify empty throw  
+exception match catch clause try block  propagate enclosing try block 
+process continue exception match enclosing try block remain 
+cause predefine function terminate call  simply terminate program 
+function following type  typedef void  
+termfun  return previous setting 
+enable function user quickly determine list exception code will handle 
+function prototype append throw list purpose  type_function parameter throw exception  exception denote list zero comma separate exception type function directly indirectly throw 
+list assurance function_will throw exception 
+example  throw invalidkey  badfile  const char  specifie encrypt throw invalidkey  badfile  const char 
+generally expect least define throw list frequently function 
+function throw exception specify throw list  predefine function unexpected call 
+default behavior unexpected terminate program 
+overridden call signature pass replace function argument  termfun  return previous setting 
+copyright pragsoft exercise follow function receive packet network system  
+connection active 
+will_return true case 
+error occur transmission packet 
+will_return true case 
+packet type know default case exercise 
+define suitable exception modify receivepacket throw exception case satisfied 
+define throw list function 
+size operand identical 
+number column first operand match number row second operand 
+heap storage exhaust 
+io library build input output io capability 
+capability library 
+standard io library call iostream library 
+definition library class divide header_file 
+additional header_file define set manipulator act stream 
+summarize table 
+figure header_file class hierarchy unix base implementation iostream class hierarchy 
+high level class unshaded 
+user iostream library typically work class only 
+table summarize role high level class 
+library predefined stream object common program 
+summarize table 
+table iostream header_file 
+header file 
+table high level iostream class 
+form io standard io file io array char io table description define hierarchy class low level untyped characterlevel io high level type io 
+include definition io  istream  ostream  iostream class 
+derive set class define file io 
+include definition ifstream  ofstream  fstream class 
+derive set class define io character array 
+include definition istrstream  ostrstream  strstream class 
+define set manipulator operate stream produce useful effect 
+input output istream ifstream istrstream ostream ofstream ostrstream iostream fstream strstream predefine stream 
+stream type cin cout clog cerr istream ostream ostream ostream essential buffer yes yes yes description copyright pragsoft stream input  output 
+act read datum input stream call extraction 
+perform operator call extraction operator iostream member_function 
+similarly  act write datum output_stream call insertion  perform operator call insertion operator iostream member_function 
+speak extract datum input stream  insert datum output_stream  
+figure iostream class hierarchy 
+upper layer deal format io type object build user define 
+low layer deal unformatted io stream character  define term streambuf object see figure 
+stream class_contain pointer streambuf object derive
+figure layer io model 
+normal circumstance  user need worry directly work streambuf object 
+indirectly employ stream 
+basic understanding streambuf operate easy understand operation stream 
+think streambuf sequence character grow shrink 
+depend type stream  pointer associate sequence see figure 
+put pointer point position next character deposit sequence result insertion 
+pointer point position next character fetch sequence result extraction 
+example  ostream only put pointer  istream only pointer  iostream pointer 
+figure streambuf put pointer 
+stream class constructor take streambuf argument 
+stream class overload insertion extraction operator streambuf operand 
+insertion extraction streambuf cause entire stream represent copy 
+insertion operator stream output introduce  employ book 
+overloading insertion operator user define type discuss 
+section look ostream member_function 
+put member_function simple method insert single character output_stream 
+example  assume os ostream object    insert  os 
+optional second argument
+define public enumeration ios class 
+table summarize ostream member_function 
+output function ostream return_type  return stream invoke 
+multiple call function concatenate  combine statement 
+example   io library 
+member function ostream 
+copyright pragsoft stream input istream istream formatted input capability 
+extraction operator stream input introduce 
+overloading extraction operator user define type discuss 
+section look istream member_function 
+member_function simple method extract single character input stream 
+example  assume istream object  int  extract return character denote pointer advance pointer 
+variation call peek  advance pointer 
+word  allow examine next input character extract
+effect call cancel call putback deposit extract character back stream   return_type peek int char 
+end offile character eof give value 
+behavior extraction operator skip blank 
+example  input line consist    space    newline extract call
+see table summary 
+read member_function extract string character input stream 
+example  char    extract character deposit buf 
+course  eof encounter process  character will extract 
+actual number character extract obtain call gcount 
+variation read  call getline  allow extraction character user specify delimiter encounter 
+example       similar call read extraction tab character encounter 
+delimiter  extract encounter specified number character  deposit buf 
+delimiter extract discard 
+position input stream pointer query tellg adjust seekg 
+example   move pointer character backward 
+optional second argument
+table summarize istream member_function 
+input function istream return_type  return stream invoke 
+multiple call function concatenate 
+table member_function istream 
+constructor associate streambuf derivation class input stream 
+first version extract next character include eof 
+second third version similar deposit character parameter 
+last version extract deposit character give streambuf delimiter denote last parameter encounter 
+delimiter  encounter extract  deposit array 
+streambuf buffering datum maintain operational state streambuf  io error 
+keep format client class  istream ostream 
+definition io contain number public enumeration value summarize table 
+value state datum_member bit vector io error flag 
+format flag datum_member bit vector 
+value bit flag specify opening mode stream 
+value specify seek direction seekp seekg 
+table useful public enumeration io 
+state set value  mean ok 
+end file reach 
+invalid operation attempt 
+last io operation attempt
+unrecoverable error take place 
+format flag 
+left adjust output 
+right adjust output 
+output padding indicator 
+convert decimal 
+convert octal 
+convert hexadecimal 
+show base output 
+show decimal_point output 
+upper case hexadecimal output 
+show symbol positive integer 
+float notation real 
+scientific notation real 
+skip blank white space input 
+flush stream insertion 
+value stream opening mode 
+stream open input 
+stream open output 
+append datum end file 
+open stream  seek eof 
+truncate exist file 
+open file exist 
+open file exist 
+binary file oppose default text file 
+value relative seek 
+seek relative beginning stream 
+seek relative current put pointer position 
+seek relative end stream 
+copyright pragsoft io operation result io error  check number io member_function 
+example  return nonzero error 
+opposite shorthand overloading void return zero return nonzero 
+possible check error follow fashion  error occur entire error bit vector obtain call rdstate  clear
+example   set eofbit badbit flag 
+io format member_function 
+example  precision change precision display float_point number      
+specify width apply only next object output 
+default  space pad object specified minimum size 
+pad character change fill 
+second argument typically 
+copyright pragsoft format flag reset call unsetf  set whole examine call flag 
+example  disable skipping lead blank input stream cin  write   table summarize member_function io 
+member function io 
+return previous setting 
+second version set format flag give_value restore default format  return previous setting 
+second version tie stream denote parameter stream return previously tie stream 
+stream tie affect
+example  cin  cerr  clog tie first cause flush first 
+copyright pragsoft stream manipulator manipulator identifi insert output_stream extract input stream order produce desire effect 
+example  endl commonly manipulator insert newline output_stream flush
+manipulator endl end flush dec hex ws 
+stream type output output output input output input output input output input input output input output input output input output input output input output description insert newline_character flush stream 
+insert null terminate character 
+set conversion base decimal 
+set conversion base hexadecimal 
+set conversion base octal 
+extract blank white space character 
+set conversion base   
+clear status flag denote argument 
+set status flag denote argument 
+set pad character argument 
+set float point precision argument 
+set field width argument 
+class define file derive iostream class  include 
+file open output create ofstream object specify file name mode argument constructor 
+example  ofstream    open file name output see table list open 
+first  check file open expect  
+ifstream derive istream  public member_function invoke ifstream object 
+fstream class derive iostream open file input output 
+table member_function ofstream  ifstream  fstream 
+first version ofstream attach file 
+second version ofstream connect open file descriptor 
+third version userspecified buffer give size 
+last version ofstream open connect specified file writing 
+insertion extraction stream cause datum move character array 
+class derive iostream class  file include 
+high level array io class ostrstream  istrstream  strstream similar file io counterpart ofstream  ifstream  fstream 
+derive iostream class inherit member_function 
+ostrstream object output 
+create dynamically allocate internal buffer  user specify buffer  
+static version ssta situation user upper bind stream buffer size 
+dynamic version  object responsible resize buffer need 
+insertion ostrstream complete  user obtain pointer stream buffer call  char  freeze odyn disable future insertion 
+call odyn scope  class destructor will destroy buffer 
+call  responsibility rest user 
+user sure long need delete  delete  
+advantage extraction operation will attempt end datum array 
+table summarize member_function ostrstream  istrstream  strstream addition inherit base_class 
+like write tool take output compiler annotate line program file report contain error  example  like   error  invalid expression 
+list function perform propose annotation 
+annotation annotate take argument  inprog denote program file name indata denote name file contain message generate compiler 
+match find  reset pointer datum back beginning stream  ignore character space character line number  extract line number lineno  ignore remain character comma follow line number  actual error_message start 
+note result arrangement  line number effectively remove error_message display next program line 
+copyright pragsoft list 
+ io library  defone size 
+copyright pragsoft exercise istream member_function define overloaded version operator set class see input set express
+program able copy text binary file 
+line contain unbalanced bracket report message following standard output    line matching  
+preprocessor prior compile program source_file  compiler pass file preprocessor 
+role preprocessor transform source_file equivalent file perform preprocessing instruction contain
+instruction facilitate number feature  file inclusion  conditional compilation  macro substitution 
+figure illustrate effect preprocessor simple file 
+show preprocessor perform following  
+remove program comment substitute single white space comment 
+perform file inclusion include conditional compilation ifdef  command encounter
+compare name identifier program  substitution find match 
+preprocessor perform minimal error checking preprocessing instruction 
+operate text level  unable check sort language level syntax_error 
+function perform compiler 
+figure role preprocessor 
+copyright pragsoft preprocessor directive programmer instruction preprocessor call directive take general form  directive token symbol first non blank character line  only space tab 
+blank symbol directive 
+follow valid exactly effect  define size define size define size directive occupy single_line 
+line last non blank character  assume continue line follow possible define multiple line directive 
+example  follow multiple line single_line directive exactly effect  define checkerror
+directive line contain comment  simply ignore preprocessor 
+line simply ignore 
+table summarize preprocessor directive  explain detail subsequent section 
+directive follow token 
+token blank 
+table preprocessor directive 
+directive define undef include ifdef ifndef endif elif line error pragma explanation define macro undefine macro textually include content file compilation code conditional macro define compilation code conditional macro define mark end conditional compilation block compilation code conditional expression nonzero specify part ifdef  ifndef  directive combination change current line number file name output error_message implementation specific
+plain macro general form  define identifi token instruct preprocessor substitute token occurrence identifi rest file inside string 
+substitution token empty effect remove identifier rest file 
+plain macro define symbolic constant 
+example  define size define word define byte long macro substitution apply directive line  identifier define
+give definition  code fragment word size byte  
+macro define symbolic constant origin language facility define constant 
+ macro purpose  const add benefit proper type checking 
+parameterized macro general form define token parameter list comma separate identifier 
+blank identifi 
+whole interpret plain macro substitution tokens part start 
+example  define parameterized macro work maximum quantity 
+parameterized macro match call syntactically similar function_call 
+call matching number argument 
+additionally  occurrence parameter substitute token substitute corresponding argument 
+call macro expansion 
+example  call max   
+note macro call separate macro identifi blank 
+generally idea place additional bracket occurrence parameter substitution token max 
+protect macro undesirable operator precedence effect macro expansion 
+overlook fundamental difference macro function lead subtle programming error 
+macro work textual level  semantic macro expansion necessarily equivalent function_call 
+example  macro call expand mean end incremente twice 
+function version max ensure only incremente once 
+facility parameterized macro attractive c
+first  inline function level code efficiency macro  semantic pitfall
+second  template kind flexibility macro define generic function class  add benefit proper syntax analysis type checking 
+macros redefine 
+macro redefine  undefined undef directive 
+example  undef size define size undef max undef undefined identifier harmless effect 
+quote operator unary take macro parameter operand 
+transform operand string put double quote
+example  parameterized macro check pointer nonzero output warning message zero  operator allow expression give argument checkptr literally print part warning message 
+note define macro
+concatenation operator binary concatenate token 
+example  give definition 
+useful write translator code generator  easy build identifier fragment 
+copyright pragsoft file inclusion file textually include file include directive 
+example  place inside file cause content include exactly position directive
+include file expect reside directory program file 
+full relative path specify 
+include system header_file standard_library  file name enclose double quote 
+example  preprocessor encounter look file prespecified location system  directory unix system 
+system exact location search specify user  argument compilation command system environment variable 
+file inclusion nest 
+example  file include file turn include file effectively include
+preprocessor care ending include file    customary only header_file file 
+multiple inclusion file lead compilation problem 
+example  header_file contain only macro declaration compiler_will object reappearance 
+contain variable definition  example  compiler_will flag error 
+next section way avoid multiple inclusion file 
+portability tool tailor program code specific hardware software architecture 
+table summarize general form directive code denote zero line program text  expression denote constant expression 
+table general form conditional compilation directive 
+form ifdef identifi code endif ifndef identifi code endif expression code endif ifdef identifi endif elif explanation identifier define symbol code include compilation process 
+identifier define symbol code include compilation process 
+expression evaluate nonzero code include compilation process 
+identifier define symbol include compilation process exclude 
+include exclude 
+similarly  ifndef
+evaluate nonzero only include compilation process 
+evaluate nonzero only include 
+part optional 
+number elif directive directive 
+displaybetadialog  checkregistration  endif ensure unit least byte wide  
+copyright pragsoft common temporarily omit code 
+testing debug programmer experiment suspect area code 
+code omit comment  place  approach work code contain style comment  comment nest 
+code omit give expression evaluate zero  omit endif preprocessor operator call define expression argument elif 
+example  define beta effect ifdef beta define possible write compound logical expression 
+example  define alpha define beta conditional compilation directive avoid multiple inclusion file 
+example  give include file call  avoid multiple inclusion file add following  ifndef define content here endif preprocessor read first inclusion  symbol undefined  content include  cause symbol define 
+subsequent inclusion effect ifndef directive cause content exclude 
+line directive change current line number file name 
+general form  line number file file optional 
+example  compiler believe current line number current file name 
+change remain effective line directive encounter 
+directive useful translator generate code 
+allow line number file name consistent original input file  intermediate file 
+error directive report error preprocessor 
+general form error error error sequence token 
+preprocessor encounter output error cause compilation abort 
+only report error compilation pointless impossible 
+example  ifndef unix error software require unix os 
+compiler vendor introduce nonstandard preprocessor feature  specific implementation 
+example sun compiler include  align name val start address multiple byte  char  double val  call myfunction beginning program execution  
+copyright pragsoft predefine identifier preprocessor small set predefine identifier denote useful
+standard summarize table 
+implementation augment list nonstandard predefine identifier 
+table standard predefine identifier 
+predefine identifier program just_like program constant 
+example  define cout file   assertion line  define assert macro testing program invariant 
+assume sample call  file line  stated condition follow message display   assertion line
+infinite loop structure call
+pascal style repeat loop 
+define parameterized macro following  
+swap value 
+find center rectangle top left bottom right coordinate give require macro 
+redefine inline function function template
+define small unsigned char symbol pc define  unsigned short
+include file file release  release  release great 
+write macro name return current date time string   dec   
+similarly  write macro name return current location file string    line  
+will output message negative 
+clause associate clause precede
+indentation code fragment       misleading  understand compiler   
+value will unchanged swap value parameter 
+swap copy original 
+jan  feb  mar  apr  jun  
+declare set parameter reference avoid copy call 
+call byreference generally efficient call value object involve large build type object 
+option next void return next  private  
+copyright pragsoft 
+freesubtree insertnode deletenode findnode printnode 
+static data member keep track last allocate see lastid 
+row void return row  int col 
+string string char int string string string length 
+copyright pragsoft 
+tree consist set node  node contain record + child 
+number call order tree 
+node tree root node least record 
+ensure least storage capacity utilize 
+nonleaf node contain record exactly child 
+important property tree insert delete operation design tree remain balance time 
+item  item key  datum  key keyof return key  datum return datum  return  friend ostream ostream  item  
+copyright pragsoft 
+page bufp  buffer page distribution merge virtual void virtual item virtual item freepage searchaux 
+node least full full 
+split node soon full  attempt evenly distribute content node
+node split only neighbor full
+solution exercise facilitate economic utilization store  ensure least storage occupy actually 
+result  height small  turn improve search speed 
+search delete operation exactly  only insertion operation
+freesubtree insertnode deletenode findnode printnode private  
+insertnode   template class 
+copyright pragsoft 
+copyright pragsoft template class key  class key  key    int 
+ptype type bool valid  class connection public  
+bool active  class inactiveconn class invalidpack class unknownpack 

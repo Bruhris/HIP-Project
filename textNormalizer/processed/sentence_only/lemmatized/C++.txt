@@ -1,0 +1,2051 @@
+complete guide program ulla kirch prinz peter prinz jones bartlett publishers ulla kirch prinz peter prinz complete guide program world headquarters jones bartlett publisher tall pine drive sudbury  ma jones bartlett publishers canada nikanna road mississauga  canada jones bartlett publishers international barb house  barb mews london uk copyright jones bartlett publishers 
+right reserve 
+part material protect copyright notice reproduce utilize form  electronic mechanical  include photocopy  recording  storage retrieval system  write permission copyright owner 
+cover image  stone shore line yellow leaf  bjorkliden  sweden  peter lilja library congress catalog publication datum prinz  peter 
+english complete guide program peter prinz  ulla kirch prinz  translate ian travis 
+isbn 
+chief executive officer  clayton jones chief operating officer  don
+ manage editor  judith
+hauck  design production  anne spencer  manufacturing inventory control  therese bräuer editor chief  michael stranz development product manager  amy rose marketing manager  nathan schultz production assistant  tara mccormick cover design  night day design composition  northeast compositor text design  mary mckeon printing bind  courier westford cover printing  john pow company 
+book typeset quarkxpress macintosh 
+font family goudy  gill courier  rubino serif 
+first printing print lb 
+print united states america dedicate child  vivi jeany page intentionally leave blank book write reader interested learn programming_language scratch  novice advanced programmer wish enhance knowledge 
+goal beginning design text capability serve dual market  textbook student holistic reference manual professional 
+language definition base american national standards institute ansi standard 
+standard comply iso norm  ratify international standardization organization 
+programming_language platform independent majority compiler ansi support 
+element language  exception_handling template  support major compiler 
+visit jones bartlett web site listing compiler text 
+book organize guide reader elementary language concept professional software development  depth coverage language element en route 
+order element discuss reflect goal help reader create useful program step way 
+type visual representation offer spread will student professional unmatched guide text 
+sample program choose illustrate typical application language element 
+addition  filter program case study introduce reader wide range application scenario 
+gain command programming_language  student need experience develop program 
+include exercise follow sample solution  allow reader test enhance performance understanding 
+appendix useful binary number representation  pre processor directive  operator precedence table  book wellstructured intelligible reference guide programmer 
+order test expand acquire knowledge  download sample program solution exercise content organization give description fundamental characteristic objectoriented programming_language 
+addition  student introduce step create fully functional program 
+example help enforce step demonstrate basic structure program 
+complete introduction basic type object program 
+integral type constant  fundamental type  boolean constant just topic discuss 
+declare call standard function 
+teach student standard class  include standard header_file 
+addition  student work string variable first time
+explain stream input output  focus format technique 
+format flag manipulator discuss  field width  fill character  alignment 
+introduce operator need calculation selection 
+binary  unary  relational  logical_operator examine detail 
+statement need control flow program 
+include loop selection switch  conditional operator  jump goto  continue  break 
+introduction definition symbolic constant macro  illustrate significance
+comprehensive examination standard macro character handling include 
+introduce implicit type_conversion  perform arithmetic type occur expression 
+additionally  explore operator explicit type_conversion 
+addition define string  look method string manipulation 
+include insert erase  search replace  comparing  concatenate string 
+write function
+basic rule cover  pass argument  definition inline function  overload function default argument  principle recursion 
+give explanation storage class object function 
+object lifetime scope discuss  global  static  auto object 
+namespace external static function include discussion 
+explain define reference pointer parameter return_value function 
+context  pass reference read only access argument introduce 
+complete description class define instance class  object 
+addition  struct union introduce example special class 
+constructor destructor define create destroy object 
+discuss inline method  access method  read only method
+explain pointer method  need pay attention pass object argument return object 
+give complete explanation member object initialize  datum_member create only once object class 
+addition  constant member enumerate type 
+take depth look define array 
+interest dimensional multidimensional array  string  class array 
+relationship pointer array 
+include pointer arithmetic  pointer version function  pointer return_value read only pointer  pointer array 
+student learn operation string illustrate pointer efficient programming  string access command line application program illustrate pointer array 
+explain sequential file access file stream 
+student will develop understanding file stream simple portable file handle technique 
+complete description overloaded operator 
+arithmetic operator  comparison  subscript_operator  shift operator input output overload illustrate technique 
+addition  concept friend_function  introduce context  important overload_operator 
+student learn overload_operator allow apply exist operator object class type 
+discuss implicit type_conversion occur expression compile directly compile apply conversion rule 
+programmer stipulate compiler_will perform implicit type_conversion class define conversion constructor function 
+finally  discuss ambiguity occur due type_conversion avoid
+preface vii program allocate release memory dynamically line current memory requirement 
+dynamic memory allocation important factor program  follow contain case study help student review subject 
+explain implement class_contain pointer dynamically allocate_memory 
+include copy_constructor definition overload assignment_operator 
+class design represent array give length sample application 
+description derived_class construct exist class inheritance 
+addition define derived_class  discuss member redefine  object construct destroy  access control base_class realize 
+discuss implicit type_conversion class hierarchy  occur context assignment function_call 
+explicit type cast class hierarchy pay attention upcaste downcaste 
+give complete explanation develop manage polymorphic addition define virtual_function  dynamic downcasting polymorphic class hierarchy introduce 
+define pure virtual method create abstract abstract polymorphic interface derive 
+illustrate inhomogeneous list  link list element class type  implement 
+create multiple inheritance explain
+introduce student creation destruction object multiply derive  virtual base depict avoid ambiguity multiple inheritance 
+explain program error handle technique resolve error condition 
+addition throw catching exception  examine exception specification declare exception define 
+addition  standard exception discuss 
+examine random access file base file stream  option query file state 
+exception handle file discuss
+illustrate object polymorphic persistent  file 
+application introduce include simple index file hash table 
+explanation advanced pointer 
+include pointer pointer  function variable number argument  pointer function 
+addition  application define class represent dynamic matrix introduce 
+bitwise operator bit mask 
+application include demonstrate calculation parity bit  conversion lowercase capital letter  convert binary number 
+finally  definition bit field introduce 
+discuss define function class_template 
+addition  special option  default argument  specialization  explicit instantiation  viii discuss 
+student learn template allow construction function base type state 
+template powerful tool automate program code generation 
+explain standard class_template represent container efficient management object collection 
+include sequence  list double ended queue  container adapter  stack  queue  priority queue  associative container  set map  bitset 
+addition discuss manage container  look sample application  bitmap raster image  routing technique 
+additional feature goal concise introduction  contain description content  present beginning
+summary student idea key point look
+exercise contain exercise  include programming problem  design test student  knowledge understanding idea 
+exercise reinforcement key concept 
+solution include allow student check work correct possible mistake 
+case study contain number case study design introduce reader wide range application scenario 
+note feature student helpful tip useful learn 
+important concept rule highlight additional emphasis easy access 
+hint informative suggestion easy programming 
+include common mistake avoid
+acknowledgement thank who help produce book  ian travis  valuable contribution development book 
+alexa doehring  who review sample program listing  give valuable hint american perspective 
+michael stranz amy rise jones bartlett publisher  who manage publishing agreement production process smoothly 
+child  vivi jeany  who leave peace long finish 
+now remain wish dear reader  fun 
+ulla kirch prinz peter prinz preface ix page intentionally leave blank xi fundamental development property object orient programming develop program beginner program structure simple program exercise solution fundamental type  constant  variable fundamental type constant escape sequence name variable keyword const volatile exercise solution content function class declare_function function_call type void function header_file standard header_file standard class exercise solution input output stream stream formatting manipulator format output integer format output float point number output field output character  string  boolean value format input format input number unformatted input output exercise solution operator fundamental type binary arithmetic_operator unary arithmetic_operator assignment relational operator logical_operator exercise solution control flow statement statement statement selection chain conditional expression select switch jump break  continue  goto exercise solution xii symbolic constant macro macro macro parameter work define directive conditional inclusion standard macro character manipulation redirect standard_input output exercise solution convert arithmetic type implicit type_conversion perform usual arithmetic type_conversion implicit type_conversion assignment type_conversion exercise solution standard class string define assign string concatenate string compare string inserting erase string search replace string access character string exercise solution function significance function define function return_value function pass argument inline function default argument overloading function recursive function exercise solution storage class namespace storage class object storage class extern content xiii storage class static specifiers auto register storage class function namespace keyword exercise solution reference pointer define reference reference parameter reference return_value expression reference type define pointer indirection operator pointer parameter exercise solution define class class concept define class define method define object object pointer objects struct union exercise solution method constructor constructor call destructor inline method access method const object method standard method pointer passing object argument return object exercise solution xiv member object static member member object member initializer constant member object static data member access static datum_member enumeration exercise solution array define array initialize array array class array multidimensional array member array exercise solution array pointer pointer arithmetic array argument pointer version function read only pointer return_pointer array pointer command line argument exercise solution fundamental file input output file file stream create file stream open mode closing file reading write block object persistence exercise solution content xv overloading operator general overload_operator global operator function friend_function friend_class overload subscript_operator overloading shift operator exercise solution type_conversion class conversion constructor conversion function ambiguity type_conversion exercise solution dynamic_memory allocation operator operator delete dynamic storage allocation class dynamic storage allocation array application  link list represent link list exercise solution dynamic member member vary length class dynamic member create destroy object implement method copy_constructor assignment exercise solution inheritance concept inheritance derived_class xvi member derived_class member access redefine member construct destroy derived_class object derived_class protect member exercise solution type_conversion class hierarchy convert base_class type_conversion assignment convert reference pointer explicit type_conversion exercise solution polymorphism concept polymorphism virtual method destroy dynamically allocate object virtual method table dynamic cast exercise solution abstract_class pure virtual method abstract concrete_class pointer reference abstract_class virtual assignment application  inhomogeneous list implement inhomogeneous list exercise solution multiple inheritance multiply derived_class multiple indirect base_class virtual base_class constructor call initialize virtual base_class exercise solution content xvii exception_handle traditional error handle exception_handle exception handler throw catch exception nesting exception_handle define error class standard exception class exercise solution file open file random access positioning random access file state exception_handle file persistence polymorphic object application  index file implement index file exercise solution pointer pointer pointer variable number argument pointer function complex declaration define typename application  dynamic matrix exercise solution manipulate bit bitwise operator bitwise shift operator bit mask bit mask bit field exercise solution template function class_template define template xviii template instantiation template parameter template argument specialization default argument template explicit instantiation exercise solution container container type sequence iterator declare sequence insert sequence access object length capacity deleting sequence list operation associative container set multiset map multimap bitset exercise solution appendix binary number preprocessor directive pre define standard macro bind function operator overview operator precedence table ascii code table screen control sequence literature index content xix page intentionally leave blank fundamental fundamental characteristic objectoriented programming_language 
+addition  will introduce step create fully functional example will help retrace step demonstrate basic structure program 
+early version  originally refer class   date back 
+name imply  derive programming_language  increment operator c
+early ansi committee american national standards institute found standardize programming_language 
+aim compiler vendor software developer possible agree unified description language order avoid confusion cause variety dialect 
+iso international organization standardization approve standard iso iec 
+mean feature universally usable modular program efficient  close machine programming portable program platform 
+large quantity exist source_code program 
+support concept object orient programming oop short  datum abstraction  creation class object datum encapsulation controlled access object datum polymorphism greek multiform  implementation instruction vary effect program execution 
+language element add  reference  template  exception_handling 
+element language strictly object orient programming feature  important efficient program implementation 
+significant effect way program handle datum  programmer ensure datum initialize suitable value suitable datum pass function call datum representation change  
+point lead error support low program maintenance requirement 
+program design maintain bank account work datum balance  credit limit  transfer  interest calculation 
+object represent account program_will property capacity important account management 
+oop object combine datum property function capacity 
+class define object type define property capacity object type 
+object communicate message   turn activate object capacity 
+specifically  object reject erroneous access attempt easy object maintain build block program low maintenance requirement  object type modify internal datum representation require change application 
+additional error_message show compiler attempt continue find error 
+troubleshoot program  sure start first error show 
++ note follow step require create translate program  
+first  text editor program text file 
+large project programmer will normally modular programming 
+mean source_code will store source_file edit translate separately 
+source_file put compiler translation 
+work plan  object file machine code create 
+object file refer module 
+finally  linker combine object file module form executable file 
+module contain function standard_library part program compile previously 
+important correct file extension source_file name 
+file extension depend compiler commonly find file extension 
+prior compilation  header_file  refer include file  copy source_file 
+header file text file contain need source_file  example  type definition declaration variable function 
+header file file extension  file extension 
+standard_library contain predefine standardized function compiler 
+modern compiler normally offer integrate software development environment  combine step mention previously single task 
+graphical user interface editing  compile  linking  run application 
+additional tool  debugger  launch 
+addition error_message  compiler_will issue warning 
+warning syntax_error merely draw attention possible error program logic  non initialized variable 
+function name program type function end function begin function_function block 
+program + program object accompany member_function global function  belong single class 
+function fulfill task call function 
+create function ready function standard_library 
+will need write global function special role play  program 
+short programming example opposite page demonstrate display message 
+first line begin number symbol   line intend preprocessor 
+preprocessor just step first translation phase object code create time 
+type filename preprocessor copy quote file position source_code 
+allow program access contain header_file 
+header_file iostream comprise convention input output_stream 
+word stream involve will treat flow datum 
+predefine name find std standard namespace 
+using_directive allow direct access name std namespace 
+program execution begin first instruction function  program function 
+structure function show opposite page 
+name change  function structure function 
+example function contain statement 
+first statement  enjoy  endl  output text string enjoy
+name console output designate object responsible output 
+symbol   character push  output_stream 
+finally endl end line cause line feed 
+statement return  terminate function program  return value exit code call program 
+standard practice exit code program terminate correctly 
+note statement follow semicolon 
+way  short statement comprise only semicolon
+program function screen output hello 
+program start 
++ example opposite page show structure program contain multiple function 
+function need define fix order 
+example  define function first  follow function line  finally function 
+common start function function control program flow 
+word  call_function define 
+possible supply compiler function prototype include compiler need 
+example introduce comment 
+string enclose 
+example  cover line cover just comment compiler ignore character follow sign end
+comment cover line useful troubleshoot  mask complete section program 
+comment type comment type 
+layout source_file  compiler parse source_file sequentially  break content token  function_name operator 
+tokens separate number whitespace character  space  tab  character 
+order source_code important important adhere specific layout  organize code row column 
+example void  function  endl  difficult read  correct definition function 
+preprocessor directive exception layout rule occupy single 
+number sign   beginning precede only space tab character 
+improve legibility program adopt consistent style  indentation blank line reflect structure program 
+addition  generous comment 
+computer method processing saving datum  data_type know 
+type define 
+number store byte 
+access part memory number store  important read correct number byte 
+memory content  bit sequence read  interpret correctly sign integer 
+compiler recognize fundamental type  refer build type  show opposite page  type vector  pointer  class  base 
+bool type represent boolean value 
+expression type bool true false  internal value true will represent numerical value false zero 
+character code integer associate character 
+letter represent code  example 
+character set define code represent character 
+display character screen  applicable character code transmit receiver   screen  responsible correctly interpret code 
+language stipulate character set  general character set contain ascii code american standard code interchange
+bit code contain definition control character code printable character code 
+char character type store character code byte bit 
+amount storage sufficient extended character set  example  ansi character set contain ascii code additional character german umlaut 
+wide character type type comprise least byte bit capable store modern unicode character 
+unicode bit code window contain code approximately character language 
+type distinguish range value 
+table opposite page show integer type  refer integral type  typical storage requirement range value 
+int integer type tailor computer adapt length register computer 
+bit computer  int equivalent short  bit computer int will equivalent long 
+treat character code just_like normal integer 
+mean perform calculation variable belong char type exactly way int type_variable 
+range value  depend compiler interpret char type sign unsigned 
+type integral type normally define unsigned short 
+integral type precede keyword unsigned 
+amount memory require remain unaltered range value change due high bit long require sign 
+keyword unsigned abbreviation unsigned 
+type normally interpret sign 
+merely convention mandatory  sign keyword
+type  sign  unsigned 
+current value range climit header_file 
+file define constant    represent small great possible value 
+program opposite page output value constant unsigned type 
+ansi size integer type preset 
+follow order apply  long type comprise least byte long type least byte 
+table representation 
+contrast integer  float point number store preset accuracy 
+follow type calculation involve float point number  float simple accuracy double double accuracy long double high accuracy value range accuracy type derive amount memory allocate internal representation type 
+accuracy express decimal place 
+mean decimal place  allow programmer store float point number differ first decimal place separate number 
+reverse  guarantee figure will distinguish work accuracy decimal place 
+remember  question position decimal_point  merely numerical sequence 
+important program display float point number accuracy support machine  refer value define cfloat header_file 
+reader interested additional material subject refer appendix  contain section representation binary number computer integer float point number 
+example  value depend machine 
+contrast  will equal 
+type integer float point number collectively refer arithmetic type  arithmetic_operator define
+void type expression represent value 
+function_call take void type 
+constant subdivide boolean constant numerical constant character constant string constant 
+constant represent value type expression 
+type define way constant write 
+constant bool type 
+example  set flag represent just state 
+hexadecimal number capitalize noncapitalize 
+integral constant normally type_int 
+value constant large int type  type capable represent large value will apply 
+ranking decimal constant follow  int  long  unsigned long designate type constant add letter long  unsigned 
+example  correspond type long correspond type unsigned int correspond type unsigned long           string literal  store byte sequence  example float point constant example character constant internal representation string literal 
+exponential notation permissible 
+example  type  double here  represent value 
+write small letter
+decimal_point distinguish float point constant integer constant 
+float point constant type double default 
+add designate float type  add long double type 
+character constant take type char 
+example   type  char numerical value character code represent character 
+constant  value ascii code 
+string constant consist sequence character enclose double quote 
+example  comprise byte  first byte contain code character zero ascii code second byte value 
+terminate null character example escape sequence 
+escape sequence follow section 
+single character mean ascii code string terminate character numerical value character 
+effect escape sequence will depend device
+sequence  example  depend setting tab width  default blank value 
+escape sequence begin backslash represent single character 
+table opposite page show standard escape sequence  decimal value  effect 
+octal hexadecimal escape sequence create character code 
+letter decimal ascii code express octal hexadecimal 
+traditionally  escape sequence only represent non printable character special character 
+control sequence screen printer driver example  initiate esc character decimal  represent 
+escape sequence character string constant 
+example    character     special significance precede backslash  
+octal number escape sequence string  sure digit  example  
+help avoid subsequent number evaluate part escape sequence 
+maximum number digit hexadecimal escape sequence 
+sequence hex number automatically terminate first character valid hex number 
+sample program opposite page demonstrate escape sequence string 
+string occupy line
+string constant separate only white space will concatenate form single string 
+continue string next backslash last character press enter key begin continue type string 
+example   note  lead space second will evaluate part string 
+generally preferable first method  terminate string reopen 
+follow rule apply create name  know identifier  name contain series letter  number  underscore character 
+german umlaut accented letter invalid 
+case sensitive  lowercase letter
+opposite page show keyword example valid invalid name 
+compiler internal name begin underscore follow capital letter 
+avoid confusion name  avoid underscore beginning name 
+normal circumstance linker only evaluate set number character  example  first character name 
+reason name global object  function  choose first character significant 
+name variable tend associate specific
+example  ch character integer  index float point number improve readability program choose long selfexplanatory name  startindex first index range index value 
+case software project  naming convention will normally apply 
+example  prefix type variable assign name variable 
+integer print decimal format default 
+variable datum number  character  complete record store variable enable processing program 
+variable refer object  belong class 
+define variable type specify amount memory reserve 
+memory space address reference name variable 
+simple definition following syntax  syntax  typ 
+variable state single definition 
+example  char int counter  double size  program  variable define program function
+follow effect  variable define function global  
+local variable normally define first brace example beginning function 
+define statement permit 
+mean variable define program 
+initialization achieve place follow name variable  equals initial value variable round bracket contain value variable 
+example  char   float  global_variable explicitly initialize default zero 
+contrast  initial value local_variable initialize will undefined initial value 
+object type constant  modify later stage initialize definition 
+example  const double  value modify program 
+statement following will merely result error_message  +  invalid volatile object keyword volatile  rarely create variable modify only program program external event 
+event initiate interrupt hardware clock  example 
+example  volatile unsigned long  program modify variable  compiler assume value variable change last access 
+compiler create machine code read value variable access repeatedly value read prior stage 
+possible combine keyword const volatile declare variable 
+example  volatile const unsigned  base declaration  variable modify program external event 
+exercise exercise sizeof operator determine byte occupy memory variable type 
+example  equivalent 
+write program display memory space require fundamental type screen 
+exercise write program generate screen output show opposite page 
+exercise variable definition show opposite page invalid sense 
+exercise write program define variable float point number initialize value display sum difference number screen 
+solution exercise incorrect   integer_value const large  initialization 
+type void function type  refer procedure programming_language 
+example  void srand unsigned int seed  standard function srand initialize algorithm generate random number 
+function return value  type void 
+unsigned value pass function argument seed random number generator 
+value create series random number 
+example  int rand void  int rand  standard function rand call argument return random number 
+series random number generate repeat function_call 
+function prototype srand rand find cstdlib header_file 
+call function rand previously call srand create number follow statement proceed   want avoid generate random number program execute  call srand value argument program run 
+common current time initialize random number generator 
+see example technique 
+output screen 
+page intentionally leave blank input output stream stream input output  focus format technique 
+give rise stream class  now library call iostream library 
+diagram opposite page show call hierarchy develop due inheritance 
+io base stream class 
+contain attribute ability common stream 
+effectively  io manage connection physical datum stream write program data file output datum screen contain basic function need format datum 
+flag determine character input interpret define purpose 
+istream ostream class derive ios form user friendly interface stream manipulation 
+istream read stream ostream write stream 
+operator define istream define ostream  example 
+iostream derive multiple inheritance istream ostream offer functionality class 
+stream class  file management  example  derive class mention
+allow developer technique file manipulation 
+class  contain method opening closing file  will discuss later
+program launch object automatically create read standard_input write standard output 
+standard input normally keyboard standard output screen 
+standard_input output redirect file 
+case  datum read keyboard file  datum display screen write file 
+standard streams cerr clog display message error occur 
+error message display screen standard output redirect file 
+positive number print sign 
+output positive sign cancel manipulator  
+last statement equivalent io    operator format input output accord flag base io set manipulator function call method    io   flag belong io manipulator easy directly access flag 
+reason  manipulator follow section  method setf unsetf only exceptional circumstance 
+similarly  screen output adhere set rule govern example  float point number display 
+stream class istream ostream offer option perform task 
+example  display table numeric_value simple way 
+previous look cin stream statement  enter number    cin follow section systematically ability stream class 
+include  operator formatted input output 
+operator define expression fundamental type character  boolean value  number string 
+manipulator generate format subsequent input output 
+manipulator familiar endl  generate line feed end line 
+general  flag represent individual bit special integral variable 
+example  depend bit set positive number output plus sign 
+flag default setting 
+example  integral number output decimal default  positive number output plus sign 
+possible modify individual formatting flag 
+method setf unsetf purpose 
+effect achieve simply call manipulator  define important flag 
+manipulator function insert input output_stream call 
+generate capital letter hexadecimal output 
+generate non negative numeric output sign default 
+generate lowercase letter hexadecimal output default 
+follow formatting option define numeric system display decimal  octal  hexadecimal capital small letter hexadecimal display sign positive number 
+addition  field width define type 
+field width define character  string  float point number  will discuss follow section 
+manipulator oct   dec switch decimal display mode 
+example   output  hexadecimal display small letter default  
+manipulator allow capital 
+example    manipulator nouppercase return output format small letter 
+manipulator output sign positive number 
+example    noshowpos revert original display mode 
+octal hexadecimal number output  bit output interpret unsigned 
+word  output show bit pattern octal hexadecimal format 
+example     statement cause follow output bit system  ffffffff
+key word const prototype precision signify method perform only read operation 
+return precision 
+digit decimal_point correspond precision 
+output fix point notation output notation set precision
+trail zero decimal_point print 
+digit decimal_point  decimal_point print 
+decimal separate integral part number decimal_point 
+trail zero decimal_point print 
+digit decimal_point  decimal_point print 
+example   output   output   output  
+large small number display exponential notation 
+example   output  format standard setting modify way 
+change precision  
+manipulator method precision redefine precision
+apply standard manipulator call least argument 
+manipulator output decimal_point trail zero 
+number digit output 
+example   output  point output predetermined number decimal place useful 
+case  manipulator precision define number decimal place 
+value assume follow example 
+example   output  contrast  manipulator specify float point number output exponential expression 
+manipulator effect set minimum field width set fill character ch leave aligns output field right align output field leave aligns output sign right align output numeric_value leave right internal output field operator generate format output field 
+specify field width set alignment output left justified specify fill character fill field 
+output string large field width  output truncate field extend 
+output will contain least number digit specify field width 
+width method manipulator define field width 
+example    special attribute field width value non permanent  field width specify apply next output only  illustrate example opposite page 
+first example output character field width  output  character 
+default field width 
+width method current field width 
+call width argument 
+example  int  fill character alignment field large string need output  blank default fill field 
+fill method manipulator specify fill character 
+example     output  fill character apply character define 
+previous example show  output field normally right align 
+option leave align set manipulator leave
+manipulator left justifie sign rightjustifie number field 
+example      output  enter character output
+program continue return  buffer clear error flag reset call sync clear method 
+ensure program_will wait character enter label 
+read standard  cin buffer
+keyboard read confirm press return key 
+allow user press backspace key correct error  return key press 
+input display screen default 
+white space character blank  tab  ignore default 
+example  char  cin  enter character follow key press return tab blank return character  store variable 
+field terminate first white space character first character process 
+example  int cin type return store decimal value variable
+character follow  ff newline_character  remain buffer will read first next read operation 
+read string  only word read first white space character will begin field 
+example  string city  cin city  read just word 
+lao kai only lao will write city string 
+character read limit specify field width 
+give field width maximum character will read  byte require null character 
+initial white space will ignore 
+program opposite page illustrate point show clear buffer 
+example  int cin oct value will interpret octal  correspond decimal value 
+example  cin hex here  will interpret hexadecimal  enable 
+float point enter point exponential notation 
+example  double  cin  character convert double value case 
+input    valid 
+example  int cin give digit will store variable
+next field begin
+decimal type require  sequence will process letter
+example  type_conversion perform  variable write internal error flag raise 
+normally sense read numerical value individually  clear buffer error flag set entry 
+  control flow     exception_handling   show program react error 
+line enter 
+sample program require least word follow white space enter 
+exercise correct program  
+overloading operator  need bit manipulation  introduce later
+expression type variable place left assign right assignment 
+case last example  right side expression first evaluate result assign variable left 
+assignment expression right  assign 
+example   assignment number assign pass function argument 
+multiple assignment  evaluate right leave  possible 
+example   case first assign
+second example show compound assignment implicitly place parenthesis  demonstrate precedence compound assignment just low simple assignment 
+compound assignment_operator compose binary arithmetic  will see later  bit operator 
+follow compound operator +     
+modify variable evaluate complex expression mean assignment  operator 
+technique refer side effect 
+avoid side effect possible  lead error impair readability program 
+example  circuit false true variable circuit contain number  comparison true value relational expression true 
+expression contain value  value expression will false 
+individual character compare  character code compare 
+result depend character set
+follow expression result value true ascii code
+example    true  precedence relational operator relational operator low precedence arithmetic_operator high precedence assignment_operator 
+example  bool max  example  max evaluate first  compare value relational expression false true assign variable 
+similarly  following example  int  + limit  + evaluate first  compare limit  value relational expression assign variable 
+int type  numerical value assign false true  
+common assign value perform comparison  parenthesis case 
+example  + limit example store + variable compare expression limit 
+assignment compare expression 
+compiler_will generate error_message value left variable 
+mistake cause headache beginner troubleshoot program 
+value note logical_operator  truth  table logical_operator example logical expression true true true false false true false false false true true false false true true false true false true false false true true false 
+create compound condition perform conditional execution program depend multiple condition 
+logical expression result value false true  depend logical expression correct incorrect  just_like relational expression 
+operand type convert bool include arithmetic type 
+case operand interpret false  convert false  value 
+value interpret true 
+will_return true only least operand true  value expression example  true great 
+will_return true only operand true  logical expression example  true  index max number successfully input 
+condition index max meet  program_will attempt read number 
+important feature logical_operator fix order evaluation 
+left operand evaluate first ascertain  right operand will evaluate 
+variable flag contain value false value  return boolean value true 
+precedence operator high precedence assignment_operator  low precedence previously operator 
+permissible omit parenthesis example early
+refer table precedence appendix detail 
+value will assign part variable variable value 
+exercise int variable contain number 
+calculate value follow logical expression  
+value will assign variable 
+set instruction iterate call loop body 
+offer language element formulate iteration statement 
+number time loop repeat define control expression 
+case statement expression verify loop body execute  loop perform once testing 
+statement take following format  syntax  statement loop body enter loop  control expression verify  
+value true  loop body execute control expression evaluate once
+control expression false  
+common practice place loop body source_code indent statement improve readability program 
+example  int  endl  example illustrate  control expression normally boolean expression 
+control expression expression convert bool type include arithmetic expression 
+learn section boolean operator  value convert false value convert true 
+block syntactically equivalent statement  block syntax require statement 
+program opposite page calculate average sequence integer input keyboard 
+loop contain statement  statement place block 
+control expression cin true user input integer 
+result convert expression cin bool type will true valid input false case 
+invalid input  user type letter integer  example  terminate loop execute next statement 
+example  int   
+follow form  syntax  statement execute first only once initialize
+subsequently  reinitialize execute test 
+define counter 
+mean counter leave
+example   example illustrate  body empty statement 
+case header contain statement 
+improve readability  empty statement occupy
+direction vertically ball subject constant acceleration  express + 
+exercise program output single follow control  will need store predecessor
+want counter count character control character current string 
+case conditional operator  
+add macro macro header_file test macro 
+system support screen control macro  add screen control macro header 
+example  write macro name  define foreground background color follow output 
+exercise modify program
+will need function getch show opposite solve part problem 
+exercise write filter program display text contain give program filter control character input exception character end line tabulator  treat normal character purpose exercise 
+control character define code 
+sequence control character represent single space 
+single  control character  output 
+solution exercise 
+page intentionally leave blank convert arithmetic type introduce implicit type_conversion  perform arithmetic type occur expression 
+additionally  operator explicit type_conversion introduce 
+compiler automatically perform implicit type_conversion  common type  allow operation question perform  assign value operand 
+generally assume small  type will convert large  type 
+assignment_operator exception rule will discuss separately 
+result arithmetic operation belong common type perform calculation 
+comparison expression will bool type matter type operand involve 
+type_conversion perform preserve original value 
+boolean value false convert true convert 
+will int type_value great perform calculation 
+give char variable  value expression example  will convert int compare 
+case  type operand high rank hierarchy apply 
+type_conversion integer promotion collectively know usual arithmetic type_conversion 
+example   value size first promote int integer division perform 
+interim result convert double multiply
+usual arithmetic type_conversion perform binary operator conditional operator  operand belong arithmetic type  only exception assignment_operator logical_operator 
+binary representaion integer value type sign char bit 
+binary representaion integer value type sign char bit 
+value negative number change pattern interpret unsigned 
+pattern  example  correspond unsigned char value + + + + + + + note perform usual arithmetic type_conversion convert sign integer convert positive number convert negative number pattern compute start pattern generate binary complement see binary representation number appendix 
+perform usual arithmetic type_conversion usual arithmetic conversion retain value number represent
+procedure conversion depend type involve  
+conversion unsigned large integral example  unsigned char int unsigned int zero extension perform first 
+process  pattern number convert expand match length add zero left 
+conversion sign large integral sign example  char int  short long sign integer represent generate binary complement 
+value retain perform sign extension 
+show example opposite page  original pattern expand match length pad sign left 
+length  pattern retain 
+pattern will interpret differently 
+sign bit lose significance see note opposite 
+long  sign extension perform first bit pattern interpret unsigned 
+conversion integral float point example  int double  unsigned long float number convert exponential float point value retain 
+convert long unsigned long float  round occur 
+conversion float point large float point example  float double  double long double value retain conversion 
+implicit type_conversion assignment arithmetic type mix assignment 
+compiler adjust value right assignment_operator match variable left 
+case compound assignment  calculation normal arithmetic conversion perform first conversion perform follow rule simple assignment 
+case occur conversion assignment  
+variable large value assign  value promote 
+rule usual arithmetic conversion apply case see example 
+value assign large   follow procedure follow depend individual circumstance 
+conversion integral small  convert small remove significant 
+bit pattern remain will interpret unsigned  unsigned  sign case 
+value only retain represent see example 
+conversion float point integral decimal part float point number remove 
+example  convert integer 
+round achieve add positive float point number subtract negative float point number 
+allow convert + 
+result integer large small result unpredictable 
+apply convert negative floatingpoint number unsigned integer see example 
+conversion float point small float point number fall range value will retain  accuracy compromise 
+value large represent result unpredictable see example 
+function func parameter belong short double type 
+function call int argument 
+lead implicit conversion value short integer double 
+int convert short compiler issue warning  data loss occur 
+explicit conversion avoid warning conversion 
+syntax  expression convert value expression give 
+explicit conversion know cast 
+cast operator unary operator high precedence arithmetic_operator 
+example  int   double   example value explicitly convert double 
+follow convention usual implicit conversion  convert double floatingpoint division perform 
+exact result   assign variable 
+cast  integer division result occur 
+additional operator explicit conversion cast operator  example 
+operator  later require special circumstance  example  perform check runtime convert class 
+plot point curve column  +   + lead step value
+follow extend ascii code character draw axis  example     arrowhead note character decimal octal + exercise function follow prototype void func unsigned int  happen function call argument 
+exercise follow loop execute 
+exercise output program opposite execute 
+exercise write program output curve screen graphic show opposite page 
+pattern interpret unsigned  yield greatest unsigned value 
+bit system  bit pattern  interpret unsigned  correspond decimal value 
+exercise statement loop execute
+expression value variable   implicitly convert unsigned int represent great unsigned value see exercise 
+exercise screen output program   fffe  fffe  fffffffe   exercise 
+define string will look method string insert erase  search replace  comparing  concatenate string 
+initialize string    sample program object class string necessarily contain string terminate character    case c
+string operation require memory space automatically reserve modify 
+programmer need internal memory allocation 
+string class define string header_file mention example class 
+operator overload define string class 
+allow easy copying  concatenation  comparison 
+additionally  method string manipulation insertion  erasing  searching  replace
+string initialize explicitly  empty string length create 
+length string  current number character string  store internally access length method equivalent size 
+example  string     output  string assignment assign value string  current content replace character sequence 
+assign following string object  string string constant single character 
+memory space require adjust automatically 
+program opposite page function getline  introduce early store keyboard string 
+contrast  operator read only word  ignore lead white space 
+case original content string lose 
+example  stre story   string   bill      
+will function block 
+ define class  step define member_function 
+program easy understand  start read point program start execute 
+function test show opposite example follow general form function 
+example read follow  type function type  type return_value 
+list empty  function  example 
+list declaration contain only word void equivalent empty list 
+parameter declare list local_variable 
+create function call initialize value argument 
+example  test   call  parameter initialize value 
+left curve bracket start function block  contain statement define function
+only difference function define name declaration list follow semicolon function code block 
+prototype declaration function only formal interface function 
+mean omit parameter name prototype  compile function definition will_produce machine code 
+stack local object return address first parameter last parameter 
+course call_function change value argument call_function  copy argument 
+function argument pass reference 
+case  function pass reference object argument access object directly modify
+example pass reference example contain function time 
+ call  address variable sek pass argument  allow function store result variable 
+will see create function type later 
+pass value offer important advantage  function argument kind expression  constant  example call_function cause accidental modification argument call_function parameter suitable variable function 
+additional indirect memory access unnecessary 
+copy large object difficult major disadvantage  reason vector pass reference starting address 
+valid function only object parameter name function 
+example  program structure opposite contain variable function function 
+variable collide reference memory address 
+apply variable 
+function local object place stack parameter function place first reverse order 
+stack area memory manage accord lifo last first principle 
+stack plate analogy 
+last plate put stack take first 
+lifo principle ensure last local object create destroy first 
+copy executable file only contain instance function machine code 
+part stack occupy function release 
+jump back forth affect run time program  especially function contain only instruction call
+time take branch small function great time need execute function
+define inline function avoid problem 
+definition inline function introduce inline keyword function header 
+example  return
+inline function contain instruction 
+inline function contain instruction  compiler ignore inline keyword issue warning 
+inline function define source_file call 
+simply supply prototype function 
+code contain instruction compiler 
+sense define inline function header_file  contrast normal  function 
+macro call  preprocessor simply replace block text 
+contrast  inline function behave like normal function  program flow interrupt function branch 
+compiler perform type check  example 
+function define default argument call full number argument 
+reason efficiency useful define version function 
+allow omit argument call function 
+compiler simply default_value missing argument 
+word  need supply declare function 
+example  void moveto   parameter name omit  usual 
+example  void moveto   function moveto call argument 
+example  moveto  moveto    first call equivalent   
+possible define default argument only parameter 
+follow general rule apply  default argument define function prototype 
+supply function define  definition occur source_file function call define default argument parameter  follow parameter default argument default argument redefine prototype scope next give detail topic 
+default argument call function number argument write function 
+page intentionally leave blank storage class namespace begin storage class object storage class responsible define part program object function
+namespace avoid conflict name global identifier 
+follow storage class specifier extern static auto register storage class object object declare  only object type name define storage class 
+storage class specify lifetime object  period time construction object destruction 
+addition  storage class delimit part program object access directly name  call object scope 
+essentially  object only declare translation unit 
+translation unit  refer module  comprise source_file compile file include 
+programmer  define object  block scope object only code block define 
+object long visible once leave code block 
+only function module reference object 
+module access object directly 
+reason  object refer global 
+access object define object storage class independent access control element class 
+namespace subdivide program scope class_will introduce later stage 
+object only access statement block call local block 
+memory object free leave code block 
+case  lifetime object automatic 
+possible define object block scope runtime program 
+lifetime object static 
+program flow enter code block  pre exist condition will apply 
+object program file scope static 
+object create program launch program terminate 
+storage class create object scope lifetime need 
+storage class_will discuss individually follow section 
+object storage class program scope read define const  modify place program 
+external object allow exchange function pass argument 
+demonstrate point  program opposite page divide separate source_file 
+string  global definition  exchange datum 
+global object explicitly initialize definition receive initial value default 
+apply object belong class type  stipulate class 
+need object define module  first declare object 
+declare object  compiler issue message state object unknown 
+declaration name type object know compiler 
+contrast definition  storage class identifier extern precede object name declaration 
+example  extern long position  declaration statement declare position external object type long 
+extern declaration allow import  object source_file 
+global object define once  once only  program 
+declare need position program 
+will normally declare object first function source_file header_file need 
+object function file 
+remember  declare object code block  object only block 
+extern declaration only refer object initialize object 
+initialize object  define object 
+global object affect whole program sparingly 
+large program contain central object define extern 
+example  static int  important characteristic static object static permanent lifetime 
+static object place stack  store data area program just_like external object 
+contrast external object  access static object restrict 
+condition apply  depend object define  
+definition external program function case  object external static  object designate name module only  will collide object name module 
+definition code block mean object internal static  object only visible single block 
+object create only once destroy leave block 
+enter block  continue work original object 
+rule apply initialize static object external object 
+object initialize explicitly  default_value applie 
+permission refuse follow unsuccessful attempt second elapse 
+follow instruction call function source_file  example      string threshold external static  variable function timediff internal static 
+value zero only function first call 
+sense add function source_file change 
+white space sign precede sequence digit 
+parameter function auto object 
+auto keyword definition 
+example  auto float radius  equivalent float radius  program flow reach definition  object create stack  contrast static type object  object destroy leave block 
+object belong class type normally initialize default_value  specify class definition 
+case  register keyword declare object 
+register normally size int variable 
+word  only sense define register variable variable large  case type char  short  int pointer 
+omit type define register variable  int assume 
+compiler ignore register keyword 
+number register register variable depend hardware  register normally
+program define register variable code block  superfluous variable place auto storage class 
+useful need perform calculation contain string 
+algorithm string   long variable  step   step  +  step  +  pattern follow long string 
+function block scope invalid  define function function 
+storage class function define access function  object 
+external function program scope  static function file scope 
+similar manner external object  external function position program 
+need call function define source_file  will need declare function 
+example  extern bool  prototype previously see  omit extern keyword  function belong extern storage class default 
+only call source_file define
+name static function_will collide object function name module 
+need call static function define first declare function source_file 
+example  static long timediff void  program structure opposite take example function getpassword timediff once
+function timediff auxiliary function design call externally 
+function declare static reason 
+namespace order avoid name conflict global identifier 
+namespace  identifier need check define previously area namespace 
+global scope subdivide isolated part 
+normal namespace identify name precede namespace keyword 
+element belong namespace declare brace 
+example  namespace mylib 
+element belong namespace reference directly name namespace 
+need reference element namespace  additionally supply namespace 
+place scope resolution operator     element name 
+example  mylib    mylib allow distinguish identical name namespace 
+scope resolution operator   reference global name  name declare namespace 
+simply omit name namespace 
+technique useful need access global name hide identical name define current namespace 
+example    demo  belong namespace aware follow namespace  namespace need define contiguously 
+reopen expand namespace define previously point program namespace nest  define namespace namespace 
+global identifier belong standard_library automatically belong standard namespace std 
+case  need repeatedly quote namespace 
+just like normal declaration  declaration using_directive occur part program 
+example   declaration call function calculate mylib namespace 
+example  namespace mylib  statement allow reference identifier mylib namespace directly 
+mylib contain additional namespace using_directive  namespace import 
+identical identifier occur current namespace import namespace  using_directive automatically result conflict 
+reference identifier lead ambiguity 
+case  scope resolution operator resolve situation 
+header_file file extension declare global identifier standard namespace std 
+using_directive previous example import require identifier global scope  example  namespace std  develop large scale program library  useful declare element proprietary namespace header_file 
+normal source_file define element 
+define name code block name valid will reference only code block 
+hide name block 
+leave code block  original once visible 
+program opposite page identical variable_name program output screen 
+exercise develop large scale program intend commercial library  name type  function  macro  declare header_file user library 
+unfortunately  library global name part 
+order library  will need define namespace 
+write follow program simulate situation  define inline function_call calculate return sum number header_file function interface follow  double  double  define inline function_call calculate return product number second header_file function interface function 
+resolve potential naming conflict  define namespace relevant header_file 
+syntactically simple reference  permissible 
+parameter reference type alias argument 
+function call  reference parameter initialize object supply argument 
+function directly manipulate argument pass
+example  void test int  base definition  statement test var  int variable var increment variable var 
+function  access reference automatically access supply variable  var 
+object pass argument pass reference  object copy 
+address object pass function internally  allow function access object call 
+argument address memory correct type 
+reference parameter offer follow benefit  argument copy 
+contrast pass value  run time program improve  especially argument occupy large amount memory function reference parameter return multiple value call_function 
+pass value allow only result return_value  resort global_variable 
+need read argument  copy define read only reference parameter 
+example  void display const  function display contain argument 
+generate argument copy 
+simply reference argument 
+caller rest assure argument modify function  declare const 
+function_call represent object  just_like object 
+function_return reference static  
+pay attention follow point return reference pointer  object reference return_value exist leave function 
+critical error declare normal auto variable function 
+destroy leave function reference point object long exist 
+append length reference output third statement 
+want avoid modify reference object  define function type read only reference 
+example  const  read only 
+reference commonly return_type overload_operator 
+operation operator perform user define type implement function 
+refer overload_operator later book detail 
+example operator standard class point 
+example  operator class ostream     sample assignment class expression reference type expression belong type  type void 
+reference type valid expression 
+example  expression void type reference object  represent object 
+allow repeatedly expression     expression equivalent     expression compose left right  see table precedence contain appendix 
+similarly  expression cin variable represent stream cin 
+allow repeat 
+example  int  double  cin  cin  reference type operator commonly reference type operator simple assignment compound assignment  + 
+operator return reference operand left 
+expression + object 
+turn  expression represent object 
+apply operator refer object belong class type 
+class definition stipulate operator 
+example  assignment_operator + standard class 
+example   jonny   +  depp   expression type represent object  expression pass argument function call reference 
+point illustrate example opposite page 
+link list tree element generate dynamically runtime typical example 
+address   give object create pointer object 
+give int variable  example  address object address int object memory pointer
+pointer point memory address simultaneously type memory address read write
+depend type  refer pointer char  pointer int  abbreviation  char pointer  int pointer 
+example  int  int  statement define variable  int type word  pointer int 
+declaration  star char pointer type derive type 
+general form  give type 
+example int type 
+object base type declare
+example  int   definition declare pointer variable  point pointer address 
+program opposite page statement  
+pointer merely alias individual object identity separate object reference 
+pointer address manipulate point address reference object 
+occupy space store address 
+bit computer  pc  byte 
+allow efficient storage management swapping currently unused block hard disk 
+special value error 
+pointer  symbolic constant null define standard header_file 
+pointer contain value null call null pointer 
+indirection operator pointer access object indirection operator access object reference pointer  give pointer   object reference
+programmer  distinguish pointer address object 
+assign value point
+assignment  return result 
+expression represent object 
+star character define pointer variable operator merely imitate later pointer expression 
+definition long  follow meaning  long pointer long type long type 
+indirection operator high precedence  just_like address operator 
+operator unary  only operand 
+help distinguish redirection operator binary multiplication operator  take operand 
+term value occur commonly compiler error_message derive assignment 
+left operand operator designate address 
+expression value refer value 
+variable_name simple example value 
+constant expression   value 
+indirection operator example operator yield value 
+give pointer variable value  designate object point 
+pointer parameter object argument object pass argument function  possible situation occur  parameter question type object pass
+func parameter question reference 
+parameter alias argument  function call manipulate object pass call_function pass reference 
+first case  argument pass function manipulate function 
+true pass reference 
+third way pass reference pass pointer function 
+answer simple  parameter declare pointer variable 
+example  function func require address int value argument  follow statement example  
+function know address object  course indirection operator access manipulate object 
+program opposite page  function swap swap value variable call_function 
+function swap able access variable address variable   pass argument 
+parameter swap declare float pointer 
+statement swap   initialize pointer address
+function manipulate expression  access variable call_function exchange value 
+test value quadratic equation solution  +  + exercise give circle radius note exercise happen parameter sample function strtoupper declare string string 
+exercise write void type_function call calculate area radius variable pass function  parameter  parameter  read only reference double radius reference double function store area circle 
+test function circle output table contain radius  area radii    
+exercise
+version function swap opposite compile produce error_message 
+function_will swap value swap   wrong 
+test correct pointer version function swap find write test version function swap reference pointer 
+exercise create function quadequation calculate solution quadratic formula calculate quadratic equation show opposite 
+argument  coefficient pointer solution 
+return  false  real solution true 
+test function output quadratic equation opposite page solution 
+pass reference  pass value occur   function manipulate local copy 
+only local copy string change function  string call_function remain unchanged 
+page intentionally leave blank define class class define instance class  object 
+addition  struct union introduce example special class 
+property  date 
+method member_function run  brake  park  turn
+class define property capacity object 
+object process reduce basic refer generic term 
+class allow direct result type abstraction software development 
+first solve problem analysis 
+object orient programming  analysis comprise identify object recognize mutual relationship 
+object description building block class 
+ class user define type 
+contain datum_member  property class  member_function  method  capacity object 
+class simply pattern instantiate  create  object class type 
+word  object variable give class 
+application program access object public method class activate capacity 
+access object datum rarely direct  object datum normally declare private read modify method public declaration ensure correct access datum 
+important aspect technique application program need aware internal structure datum 
+need  internal structure program datum modify 
+interface public method remain unchanged  change like will affect application program 
+allow enhance application program improved class version change single byte application 
+object see encapsulate private structure  protect external influence manage method 
+concept datum encapsulation concisely 
+definition begin keyword class follow class_name 
+datum_member method declare subsequent code block 
+datum member member_function belong valid type  previously define class 
+time  class_member divide private member  access externally public member  external access 
+public member form call public interface class 
+opposite page show schematic definition class 
+private section generally contain data member public section contain access method datum 
+datum encapsulation 
+following example include class_name account represent bank account 
+datum_member  name account holder  account  account balance  declare private 
+addition  public method  init initialization purpose display  display datum screen 
+label private  public  programmer discretion class  label need  order 
+section mark private  public  valid next public  private  label occur default_value member access private 
+omit private public label  class_member assume private 
+rule reflect target platform class library
+purpose book  decide keep standard naming convention distinguish class class_member 
+class name begin uppercase letter member name lowercase letter 
+member class share name 
+member class name display 
+only object class
+method  member class designate directly name 
+class membership automatically assume 
+method belong class call directly 
+access private member only possible method belong class 
+private member completely control class 
+define class automatically allocate_memory datum_member class 
+allocate_memory  define object 
+method call give object  method manipulate datum object 
+case  will need place class definition header_file 
+place definition class account file  source_file include header_file class account 
+method define source_file 
+mean define method class account source_file name  example 
+source_code application program  example  code contain function independent class store separate source_file 
+separate class application program facilitate class 
+integrated development environment  programmer will define project help manage program module insert source_file project 
+project compile link  modified source_file automatically compile link application program 
+assign address suitable pointer 
+example     saving  define object saving pointer variable call 
+pointer initialize point object saving 
+object saving
+statement example   call method display object saving 
+parenthesis case 
+syntax  expression equivalent arrow_operator minus sign great sign 
+example   statement call method display object reference object saving 
+statement equivalent statement previous example 
+difference class_member access operator 
+function address object argument manipulate reference object directly 
+read datum
+call  address pass  function pointer init method write datum reference object 
+extensive datum datum article automobile manufacturer stock organize ease view store file 
+viewpoint object orient language  record merely class_contain only public data member method 
+class keyword define structure record 
+example  class date public  short month  day  year   common practice keyword struct  programming_language  define record 
+definition date member day  month  year equivalent example  struct date short month  day  year   keywords class struct keyword struct define class  class 
+keywords class struct only vary datum encapsulation  default access member class define struct public 
+contrast class define class keyword  class_member public private label
+allow programmer retain compatibility 
+example  future  future 
+public datum record true sense word  object class_contain only public member  initialize mean list definition 
+example     first element list initialize first data member object 
+union class member store memory space 
+data member starting address memory 
+course  union store data member address simultaneously 
+union versatile usage memory space 
+example  union number 
+example define union number object type 
+union number store integral float point number 
+private label union member assume public 
+similar default set structure 
+allow direct access member union number 
+normally achieve additional type field identify current content 
+size union type object derive long data member  datum_member begin memory address 
+look example  union number  size define double member  default 
+example opposite define union wordbyte allow read write bit memory space unit 
+method print output date standard output format year 
+method init parameter copy value pass correspond range check require stage  will add later 
+method init parameter write current date correspond member 
+structure sample call function include type define long ctime 
+function time return system time express number second write value variable reference ptrsec 
+value pass function localtime convert number second local type date return pointer structure 
+object assignment additional exercise reference pointer object 
+demo   define destructor 
+task involve clean release memory closing file 
+object clean special method call destructor  class precede tilde 
+parameter  destructor impossible overload 
+class destructor only 
+class define destructor  compiler_will create minimal version destructor public member  call default destructor 
+important define destructor action perform constructor need undo 
+constructor open file  example  destructor close file 
+destructor account class specific task perform 
+explicit definition individual data member object remove order opposite order create 
+first data member create clean last 
+data member class type object  object destructor will call 
+sample program opposite page illustrate implicit call constructor destructor 
+only way ensure datum encapsulation class functionality 
+continually call  short  method impact program runtime 
+entry address jump call_function back call_function take time execute function
+avoid overhead  define inline method way similar define inline global function 
+first case  method declare class  just_like method 
+simply need place inline keyword method function header define method 
+short method define class 
+method type know implicit inline method  inline keyword
+example  class account  bool ispositive return  constructor destructor inline definition constructor destructor special method belong class define inline 
+point illustrate account class opposite 
+constructor destructor implicit inline 
+constructor default_value argument  mean default constructor 
+now define object supply initialization list 
+example  temp  explicitly supply value here  object temp correctly initialize default constructor define 
+allow access data  place datum_member public section class  undermine attempt datum encapsulation 
+access method offer useful way access private datum_member 
+access method allow datum read manipulate control manner 
+access method define inline  access just efficient direct access public member 
+example opposite  access method add class 
+now method read individual data member 
+illustrate getname  reference read only return_value 
+direct access write operation possible
+manipulate datum_member  follow method setname  setnr  setstate 
+allow define follow  example   access method benefit define access method read writing member like work typing  ream source_code  programmer remember name task perform method 
+ask benefit access method 
+important issue  access method prevent invalid access attempt onset perform sanity check 
+class_contain member design represent positive number only  access method prevent process negative number 
+possible modify internal structure later stage 
+detect structure will allow efficient handling  add modification class 
+public interface class remain unchanged  application program leverage modification need modify application
+simply recompile application program 
+mention early  object initialize define reason 
+example  const  fl     object inv modify later stage 
+mean method setname call object 
+method getname display will similarly unavailable only perform read access member 
+reason compiler decide method perform write operation only read operation member additional supply 
+identify method read only  append const keyword method declaration function header method 
+example  unsigned long getnr const  declare getnr method read only method constant object 
+example      course  prevent call read only method non constant object 
+compiler issue error_message read only method try modify member 
+occur read only method call method define const 
+addition  constant member enumerate type 
+case class present 
+correct value assign later 
+additional action impact program performance 
+define constructor  member initializer ensure general efficient member object 
+example  hr  min  sec member initializer multiple member initializer separate comma 
+list member initializer define way follow constructor header separate header colon 
+example  function block ensure suitable constructor will call data member member initializer avoid call default constructor subsequent assignment 
+example show  member initializer data member belong fundamental type 
+argument name member initializer normally constructor parameter 
+help pass value create object right member object 
+member initializer only state constructor definition 
+constructor declaration remain unchanged 
+example  set measurement once change time subsequently 
+need able edit measurement value correct systematic error 
+case  member object time declare follow  example  const  const member object modify later assignment  correct constructor call initialize object 
+word  define constructor define member initializer const member object 
+example  st  mn  sk  error 
+later version constructor ok 
+member initializer ensure desire initial value create member object 
+compiler_will issue error_message point statement current program attempt modify static member  mean programmer accidentally overwrite member declare const 
+result long contain default constructor  default_value measurement sense 
+client contain number  nr  identify customer 
+client number change  sense define number const 
+constructor client read follow  example  member initializer initialize const datum_member nr global value incremente prior
+mean datum_member object will store memory address 
+useful keep common datum access object belong example  figure exchange rate  interest rate limit value object status number object  current minimum maximum threshold value  pointer object  example  pointer active window window 
+kind datum need store once only  matter object exist 
+programmer will need manage datum represent globally 
+static datum_member purpose 
+contrast normal datum_member  static data member occur only once memory 
+opposite page  follow statement example  static double   declaration define static datum_member call record minimum maximum value measurement 
+just like member_function  occur only once  static data member define initialize external source_file 
+range operator   datum_member
+example  double    definition example illustrate  static keyword definition 
+static datum_member member_function belong normally define source_file 
+enumeration define enum keyword 
+range value name value define time 
+example  enum line  rectangle  ellipse  statement define enumerate type 
+name quote list identify integral constant 
+value deduce list order 
+first constant value  subsequent constant value high predecessor 
+previous example  line represent value  rectangle value  ellipse value 
+type_variable only assume value 
+example  enum   leave type_name  only need define constant 
+example  enum     statement define constant set value  constant value 
+value implicit 
+contrast define directive  merely replace text string  enum constant part declaration valid range 
+allow define constant visible namespace only 
+example opposite page show enumerate type  define
+mean type enum constant only direct
+enumeration declare public  access possible 
+member_class int string const date member number name birthday address  telephone number  
+constructor parameter data member access method data member 
+birthday read only 
+method formatted screen output datum_member private datum_member public method type exercise exercise first exercise last define simple class_call involve global counter log object creation destruction 
+improve extend article class follow  static data member global_variable count current number object 
+method return current number object 
+tip  member initializer 
+exercise sport club need program manage task define test class_call purpose 
+date class define last definition 
+member  birthday will change  data member birthday define const 
+overload constructor allow enter date object value day  month  year 
+appoint  pointer point null 
+pointer set return object question 
+terminate program 
+light amber green amber amber red green amber red amber green
+sample output 
+function time declare header_file ctime 
+call determine number second type  type define long 
+call function time loop  function sleep window function sleep unix 
+system call standardize  effective process sleep waiting loop 
+exercise exercise create program simulate signal position set traffic light junction 
+class light define program 
+example  green phase take second amber phase value set light 
+define auxiliary function function_return stipulated number call standard function time loop 
+forget read note opposite page 
+solution exercise date class last see file leave unchanged 
+sense define function static member_function class date globally 
+array occupy contiguous memory space 
+case array arr  space byte 
+index begin zero 
+element belong array arr    
+int expression index 
+subscript_operator high precedence  just_like class_member operator 
+error_message issue index exceed valid index range 
+programmer  need careful avoid error 
+define class perform range check index 
+create array type exception special type  void class 
+class discuss later 
+example  short  short array number  example define array call number short element assign value    
+initialize array define need state length 
+example  int    case  length array equal number initial value 
+array length explicitly state definition large number initial value  remain array_element set zero 
+contrast  number initial value exceed array length  surplus value ignore 
+locally define create stack program runtime 
+aware follow issue define  array occupy large amount memory  kbyte define global static 
+value normally assign mean loop 
+assign vector vector 
+overload assignment_operator class design represent 
+topic will discuss depth later 
+fibonacci number useful represent natural growth 
+computer science  fibonacci number like memory management hashing 
+definition follow  first fibonacci number  second subsequent fibonacci number sum predecessor 
+result follow sequence          
+quotient fibonacci number predecessor refer fibonacci quotient 
+sequence fibonacci quotients      converge threshold value + 
+array text length  string  hello eve  only occupy first byte 
+example  char  kbyte buffer common string storage 
+way represent string store string terminate null character   char array 
+define array  string constant initialize array 
+example  char  hugo   definition equivalent char    see  string occupy byte  include additional byte null character 
+need allocate memory  state size array explicitly show opposite 
+language  string represent char vector terminate null character 
+ string type refer string distinguish object string class 
+example  assignment comparison define 
+example  char   string    error 
+standard function language  strlen  strcpy  strcmp  string 
+global function begin prefix 
+program opposite page show  stream overload char array 
+input output easily achieve string class object 
+program sure overrun end char array read datum array 
+width method setw manipulator purpose 
+example  cin  character string preferable string class only operation need want avoid unnecessary overhead 
+array know class array case 
+declare array type  only need state type array_element 
+example  result  statement define class array store object type class introduce beginning last
+statement initialize array explicitly  default constructor automatically call array_element 
+previous example only valid first version class class_contain default constructor 
+list contain constructor call array_element 
+first array_element initialize constructor call implicitly contain statement 
+constructor argument  simply supply argument 
+default constructor call remain element 
+size array state explicitly  number value initialization list define size array 
+public interface object array usual 
+example   additional parenthesis need statement subscript_operator class_member operator 
+class only define explicit initialization default constructor exist class 
+ansi standard stipulate minimum dimension total dimension limit amount memory
+common multidimensional array type dimensional array  socalled matrix 
+example  float  matrix define matrix call contain row column 
+element float type 
+assignment example   row  column store value last element first row 
+contrary  dimensional array array only dimension element 
+array contain follow element  
+element float array size  turn form row dimensional array  
+mean rule apply multidimensional dimensional 
+initialization list dimensional array contain value array_element  dimensional row 
+example  int       int   definition equivalent 
+initialize array  only omit size first dimension 
+define dimension define size array_element 
+row char store name representative 
+onedimensional string array 
+example  string    class represent list contain name telephone number 
+class design perform task array ease datum management 
+array allow access individual object directly perform search 
+class encapsulate array will method simple array operation  insert deleting object 
+design class type  aim will perform automatic range checking 
+help avoid overrun end array perform read write operation 
+result class_will contain comfortable safe interface object datum management 
+entry list contain dataset contain name phone 
+element_type  comprise string  define purpose 
+array store max entry element_type 
+data member record element currently store array 
+phone list create  will initially 
+element insert delete  modify correspondingly 
+class single default constructor set counter   zero 
+initial value max element array default constructor string class execute string 
+task perform method easily deduce name 
+retrieve method return give index pointer corresponding element 
+pointer possible return null pointer index invalid 
+append method add list 
+datum pass method copy next free array_element counter incremente 
+space name field empty  name happen 
+case  method return false true 
+exercise contain detail method 
+implement method test
+screen control character possible locate cursor  independent current compiler see appendix 
+result  screen shot exercise exercise bubble sort algorithm sort array 
+algorithm repeatedly access array  compare neighboring array_element swap need 
+sort algorithm terminate element need swap 
+flag element swap 
+input terminate invalid input  letter 
+exercise introduce sample class daytime isless method 
+define initialize array daytime class object 
+write function first print method display element 
+finally  find large small element output screen 
+exercise write program output prime number program count number prime number 
+sieve eratosthene  find primary number simply eliminate multiple primary number find   first eliminate multiple    
+exercise write program create screen output show follow banner display center window scroll scroll banner begin string output first character  second 
+handle string like loop first letter follow last letter output continue starting position reach 
+wait loop modify speed banner string output 
+just enhancement variable length will add later stage 
+method erase delete array position element delete first locate search method 
+element exist  erase return value false 
+case  last element array overwrite element delete counter count decremente 
+search method find position array contain search name 
+search operation unsuccessful  value pseudo return 
+print method parameter output pass first letter letter name second method output begin letter 
+method compare string class help task 
+example    expression true character subsequent position string identical 
+getnewentrie method read list method 
+reading terminate user type empty string 
+method return number
+write application program create list type tellist display menu show opposite page 
+depend command input  method define choose  read name first letter name keyboard 
+solution exercise 
+string access command line application program illustrate pointer array 
+just_like definition reference  define read only pointer  pointer read operation only 
+read only pointer obligatory need point constant object 
+example  const int    statement define constant pointer constant object type_int 
+reference object read modify 
+example   read ok 
+pointer constant  modify  example   ok 
+reference object need constant 
+word  read only pointer point non constant object 
+only read access non constant object depo 
+guarantee argument modify 
+example  int strlen const char  example  parameter read only pointer 
+allow pass constant 
+wish vivi array memory command line argument argument program launch program  command line supply additional character sequence program 
+command line argument typically govern program execute supply datum program_will work
+example  copy case  program copy launch argument 
+individual argument separate space 
+character redirect input output follow word evaluate operating_system pass program 
+argument contain space redirection character  place double quote 
+only function parameter 
+intend process command line argument  define parameter 
+program will value least 
+parameter array char pointer  point first real argument  word program point second argument 
+operating_system  example windows nt unix  allow declare third parameter 
+parameter array pointer environment string 
+exercise contain program display program environment 
+original array  first loop  second loop  small element second small element exercise exercise note exercise selection sort algorithm method first find small element array exchange first element 
+procedure repeat remainder array contain array_element initial index
+example exercise exercise give array follow definition  int       screen output cause follow statement 
+file stream simple portable file handle technique 
+store datum permanently  need write datum file external storage medium 
+common practice store record file 
+contain datum form logical unit  human resource person 
+write operation store file  exist file update add 
+read  take file copy data_structure program 
+object put permanent storage similar technique 
+normally involve just store object datum 
+need ensure object correctly reconstruct read  turn involve store type reference object 
+external mass storage medium  hard disk  normally block orient datum transfer block size multiple byte 
+efficient easy file management imply put datum need store temporary storage memory  call file buffer 
+structure record example  entirely programmer responsibility  allow maximum degree flexibility 
+character occupie byte position 
+first byte occupie position  second byte position 
+current position position byte will read write next 
+byte transfer automatically increase current position 
+case sequential access  read write byte byte fix order 
+first read operation start beginning
+need access piece  read content start finish 
+write operation create overwrite exist  append existing 
+easy access give imply able set current position require 
+technique know random access will discuss follow
+call stream class allow easy handling 
+programmer will need buffer management system specific 
+stream class standardize  develop portable program 
+program process file window unix platform 
+simply need recompile program platform
+expect  support read write operation file 
+stream class declare fstream header 
+object belong stream class know stream 
+method  operator  manipulator cin here 
+stream method non formatted writing reading single character block operator formatted reading writing file method manipulator format character sequence method state query 
+file handle method  method opening closing file  round package 
+example  stipulate effect operator object class 
+overloaded operator 
+arithmetic operator  comparison  subscript  shift operator input output overload illustrate technique 
+concept friend_function  introduce context  important overload_operator 
+meaning change class definition
+definition scope simply extend characteristic remain unchanged 
+follow rule apply  create  only overload exist 
+binary will binary unary will unary 
+word  overload mean significant
+overload fundamental type 
+case expression  example  operand determine machine code create compiler division operand integral type  integral division perform  case float point division occur 
+action perform depend operand type involve 
+overload addition add method 
+object class  overloaded class expression easily define fundamental type 
+expression intuitive  easy understand expression contain function_call 
+belong standard_library class overload 
+apply string class  familiar 
+table opposite page show overload 
+overload  cast  sizeof  follow   member access scope resolution  conditional fixed significance class define  overload sense 
+function action perform
+name function begin keyword follow symbol 
+example  + name function 
+function define global function class method 
+generally  function define method  especially case unary operator 
+sense define function globally 
+point will illustrate later 
+function call object 
+right operand pass argument method 
+method single parameter 
+example  bool const daytime const  case overload compare daytime object 
+replace method isless  define class 
+prefix overload example opposite page illustrate overload unary operator 
+correspond function class parameter 
+function call object expression object class daytime 
+expression equivalent uncommon  call function explicitly 
+previous function_call technically correct 
+program operator easy encode read 
+aware function perform similar operation correspond fundamental 
+lead confusion 
+class note sample class opposite page show class  represent currency 
+member store give amount euro integer format  integer + cent 
+return number euro number
+technique allow easy implementation arithmetic operation need class 
+addition constructor pass whole euro argument  constructor process double value euro standard copy_constructor 
+example     negation  addition  subtraction unary change operand 
+previous example  assign value  remain unchanged 
+function create temporary object return correct value 
+example  +  expression + result 
+distinct require separate definition 
+course  overload ensure statement example  +  +  produce result 
+temporary require 
+expression contain only type object  function define 
+add subtract int double type 
+possible constructor  create object int double type 
+allow function expect value argument process int double value 
+program opposite show  statement example  +  valid 
+function characteristic  compiler convert double value call exist function euro 
+example  +  ok  ok first statement equivalent
+follow statement invalid 
+example  +  wrong 
+function define method  left operand class simply exchange operand + 
+want convert operand  will need global definition function 
+define function global function method 
+global function generally preferable follow situation apply  binary operand symmetrical  
+function unary possess single parameter  function binary
+class modify global definition function + 
+example  + const  const  operand now peer 
+specifically  conversion int double perform operand now 
+give object net  follow expression valid equivalent  example  net + + net cause follow function_call  global function access private member class 
+function + show opposite +  function define method 
+global function declare friend  class allow access private member class 
+possible friend declaration  eliminate encapsulation case 
+imagine need write global function access element numerical array class 
+need call access method class time  method perform range checking  function runtime will increase considerably 
+special permission access private member class dramatically improve function response 
+achieve declare function friend 
+friend keyword precede function prototype class definition 
+example  class
+allow direct access private member class
+function method class pointer
+resolve issue  will generally pass object function need process argument 
+important note class determine who friend
+encapsulation easily undermine 
+order compute interest  multiply divide euro double value 
+expression num num possible  friend_function implement perform multiplication 
+example show  friend_function define inline class 
+method friendly  class automatically friend_function class_contain friend declaration 
+technique useful class close conjunction class method class need access private member class 
+example  class controlpoint object result class 
+calculation individual measurement perform repeatedly 
+case  sense declare controlpoint class friend result class 
+example  class result 
+important note controlpoint class influence friend result class 
+result class decide who friend who access private member 
+matter friend declaration occur private public section class 
+friend declaration extension public interface 
+reason  preferable place friend declaration public area class 
+specifically  utilize global friend_function method suit task hand 
+common global operator function_declare friend_function 
+extensive friend technique diffuse concept encapsulation 
+allow external function manipulate internal lead inconsistency  especially class modify extend later version 
+reason  take special care friend technique 
+binary operator operand 
+give expression  array name will left operand  index will right operand 
+subscript_operator array imply background pointer arithmetic  example  equivalent 
+follow restriction apply non overloaded index operator  operand pointer array name  example operand integral expression 
+note  operator function class method parameter right operand 
+follow apply  left operand class object right operand valid type result type define 
+allow considerable flexibility 
+overloading reflect normal array 
+specifically  return_value reference object 
+index valid type  possibility unlimited 
+example  easily define associative array  array element reference string 
+invalid index lead abnormal termination application program 
+address issue define array class  impact speed program 
+opposite page show simple array class definition float value 
+subscript_operator overload return reference array 
+array access  checking perform ensure index fall give boundary 
+invalid index find  program issue error_message terminate 
+class floatarr array fix length 
+will see  variable length possible dynamic_memory allocation 
+dynamic memory allocation important factor program follow will contain additional case study review subject 
+case like will need allocate_memory dynamically  program run 
+dynamically allocate_memory release continually optimize memory usage current requirement 
+turn high level flexibility  allow programmer represent dynamic data_structure  tree link list 
+program access large space free memory know heap 
+depend operating_system os configure  heap occupy large amount unused space hard disk swap memory disk 
+delete_operator allocate release memory  mean object create destroy 
+let look scenario fundamental type first 
+simple form  call syntax syntax  pointer
+create specify return address
+address normally assign pointer variable 
+pointer belong wrong  compiler_will issue error_message 
+example   statement allocate_memory  sizeof byte 
+previous call define initial supply parenthesis initialize
+example   follow statement point memory address contain 
+statement endl  will output 
+failure impact performance computer system 
+memory release call
+call delete syntax syntax  delete  operand address memory space release 
+sure memory space dynamically allocate call
+pass null pointer delete call
+case happen delete just return  need check null pointer release memory 
+delete expression void  check memory successfully release 
+sample program illustrate  misuse delete disastrous 
+specifically call delete twice delete release statically allocate_memory 
+function design central error handling 
+need design error handle routine time call
+activate default throw exception 
+exception catch program  allow error condition remedied refer  exception_handling 
+exception catch will terminate program  install
+work old compiler  note null pointer memory
+case  addition allocate_memory  suitable constructor call 
+release memory  destructor call perform clean task 
+operator delete ensure happen 
+explicitly initialize  default constructor call sure default constructor exist 
+example  statement allocate_memory class 
+memory default constructor execute address return 
+syntax   initialization list pass argument constructor 
+compiler unable locate suitable constructor  error_message occur 
+example   statement assign address class pointer 
+initialize supply 
+expression represent entire 
+example  +  add euro 
+public member refer member access operator arrow_operator 
+example  endl  release memory create dynamically destroy  delete_operator sure clean
+destructor first call  only memory space release 
+previously discuss section fundamental type  call delete ensure pointer address dynamic deal null pointer 
+page intentionally leave blank dynamic member implement class_contain pointer dynamically allocate copy_constructor definition overload assignment 
+class design represent give length sample application 
+object farr arrptr max  cnt  class represent dynamic float 
+depend datum application program handle  memory allocate require application run 
+order class need pointer dynamically allocate_memory contain actual datum 
+datum member kind know dynamic member
+compile program contain  will know element will need store 
+design represent take point consideration allow dynamically define variable length 
+example  simple assignment possible object
+example   programmer will ensure memory accommodate array 
+just case fundamental type  possible exist   initialize 
+example  floatarr  here ensure memory accommodate array_element 
+floatarr declare  user able define initial length array 
+statement example  floatarr  allocate_memory maximum array_element 
+definition floatarr comprise member address dynamically allocate array 
+addition int variable require store maximum current number array_element 
+operator allow read write access array_element constant object reason 
+will need support read only access constant object 
+first version return reference array_element support write access 
+second  read only version only support read access array_element automatically call compiler access constant object 
+implementation version identical 
+case range checking perform index 
+index lie valid boundary  array_element simply value case read only version return 
+first version  append only work least empty slot array 
+exercise  append extend array require 
+apply insert  will write exercise
+remove delete element follow deleted move place  preserve original order 
+current count decremente
+last array delete overwrite insert 
+technique copy last position need delete  simply overwrite
+course  technique quick preferable case order element significant 
+effect standard copy_constructor floatarr  create copy
+self define copy_constructor class floatarr copy_constructor initialize object next step ensure exist initialize
+give array  follow statement valid  example  floatarr  array now length array array_element contain value
+floatarr class need copy_constructor perform task 
+constructor reference constant array parameter 
+prototype  floatarr const floatarr  standard copy_constructor class contain copy_constructor  compiler_will automatically create minimal version  know standard copy_constructor 
+constructor copy datum_member pass correspond data member
+standard constructor normally sufficient class 
+simply copy data member serve useful purpose object contain dynamic member 
+merely pointer  mean pointer object reference place memory 
+diagram opposite page illustrate situation floatarr class object 
+scenario obviously mean trouble 
+imagine release memory allocate dynamically 
+pointer second reference memory area long exist 
+example opposite page show definition constructor floatarr class 
+call element pass copy
+solution exercise  dynamic array float point number 
+define derived_class  will discuss member redefine object construct destroy  access control base_class realize 
+derive  inherit  datum method call base 
+add characteristic functionality
+fleet management program car hire company need handle kind vehicle automobile  motorcycle  truck 
+vehicle identification number vehicle  manufacturer  vehicle status  hire    repair shop  
+additionally  operation modify status  require
+differentiate vehicle type  derive base car  passcar  represent passenger carry vehicle 
+additional attribute  number seat  type  sunroof yes  additional operation 
+passenger vehicle special kind car 
+case like derive establishe relationship base 
+distinguish close relationship call relationship 
+mention  relationship occur member type 
+account object string object represent name account holder  example 
+easy manage complex situation relationship 
+base implementation need know purpose  only public interface require 
+opposite page show schematic definition derive  c
+inherit define public section follow colon 
+private public section contain additional member c
+word  public member base publicly derive c
+kind inheritance port public interface base derive extend additional declaration 
+object derive call public method base 
+public base  implement relationship  common 
+common case access member base need restrict prohibit 
+only method still access public member user
+private protect derivation achieve technique will discuss later 
+method derive access private member base 
+imagine consequence able hack access base simply define derive  undermine protection offer datum encapsulation 
+allow hierarchy 
+class indirect base
+graphic opposite page  arrow mean directly derive
+direct derivation indirect derivation
+car class derived_class passcar define example 
+derived_class passcar inherit datum_member 
+object passcar class contain datum_member
+object include call base subobject type car 
+passcar class additionally contain datum_member represent passenger vehicle sunroof 
+passcar type object total datum_member 
+sake simplicity  omit data member  number seat 
+base_class car contain constructor  access method  method display  screen output 
+method inherit derived_class passcar 
+passcar class constructor  additional access method  second output function call display declare 
+derived_class inherit method method redefine 
+member_function data member derived_class redefine 
+member assume derived_class 
+member inherit base_class derived_class will retain original 
+will look point detail later 
+example  call getnr method object name cabrio passcar class 
+example   car    public interface derived_class comprise public member base_class public member additionally define derived_class 
+example  const string gettype const return  gettype method directly access private data member passcar class example 
+output function display derived_class passcar  example  contain follow statement  example      private data member base_class car  compiler issue error_message point 
+method belong derived_class only indirect access private datum_member base_class 
+access method public declaration base_class purpose 
+opposite page show version display method call method base_class car 
+call access method  need state method base_class 
+base_class identify pointer  pass implicitly argument 
+call getprod opposite page equivalent example   name lookup follow rule apply search name method  compiler look name method call derived_class first name find  compiler walk step tree look public method name 
+example call getprod base_class car  method define passcar class 
+name occur base_class redefinition 
+name exist base_class redefinition 
+second case  member name continue exist unchanged base_class 
+word  redefine member derived_class effect base_class 
+name lookup rule compiler lead follow scenario  member redefine derived_class  will mask correspond member base_class 
+situation similar see local global_variable 
+local_variable will mask previously define global_variable name 
+adopt method feature class 
+method redefine  signature return_type method change 
+redefinition overload function derived_class scope 
+redefine method will mask method name base_class 
+course  overload method class  mean repeatedly redefine base_class method derived_class 
+method declare public section base_class  call redefine method 
+range   operator access base_class method 
+display method opposite illustrate point 
+display method define base_class output datum_member base_class 
+range operator name base_class 
+display method derived_class will call head indefinite recursion 
+derived_class contain member base_class  base sub object create initialize 
+base_class constructor call perform task 
+define  will default constructor 
+order constructor call important 
+base_class constructor call first  derived_class constructor 
+object construct core outward 
+first constructor passcar  show opposite  set initial value call access method base_class 
+implicit call default constructor base_class occur prior base sub object initialize default_value 
+process drawback technique create object member object 
+default constructor base_class initialization incorrect value assign live value impact response program 
+initialize datum_member correct value 
+base initializer constructor derived_class define purpose 
+second constructor passcar contain base initializer 
+example  syntax base initializer base sub object similar member initializer member sub object 
+mean state base member initializer list separate comma 
+third passcar constructor illustrate point 
+reverse order constructor call applie 
+need define destructor derived_class action perform constructor need reverse 
+base_class destructor need call explicitly execute implicitly 
+object  beetle cabrio  derived_class passcar type declare 
+passcar class contain default constructor  object initialize 
+sufficient state passcar type sunroof default_value exist datum_member 
+object beetle declare const just show method display method call constant object declare read only method 
+follow call invalid  example   error mean correctly define initial value object declare
+passcar class method display redefine 
+statement example   output additional data member
+case van object car class  call example   will execute method base_class 
+possible scope resolution operator    
+want display basic datum cabrio object  direct call base_class method display
+example   name method precede name base_class scope resolution operator case 
+create class hierarchy want require method friend_function derived_class communicate directly member base_class 
+base_class contain member build block derived_class general purpose
+example  class represent window screen contain dimension characteristic general window 
+characteristic need protect  method derived_class will still need direct access 
+achieve mean protect declaration 
+member declare protect shelter external access just_like private member 
+mean  protect member inaccessible base_class object class derive base_class 
+contrast private member  method friend_function derived_class access member 
+class define opposite  safe castle  show protect member base_class access directly derived_class 
+contrast protect member inaccessible user class 
+protect declaration caution 
+change declaration protect member  class derive class examine ascertain additional modification
+addition  class add class hierarchy 
+savacc contain member base_class interest rate 
+property  weight price pound method  
+exercise exercise exercise supermarket chain ask develop automatic checkout system 
+product identifiable mean barcode product name 
+grocery sell package weight 
+pack fix price grocery sell weight calculate multiply weight current price kilo 
+develop need represent product first organize product class  contain generic product barcode  name   base_class 
+define constructor parameter datum default parameter default constructor class 
+addition access method setcode getcode  define method scanner printer 
+test purpose  method will simply output product screen read product keyboard 
+define derive product  prepackedfood freshfood 
+addition product  prepackedfood class contain unit price freshfood class contain weight price kilo member 
+define constructor parameter member 
+base member initializer 
+define access method need redefine method scanner printer take member consideration 
+object type fully initialize object definition 
+default constructor create set method scanner method display product screen 
+reach end lifetime  memory occupy release delete statement 
+multiple constructor call create correspond destructor call reverse order 
+mean object derived_class 
+destructor derived_class call first destructor base_class execute 
+base_class pointer manage virtual method derived_class call 
+non virtual method will execute base_class 
+previous example  only base_class destructor execute 
+destructor call  destructor call data member passcartype  additionally define derived_class 
+data member passcartype string  occupy dynamically allocate_memory memory will release 
+multiple object create dynamically derived_class  dangerous situation occur 
+unreferenced memory block will clutter memory able reallocate seriously impact program response lead external memory swap
+opposite page show define virtual destructor class 
+just like virtual  destructor will execute 
+destructor direct indirect base_class follow 
+class base_class class virtual destructor define 
+base_class need destructor least contain dummy destructor  destructor empty function_body 
+address insert directly machine code 
+refer static early binding 
+virtual method call  version method know time compilation 
+case early binding 
+statement example   execute version display method  depend currently reference pointer 
+compiler force create machine code form association function program run 
+refer late dynamic binding 
+vmt create class least virtual method array address virtual method current class 
+polymorphic class_contain vmt pointer  hidden pointer vmt corresponding class 
+dynamic binding cause virtual_function call execute step  
+pointer vmt reference object read 
+address virtual method read vmt 
+comparison static binding  dynamic binding disadvantage vmts occupy memory 
+program response impact indirect addressing virtual method 
+small price pay benefit 
+dynamic binding allow enhance compiled source_code access source_code 
+important commercial class library  user derive class virtual_function version 
+compiler option  run time type rtti  activate  example  project setting 
+gnu compiler activate option automatically 
+reference object correspond type derived_class  fatal runtime error occur 
+give pointer base_class  currently point type  statement example   will cause compiler error 
+follow statement   cause program crash 
+runtime operator check require conversion valid
+syntax  expression expression convert target type_type 
+target type pointer reference polymorphic class void pointer 
+pointer type  expression pointer type 
+target type reference  expression identify object memory 
+operator will_return null pointer 
+give cabrio type object  follow statement example  cabrio   perform dynamic cast reference type 
+case  reference identify type object  exception type throw 
+dynamic cast upcaste 
+class involve need polymorphic case 
+type checking perform runtime 
+erroneous upcast recognize report compiler 
+first  define class_call citycar contain array pointer object allow store pointer object derived_class type
+object will create dynamically runtime 
+constructor will set current number array_element 
+destructor release memory allocate dynamically remain object 
+sure virtual destructor definition base_class allow correct releasing memory truck vehicle 
+implement version insert method prototype show opposite 
+version will allocate_memory object type class argument pass method return false impossible enter automobile array full  true case 
+display method output datum vehicle perform task call exist display method object 
+insert will first vehicle company fleet 
+user choose  add  add   program read datum supply call version insert 
+yes record dialog receptionist exercise exercise automatic checkout system supermarket chain need complete 
+create array pointer base_class  product 
+checkout assistant prompt state prepacked fresh food item scan next 
+memory product scan allocate dynamically reference next pointer array 
+scan item  sequential list price item add total output end 
+checkout assistant prompt loop state define
+record call  program terminate 
+example   coref  pointer base_class pointer address object belong derive concrete_class 
+reference coref address object type 
+copy_constructor coworker class just
+example  coworker const coworker  copy_constructor expect object belong derived_class  base_class abstract 
+assignment coworker class reference parameter return reference abstract_class 
+base_class abstract  only allocate_memory object belong derive  concrete_class 
+example  coworker   young    virtual  correspond function find derived_class execute 
+derived_class contain definition virtual method  version will execute object reference base_class pointer reference 
+abstract class refer polymorphic interface derived_class 
+opposite page show definition class  derive abstract_class 
+function assignment discuss implement follow section 
+redefine virtual function  return reference derived_class  support compiler 
+case return_type reference base_class 
+case  ensure right version function_will execute pointer reference base_class address derived_class object 
+example function assignment 
+function_declaration virtual  function call base_class pointer  only base datum object overwrite 
+additional data member derived_class remain unchanged 
+derived_class contain version 
+following example  assignment class execute  object class type first argument pass
+object type  assignment class perform 
+case  assign object class  include class derive later stage  modify function
+definitely need define assignment derived_class 
+standard assignment derived_class signature virtual 
+standard assignment class follow prototype  example  const  type const const type parameter virtual function base_class 
+standard assignment mask virtual assignment base_class 
+give rise issue  virtual function assignment define derived_class ensure standard assignment standard assignment redefine derived_class 
+inhomogeneous list linear list element type 
+datum need store consist object class hierarchy  list element contain object belong base_class  contain object derived_class 
+due implicit type_conversion class hierarchy  base_class pointer manage list element  manage element link list 
+follow graphic illustrate scenario  represent list element separate management list element contain list  define abstract_class call base_class list element 
+class_contain pointer type data member link list element 
+type object create  constructor class protect declaration 
+class contain datum need output 
+class derive contain datum need display 
+reason  contain declaration pure virtual method display  modify multiple derivation 
+class baseel derivedel  derive represent list element store
+keep simple  baseel class_contain only name  derivedel class additionally contain comment 
+public declaration section contain constructor access method declaration 
+addition  suitable display method define 
+page intentionally leave blank file random access file base file stream option query file state exception_handle file 
+will illustrate object polymorphic class persistent  application introduce simple file hash table 
+open file output 
+open file output 
+file exist  will truncate 
+open file output 
+file exist  will create 
+write access  seek end perform 
+flag additionally set  file will open binary mode 
+flag  end  additionally set  current seek position set end file opening 
+need access specific file  walk file top tail  record append end file 
+random file access give option read write directly pre defined position 
+able need change current file position explicitly  need point put pointer next byte manipulate 
+point pointer  revert read write operation familiar
+imply open file binary avoid transfer additional escape character file 
+example   fstream    statement open file   binary reading append end file 
+file will create previously exist 
+random read access file possible  write operation will append end file 
+enable random read write access file  file open follow  example   fstream    technique only exist file 
+file exist  flag create
+section  file state  discuss error handling option file   find 
+tellp tellg method return current position put pointer long value 
+example  long  statement query current position read pointer myfile stream 
+current position return byte offset relative beginning file 
+current file position modify seekp seekg method 
+position state byte offset  relative beginning end file  relative current position file 
+imagine want write object acc file   offset pos 
+follow statement example  ofstream      fstr  call write method account class  allow object write data member file see 
+specify position flag  position will assume relative beginning file 
+statement position write pointer last example formulate follow  example   byte offset negative call method seekp seekg 
+position read write pointer beginning file 
+contrast  possible place pointer position end file perform write operation  will create gap unknown content file 
+only sense empty slot file equal length  overwrite later 
+option programming hash table 
+represent index entry method positioning method follow statement commonly random positioning seekg  seekp   set current position beginning end file 
+aware first argument long type require 
+need determine length file  point pointer end file query position pointer  example    unsigned long  variable will contain number byte occupy file 
+positioning method useful file open binary 
+sense text file device 
+text  conversion prevent method work correctly 
+give size length record  size   
+work variable length record  exactly compute position 
+enable random access need store position record separate structure  call index 
+index store pair key record position  call index entry file 
+social security number  customer example  uniquely identify record 
+index sort  position correlate require quickly find binary search algorithm 
+class comprise method read write index entry current file position give position 
+file stream pass argument method 
+file operation file open  block transfer correctly 
+ios class state flag define state file assume 
+state flag correspond single bit status word  represent iostate type ios class 
+follow state flag exist  end file reach last read write operation irrecoverable error occur stream ok  
+flag  exception rule represent single bit  value flag set 
+word status word value fine 
+method exist state flag  eof   bad  
+return true correspond flag raise 
+mean discover end file follow statement  example  
+stream read method 
+individual flag query simple comparison  example  
+argument iostate type pass clear automatically stream 
+constructor class clear method reset bit invalid attempt open non existent 
+indexfile class comprise method inserting  seeking  retrieve index entry  will implement later
+string fileerror  endif exception_handle file define exception class exception_handle file implement exception_handle exploit error tracking option state flag give implement exception_handle file 
+example  method read record throw exception state flag raise  end reach 
+opposite page show typical exception class organize hierarchy represent error condition opening  read write
+case evaluation exception handler 
+exception method specify flag stream will cause exception throw 
+exception method define ios stream base_class 
+method expect multiple state flag separate sign 
+exception throw flag specify 
+example  ifstream    access fstrm stream exception throw flag raise 
+operation cause error terminate state flag clear call clear  
+exception throw here standard exception class  failure 
+type define public element ios base_class comprise virtual method return string contain cause error 
+exception handler will normally string standard error output 
+call exception argument discover state flag stream cause exception throw 
+bit set return_value exception method  exception will throw error occur 
+example  iostate  
+statement bitwise operator ascertain exception throw end reach 
+method read write class depacc persistence polymorphic object store polymorphic object imagine want object polymorphic class hierarchy persistent  store
+need ensure object reconstruct precisely read 
+give rise object polymorphic class hierarchy contain virtual method 
+simply case datum_member object record write
+write type datum_member object
+object contain dynamic member  reference object object type 
+method virtual definition class hierarchy 
+pointer reference object  read write operation object will call 
+virtual method now add 
+implementation read write method discuss early   fundamental file input output   unchanged 
+derived_class depacc savacc contain definition read read only object write file 
+implementation first call base_class method 
+error occur  simply question transfer additional data member derived_class
+present  type will write file read file 
+task will perform special class feature file management 
+follow section contain detail topic 
+page intentionally leave blank pointer advanced pointer pointer  function variable number argument  pointer function 
+application define class represent dynamic matrix introduce 
+pointer pointer motivation pointer variable object address memory  mean pointer address
+possible create pointer pointer 
+array pointer dynamically allocate  function expect array pointer argument 
+case need declare pointer variable access first element array 
+element array pointer  pointer variable pointer pointer 
+example   pointer now point first pointer array total type pointer 
+array_element address follow  access object manage array achieve follow  pointer array argument define function expect array pointer argument  define parameter match 
+example  void accsort  int len  parameter manipulate pointer array length store second parameter  len 
+call example  accsort   point first pointer pointer array 
+equivalent form 
+opposite page show implementation function accsort 
+function selection sort algorithm work sort 
+case important sort account sort pointer
+time consume copying 
+example function type standard function printf  require least argument  format string 
+printf function conversion specifier format string compute number type argument follow 
+least obligatory argument require 
+expect  need define parameter obligatory argument define function type 
+optional argument represent dot 
+function show opposite  func  expect argument 
+prototype follow prototype  int func char buffer  int max   allow function variable number argument define  push last argument stack first 
+call sample function func  stack look like diagram opposite 
+optional argument access pointer  call argument pointer  designate argptr here 
+header_file cstdarg contain macro  conform ansi standard  manage pointer assure source_code will portable 
+type argument pointer argptr declare addition local_variable 
+type define header_file typeless char pointer 
+macro call point argument pointer argptr first optional argument 
+example  argptr  max   function input read character keyboard append   
+pointer input buffer 
+maximum number character read 
+optional argument  character
+macro call  optional argument point argptr read stack 
+argument name argument pointer type optional argument   argptr  long  call macro set argument pointer next optional argument 
+result type state call 
+identical type correspond optional argument 
+special terminate condition last optional argument 
+specific value null  current number argument define obligatory argument 
+evaluate argument argument pointer set null macro   argptr  optional argument read once 
+procedure repeat begin step  macro 
+second argument define maximum number character read 
+argument character terminate keyboard input 
+last argument return character   
+input terminate press space  esc   return key 
+return_value correspond character code 
+non printable character ignore state optional argument 
+special key  function key  return value first call extended code second call 
+function key code range 
+distinguish extended code normal ascii code  value add extended code 
+table extended code appendix 
+integral float point number represent internally binary number  sequence value 
+format represent integral float point number differ 
+bit pattern integer will interpret differently float point number computer 
+represent sign unsigned integer binary format integer basically char  short  int long type differ only number byte type number interpret sign unsigned 
+bit pattern positive integer represent base power series 
+sign bit additionally number positive case sign type 
+number represent follow power series  + + + + 
+binary representation number sign char type_value bit follow  complement represent negative number  example  first  complement compute  bit invert  number add  produce bit pattern  
+complement yield value 
+sign bit require unsigned type 
+bit represent positive number  double range positive number represent 
+follow table contain binary format signed unsigned integral bit value  bit pattern negative number interpret unsigned number  value number change 
+bit pattern number will yield follow unsigned value  + + + + + + + decimal number 
+represent float point number represent give float point number   number first break sign  mantissa  power  exp  base  binary sign decimal unsigned decimal 
+binary number memory value exp normally assign ieee institute electronic electronical engineer format 
+type float bit will organize follow  normalize  form  float point number unambiguous 
+mantissa  value great equal  only exception  mantissa 
+example  first digit mantissa need store 
+power store bias 
+bias applie float type  power floatingpoint number represent internally 
+memory reserve mantissa define accuracy  memory reserve power define range value float point number 
+platform dependent range  length mantissa small large value represent  significant program  discover range cfloat climit header_file 
+instantiation class_template type question query platform dependent range method call 
+bit position exp preprocessor directive define directive define directive define symbolic constant macro 
+syntax  define substitutetext preprocessor replace name substitutetext whole program 
+substitutetext state  preprocessor will delete symbolic constant macro program code see  example  define bufsiz symbolic constant 
+macro call  argument set quote  string constant form character current argument 
+example  concatenate catalog  
+character  represent  argument 
+example  define  subdir   logid   cmd string   produce 
+operator macro define  character sequence concatenate substitute text 
+past token operator   effect 
+macro call  parameter precede follow token replace argument 
+token leading trail whitespace character remove 
+preprocessor directive example  define debug     call  will generate statement    argument macro parse symbolic constant macro 
+result concatenation symbolic constant macro  text replacement perform 
+undef directive change definition symbolic constant macro program runtime  first remove original definition 
+undef directive
+syntax  undef name supply parameter list parameterized macro 
+define directive redefine macro 
+example  define bufsize 
+directive replace content file 
+syntax  filename
+replace sign decimal number case 
+cursor line cursor line cursor character right cursor character leave  sh put cursor line column cursor position load cursor position  delete cursor position line end  delete start line cursor position  delete whole line clear screen  attribute normal  switch double intensity  blink  inverse  foreground color  background color  black  blue  red  magenta  green  cyan  yellow  white change key assignment  key decimal code will return code 
+enable escape sequence  first load screen device driver 
+window  place follow line file win win supply ansi screen control character 
+correspond function base system call offer download 
+international standard iso iec  programming_language publish iso copyright office  case postale   geneva  
+stroustrup  bjarne  programming_language  addison wesley  
+josuttis  nicolai  standard_library  addison wesley  
+literature page intentionally leave blank note  italicize page locator figure 
+see compound assignment associative array  associative container class  associative container     bitset  atm asynchronous transfer mode cell header  representing  method   auto keyword  automatic lifetime  auto object  auto specifi  back method container class vector  deque  list  backslashe   badbit  base_class   accessibility access member  call method conversion reference convert  multiple indirect   virtual   virtual destructor   base_class object assignment  base_class pointer conversion  class  define  base initializer     base subobject  begin method   bell laboratory  bias  bidirectional iterator  binary arithmetic_operator   binary bitwise operator  binary complement  binary mode file open binary operator   operand  binary search algorithm  binary tree  binding  bit coded datum  bit field  define  bitmap container class   bitmap raster image represent  bit mask   creating  bit pattern retain  bit delete  manipulating  bitset     associative container declaring  bitwise operator  bitwise exclusive operator  index bitwise operator     bit manipulation  compound assignment  create bit mask  bitwise operator  bitwise shift operator    block  building  block scope object define boolean constant  boolean operator precedence  boolean value  output   type bool type    brace function argument  variable  bracket parameter macro  syntax description  branch  break_statement  sample program contain  bresenham algorithm   bubble sort algorithm  build type  programming_language    standard_library header file  characteristic  convention develop translate program  historical perspective keyword programming_language  sample program   standard_library         calc function   call environment  capacity   capital function define  car class  access member virtual method table case conversion macro  case label  casting  castle class   cast operator  catch block  nest   syntax  catching exception  cctype header_file  cell base_class derived_class  cerr stream   cfloat header_file  character character_string comparison  character code   character constant   example character manipulation standard macro character  output  reading writing  testing  type character set  char array    char pointer  array sample function  char type     char vector  cin  cin stream     class array declare  sample program  class   abstract  adapter  associative container  base  container  define   derive  dynamic member  dynamic storage allocation example exception  friend   friend_function  global function  stream  iterator  multiply derive   name  operator 
+see abstract_class  adapter class  base_class  derived_class  type_conversion class_class keyword   class access operator  constant  class  define  sequence  clear method   delete object container class  erase container  map multimap  client class  climit header_file  clog stream   close method  closing file   cls macro  cmath header_file  collision resolution  collision  colon label  command line argument  sample program  comma operator  syntax comma separate initializer  comment program example comparative operator    comparator class  compare function  comparison result   compiler  complex declaration  operator rule evaluate  complex header_file  compound assignment  bitwise operator demonstration operator  compound condition  concatenation operator   concrete_class abstract class conditional expression  compilation  structogram conditional inclusion   conditional operator precedence  header_file  constant    type  const keyword     const object declaration  const object method access   pointer constructor call   initialization  sample program  virtual base_class  constructor   account class adapter class  calling   conversion   copy  declaring  index default   define   initialize  inline definition  task vector  list  deque  
+see destructor container adapter  container class   delete object container  description length capacity positioning iterate type  container library   contiguous memory space  continue statement  control  control expression  controlpoint class   conversion constructor   conversion function  conversion constructor define   cooked mode   copy_constructor  effect standard  floatarr class   proprietary version cos function  counter initializing  count method map multimap  count variable  cout    cout stream     coworker class   assignment  cpu register  cstdlib header_file  string initialize  specialize function template string class  ctime function  header_file  current file position  currenttime global function   datum abstraction    bit coding  class specific  encapsulation    structure  datum block transfer  datum handle traditional procedural programming  datum_member   method  static   date class method  daytime class operator  daytime sample class  debugger  dec alpha workstation bit field  decimal constant  decimal float point number represent declaration  header_file  declare sequence   dec manipulator   decrement operator  bidirectional iterator  default argument   define   rule setting template   default constructor     default destructor  default label  default setting  flag  define directive   enum constant contrast work  delete_operator     delete operator   delete array  list element   object container class  sequence   depacc class read write method  deque container class   constructor derived_class   constructing destroy   define  member standard assignment derived_class object assignment  class  define  derive type  destructor     calling   declaring  default  define  inline definition  matrix class  sample program  
+see constructor direct base_class  direct derivation  displayerror function  display function  display method    calling   division  dot_operator  double end queue  double quote header_file  string constant double type   loop  syntax statement structogram downcasting   safety issue  draw method bitmap container class  bresenham algorithm  dynamically allocate object destroy   dynamic array  dynamic binding  dynamic casting  operator  dynamic cast dynamic data_structure  dynamic matrix   dynamic member  class description object create vary length  dynamic_memory allocation  container  dynamic storage allocation array   class  early binding  elementary operation  element function output field  branch   chain structogram switch_statement contrast embed key  employee class  assignment  empty list   empty method  container class  empty statement  empty string  encapsulation    array  static datum_member  index end method  associative container class  endl manipulator   enumeration definition  sample program  enum keyword  eof bit  equal sign initialization  erase method   delete object container class  header_file  error class define   error condition back error handling  exception hierarchy  traditional   error avoid  common cause input  message   parity bit computation recognition runtime  template check escape sequence     decimal value effect  euro class    convert constructor convert function explicit type_conversion expression valid operator friend_function   testing conversion exception class  define  standard   exception class_member  exception declaration  exception handler   search exception_handling   concept description file  implement nesting  exception hierarchy  exception  catch  throw  throwing    exception method  exception specification list  exchange template function  
+exit code  exit function  exp function  explicit cast construction  explicit initialization  object  explicit inline method  explicit instantiation template   syntax explicit type_conversion     euro class  testing  explicit keyword  exponential notation   expression  evaluating  reference type   switch_statement  extended code  external function  external static object  extern storage class    extern   failbit state flag  ios base_class  method  false keyword  fibonacci number  fibonacci quotient  field input  output  field width defining  specify  file access mode  stream class file management file buffer  file operation   file  buffer  closing   default setting opening  determine position error handle open  exception_handle extension  name  opening closing     open mode positioning random access     
+see header_file  record file scope object define file state   file stream class   functionality iostream library  file stream  definition  sample program creating  fill character specify field  fill method  filter program filter  find method  map multimap  fix manipulator  fix point output  flag  open mode file  open mode  positioning  state   floatarr class  constructor copy_constructor  datum_member  prototype operator function version     float point constant  example float point division  float point number    format output inputting  float point type   conversion integral type  conversion large float point type  conversion small type  float point value type float type    loop syntax formatting  option  standard setting  format flag  format operator   statement  sample program  structogram fraction class  simplify method fraction calculate friend_class   declaring  using  friend declaration  friend_function   declare  overload_operator index friend keyword  front method  container class vector  deque  list  fstream class   function block  function_call operator  function_call define  implicit type_conversion  sample program  function prototype   example function  program calling call  conversion declaring    default argument define  define  error check leave  external  general form  hash  inline   library  macro  operator    overloading   pass value  pointer  pointer version  recursive   return_value sample  scheme vary argument  signature  significance  static  virtual operator  argument  return_value  function template  ansi instantiation define  explicit instantiation pass argument  fundamental type     example operator
+see institute electrical electronic engineer ifdef directive  statement structogram syntax ifndef directive  statement variable define ifstream class  implicit conversion  example implicit inline method  implicit instantiation  template class  implicit type_conversion     assignment  avoiding  base_class type  function_call  include directive  include file  include folder  income method   constant  increment operator  bidirectional iterator  indefinite recursion  indentation  index entry  represent  indexentry class   index      access array_element  bit manipulation  invalid  represent  index file  implement   indexfile class  constructor define   insert method  indexfilesystem class insert retrieve method  index version function   indirect base_class  indirect derivation  indirection operator    infinite loop  inheritance    datum abstraction reusability  derived_class  relation   member access  protect member   redefining member   
+see multiple inheritance inheritance graph building   inhomlist class complete  define   inhomogeneous list application implement  terminology init call  initialization  constructor call  constructor  explicit  member object  object    reference  virtual base_class   index initialization list   array pointer  init method   inline function    definition global  macro   inline keyword  inline method   input error  field  format  format  number  redirect standard   stream class stream  input function   insertafter method  insertion method sequence  vector  deque  list container class  insertion sort algorithm  insert method    class indexfile   class indexfilesystem   map multimap  sortvec derive container class  instance  class   instantiation template definition  template function  template   institute electrical electronic engineer  integer promotion   integer  compute parity format output inputte  type integer type  integral constant  example integral number display  integral promotion  integral type   conversion float point type  conversion small type  operand bitwise operator  integrate software development environment  internal manipulator  internal static object  international organization standardization  interpolation search    int type   invalid index  class  format unformatted    overloading shift operator redirecting   iomanip header_file    io baseclass flag define flag  io class  type position flag  iostream class  iostream header_file  iostream library  file stream class isless method  macro  iso 
+see international organization standardization method  relationship    istream class    iterating list  iterator class  iterator  type jump table   kbhit function  key adapter class  associative container  hash  represent pair set multiset  unique ambiguous  keyword  label goto statement  laborer class  standard assignment layout program flow  source_file  leave shift operator   left manipulator  legibility  length  container  class  length method   symbol  library function lifetime object  static  lifo last first principle    light class  limit header_file  linear solution  line feed  line function  link list   advantage define  represent  linker  list class_class definition   list container class  constructor delete object list element append delete    inserting middle inhomogeneous list  inserting  represent   list operation sample program  list represent  sorting  inverting  splicing  literal  local object   local_variable   locate macro  logarithmic runtime  logical bitwise operator  logical expression example logical_operator    logical shift  exception class derive  long double type   long type  loop body  loop  value   macro definition visibility macro call argument  case conversion  character manipulation classification  define  source_file  header_file  inline function   redefining  sample program  screen control   macro parameter sample program  function     parameter structure utility  module management  index manipulator  calling  float point number format  integer format  output field  map associative container  represent  mask  bit   mathematical rule expression  mathematical standard function  matherror exception class  header_file  matrix  matrix class  constructor  destructor  subscript_operator member array  member_function    member initializer   member object   constant   initializing  member  redefining   member sub object  memory allocate  object releasing  union usage memory address object class  merge method merging list container  sortvec container class  message function  method   calling  class_template  const non const version  datum_member  define   global function name lookup operator function operator overloadable positioning  pure virtual   standard   min function template  min macro  modifier sign unsigned  modular programming   module    motorhome multiply derived_class    move method bitmapn container class  multidimensional array define  parameter  sample program  multimap   multiple assignment  multiple indirect base_class   multiple inheritance  constructor call  initialize virtual base_class  multiple identical base_class  multiple indirect base_class  multiply derived_class   virtual base_class  multiple template parameter  multiply derived_class   multiset container class  multiset  declare  sample  name naming array  bit field  constructor  declaring  file  macro  operator function  source_file  valid  variable  namespace keyword  namespace define   dimensional array  negation  negative number convert  output decimal  nest statement  nest namespace  nesting exception_handling   nesting loop   line character    call fundamental type  call default constructor   noboolalpha manipulator  nongraphic character  noshowpoint  noshowpos manipulator  nouppercase manipulator  null    null character    null pointer    number format input number symbol   numerical constant  numeric operation exception_handle   object orient programming     object persistence   object   accessing    argument  assign  cleaning create destroy     create dynamic member  declare  define   derived_class  explicit initialization initializing   lifetime local  member  memory  pass argument  pass reference  pass value  pointer  reference return represent pair return   static  storage class storing  union wordbyte memory  
+see class  reference obligatory argument  octal constant  octal number output  oct manipulator   constant  ofstream class  constant  oop 
+see object orient programming open method   open mode flag  open mode  file  operand order evaluation  symmetry operation file   sequence  operator function    calling   declaration define global  definition index global method  method  name  negation  addition  subtraction  keyword   operator bitwise   class  complex declaration  dot  indirection  overloadable  overloading  pointer variable  reference type  template function  unary  operator fundamental type binary arithmetic_operator  increment decrement operator  logical_operator  relational operator   sign operator  unary arithmetic_operator  optional argument   operator  ostream class    constant  out_of_range  output redirect standard   stream class stream  class  overloaded operator rule  overload assignment_operator  function   operator   redefinition  shift operator  subscript_operator    parameter  declaring  multidimensional array pointer read only pointer parenthese syntax description  parity bit computation  parity function  passcar version  passcar class virtual method table passcar derived_class  pass argument function template   pass reference    pass value    persistence object   polymorphic object   pixel picture element  pointer arithmetic   pointer array generate dynamically  pointer assignment effect pointer     abstract_class   argument  array_element interrelate array compare  const object  define  define array function   move array  null  object   parameter  parameter declare read only  return   sample program   subtracting  typeless  index  pointer pointer   pointer type  pointer variable    address array  polymorphic interface  polymorphic object persistence  storing  polymorphism   concept  destroy dynamically allocate object   dynamic cast   virtual method   virtual method table   method delete object container class  popfront method   pop method  positioning flag  positioning method  positive number convert postfix increment  postfix notation  effect precedence arithmetic_operator  arithmetic type_conversion  boolean operator  cast operator type  comma operator  indirection operator  operator  operator pointer variable  relational operator   precision method  prefix  prefix increment  prefix notation  effect preprocessor  preprocessor directive  primary file  index file   printf function  priority queue  testing  template  private data member access  private member      procedure  program scope object define project  property  protect constructor  protect declaration  protect member  prototype   public base_class relationship establish public interface  class  public member   access base_class  public method  pure virtual method   
+resistant mistake program resize method container class  result class    constructor  static member  static method  retrieve method  indexfilesystem class   return address  return_statement   return_value   reusability   reverse function  reverse method  rfind method  right shift operator   round bracket  router  row class define   rtti 
+see run time type runtime behavior container class   run time error  avoid   exception class derive  run time type value  safe class   savacc class defining   scientific manipulator  scope  scope resolution operator    screen control macro   scroll string output  
+semicolon   sequence header_file  operation represent  sequential container sequence   sequential file access  set container class  
+set associative container declaring  represent  sample  settime method  setw manipulator  shape type  shelter member access shift operator  short type  showpos manipulator calling  side effect avoid  macro  sieve eratosthene  header_file  signature constructor   function  sign char type   sign integer convert  sign keyword  sign type_conversion large integral type  sign extension  sign operator  simple assignment  single character mean single quote character constant size method length container  map multimap  number object container  sizeof operator  sort method list container sort call sortvec container class merge method search method source_code  source_file   layout name  index space  special character  special object  base_class  splice function   splice operation  sqrt function   srand function  sstream class  stack class_template  explicit instantiation template parameter  stack content call_function  stack  fix vary argument recursive function  sequential container  testing  standard copy_constructor  standard exception class hierarchy standard exception_handle stream  standard_input  standard method  sample program  standard output  standard setting  star character  state flag   statement  static array  static binding  static datum_member   access  declaring  definition initialization  encapsulation  static data_structure  static function  static keyword   static lifetime   static member_function  static object  static storage class    std standard namespace   storage class  function  storage class specifier  strcat function return_pointer  strcmp function  index version strcpy function  pointer version return_pointer  stream access error  stream class shift operator  streambuf class  stream  discover change status standard  standard exception_handle string assignment   string class    string define  object sample assignment sample program   string constant   string literal internal representation string character access compare  concatenating   escape sequence initializing   inserting erase  number convert output  search replace  stringstream class  strlen function   stroustrup  bjarne  strstr function sample program   struct keyword  struct sample program  style  sub object lattice  subroutine   subscript  subscript_operator   access index  bit reference matrix class  overload   read write access substring erase  replace  subtraction   implement method  swap function  swap  switch_statement  chain contrast structogram symbolic constant  sync method  syntax  bracket description  define variable  error  tab  tan function  tellg method  tellist class   method implement  tellp method  template argument restriction template function definition  template function motivation template parameter multiple  restriction template   advantage argument   standard_library  default argument  define   define multiple parameter  function class  instantiating     parameter   specialization  terminate function  testing character  text mode  nesting loop  text editor  pointer sample class daytime  throw exception  throw statement  timediff function  time function  type  tm struct  token  tone nesting loop  top method  toupp macro  traditional procedural programming   translation unit  true keyword  trunc open mode  truth table logical_operator  try block  nest   syntax  dimensional array initialization list parameter declaration type casting  type_conversion class  ambiguity type_conversion  conversion constructor  conversion function  index type_conversion   ambiguity  assignment    explicit    failure  implicit     standard  usual arithmetic   typedef keyword  type hierarchy  typeless pointer  typename define  type  platform dependent  pointer  unary arithmetic_operator   unary operator   class  undef directive  underscore internal name  unicode  union   define  unique key  usetf method   unsigned char type  unsigned keyword  unsigned short  unsigned type  unsigned value  unwind stack  upcaste    user network interface  declaration  using_directive  keyword    usual arithmetic type_conversion   perform  macro argument valarray class  variable define  define statement  name pointer  sample program  variable_type  vector  vector container class  constructor method delete object vector iterate  virtual assignment virtual base_class   constructor call initialize   virtual destructor declare  virtual keyword  virtual method   calling   declaring  pure   redefining  virtual method table   virtual operator function  vmt 
+see virtual method table void type  function   void type pointer  volatile keyword   warning  type   method  virtual method  statement structogram structogram break syntax whitespace character  width bit field  width method   wordbyte union define write access open mode method  writeerror type exception  write method    class depacc savacc   write operation  writing block record  character  xor operator  zero extension  index 
